@@ -1,0 +1,11 @@
+$breakpoints: (
+  s: $breakpoint-s,
+  m: $breakpoint-m,
+  l: $breakpoint-l,
+);
+
+@mixin media-breakpoint-up($key) {
+  @media (min-width: map-get($map: $breakpoints, $key: $key)) {
+    @content;
+  }
+}
