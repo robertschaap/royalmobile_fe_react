@@ -1,8 +1,12 @@
 import React from 'react';
 
+import RootLayout from '../components/RootLayout';
+
 const Root: React.FC = () => {
   return (
-    <div>Blaat</div>
+    <RootLayout>
+      Page Content Here
+    </RootLayout>
   );
 };
 
