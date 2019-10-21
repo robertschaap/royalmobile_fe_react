@@ -1,5 +1,8 @@
 import React from 'react';
-import styles from './RootLayout.module.scss';
+
+import Footer from './Footer';
+import Header from './Header';
+import Main from './Main';
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -9,11 +12,13 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
   const { children } = props;
 
   return (
-    <div className={styles.component}>
-      <main>
+    <>
+      <Header />
+      <Main>
         {children}
-      </main>
-    </div>
+      </Main>
+      <Footer />
+    </>
   );
 };
 
