@@ -1,0 +1,1 @@
+export { useContentCopy } from './useContentCopy';
