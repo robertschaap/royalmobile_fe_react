@@ -1,3 +1,5 @@
+const spacing = (n: number) => (n * 4) + "px";
+
 const color = {
   primary: '#ff9e00',
   secondary: '#c3ebeb',
@@ -9,6 +11,8 @@ const color = {
 
 const theme = {
   color,
+  spacing,
 };
+
 
 export default theme;
