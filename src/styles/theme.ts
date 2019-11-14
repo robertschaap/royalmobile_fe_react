@@ -7,9 +7,9 @@ const breakpoints = {
 };
 
 export const breakpoint_up = {
-  sm: `@media (min-width: ${breakpoints.sm}x)`,
-  md: `@media (min-width: ${breakpoints.md}px)`,
-  lg: `@media (min-width: ${breakpoints.lg}px)`,
+  sm: `(min-width: ${breakpoints.sm}x)`,
+  md: `(min-width: ${breakpoints.md}px)`,
+  lg: `(min-width: ${breakpoints.lg}px)`,
 }
 
 const color = {
