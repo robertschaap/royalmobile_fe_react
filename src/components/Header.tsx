@@ -7,9 +7,11 @@ import HeaderLogo from './HeaderLogo';
 import Navigation from './Navigation';
 
 const HeaderBase = styled.header`
+  margin-top: ${({ theme }) => theme.spacing(8)}
   margin-bottom: ${({ theme }) => theme.spacing(4)}
 
   @media ${breakpoint_up.md} {
+    margin-top: ${({ theme }) => theme.spacing(9)}
     margin-bottom: ${({ theme }) => theme.spacing(6)};
   }
 `;
