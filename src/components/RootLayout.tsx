@@ -7,7 +7,10 @@ import Header from './Header';
 import Main from './Main';
 
 const RootLayoutBase = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  min-height: 100vh;
   max-width: 960px;
   padding: 0 ${({ theme }) => theme.spacing(4)};
 
