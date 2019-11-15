@@ -1,6 +1,8 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { BrowserRouter, Route } from 'react-router-dom';
 
+import routes from '../constants/routes';
 import theme from '../styles/theme';
 
 import Banner from '../components/Banner';
@@ -26,9 +28,11 @@ const Root: React.FC = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RootLayout>
-          <Banner />
-        </RootLayout>
+        <BrowserRouter>
+          <RootLayout>
+            <Route exact path={routes.HOME} component={Banner} />
+          </RootLayout>
+        </BrowserRouter>
       </ThemeProvider>
       <GlobalStyle />
     </>
