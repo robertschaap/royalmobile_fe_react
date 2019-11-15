@@ -5,7 +5,6 @@ import { breakpoint_up } from '../styles/theme';
 import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
-import Banner from './Banner';
 
 const RootLayoutBase = styled.div`
   margin: 0 auto;
@@ -29,7 +28,6 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
       <Header />
       <Main>
         {children}
-        <Banner />
       </Main>
       <Footer />
     </RootLayoutBase>
