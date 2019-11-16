@@ -5,8 +5,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import routes from '../constants/routes';
 import theme from '../styles/theme';
 
-import Banner from '../components/Banner';
 import RootLayout from '../components/RootLayout';
+import HomePageContainer from '../containers/HomePageContainer';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -30,7 +30,7 @@ const Root: React.FC = () => {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <RootLayout>
-            <Route exact path={routes.HOME} component={Banner} />
+            <Route exact path={routes.HOME} component={HomePageContainer} />
           </RootLayout>
         </BrowserRouter>
       </ThemeProvider>
