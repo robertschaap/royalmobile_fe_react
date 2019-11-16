@@ -28,12 +28,16 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   if (variant === "primary") {
     return (
-      <ButtonPrimary {...rest} />
+      <ButtonPrimary
+        data-testid="button-primary"
+        {...rest} />
     );
   }
 
   return (
-    <ButtonSecondary {...rest} />
+    <ButtonSecondary
+      data-testid="button-secondary"
+      {...rest} />
   )
 };
 
