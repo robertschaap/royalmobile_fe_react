@@ -23,7 +23,6 @@ describe('<Grid />', () => {
   describe('calculatePercentage', () => {
     it('should return 100 when no values are passed', () => {
       expect(calculatePercentage(undefined)).toEqual(100);
-      expect(calculatePercentage(null)).toEqual(100);
     });
 
     it('should return 100 when a value outside of 1 to 12 is passed', () => {
