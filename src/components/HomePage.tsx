@@ -13,9 +13,7 @@ const devices = [
   { id: 6, name: "iPhoneX 16gb", manufacturer: "Apple", price: "265" },
 ];
 
-const HomePage: React.FC = (props) => {
-  const { children } = props;
-
+const HomePage: React.FC = () => {
   return (
     <>
       <Banner />
