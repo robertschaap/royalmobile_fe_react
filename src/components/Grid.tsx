@@ -9,28 +9,35 @@ export const calculatePercentage = (n?: number) => {
   return 100;
 };
 
-const gutters = {
+const gutter_column = {
   xs: 12,
   sm: 24,
   md: 32,
   lg: 32,
 };
 
+const gutter_row = {
+  xs: 8,
+  sm: 8,
+  md: 12,
+  lg: 12,
+};
+
 export const GridBase = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -${gutters.xs / 2}px;
+  margin: 0 -${gutter_column.xs / 2}px;
 
   @media ${breakpoint_up.sm} {
-    margin: 0 -${gutters.sm / 2}px;
+    margin: 0 -${gutter_column.sm / 2}px;
   }
 
   @media ${breakpoint_up.md} {
-    margin: 0 -${gutters.md / 2}px;
+    margin: 0 -${gutter_column.md / 2}px;
   }
 
   @media ${breakpoint_up.lg} {
-    margin: 0 -${gutters.lg / 2}px;
+    margin: 0 -${gutter_column.lg / 2}px;
   }
 
 `;
@@ -49,23 +56,27 @@ interface GridItemProps {
  * your grid needs to be two columns, do <GridItem sm={2} />
  */
 export const GridItem = styled.div<GridItemProps>`
-  flex: 0 1 calc(${({ xs }) => calculatePercentage(xs)}% - ${gutters.xs}px);
-  margin: 0 ${gutters.xs / 2}px;
+  flex: 0 1 calc(${({ xs }) => calculatePercentage(xs)}% - ${gutter_column.xs}px);
+  margin: 0 ${gutter_column.xs / 2}px;
+  margin-bottom: ${gutter_row.xs}px;
 
   border: 1px solid pink;
 
   @media ${breakpoint_up.sm} {
-    flex: 0 1 calc(${({ sm }) => calculatePercentage(sm)}% - ${gutters.sm}px);
-    margin: 0 ${gutters.sm / 2}px;
+    flex: 0 1 calc(${({ sm }) => calculatePercentage(sm)}% - ${gutter_column.sm}px);
+    margin: 0 ${gutter_column.sm / 2}px;
+    margin-bottom: ${gutter_row.sm}px;
   }
 
   @media ${breakpoint_up.md} {
-    flex: 0 1 calc(${({ md }) => calculatePercentage(md)}% - ${gutters.md}px);
-    margin: 0 ${gutters.md / 2}px;
+    flex: 0 1 calc(${({ md }) => calculatePercentage(md)}% - ${gutter_column.md}px);
+    margin: 0 ${gutter_column.md / 2}px;
+    margin-bottom: ${gutter_row.md}px;
   }
 
   @media ${breakpoint_up.lg} {
-    flex: 0 1 calc(${({ lg }) => calculatePercentage(lg)}% - ${gutters.lg}px);
-    margin: 0 ${gutters.lg / 2}px;
+    flex: 0 1 calc(${({ lg }) => calculatePercentage(lg)}% - ${gutter_column.lg}px);
+    margin: 0 ${gutter_column.lg / 2}px;
+    margin-bottom: ${gutter_row.lg}px;
   }
 `;
