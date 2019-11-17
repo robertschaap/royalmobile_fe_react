@@ -9,7 +9,7 @@ const BenefitsItem = styled.div`
   align-items: center;
   height: 100%;
   padding: ${({ theme })=> theme.spacing(3)} ${({ theme })=> theme.spacing(4)};
-  border: 1px solid ${({ theme })=> theme.color.lightGrey};
+  border: 1px solid ${({ theme })=> theme.color.grey};
   border-radius: 8px;
 
   @media ${breakpoint_up.md} {
