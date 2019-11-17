@@ -3,7 +3,7 @@ import React from 'react';
 import PageTitle from '../components/PageTitle';
 import HomePage from '../components/HomePage';
 
-const Main: React.FC = () => {
+const HomePageContainer: React.FC = () => {
   return (
     <>
       <PageTitle page="Home" />
@@ -12,4 +12,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;
+export default HomePageContainer;
