@@ -2,6 +2,7 @@ import React from 'react';
 
 import { GridBase, GridItem } from '../components/Grid';
 import Banner from '../components/Banner';
+import Benefits from '../components/Benefits';
 import Button from '../components/Button';
 
 const devices = [
@@ -35,6 +36,7 @@ const HomePage: React.FC = () => {
         variant="secondary">
         Load More
       </Button>
+      <Benefits />
     </>
   );
 };
