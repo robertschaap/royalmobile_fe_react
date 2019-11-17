@@ -60,8 +60,6 @@ export const GridItem = styled.div<GridItemProps>`
   margin: 0 ${gutter_column.xs / 2}px;
   margin-bottom: ${gutter_row.xs}px;
 
-  border: 1px solid pink;
-
   @media ${breakpoint_up.sm} {
     flex: 0 1 calc(${({ sm }) => calculatePercentage(sm)}% - ${gutter_column.sm}px);
     margin: 0 ${gutter_column.sm / 2}px;
