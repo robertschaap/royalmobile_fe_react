@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Banner from '../components/Banner';
 import Benefits from '../components/Benefits';
 import Button from '../components/Button';
 import ProductListing from '../components/ProductListing';
+
+const LoadMoreButton = styled(Button)`
+  margin-bottom: ${({ theme }) => theme.spacing(3)};
+`
 
 const products = [
   { id: 1, name: "iPhoneX 16gb", manufacturer: "Apple", price: "265" },
@@ -20,10 +25,10 @@ const HomePage: React.FC = () => {
       <Banner />
       <ProductListing
         products={products} />
-      <Button
+      <LoadMoreButton
         variant="secondary">
         Load More
-      </Button>
+      </LoadMoreButton>
       <Benefits />
     </>
   );
