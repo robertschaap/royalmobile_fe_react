@@ -29,6 +29,14 @@ const BenefitsItemCallout = styled.span`
   }
 `;
 
+const BenefitsItemDescription = styled.span`
+  font-size: 12px;
+
+  @media ${breakpoint_up.sm} {
+    font-size: unset;
+  }
+`;
+
 const Benefits: React.FC = () => {
   return (
     <GridBase as="section">
@@ -37,7 +45,9 @@ const Benefits: React.FC = () => {
         lg={2}>
         <BenefitsItem>
           <BenefitsItemCallout>GET</BenefitsItemCallout>
-          <span>Three months free inside of your regular bundle when you refer a friend</span>
+          <BenefitsItemDescription>
+            Three months free inside of your regular bundle when you refer a friend
+          </BenefitsItemDescription>
         </BenefitsItem>
       </GridItem>
       <GridItem
@@ -45,7 +55,9 @@ const Benefits: React.FC = () => {
         lg={2}>
         <BenefitsItem>
           <BenefitsItemCallout>GET</BenefitsItemCallout>
-          <span>Double data in your bundle plus a 5 euro discount when you combine with <b>Royal</b>Internet</span>
+          <BenefitsItemDescription>
+            Double data in your bundle plus a 5 euro discount when you combine with <b>Royal</b>Internet
+          </BenefitsItemDescription>
         </BenefitsItem>
       </GridItem>
   </GridBase>
