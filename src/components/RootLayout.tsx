@@ -28,6 +28,14 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
 
   return (
     <RootLayoutBase>
+      {true && (
+        <div style={{ backgroundColor: "#ddd" }}>
+          Debug:&nbsp;
+          <a href="/">Home</a> |&nbsp;
+          <a href="/product">Product</a> |&nbsp;
+          <a href="/order">Order</a>
+        </div>
+      )}
       <Header />
       <Main>
         {children}
