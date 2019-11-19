@@ -4,22 +4,38 @@ import { breakpoint_up } from '../styles/theme';
 
 import Breadcrumbs from './Breadcrumbs';
 import HeaderLogo from './HeaderLogo';
+import HeaderUsps from './HeaderUsps';
 import Navigation from './Navigation';
 
 const HeaderBase = styled.header`
-  margin-top: ${({ theme }) => theme.spacing(8)}
-  margin-bottom: ${({ theme }) => theme.spacing(4)}
+  background-color: rgba(255,255,255,0.97);
+  position: sticky;
+  top: 0;
+  padding-top: ${({ theme }) => theme.spacing(2)};
+  padding-bottom: ${({ theme }) => theme.spacing(2)};
+
+  margin-top: ${({ theme }) => theme.spacing(6)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
 
   @media ${breakpoint_up.md} {
-    margin-top: ${({ theme }) => theme.spacing(9)}
-    margin-bottom: ${({ theme }) => theme.spacing(6)};
+    margin-top: ${({ theme }) => theme.spacing(7)};
+    margin-bottom: ${({ theme }) => theme.spacing(4)};
   }
+`;
+
+const HeaderTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Header: React.FC = () => {
   return (
     <HeaderBase>
-      <HeaderLogo />
+      <HeaderTop>
+        <HeaderLogo />
+        <HeaderUsps />
+      </HeaderTop>
       <Navigation />
       <Breadcrumbs />
     </HeaderBase>
