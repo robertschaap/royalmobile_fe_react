@@ -7,6 +7,8 @@ import theme from '../styles/theme';
 
 import RootLayout from '../components/RootLayout';
 import HomePageContainer from '../containers/HomePageContainer';
+import OrderPageContainer from './OrderPageContainer';
+import ProductPageContainer from './ProductPageContainer';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -22,6 +24,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Raleway', sans-serif;
   }
+
+  a:focus,
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px royalblue;
+  }
 `;
 
 const Root: React.FC = () => {
@@ -31,6 +39,8 @@ const Root: React.FC = () => {
         <BrowserRouter>
           <RootLayout>
             <Route exact path={routes.HOME} component={HomePageContainer} />
+            <Route path={"/product"} component={ProductPageContainer} />
+            <Route path={"/order"} component={OrderPageContainer} />
           </RootLayout>
         </BrowserRouter>
       </ThemeProvider>
