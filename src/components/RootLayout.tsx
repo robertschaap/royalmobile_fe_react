@@ -15,8 +15,8 @@ const RootLayoutBase = styled.div`
   max-width: 960px;
   padding: 0 ${({ theme }) => theme.spacing(4)};
 
-  @media ${breakpoint_up.md} {
-    padding: 0 ${({ theme }) => theme.spacing(8)};
+  @media ${breakpoint_up.lg} {
+    padding: 0 ${({ theme }) => theme.spacing(0)};
   }
 `;
 
