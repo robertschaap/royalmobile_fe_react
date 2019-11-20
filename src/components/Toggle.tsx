@@ -16,7 +16,7 @@ const ToggleSlider = styled.span`
   right: 0;
   bottom: 0;
   background-color: ${({ theme }) => theme.color.grey};
-  transition: background-color .4s;
+  transition: background-color .2s;
   border-radius: 34px;
 
   :before {
@@ -27,7 +27,7 @@ const ToggleSlider = styled.span`
     left: 3px;
     bottom: 3px;
     background-color: white;
-    transition: transform .4s;
+    transition: transform .2s;
     border-radius: 50%;
   }
 `;
