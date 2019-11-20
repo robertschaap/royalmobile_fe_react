@@ -1,6 +1,13 @@
 import produce from 'immer';
 
-const initialState = {
+import { IfcProduct } from '../types/products';
+
+interface initialStateProps {
+  isFetching: boolean,
+  collection: Array<IfcProduct>
+}
+
+const initialState: initialStateProps = {
   isFetching: false,
   collection: [],
 };
