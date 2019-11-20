@@ -1,7 +1,10 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+import rootReducer from '../reducers';
 import routes from '../constants/routes';
 import theme from '../styles/theme';
 
@@ -32,9 +35,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const store = createStore(
+  rootReducer,
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+  );
+
 const Root: React.FC = () => {
   return (
-    <>
+    <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <RootLayout>
@@ -45,7 +53,7 @@ const Root: React.FC = () => {
         </BrowserRouter>
       </ThemeProvider>
       <GlobalStyle />
-    </>
+    </Provider>
   );
 };
 
