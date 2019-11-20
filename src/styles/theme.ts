@@ -1,4 +1,4 @@
-const spacing = (n: number) => (n * 4) + "px";
+const spacing = (n: number) => (Math.round(n) * 4) + "px";
 
 const breakpoints = {
   sm: 425,
@@ -10,7 +10,13 @@ export const breakpoint_up = {
   sm: `(min-width: ${breakpoints.sm}px)`,
   md: `(min-width: ${breakpoints.md}px)`,
   lg: `(min-width: ${breakpoints.lg}px)`,
-}
+};
+
+export const media_breakpoint_up = {
+  sm: `@media (min-width: ${breakpoints.sm}px)`,
+  md: `@media (min-width: ${breakpoints.md}px)`,
+  lg: `@media (min-width: ${breakpoints.lg}px)`,
+};
 
 const color = {
   primary: '#ff9e00',
