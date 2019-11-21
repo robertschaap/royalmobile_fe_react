@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 
 import Breadcrumbs from './Breadcrumbs';
 import HeaderLogo from './HeaderLogo';
@@ -17,7 +17,7 @@ const HeaderBase = styled.header`
   margin-top: ${({ theme }) => theme.spacing(6)};
   margin-bottom: ${({ theme }) => theme.spacing(2)};
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     margin-top: ${({ theme }) => theme.spacing(7)};
     margin-bottom: ${({ theme }) => theme.spacing(4)};
   }
