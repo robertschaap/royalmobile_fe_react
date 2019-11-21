@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 
 const HeaderUspsBase = styled.ul`
   display: none;
@@ -9,7 +9,7 @@ const HeaderUspsBase = styled.ul`
   padding-left: 0;
   list-style-type: none;
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     display: block;
   }
 `;
