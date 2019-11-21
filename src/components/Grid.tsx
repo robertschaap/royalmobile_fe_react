@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 
 export const calculatePercentage = (n?: number) => {
   if (n && n > 0 && n < 13) {
@@ -28,15 +28,15 @@ export const GridBase = styled.div`
   flex-wrap: wrap;
   margin: 0 -${gutter_column.xs / 2}px;
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     margin: 0 -${gutter_column.sm / 2}px;
   }
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     margin: 0 -${gutter_column.md / 2}px;
   }
 
-  @media ${breakpoint_up.lg} {
+  ${media_breakpoint_up.lg} {
     margin: 0 -${gutter_column.lg / 2}px;
   }
 
@@ -60,19 +60,19 @@ export const GridItem = styled.div<GridItemProps>`
   margin: 0 ${gutter_column.xs / 2}px;
   margin-bottom: ${gutter_row.xs}px;
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     flex: 0 1 calc(${({ sm }) => calculatePercentage(sm)}% - ${gutter_column.sm}px);
     margin: 0 ${gutter_column.sm / 2}px;
     margin-bottom: ${gutter_row.sm}px;
   }
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     flex: 0 1 calc(${({ md }) => calculatePercentage(md)}% - ${gutter_column.md}px);
     margin: 0 ${gutter_column.md / 2}px;
     margin-bottom: ${gutter_row.md}px;
   }
 
-  @media ${breakpoint_up.lg} {
+  ${media_breakpoint_up.lg} {
     flex: 0 1 calc(${({ lg }) => calculatePercentage(lg)}% - ${gutter_column.lg}px);
     margin: 0 ${gutter_column.lg / 2}px;
     margin-bottom: ${gutter_row.lg}px;
