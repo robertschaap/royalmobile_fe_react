@@ -4,14 +4,15 @@ export interface IfcProduct {
   manufacturer: string;
   variants: Array<{
     id: number;
-    device_color: string;
-    device_capacity: string;
+    color: string;
+    capacity: string;
     is_in_stock: boolean;
     is_preorder: boolean;
     regular_price: string;
     discounted_price: string;
     has_discounts: boolean;
   }>;
+  specifications?: {},
 }
 
 export const productsStub: Array<IfcProduct> = [{
@@ -20,8 +21,8 @@ export const productsStub: Array<IfcProduct> = [{
   manufacturer: "Apple",
   variants: [{
     id: 1,
-    device_color: "hotpink",
-    device_capacity: "16gb",
+    color: "hotpink",
+    capacity: "16gb",
     is_in_stock: true,
     is_preorder: true,
     regular_price: "265",
