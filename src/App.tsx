@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Root from './containers/Root';
+import RootContainer from './containers/RootContainer';
 
 const App: React.FC = () => {
   return (
-      <Root />
+      <RootContainer />
   );
 }
 

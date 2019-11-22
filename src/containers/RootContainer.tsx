@@ -9,7 +9,7 @@ import routes from '../constants/routes';
 import theme from '../styles/theme';
 
 import RootLayout from '../components/RootLayout';
-import HomePageContainer from '../containers/HomePageContainer';
+import HomePageContainer from './HomePageContainer';
 import OrderPageContainer from './OrderPageContainer';
 import ProductPageContainer from './ProductPageContainer';
 
