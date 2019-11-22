@@ -1,4 +1,4 @@
-export interface IfcProduct {
+export interface Product {
   id: number;
   model: string;
   manufacturer: string;
@@ -15,7 +15,7 @@ export interface IfcProduct {
   specifications?: {},
 }
 
-export const productsStub: Array<IfcProduct> = [{
+export const productsStub: Product[] = [{
   id: 1,
   model: "iPhone X",
   manufacturer: "Apple",
