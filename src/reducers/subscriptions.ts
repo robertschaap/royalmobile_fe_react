@@ -6,7 +6,7 @@ import {
   FETCH_SUBSCRIPTIONS_COLLECTION_ERROR,
 } from '../ducks/subscriptions';
 
-import { Subscription, subscriptionsStub } from '../types/subscriptions';
+import { Subscription } from '../types/subscriptions';
 
 interface SubscriptionsState {
   isFetching: boolean;

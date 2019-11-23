@@ -6,7 +6,7 @@ import {
   FETCH_PRODUCTS_COLLECTION_ERROR,
 } from '../ducks/products';
 
-import { Product, productsStub } from '../types/products';
+import { Product } from '../types/products';
 
 interface ProductsState {
   isFetching: boolean;
@@ -36,11 +36,6 @@ const products = (state = initialState, action: any) => {
         newState.hasError = true;
         break;
       default:
-        // TODO: remove when backend is implemented
-        newState.collection = Array.from({ length: 12 }, (_, i) => i).map(e => ({
-          ...productsStub[0],
-          id: e,
-        }));;
         break;
     }
 
