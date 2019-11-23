@@ -4,6 +4,7 @@ import { breakpoint_up } from '../styles/theme';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
 
+import { Product } from '../types/products';
 import { GridBase, GridItem } from './Grid';
 
 const ProductListingItem = styled.div`
@@ -55,12 +56,7 @@ const DeviceOptions = styled.div`
 `;
 
 interface ProductListingProps {
-  products: Array<{
-    id: number;
-    name: string;
-    manufacturer: string;
-    price: string;
-  }>
+  products: Product[];
 }
 
 const ProductListing: React.FC<ProductListingProps> = (props) => {
@@ -74,20 +70,20 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
           sm={2}
           md={3}
           lg={4}>
-            <ProductListingItem>
-              <DeviceImage>
-                <img width="100%" src={phone} />
-              </DeviceImage>
-              <DeviceInformation>
-                <DeviceName>{product.name}</DeviceName>
-                <DeviceManufacturer>{product.manufacturer}</DeviceManufacturer>
-                <DevicePrice>{product.price}</DevicePrice>
-                <DeviceOptions>
-                  <div>16gb | 32gb</div>
-                  <div>color | color</div>
-                </DeviceOptions>
-              </DeviceInformation>
-            </ProductListingItem>
+          <ProductListingItem>
+            <DeviceImage>
+              <img width="100%" src={phone} />
+            </DeviceImage>
+            <DeviceInformation>
+              <DeviceName>{product.model}</DeviceName>
+              <DeviceManufacturer>{product.manufacturer}</DeviceManufacturer>
+              <DevicePrice>{product.variants[0].regular_price}</DevicePrice>
+              <DeviceOptions>
+                <div>16gb | 32gb</div>
+                <div>color | color</div>
+              </DeviceOptions>
+            </DeviceInformation>
+          </ProductListingItem>
         </GridItem>
       ))}
     </GridBase>

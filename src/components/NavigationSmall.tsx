@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
 
-const NavigationSmallBase = styled.nav``;
+const NavigationSmallBase = styled.nav`
+  font-size: 12px;
+
+  @media ${breakpoint_up.sm} {
+    font-size: unset;
+  }
+`;
 
 const NavigationGroup = styled.div`
   display: flex;
