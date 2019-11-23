@@ -8,19 +8,15 @@ import {
 
 import { Product, productsStub } from '../types/products';
 
-// TODO: remove when backend is implemented
-const fakeProductListing = Array.from({ length: 12 }, (_, i) => i).map(e => ({
-  ...productsStub[0],
-  id: e,
-}));
-
 interface ProductsState {
   isFetching: boolean;
+  hasError: boolean;
   collection: Product[];
 }
 
 const initialState: ProductsState = {
   isFetching: false,
+  hasError: false,
   collection: [],
 };
 
@@ -29,15 +25,22 @@ const products = (state = initialState, action: any) => {
     switch (action.type) {
       case FETCH_PRODUCTS_COLLECTION:
         newState.isFetching = true;
+        newState.hasError = false;
         break;
       case FETCH_PRODUCTS_COLLECTION_SUCCESS:
         newState.isFetching = false;
+        newState.collection = action.payload;
         break;
       case FETCH_PRODUCTS_COLLECTION_ERROR:
         newState.isFetching = false;
+        newState.hasError = true;
         break;
       default:
-        newState.collection = fakeProductListing;
+        // TODO: remove when backend is implemented
+        newState.collection = Array.from({ length: 12 }, (_, i) => i).map(e => ({
+          ...productsStub[0],
+          id: e,
+        }));;
         break;
     }
 
