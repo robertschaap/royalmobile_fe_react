@@ -1,5 +1,6 @@
-import { call, takeEvery } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import api from '../utils/api';
+import routes from '../constants/routes';
 
 import {
   FETCH_PRODUCTS_COLLECTION,
@@ -9,7 +10,7 @@ import {
 
 function* fetchProductsCollectionSaga() {
   yield call(api.get, {
-    url: "",
+    url: routes.API_GET_PRODUCTS,
     onSuccess: fetchProductsCollectionSuccess,
     onError: fetchProductsCollectionError,
   });
