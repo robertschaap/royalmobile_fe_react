@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
+import routes from '../constants/routes';
+
+import Link from './Link';
 
 const HeaderLogoBase = styled.span`
   font-size: 40px;
@@ -17,10 +20,10 @@ const HeaderLogoBold = styled(HeaderLogoBase)`
 
 const HeaderLogo: React.FC = () => {
   return (
-    <div>
+    <Link to={routes.HOME}>
       <HeaderLogoBold>Royal</HeaderLogoBold>
       <HeaderLogoBase>Mobile</HeaderLogoBase>
-    </div>
+    </Link>
   );
 }
 
