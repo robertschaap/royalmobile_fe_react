@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
 const DurationListingBase = styled.div`
-${media_breakpoint_up.md} {
-  display: flex;
-}
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
+
+  ${media_breakpoint_up.md} {
+    display: flex;
+  }
 `;
 
 interface DurationListingItemProps {
@@ -18,7 +20,10 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.color.grey};
   padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(4)};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
+
+  :first-of-type {
+    margin-bottom: ${({ theme }) => theme.spacing(2)};
+  }
 
   ${({ isSelected, theme }) => isSelected && `
     border: 2px solid ${theme.color.primary};
@@ -27,6 +32,10 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
   ${media_breakpoint_up.md} {
     width: unset;
     margin-right: ${({ theme }) => theme.spacing(2)};
+
+    :first-of-type {
+      margin-bottom: unset;
+    }
   }
 `;
 
