@@ -1,14 +1,14 @@
 import React, { createContext, useContext } from "react";
 
-interface ContentCopyType {
+interface ContentCopy {
   [key: string]: string;
 }
 
-const contentCopy: ContentCopyType = Object.freeze({
+const contentCopy: ContentCopy = Object.freeze({
 
 });
 
-const ContentContext = createContext<ContentCopyType>(contentCopy);
+const ContentContext = createContext<ContentCopy>(contentCopy);
 
 export const useContentCopy = (messageId: string): string => {
   const copy = useContext(ContentContext);
