@@ -32,9 +32,9 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
       {true && (
         <div style={{ backgroundColor: "#ddd" }}>
           Debug:&nbsp;
-          <a href={routes.HOME}>Home</a> |&nbsp;
-          <a href={routes.PRODUCT}>Product</a> |&nbsp;
-          <a href={routes.ORDER}>Order</a>
+          <a href={routes.HOME_PAGE}>Home</a> |&nbsp;
+          <a href={routes.PRODUCT_PAGE}>Product</a> |&nbsp;
+          <a href={routes.ORDER_PAGE}>Order</a>
         </div>
       )}
       <Header />

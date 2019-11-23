@@ -32,9 +32,9 @@ const Root: React.FC = () => {
       <ThemeProviderContainer>
         <BrowserRouter>
           <RootLayout>
-            <Route exact path={routes.HOME} component={HomePageContainer} />
-            <Route path={routes.PRODUCT} component={ProductPageContainer} />
-            <Route path={routes.ORDER} component={OrderPageContainer} />
+            <Route exact path={routes.HOME_PAGE} component={HomePageContainer} />
+            <Route path={routes.PRODUCT_PAGE} component={ProductPageContainer} />
+            <Route path={routes.ORDER_PAGE} component={OrderPageContainer} />
           </RootLayout>
         </BrowserRouter>
       </ThemeProviderContainer>
