@@ -1,32 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-import { getProductsCollection } from '../ducks/products';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProducts, fetchProductsCollection } from '../ducks/products';
 
-import { Product } from '../types/products';
 import Button from '../components/Button';
 import ProductListing from '../components/ProductListing';
 
-const LoadMoreButton = styled(Button)`
-  margin-bottom: ${({ theme }) => theme.spacing(3)};
-`
+const ProductListingContainer: React.FC = () => {
+  const dispatch = useDispatch();
+  const productsState = useSelector(getProducts);
 
-interface ProductListingContainerProps {}
-
-
-const ProductListingContainer: React.FC<ProductListingContainerProps> = (props) => {
-  const products = useSelector(getProductsCollection);
+  useEffect(() => {
+    dispatch(fetchProductsCollection());
+  }, []);
 
   return (
     <>
       <ProductListing
-        products={products} />
-      <LoadMoreButton
+        products={productsState.collection} />
+      <Button
         variant="secondary">
         Load More
-      </LoadMoreButton>
+      </Button>
     </>
   );
+
 };
 
 export default ProductListingContainer;
