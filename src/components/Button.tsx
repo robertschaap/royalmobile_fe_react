@@ -7,6 +7,14 @@ const ButtonBase = styled.button`
   border: none;
   border-radius: 8px;
   padding: ${({ theme }) => theme.spacing(2)} 0;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  :disabled {
+    cursor: not-allowed;
+  }
 `;
 
 const ButtonPrimary = styled(ButtonBase)`
@@ -20,6 +28,8 @@ const ButtonSecondary = styled(ButtonBase)`
 
 interface ButtonProps {
   children: React.ReactNode;
+  disabled?: boolean;
+  onClick?(): void;
   variant: "primary" | "secondary";
 }
 
