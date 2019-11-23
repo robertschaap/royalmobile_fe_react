@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
+import { useContentCopy } from '../hooks/useContentCopy';
 
 const HeaderUspsBase = styled.ul`
   display: none;
@@ -23,9 +24,9 @@ const Check = styled.span`
 const HeaderUsps: React.FC = () => {
   return (
     <HeaderUspsBase>
-      <li><Check>✓</Check> Guaranteed no False Promises</li>
-      <li><Check>✓</Check> No Connection Fee For New Customers</li>
-      <li><Check>✓</Check> Free Shipping on All Orders</li>
+      <li><Check>✓ </Check>{useContentCopy("usp.noFalsePromises")}</li>
+      <li><Check>✓ </Check>{useContentCopy("usp.noConnectionFeeAcquisition")}</li>
+      <li><Check>✓ </Check>{useContentCopy("usp.freeShipping")}</li>
     </HeaderUspsBase>
   );
 };

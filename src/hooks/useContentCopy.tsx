@@ -6,6 +6,9 @@ interface ContentCopy {
 
 const contentCopy: ContentCopy = Object.freeze({
 
+  "usp.freeShipping": "Free Shipping on All Orders",
+  "usp.noConnectionFeeAcquisition": "No Connection Fee For New Customers",
+  "usp.noFalsePromises": "Guaranteed no False Promises",
 });
 
 const ContentContext = createContext<ContentCopy>(contentCopy);
