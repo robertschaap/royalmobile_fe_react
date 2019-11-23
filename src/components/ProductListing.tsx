@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
+import routes from '../constants/routes';
+import formatRoute from '../utils/formatRoute';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
 
 import { Product } from '../types/products';
 import { GridBase, GridItem } from './Grid';
+import Link from './Link';
 
-const ProductListingItem = styled.div`
+const ProductListingItem = styled(Link)`
   display: flex;
   padding: ${({ theme })=> theme.spacing(3)} ${({ theme })=> theme.spacing(4)};
   border: 1px solid ${({ theme })=> theme.color.grey};
@@ -70,7 +73,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
           sm={2}
           md={3}
           lg={4}>
-          <ProductListingItem>
+          <ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.id })}>
             <DeviceImage>
               <img width="100%" src={phone} />
             </DeviceImage>
