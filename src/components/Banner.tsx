@@ -52,10 +52,12 @@ const BannerRight = styled.span`
 
 const Banner: React.FC = () => {
   return (
-    <BannerBase>
-      <BannerLeft>Fat Freaking<br />Discounts</BannerLeft>
-      <BannerRight>SALE</BannerRight>
-    </BannerBase>
+    <PageSection>
+      <BannerBase to={formatRoute(routes.CAMPAIGNS, { id: 1 })}>
+        <BannerLeft>Fat Freaking<br />Discounts</BannerLeft>
+        <BannerRight>SALE</BannerRight>
+      </BannerBase>
+    </PageSection>
   );
 };
 
