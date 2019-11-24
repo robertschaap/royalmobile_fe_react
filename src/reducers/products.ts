@@ -1,9 +1,9 @@
 import produce from 'immer';
 
 import {
-  FETCH_PRODUCTS_COLLECTION,
-  FETCH_PRODUCTS_COLLECTION_SUCCESS,
-  FETCH_PRODUCTS_COLLECTION_ERROR,
+  FETCH_PRODUCTS,
+  FETCH_PRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_ERROR,
 } from '../ducks/products';
 
 import { Product } from '../types/products';
@@ -23,15 +23,15 @@ export const initialProductsState: ProductsState = {
 export const productsReducer = (state = initialProductsState, action: any) => {
   return produce(state, newState => {
     switch (action.type) {
-      case FETCH_PRODUCTS_COLLECTION:
+      case FETCH_PRODUCTS:
         newState.isFetching = true;
         newState.hasError = false;
         break;
-      case FETCH_PRODUCTS_COLLECTION_SUCCESS:
+      case FETCH_PRODUCTS_SUCCESS:
         newState.isFetching = false;
         newState.collection = action.payload;
         break;
-      case FETCH_PRODUCTS_COLLECTION_ERROR:
+      case FETCH_PRODUCTS_ERROR:
         newState.isFetching = false;
         newState.hasError = true;
         break;

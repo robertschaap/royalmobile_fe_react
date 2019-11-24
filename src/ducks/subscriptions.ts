@@ -1,20 +1,20 @@
 import { StoreState } from '../reducers/index'
 
-export const FETCH_SUBSCRIPTIONS_COLLECTION = 'FETCH_SUBSCRIPTIONS_COLLECTION';
-export const FETCH_SUBSCRIPTIONS_COLLECTION_SUCCESS = 'FETCH_SUBSCRIPTIONS_COLLECTION_SUCCESS';
-export const FETCH_SUBSCRIPTIONS_COLLECTION_ERROR = 'FETCH_SUBSCRIPTIONS_COLLECTION_ERROR';
+export const FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS';
+export const FETCH_SUBSCRIPTIONS_SUCCESS = 'FETCH_SUBSCRIPTIONS_SUCCESS';
+export const FETCH_SUBSCRIPTIONS_ERROR = 'FETCH_SUBSCRIPTIONS_ERROR';
 
-export const fetchSubscriptionsCollection = () => ({
-  type: FETCH_SUBSCRIPTIONS_COLLECTION,
+export const fetchSubscriptions = () => ({
+  type: FETCH_SUBSCRIPTIONS,
 });
 
-export const fetchSubscriptionsCollectionSuccess = (payload: any) => ({
-  type: FETCH_SUBSCRIPTIONS_COLLECTION_SUCCESS,
+export const fetchSubscriptionsSuccess = (payload: any) => ({
+  type: FETCH_SUBSCRIPTIONS_SUCCESS,
   payload,
 });
 
-export const fetchSubscriptionsCollectionError = (error: any) => ({
-  type: FETCH_SUBSCRIPTIONS_COLLECTION_ERROR,
+export const fetchSubscriptionsError = (error: any) => ({
+  type: FETCH_SUBSCRIPTIONS_ERROR,
   error,
 });
 

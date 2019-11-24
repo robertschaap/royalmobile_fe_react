@@ -1,20 +1,20 @@
 import { StoreState } from '../reducers/index'
 
-export const FETCH_PRODUCTS_COLLECTION = 'FETCH_PRODUCTS_COLLECTION';
-export const FETCH_PRODUCTS_COLLECTION_SUCCESS = 'FETCH_PRODUCTS_COLLECTION_SUCCESS';
-export const FETCH_PRODUCTS_COLLECTION_ERROR = 'FETCH_PRODUCTS_COLLECTION_ERROR';
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
+export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
+export const FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR';
 
-export const fetchProductsCollection = () => ({
-  type: FETCH_PRODUCTS_COLLECTION,
+export const fetchProducts = () => ({
+  type: FETCH_PRODUCTS,
 });
 
-export const fetchProductsCollectionSuccess = (payload: any) => ({
-  type: FETCH_PRODUCTS_COLLECTION_SUCCESS,
+export const fetchProductsSuccess = (payload: any) => ({
+  type: FETCH_PRODUCTS_SUCCESS,
   payload,
 });
 
-export const fetchProductsCollectionError = (error: any) => ({
-  type: FETCH_PRODUCTS_COLLECTION_ERROR,
+export const fetchProductsError = (error: any) => ({
+  type: FETCH_PRODUCTS_ERROR,
   error,
 });
 

@@ -1,21 +1,21 @@
-import { call, put, takeEvery } from 'redux-saga/effects'
+import { call, takeEvery } from 'redux-saga/effects'
 import api from '../utils/api';
 import routes from '../constants/routes';
 
 import {
-  FETCH_PRODUCTS_COLLECTION,
-  fetchProductsCollectionSuccess,
-  fetchProductsCollectionError,
+  FETCH_PRODUCTS,
+  fetchProductsSuccess,
+  fetchProductsError,
 } from '../ducks/products';
 
-function* fetchProductsCollectionSaga() {
+function* fetchProductsSaga() {
   yield call(api.get, {
     url: routes.API_GET_PRODUCTS,
-    onSuccess: fetchProductsCollectionSuccess,
-    onError: fetchProductsCollectionError,
+    onSuccess: fetchProductsSuccess,
+    onError: fetchProductsError,
   });
 }
 
 export default [
-  takeEvery(FETCH_PRODUCTS_COLLECTION, fetchProductsCollectionSaga),
+  takeEvery(FETCH_PRODUCTS, fetchProductsSaga),
 ];
