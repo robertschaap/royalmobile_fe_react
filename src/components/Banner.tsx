@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
+import routes from '../constants/routes';
+import formatRoute from '../utils/formatRoute';
 
-const BannerBase = styled.section`
+import Link from './Link';
+import PageSection from './PageSection';
+
+const BannerBase = styled(Link)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   color: ${({ theme }) => theme.color.white};
-
   padding: ${({ theme }) => theme.spacing(4)};
-  margin-bottom: ${({ theme }) => theme.spacing(4)};
   border-radius: 8px;
   height: 96px;
 
@@ -23,7 +26,6 @@ const BannerBase = styled.section`
   @media ${breakpoint_up.md} {
     justify-content: space-between;
     padding: ${({ theme }) => theme.spacing(8)};
-    margin-bottom: ${({ theme }) => theme.spacing(8)};
     height: 200px;
   }
 `;
