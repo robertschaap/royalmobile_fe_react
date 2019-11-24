@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
 
+import {
+  ForYourBusinessLink,
+  HelpLink,
+  MyAccountLink,
+  ProductsForYouLink,
+} from './NavigationLinks';
+
 const NavigationSmallBase = styled.nav`
   font-size: 12px;
 
@@ -36,12 +43,12 @@ const Navigation: React.FC = () => {
   return (
     <NavigationSmallBase>
       <NavigationTop>
-        <span>My Account</span>
-        <span>Help</span>
+        <MyAccountLink />
+        <HelpLink />
       </NavigationTop>
       <NavigationBottom>
-        <span>Products for You</span>
-        <span>For Your Business</span>
+        <ProductsForYouLink />
+        <ForYourBusinessLink />
       </NavigationBottom>
     </NavigationSmallBase>
   );

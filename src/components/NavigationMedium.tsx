@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
 
+import {
+  ForYourBusinessLink,
+  HelpLink,
+  MyAccountLink,
+  ProductsForYouLink,
+} from './NavigationLinks';
+
 const NavigationMediumBase = styled.nav`
   display: none;
   background-color: ${({ theme }) => theme.color.lightGrey};
@@ -35,14 +42,14 @@ const Navigation: React.FC = () => {
         Our Products
       </NavigationLeft>
       <NavigationMiddle>
-        <span>Products for You</span>
+        <ProductsForYouLink />
         <span> | </span>
-        <span>For Your Business</span>
+        <ForYourBusinessLink />
       </NavigationMiddle>
       <NavigationGroup>
-        <span>My Account</span>
+        <MyAccountLink />
         <span> | </span>
-        <span>Help</span>
+        <HelpLink />
       </NavigationGroup>
     </NavigationMediumBase>
   );
