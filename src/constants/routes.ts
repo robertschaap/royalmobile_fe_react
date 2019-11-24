@@ -3,6 +3,7 @@ const pageRoutes = {
   PRODUCT_PAGE: '/product/:id',
   ORDER_PAGE: '/order',
   CAMPAIGNS: '/campaigns/:id',
+  CONTACT: '/contact',
 };
 
 const API = "/api";
