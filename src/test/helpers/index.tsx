@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
@@ -9,6 +9,16 @@ export const renderWithTheme = (Component: React.ReactElement) => {
   return render(
     <ThemeProvider theme={theme}>
       {Component}
+    </ThemeProvider>
+  );
+};
+
+export const renderWithProviders = (Component: React.ReactElement) => {
+  return render(
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        {Component}
+      </BrowserRouter>
     </ThemeProvider>
   );
 };
