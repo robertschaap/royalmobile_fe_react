@@ -1,9 +1,11 @@
 export interface Product {
   id: number;
-  model: string;
   manufacturer: string;
+  model: string;
+  modelId: string;
   variants: Array<{
     id: number;
+    variantId: string;
     color: string;
     capacity: string;
     is_in_stock: boolean;
@@ -17,10 +19,12 @@ export interface Product {
 
 export const productsStub: Product[] = [{
   id: 1,
-  model: "iPhone X",
   manufacturer: "Apple",
+  model: "iPhone X",
+  modelId: "apple-iphone-x",
   variants: [{
     id: 1,
+    variantId: "apple-iphone-x-16gb-hotpink",
     color: "hotpink",
     capacity: "16gb",
     is_in_stock: true,
