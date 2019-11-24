@@ -1,12 +1,16 @@
 import { combineReducers } from "redux";
 
-import products from './products';
-import subscriptions from './subscriptions';
+import { productsReducer, initialProductsState } from './products';
+import { subscriptionsReducer, initialSubscriptionsState } from './subscriptions';
 
-const rootReducer = combineReducers({
-  products,
-  subscriptions,
+export const initialState = {
+  products: initialProductsState,
+  subscriptions: initialSubscriptionsState,
+};
+
+export const rootReducer = combineReducers({
+  products: productsReducer,
+  subscriptions: subscriptionsReducer,
 });
 
-export default rootReducer;
 export type StoreState = ReturnType<typeof rootReducer>;

@@ -14,13 +14,13 @@ interface ProductsState {
   collection: Product[];
 }
 
-const initialState: ProductsState = {
+export const initialProductsState: ProductsState = {
   isFetching: false,
   hasError: false,
   collection: [],
 };
 
-const products = (state = initialState, action: any) => {
+export const productsReducer = (state = initialProductsState, action: any) => {
   return produce(state, newState => {
     switch (action.type) {
       case FETCH_PRODUCTS_COLLECTION:
@@ -42,6 +42,3 @@ const products = (state = initialState, action: any) => {
     return newState;
   });
 };
-
-export default products;
-

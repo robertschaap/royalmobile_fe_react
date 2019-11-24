@@ -13,12 +13,12 @@ interface SubscriptionsState {
   collection: Subscription[];
 }
 
-const initialState: SubscriptionsState = {
+export const initialSubscriptionsState: SubscriptionsState = {
   isFetching: false,
   collection: [],
 }
 
-const subscriptions = (state = initialState, action: any) => {
+export const subscriptionsReducer = (state = initialSubscriptionsState, action: any) => {
   return produce(state, newState => {
     switch (action.type) {
       case FETCH_SUBSCRIPTIONS_COLLECTION:
@@ -37,5 +37,3 @@ const subscriptions = (state = initialState, action: any) => {
     return newState;
   });
 };
-
-export default subscriptions;
