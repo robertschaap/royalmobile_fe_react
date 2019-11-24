@@ -5,6 +5,8 @@ interface ContentCopy {
 }
 
 const contentCopy: ContentCopy = Object.freeze({
+  "common.errorMissing": "Something should've been here, but it isn't.",
+
   "navigation.business": "For Your Business",
   "navigation.consumer": "Products For You",
   "navigation.contact": "Contact",
