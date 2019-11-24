@@ -5,6 +5,12 @@ interface ContentCopy {
 }
 
 const contentCopy: ContentCopy = Object.freeze({
+  "navigation.business": "For Your Business",
+  "navigation.consumer": "Products For You",
+  "navigation.contact": "Contact",
+  "navigation.help": "Help",
+  "navigation.home": "Home",
+  "navigation.myAccount": "My Account",
 
   "usp.freeShipping": "Free Shipping on All Orders",
   "usp.noConnectionFeeAcquisition": "No Connection Fee For New Customers",
