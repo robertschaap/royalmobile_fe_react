@@ -2,8 +2,7 @@ const pageRoutes = {
   HOME_PAGE: '/',
   PRODUCT_PAGE: '/product/:id',
   ORDER_PAGE: '/order',
-  CAMPAIGNS: '/campaigns/:id',
-  CONTACT: '/contact',
+  CAMPAIGNS_PAGE: '/campaigns/:id',
 };
 
 const API = "/api";
