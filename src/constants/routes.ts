@@ -3,6 +3,11 @@ const pageRoutes = {
   PRODUCT_PAGE: '/product/:id',
   ORDER_PAGE: '/order',
   CAMPAIGNS_PAGE: '/campaigns/:id',
+  CONTACT_PAGE: '/contact',
+  HELP_PAGE: '/help',
+  MY_ACCOUNT_PAGE: '/myroyalmobile',
+  CONSUMER_PAGE: '/consumer',
+  BUSINESS_PAGE: '/business',
 };
 
 const API = "/api";

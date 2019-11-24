@@ -14,7 +14,7 @@ const FooterBase = styled.footer`
 const Footer: React.FC = () => {
   return (
     <FooterBase>
-      <Link to={routes.CONTACT}>
+      <Link to={routes.CONTACT_PAGE}>
         {useContentCopy("navigation.contact")}
       </Link>
       <div><b>Royal</b>Mobile 2019</div>
