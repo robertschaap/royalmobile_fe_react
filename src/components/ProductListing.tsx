@@ -67,13 +67,13 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
 
   return (
     <GridBase>
-      {products.map(product => (
+      {products.map((product, index) => (
         <GridItem
-          key={product.id}
+          key={index}
           sm={2}
           md={3}
           lg={4}>
-          <ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.id })}>
+          <ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.modelId })}>
             <DeviceImage>
               <img width="100%" src={phone} />
             </DeviceImage>
