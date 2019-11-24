@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
+import { useContentCopy } from '../hooks';
+import routes from '../constants/routes';
 
+import Link from './Link';
 
 const BreadcrumbsBase = styled.div`
   display: none;
@@ -14,7 +17,9 @@ const BreadcrumbsBase = styled.div`
 
 const Breadcrumbs: React.FC = () => {
   return (
-    <BreadcrumbsBase>Home |</BreadcrumbsBase>
+    <BreadcrumbsBase>
+      <Link to={routes.HOME_PAGE}>{useContentCopy("navigation.home")}</Link> |
+    </BreadcrumbsBase>
   );
 };
 
