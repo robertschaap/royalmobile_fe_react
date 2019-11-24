@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
 import { GridBase, GridItem } from '../components/Grid';
+import PageSection from './PageSection';
 
 const BenefitsItem = styled.div`
   display: flex;
@@ -39,28 +40,30 @@ const BenefitsItemDescription = styled.span`
 
 const Benefits: React.FC = () => {
   return (
-    <GridBase as="section">
-      <GridItem
-        md={2}
-        lg={2}>
-        <BenefitsItem>
-          <BenefitsItemCallout>GET</BenefitsItemCallout>
-          <BenefitsItemDescription>
-            Three months free inside of your regular bundle when you refer a friend
-          </BenefitsItemDescription>
-        </BenefitsItem>
-      </GridItem>
-      <GridItem
-        md={2}
-        lg={2}>
-        <BenefitsItem>
-          <BenefitsItemCallout>GET</BenefitsItemCallout>
-          <BenefitsItemDescription>
-            Double data in your bundle plus a 5 euro discount when you combine with <b>Royal</b>Internet
-          </BenefitsItemDescription>
-        </BenefitsItem>
-      </GridItem>
-  </GridBase>
+    <PageSection>
+      <GridBase>
+        <GridItem
+          md={2}
+          lg={2}>
+          <BenefitsItem>
+            <BenefitsItemCallout>GET</BenefitsItemCallout>
+            <BenefitsItemDescription>
+              Three months free inside of your regular bundle when you refer a friend
+            </BenefitsItemDescription>
+          </BenefitsItem>
+        </GridItem>
+        <GridItem
+          md={2}
+          lg={2}>
+          <BenefitsItem>
+            <BenefitsItemCallout>GET</BenefitsItemCallout>
+            <BenefitsItemDescription>
+              Double data in your bundle plus a 5 euro discount when you combine with <b>Royal</b>Internet
+            </BenefitsItemDescription>
+          </BenefitsItem>
+        </GridItem>
+      </GridBase>
+    </PageSection>
   );
 };
 
