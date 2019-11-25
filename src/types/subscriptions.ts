@@ -1,5 +1,6 @@
 export interface Subscription {
   id: number;
+  subscriptionId: string;
   duration: string;
   data: string;
   benefits_long: string[],
@@ -9,6 +10,7 @@ export interface Subscription {
 
 export const subscriptionsStub: Subscription[] = [{
   id: 1,
+  subscriptionId: "royalmobile-10gb-2year",
   duration: "2_year",
   data: "10gb",
   benefits_long: [
