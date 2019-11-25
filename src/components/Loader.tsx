@@ -33,7 +33,17 @@ const LoaderElement = styled.div`
   }
 `;
 
-const Loader: React.FC = () => {
+interface LoaderProps {
+  show: boolean;
+}
+
+const Loader: React.FC<LoaderProps> = (props) => {
+  const { show } = props;
+
+  if (!show) {
+    return null;
+  }
+
   return (
     <LoaderBase>
       <LoaderElement />
