@@ -16,15 +16,13 @@ const ProductListingContainer: React.FC = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  if (productsState.isFetching) {
-    return <Loader />;
-  }
+  const handleLoadMoreClick = () => {
+    dispatch(fetchProducts());
+  };
 
   if (productsState.hasError) {
     return (
-      <PageSection>
-        <ErrorMessage messageId="common.errorMissing" />
-      </PageSection>
+      <ErrorMessage messageId="common.errorMissing" />
     );
   }
 
@@ -32,8 +30,11 @@ const ProductListingContainer: React.FC = () => {
     <PageSection>
       <ProductListing
         products={productsState.collection} />
+      <Loader show={productsState.isFetching} />
       <Button
-        variant="secondary">
+        variant="secondary"
+        disabled={productsState.isFetching}
+        onClick={handleLoadMoreClick}>
         Load More
       </Button>
     </PageSection>
