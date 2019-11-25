@@ -29,7 +29,7 @@ export const productsReducer = (state = initialProductsState, action: any) => {
         break;
       case FETCH_PRODUCTS_SUCCESS:
         newState.isFetching = false;
-        newState.collection = action.payload;
+        newState.collection = [...state.collection, ...action.payload];
         break;
       case FETCH_PRODUCTS_ERROR:
         newState.isFetching = false;
