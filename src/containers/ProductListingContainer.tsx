@@ -22,7 +22,9 @@ const ProductListingContainer: React.FC = () => {
 
   if (productsState.hasError) {
     return (
-      <ErrorMessage messageId="common.errorMissing" />
+      <PageSection>
+        <ErrorMessage messageId="common.errorMissing" />
+      </PageSection>
     );
   }
 
