@@ -1,10 +1,10 @@
 import React from 'react';
 import HomePage from '../../components/HomePage';
 
-import { renderWithTheme } from '../helpers';
+import { renderWithProviders } from '../helpers';
 
 describe('<HomePage />', () => {
-  it('renders without crashing', () => {
-    renderWithTheme(<HomePage>""</HomePage>);
+  it('should render without crashing', () => {
+    renderWithProviders(<HomePage>""</HomePage>);
   });
 });
