@@ -1,8 +1,8 @@
 import { put } from 'redux-saga/effects'
 
 interface ApiCallProps {
-  onError: Function;
-  onSuccess: Function;
+  onErrorAction: Function;
+  onSuccessAction: Function;
   options?: Object;
   url: string;
 }
@@ -13,8 +13,8 @@ interface ApiCallPostProps extends ApiCallProps {
 
 function* apiCall(props: ApiCallProps) {
   const {
-    onSuccess,
-    onError,
+    onSuccessAction,
+    onErrorAction,
     options,
     url,
   } = props;
@@ -24,12 +24,12 @@ function* apiCall(props: ApiCallProps) {
     const res = yield apiRes.json();
 
     if (res.status === 'success') {
-      yield put(onSuccess(res.data));
+      yield put(onSuccessAction(res.data));
     } else {
       throw new Error(res.message);
     }
   } catch (error) {
-    yield put(onError(""));
+    yield put(onErrorAction(""));
   }
 }
 

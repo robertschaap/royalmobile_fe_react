@@ -11,8 +11,8 @@ import {
 function* fetchSubscriptionsSaga() {
   yield call(api.get, {
     url: routes.API_ROOT,
-    onSuccess: fetchSubscriptionsSuccess,
-    onError: fetchSubscriptionsError,
+    onSuccessAction: fetchSubscriptionsSuccess,
+    onErrorAction: fetchSubscriptionsError,
   });
 }
 

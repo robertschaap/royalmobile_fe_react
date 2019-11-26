@@ -11,8 +11,8 @@ import {
 function* fetchProductsSaga() {
   yield call(api.get, {
     url: routes.API_GET_PRODUCTS,
-    onSuccess: fetchProductsSuccess,
-    onError: fetchProductsError,
+    onSuccessAction: fetchProductsSuccess,
+    onErrorAction: fetchProductsError,
   });
 }
 
