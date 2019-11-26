@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../../components/Header';
 
-import { renderWithTheme } from '../helpers';
+import { renderWithProviders } from '../helpers';
 
 describe('<Header />', () => {
-  it('renders without crashing', () => {
-    renderWithTheme(<Header />);
+  it('should render without crashing', () => {
+    renderWithProviders(<Header />);
   });
 });
