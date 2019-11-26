@@ -20,7 +20,9 @@ const HeaderLogoBold = styled(HeaderLogoBase)`
 
 const HeaderLogo: React.FC = () => {
   return (
-    <Link to={routes.HOME_PAGE}>
+    <Link
+      data-testid="header-logo"
+      to={routes.HOME_PAGE}>
       <HeaderLogoBold>Royal</HeaderLogoBold>
       <HeaderLogoBase>Mobile</HeaderLogoBase>
     </Link>
