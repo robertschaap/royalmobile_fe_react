@@ -46,7 +46,7 @@ const Loader: React.FC<LoaderProps> = (props) => {
 
   return (
     <LoaderBase>
-      <LoaderElement />
+      <LoaderElement data-testid="loader" />
     </LoaderBase>
   );
 };
