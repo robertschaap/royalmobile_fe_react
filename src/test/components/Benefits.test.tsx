@@ -4,7 +4,7 @@ import Benefits from '../../components/Benefits';
 import { renderWithTheme } from '../helpers';
 
 describe('<Benefits />', () => {
-  it('renders without crashing', () => {
+  it('should render without crashing', () => {
     renderWithTheme(<Benefits />);
   });
 });
