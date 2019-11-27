@@ -66,7 +66,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
   const { products } = props;
 
   return (
-    <GridBase>
+    <GridBase data-testid="product-listing">
       {products.map((product, index) => (
         <GridItem
           key={index}
