@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export interface Subscription {
   id: number;
   subscriptionId: string;
@@ -5,19 +6,19 @@ export interface Subscription {
   data: string;
   benefits_long: string[],
   benefits_short: string;
-  regular_price: "20"
+  regular_price: '20'
 }
 
 export const subscriptionsStub: Subscription[] = [{
   id: 1,
-  subscriptionId: "royalmobile-10gb-2year",
-  duration: "2_year",
-  data: "10gb",
+  subscriptionId: 'royalmobile-10gb-2year',
+  duration: '2_year',
+  data: '10gb',
   benefits_long: [
-    "unlimited calls",
-    "unlimited texts",
-    "unlimited roaming",
+    'unlimited calls',
+    'unlimited texts',
+    'unlimited roaming',
   ],
-  benefits_short: "unlimited<br/> calls, text, roaming",
-  regular_price: "20",
+  benefits_short: 'unlimited<br/> calls, text, roaming',
+  regular_price: '20',
 }];

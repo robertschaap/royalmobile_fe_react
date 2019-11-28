@@ -6,12 +6,12 @@ interface PageTitleProps {
 }
 
 const PageTitle: React.FC<PageTitleProps> = React.memo((props): null => {
-  const { page, title = "RoyalMobile" } = props;
+  const { page, title = 'RoyalMobile' } = props;
 
   if (!page) {
     document.title = title;
   } else {
-    document.title = title + " - " + page;
+    document.title = `${title} - ${page}`;
   }
 
   return null;

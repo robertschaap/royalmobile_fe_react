@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Banner from '../components/Banner';
-import Benefits from '../components/Benefits';
+import Banner from './Banner';
+import Benefits from './Benefits';
 import ProductListingContainer from '../containers/ProductListingContainer';
 
 const HomePage: React.FC = () => {

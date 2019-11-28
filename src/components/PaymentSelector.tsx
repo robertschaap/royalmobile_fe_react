@@ -67,7 +67,7 @@ const PaymentAdjustmentDescription = styled.div`
 `;
 
 const AdjustedPaymentAmount = styled(PaymentAdjustmentAmount)`
-  background-color: unset
+  background-color: unset;
 `;
 
 const PaymentSelector: React.FC = () => {

@@ -30,7 +30,7 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
   return (
     <RootLayoutBase>
       {true && (
-        <div style={{ backgroundColor: "#ddd" }}>
+        <div style={{ backgroundColor: '#ddd' }}>
           Debug:&nbsp;
           <a href={routes.HOME_PAGE}>Home</a> |&nbsp;
           <a href={routes.PRODUCT_PAGE}>Product</a> |&nbsp;

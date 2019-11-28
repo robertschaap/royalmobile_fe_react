@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
 import { productsReducer, initialProductsState } from './products';
 import { subscriptionsReducer, initialSubscriptionsState } from './subscriptions';

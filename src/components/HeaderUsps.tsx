@@ -24,9 +24,9 @@ const Check = styled.span`
 const HeaderUsps: React.FC = () => {
   return (
     <HeaderUspsBase>
-      <li><Check>✓ </Check>{useContentCopy("usp.noFalsePromises")}</li>
-      <li><Check>✓ </Check>{useContentCopy("usp.noConnectionFeeAcquisition")}</li>
-      <li><Check>✓ </Check>{useContentCopy("usp.freeShipping")}</li>
+      <li><Check>✓ </Check>{useContentCopy('usp.noFalsePromises')}</li>
+      <li><Check>✓ </Check>{useContentCopy('usp.noConnectionFeeAcquisition')}</li>
+      <li><Check>✓ </Check>{useContentCopy('usp.freeShipping')}</li>
     </HeaderUspsBase>
   );
 };

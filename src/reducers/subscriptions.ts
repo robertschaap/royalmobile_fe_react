@@ -4,6 +4,7 @@ import {
   FETCH_SUBSCRIPTIONS,
   FETCH_SUBSCRIPTIONS_SUCCESS,
   FETCH_SUBSCRIPTIONS_ERROR,
+  SubscriptionsActionTypes,
 } from '../ducks/subscriptions';
 
 import { Subscription } from '../types/subscriptions';
@@ -16,10 +17,10 @@ interface SubscriptionsState {
 export const initialSubscriptionsState: SubscriptionsState = {
   isFetching: false,
   collection: [],
-}
+};
 
-export const subscriptionsReducer = (state = initialSubscriptionsState, action: any) => {
-  return produce(state, newState => {
+export const subscriptionsReducer = (state: SubscriptionsState = initialSubscriptionsState, action: SubscriptionsActionTypes) => {
+  return produce<SubscriptionsState>(state, (newState) => {
     switch (action.type) {
       case FETCH_SUBSCRIPTIONS:
         newState.isFetching = true;

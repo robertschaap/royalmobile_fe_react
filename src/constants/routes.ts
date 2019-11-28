@@ -10,7 +10,7 @@ const pageRoutes = {
   BUSINESS_PAGE: '/business',
 };
 
-const API = "/api";
+const API = '/api';
 
 const apiRoutes = {
   API_ROOT: `${API}/`,
@@ -21,4 +21,3 @@ export default {
   ...pageRoutes,
   ...apiRoutes,
 };
-

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useContentCopy } from '../hooks';
 import routes from '../constants/routes';
 
-import Link from '../components/Link';
+import Link from './Link';
 
 const FooterBase = styled.footer`
   background-color: ${({ theme }) => theme.color.lightGrey};
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
   return (
     <FooterBase>
       <Link to={routes.CONTACT_PAGE}>
-        {useContentCopy("navigation.contact")}
+        {useContentCopy('navigation.contact')}
       </Link>
       <div><b>Royal</b>Mobile 2019</div>
     </FooterBase>

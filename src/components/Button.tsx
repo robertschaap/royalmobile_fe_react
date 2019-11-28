@@ -30,13 +30,13 @@ interface ButtonProps {
   children: React.ReactNode;
   disabled?: boolean;
   onClick?(): void;
-  variant: "primary" | "secondary";
+  variant: 'primary' | 'secondary';
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
   const { variant, ...rest } = props;
 
-  if (variant === "primary") {
+  if (variant === 'primary') {
     return (
       <ButtonPrimary
         data-testid="button-primary"
@@ -48,7 +48,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     <ButtonSecondary
       data-testid="button-secondary"
       {...rest} />
-  )
+  );
 };
 
 export default Button;

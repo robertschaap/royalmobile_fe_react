@@ -18,7 +18,7 @@ const BreadcrumbsBase = styled.div`
 const Breadcrumbs: React.FC = () => {
   return (
     <BreadcrumbsBase>
-      <Link to={routes.HOME_PAGE}>{useContentCopy("navigation.home")}</Link> |
+      <Link to={routes.HOME_PAGE}>{useContentCopy('navigation.home')}</Link> |
     </BreadcrumbsBase>
   );
 };

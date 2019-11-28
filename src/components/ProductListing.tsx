@@ -12,12 +12,12 @@ import Link from './Link';
 
 const ProductListingItem = styled(Link)`
   display: flex;
-  padding: ${({ theme })=> theme.spacing(3)} ${({ theme })=> theme.spacing(4)};
-  border: 1px solid ${({ theme })=> theme.color.grey};
+  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
+  border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
 
   @media ${breakpoint_up.sm} {
-    padding: ${({ theme })=> theme.spacing(4)} ${({ theme })=> theme.spacing(4)};
+    padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(4)};
     flex-direction: column;
     align-items: center;
   }
@@ -44,7 +44,7 @@ const DeviceInformation = styled.div`
 const DeviceName = styled.div`
   font-weight: 700;
 `;
-const DeviceManufacturer = styled.div``
+const DeviceManufacturer = styled.div``;
 
 const DevicePrice = styled.div`
   font-size: 32px;
@@ -75,7 +75,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
           lg={4}>
           <ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.modelId })}>
             <DeviceImage>
-              <img width="100%" alt="phone image" src={phone} />
+              <img width="100%" alt="phone" src={phone} />
             </DeviceImage>
             <DeviceInformation>
               <DeviceName>{product.model}</DeviceName>

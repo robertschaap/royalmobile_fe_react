@@ -1,4 +1,4 @@
-import { put } from 'redux-saga/effects'
+import { put } from 'redux-saga/effects';
 
 interface ApiCallProps {
   onErrorAction: Function;
@@ -29,7 +29,7 @@ function* apiCall(props: ApiCallProps) {
       throw new Error(res.message);
     }
   } catch (error) {
-    yield put(onErrorAction(""));
+    yield put(onErrorAction(''));
   }
 }
 
@@ -49,5 +49,5 @@ function* post(props: ApiCallPostProps) {
 
 export default {
   get,
-  post
+  post,
 };

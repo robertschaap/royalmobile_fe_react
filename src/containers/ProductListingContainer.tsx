@@ -41,7 +41,6 @@ const ProductListingContainer: React.FC = () => {
       </Button>
     </PageSection>
   );
-
 };
 
 export default ProductListingContainer;

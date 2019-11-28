@@ -1,4 +1,4 @@
-import { StoreState } from '../reducers/index'
+import { StoreState } from '../reducers/index';
 import { Product } from '../types/products';
 
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';

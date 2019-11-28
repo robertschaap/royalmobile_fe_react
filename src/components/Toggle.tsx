@@ -33,7 +33,7 @@ const ToggleSlider = styled.span`
 `;
 
 const ToggleInput = styled.input.attrs({
-  type: "checkbox",
+  type: 'checkbox',
 })`
   opacity: 0;
   width: 0;

@@ -2,31 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
-import { GridBase, GridItem } from '../components/Grid';
+import { GridBase, GridItem } from './Grid';
 import PageSection from './PageSection';
 
 const BenefitsItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  padding: ${({ theme })=> theme.spacing(3)} ${({ theme })=> theme.spacing(4)};
-  border: 1px solid ${({ theme })=> theme.color.grey};
+  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
+  border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
 
   ${media_breakpoint_up.md} {
-    padding: ${({ theme })=> theme.spacing(6)} ${({ theme })=> theme.spacing(8)};
+    padding: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(8)};
   }
 `;
 
 const BenefitsItemCallout = styled.span`
   flex: none;
-  margin-right: ${({ theme })=> theme.spacing(4)};
+  margin-right: ${({ theme }) => theme.spacing(4)};
   color: ${({ theme }) => theme.color.primary};
   font-size: 50px;
   font-weight: 700;
 
   ${media_breakpoint_up.md} {
-    margin-right: ${({ theme })=> theme.spacing(6)};
+    margin-right: ${({ theme }) => theme.spacing(6)};
   }
 `;
 

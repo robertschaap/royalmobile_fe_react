@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { breakpoint_up } from '../styles/theme';
 
 import { GridBase, GridItem } from './Grid';
 
 const subscriptions = [
-  { id: 1, },
-  { id: 2, },
-  { id: 3, },
-  { id: 4, },
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
 ];
 
 const SubscriptionListingBase = styled(GridBase)`
@@ -70,19 +70,19 @@ const BenefitsMedium = styled.ul`
 const SubscriptionListing: React.FC = () => {
   return (
     <SubscriptionListingBase>
-      {subscriptions.map(subscription => (
+      {subscriptions.map((subscription, index) => (
         <GridItem
-          key={subscription.id}
+          key={index}
           lg={2}>
           <SubscriptionListingItem
-            isSelected={subscription.id === 1}>
+            isSelected={index === 0}>
             <div>
               <div>Data</div>
               <Bold>10gb</Bold>
             </div>
             <BenefitsSmall>Unlimited<br/>calls, texts, roaming</BenefitsSmall>
             <BenefitsMedium>
-              {["Unlimited calls", "Unlimited texts", "Unlimited roaming"].map((e, i) => (
+              {['Unlimited calls', 'Unlimited texts', 'Unlimited roaming'].map((e, i) => (
                 <li key={i}>{e}</li>
               ))}
             </BenefitsMedium>

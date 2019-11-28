@@ -27,6 +27,6 @@ const HeaderLogo: React.FC = () => {
       <HeaderLogoBase>Mobile</HeaderLogoBase>
     </Link>
   );
-}
+};
 
 export default HeaderLogo;

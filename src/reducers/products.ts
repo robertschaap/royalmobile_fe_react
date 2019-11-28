@@ -22,7 +22,7 @@ export const initialProductsState: ProductsState = {
 };
 
 export const productsReducer = (state: ProductsState = initialProductsState, action: ProductsActiontypes) => {
-  return produce<ProductsState>(state, newState => {
+  return produce<ProductsState>(state, (newState) => {
     switch (action.type) {
       case FETCH_PRODUCTS:
         newState.isFetching = true;

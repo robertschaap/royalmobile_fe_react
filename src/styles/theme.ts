@@ -1,4 +1,4 @@
-const spacing = (n: number) => (Math.round(n) * 4) + "px";
+const spacing = (n: number) => `${Math.round(n) * 4}px`;
 
 const breakpoints = {
   sm: 425,
