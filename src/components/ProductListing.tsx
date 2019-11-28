@@ -75,7 +75,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
           lg={4}>
           <ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.modelId })}>
             <DeviceImage>
-              <img width="100%" src={phone} />
+              <img width="100%" alt="phone image" src={phone} />
             </DeviceImage>
             <DeviceInformation>
               <DeviceName>{product.model}</DeviceName>
