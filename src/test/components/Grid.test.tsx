@@ -10,18 +10,18 @@ import {
 
 describe('<Grid />', () => {
   describe('<GridBase />', () => {
-    it('renders without crashing', () => {
+    it('should render without crashing', () => {
       render(<GridBase />);
     });
   });
 
   describe('<GridItem />', () => {
-    it('renders without crashing', () => {
+    it('should render without crashing', () => {
       render(<GridItem />);
     });
   });
 
-  describe('calculatePercentage', () => {
+  describe('calculatePercentage()', () => {
     it('should return 100 when no values are passed', () => {
       expect(calculatePercentage(undefined)).toEqual(100);
     });
