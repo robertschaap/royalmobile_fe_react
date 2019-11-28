@@ -12,12 +12,12 @@ describe('<Button />', () => {
   it('should render the primary button', () => {
     const { getByTestId } = renderWithTheme(<Button variant="primary">""</Button>);
 
-    expect(getByTestId("button-primary")).toBeInTheDocument();
+    expect(getByTestId('button-primary')).toBeInTheDocument();
   });
 
   it('should render the primary button', () => {
     const { getByTestId } = renderWithTheme(<Button variant="secondary">""</Button>);
 
-    expect(getByTestId("button-secondary")).toBeInTheDocument();
+    expect(getByTestId('button-secondary')).toBeInTheDocument();
   });
 });

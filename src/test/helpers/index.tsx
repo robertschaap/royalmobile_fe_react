@@ -12,7 +12,7 @@ export const renderWithTheme = (Component: React.ReactElement) => {
   return render(
     <ThemeProvider theme={theme}>
       {Component}
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 };
 
@@ -28,6 +28,6 @@ export const renderWithProviders = (Component: React.ReactElement, customInitial
           {Component}
         </BrowserRouter>
       </ThemeProvider>
-    </Provider>
+    </Provider>,
   );
 };

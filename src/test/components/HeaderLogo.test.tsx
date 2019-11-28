@@ -12,7 +12,7 @@ describe('<HeaderLogo />', () => {
   it('should redirect the user when clicked on', () => {
     const { getByTestId } = renderWithProviders(<HeaderLogo />);
 
-    fireEvent.click(getByTestId("header-logo"));
+    fireEvent.click(getByTestId('header-logo'));
 
     expect(location.pathname).toEqual('/');
   });

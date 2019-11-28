@@ -1,11 +1,12 @@
 import React from 'react';
+import { render } from '@testing-library/react';
+
 import {
   GridBase,
   GridItem,
   calculatePercentage,
 } from '../../components/Grid';
 
-import { render } from '@testing-library/react';
 
 describe('<Grid />', () => {
   describe('<GridBase />', () => {
