@@ -4,7 +4,7 @@ import {
   FETCH_PRODUCTS,
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_ERROR,
-  ProductsActiontypes,
+  ProductsActionTypes,
 } from '../ducks/products';
 
 import { Product } from '../types/products';
@@ -21,7 +21,7 @@ export const initialProductsState: ProductsState = {
   collection: [],
 };
 
-export const productsReducer = (state: ProductsState = initialProductsState, action: ProductsActiontypes) => {
+export const productsReducer = (state: ProductsState = initialProductsState, action: ProductsActionTypes) => {
   return produce<ProductsState>(state, (newState) => {
     switch (action.type) {
       case FETCH_PRODUCTS:

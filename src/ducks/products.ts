@@ -9,7 +9,7 @@ interface FetchProductsAction {
   type: typeof FETCH_PRODUCTS;
 }
 
-export const fetchProducts = (): FetchProductsAction => ({
+export const fetchProducts = (): ProductsActionTypes => ({
   type: FETCH_PRODUCTS,
 });
 
@@ -18,7 +18,7 @@ interface FetchProductsSucesssAction {
   payload: Product[];
 }
 
-export const fetchProductsSuccess = (payload: Product[]): FetchProductsSucesssAction => ({
+export const fetchProductsSuccess = (payload: Product[]): ProductsActionTypes => ({
   type: FETCH_PRODUCTS_SUCCESS,
   payload,
 });
@@ -28,12 +28,12 @@ interface FetchProductsErrorAction {
   error: string;
 }
 
-export const fetchProductsError = (error: string): FetchProductsErrorAction => ({
+export const fetchProductsError = (error: string): ProductsActionTypes => ({
   type: FETCH_PRODUCTS_ERROR,
   error,
 });
 
-export type ProductsActiontypes =
+export type ProductsActionTypes =
   | FetchProductsAction
   | FetchProductsSucesssAction
   | FetchProductsErrorAction
