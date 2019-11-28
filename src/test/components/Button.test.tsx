@@ -5,10 +5,6 @@ import Button from '../../components/Button';
 import { renderWithTheme } from '../helpers';
 
 describe('<Button />', () => {
-  it('renders without crashing', () => {
-    renderWithTheme(<Button variant="primary">""</Button>);
-  });
-
   it('should render the primary button', () => {
     const { getByTestId } = renderWithTheme(<Button variant="primary">""</Button>);
 
