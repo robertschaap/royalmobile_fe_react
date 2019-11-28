@@ -1,22 +1,42 @@
-import { StoreState } from '../reducers/index'
+import { StoreState } from '../reducers/index';
+import { Subscription } from '../types/subscriptions';
 
 export const FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS';
 export const FETCH_SUBSCRIPTIONS_SUCCESS = 'FETCH_SUBSCRIPTIONS_SUCCESS';
 export const FETCH_SUBSCRIPTIONS_ERROR = 'FETCH_SUBSCRIPTIONS_ERROR';
 
-export const fetchSubscriptions = () => ({
+interface FetchSubscriptionsAction {
+  type: typeof FETCH_SUBSCRIPTIONS;
+}
+
+export const fetchSubscriptions = (): SubscriptionsActionTypes => ({
   type: FETCH_SUBSCRIPTIONS,
 });
 
-export const fetchSubscriptionsSuccess = (payload: any) => ({
+interface FetchSubscriptionsSuccessAction {
+  type: typeof FETCH_SUBSCRIPTIONS_SUCCESS;
+  payload: Subscription[]
+}
+
+export const fetchSubscriptionsSuccess = (payload: Subscription[]): SubscriptionsActionTypes => ({
   type: FETCH_SUBSCRIPTIONS_SUCCESS,
   payload,
 });
 
-export const fetchSubscriptionsError = (error: any) => ({
+interface FetchSubscriptionsErrorAction {
+  type: typeof FETCH_SUBSCRIPTIONS_ERROR;
+  error: string;
+}
+
+export const fetchSubscriptionsError = (error: string): SubscriptionsActionTypes => ({
   type: FETCH_SUBSCRIPTIONS_ERROR,
   error,
 });
+
+export type SubscriptionsActionTypes =
+  | FetchSubscriptionsAction
+  | FetchSubscriptionsSuccessAction
+  | FetchSubscriptionsErrorAction
 
 export const getSubscriptions = (state: StoreState) => state.products;
 export const getProductsCollection = (state: StoreState) => state.products.collection;
