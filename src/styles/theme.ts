@@ -18,6 +18,10 @@ export const media_breakpoint_up = {
   lg: `@media (min-width: ${breakpoints.lg}px)`,
 };
 
+const zIndex = {
+  header: 1,
+};
+
 const color = {
   primary: '#ff9e00',
   secondary: '#c3ebeb',
@@ -28,9 +32,10 @@ const color = {
 };
 
 const theme = {
+  breakpoints,
   color,
   spacing,
-  breakpoints,
+  zIndex,
 };
 
 
