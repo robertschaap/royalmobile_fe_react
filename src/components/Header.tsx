@@ -11,6 +11,7 @@ const HeaderBase = styled.header`
   background-color: rgba(255,255,255,0.97);
   position: sticky;
   top: 0;
+  z-index: ${({ theme }) => theme.zIndex.header};
   padding-top: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ theme }) => theme.spacing(2)};
 
