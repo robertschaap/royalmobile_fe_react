@@ -44,6 +44,7 @@ const DeviceInformation = styled.div`
 const DeviceName = styled.div`
   font-weight: 700;
 `;
+
 const DeviceManufacturer = styled.div``;
 
 const DevicePrice = styled.div`
