@@ -38,5 +38,4 @@ const theme = {
   zIndex,
 };
 
-
 export default theme;
