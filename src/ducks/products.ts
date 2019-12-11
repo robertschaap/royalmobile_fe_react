@@ -36,7 +36,7 @@ export const fetchProductsError = (error: string): ProductsActionTypes => ({
 export type ProductsActionTypes =
   | FetchProductsAction
   | FetchProductsSucesssAction
-  | FetchProductsErrorAction
+  | FetchProductsErrorAction;
 
 export const getProducts = (state: StoreState) => state.products;
 export const getProductsCollection = (state: StoreState) => state.products.collection;
