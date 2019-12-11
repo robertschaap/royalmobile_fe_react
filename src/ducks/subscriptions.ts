@@ -36,7 +36,7 @@ export const fetchSubscriptionsError = (error: string): SubscriptionsActionTypes
 export type SubscriptionsActionTypes =
   | FetchSubscriptionsAction
   | FetchSubscriptionsSuccessAction
-  | FetchSubscriptionsErrorAction
+  | FetchSubscriptionsErrorAction;
 
 export const getSubscriptions = (state: StoreState) => state.products;
 export const getProductsCollection = (state: StoreState) => state.products.collection;
