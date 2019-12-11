@@ -38,5 +38,5 @@ export type ProductsActionTypes =
   | FetchProductsSucesssAction
   | FetchProductsErrorAction;
 
-export const getProducts = (state: StoreState) => state.products;
-export const getProductsCollection = (state: StoreState) => state.products.collection;
+export const selectProducts = (state: StoreState) => state.products;
+export const selectProductsCollection = (state: StoreState) => state.products.collection;

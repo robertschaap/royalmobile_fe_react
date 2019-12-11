@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProducts, fetchProducts } from '../ducks/products';
+import { selectProducts, fetchProducts } from '../ducks/products';
 
 import Button from '../components/Button';
 import ErrorMessage from '../components/ErrorMessage';
@@ -10,7 +10,7 @@ import ProductListing from '../components/ProductListing';
 
 const ProductListingContainer: React.FC = () => {
   const dispatch = useDispatch();
-  const productsState = useSelector(getProducts);
+  const productsState = useSelector(selectProducts);
 
   useEffect(() => {
     dispatch(fetchProducts());
