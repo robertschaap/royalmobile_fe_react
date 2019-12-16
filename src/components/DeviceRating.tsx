@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const DeviceRatingBase = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+`;
+
 const StarFilled = styled.span`
   color: ${({ theme }) => theme.color.primary};
 `;
@@ -11,11 +15,11 @@ const StarHollow = styled.span`
 
 const DeviceRating: React.FC = () => {
   return (
-    <div>
+    <DeviceRatingBase>
       <StarFilled>{'★'.repeat(4)}</StarFilled>
       <StarHollow>{'☆'.repeat(1)}</StarHollow>
       {` ${34} Reviews`}
-    </div>
+    </DeviceRatingBase>
   );
 };
 
