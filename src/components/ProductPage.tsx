@@ -1,28 +1,32 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import Button from '../components/Button';
-import SectionHeader from './SectionHeader';
+import Button from './Button';
+import ProductPageSummary from './ProductPageSummary';
+import ProductPageConfigure from './ProductPageConfigure';
+import ProductPageCustomise from './ProductPageCustomise';
+import PageSection from './PageSection';
+
+const OrderButton = styled(Button)`
+  margin-bottom: ${({ theme }) => theme.spacing(3)};
+`;
 
 const ProductPage: React.FC = () => {
   return (
     <>
-      <section>
-        <SectionHeader>Customise your device</SectionHeader>
-      </section>
-      <section>
-        <SectionHeader>Configure your plan</SectionHeader>
-      </section>
-      <section>
-        <SectionHeader>Summing it all up</SectionHeader>
-      </section>
-      <Button
-        variant="primary">
-        I'm ready to order!
-      </Button>
-      <Button
-        variant="secondary">
-        I'm ready to renew my contract!
-      </Button>
+      <ProductPageCustomise />
+      <ProductPageConfigure />
+      <ProductPageSummary />
+      <PageSection>
+        <OrderButton
+          variant="primary">
+          I'm ready to order!
+        </OrderButton>
+        <Button
+          variant="secondary">
+          I'm ready to renew my contract!
+        </Button>
+      </PageSection>
     </>
   );
 };
