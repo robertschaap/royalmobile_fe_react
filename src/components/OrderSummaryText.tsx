@@ -20,7 +20,6 @@ const OrderSummaryText: React.FC = () => {
       <p>
         Your total one-time payment is 265,00.
       </p>
-
       <p>
         No funny business.
       </p>
