@@ -22,13 +22,26 @@ const DeviceColorListingItem = styled.button<DeviceColorListingItemProps>`
   `}
 `;
 
-const DeviceColorListing: React.FC = () => {
+const deviceColors = [
+  { color: '#7ec09a' },
+  { color: '#8097c2' },
+  { color: '#bae596' },
+  { color: '#d59a8d' },
+];
+
+interface DeviceColorListingProps {
+  // TODO: make this required and handle 0-length
+  colors?: { color: string }[];
+}
+
+const DeviceColorListing: React.FC<DeviceColorListingProps> = (props) => {
+  const { colors = deviceColors } = props;
+
   return (
     <DeviceColorListingBase>
-      <DeviceColorListingItem isSelected={true} color="#7ec09a" />
-      <DeviceColorListingItem isSelected={false} color="#8097c2" />
-      <DeviceColorListingItem isSelected={false} color="#bae596" />
-      <DeviceColorListingItem isSelected={false} color="#d59a8d" />
+      {colors.map((e, i) => (
+        <DeviceColorListingItem isSelected={i === 0} color={e.color} />
+      ))}
     </DeviceColorListingBase>
   );
 };
