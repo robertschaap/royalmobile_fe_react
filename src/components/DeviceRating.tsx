@@ -13,12 +13,25 @@ const StarHollow = styled.span`
   color: ${({ theme }) => theme.color.grey};
 `;
 
-const DeviceRating: React.FC = () => {
+//  TODO: make required once data is passed
+interface DeviceRatingProps {
+  ratingMax?: number;
+  ratingGiven?: number;
+  reviewCount?: number;
+}
+
+const DeviceRating: React.FC<DeviceRatingProps> = (props) => {
+  const {
+    ratingMax = 5,
+    ratingGiven = 4,
+    reviewCount = 34,
+  } = props;
+
   return (
     <DeviceRatingBase>
-      <StarFilled>{'★'.repeat(4)}</StarFilled>
-      <StarHollow>{'☆'.repeat(1)}</StarHollow>
-      {` ${34} Reviews`}
+      <StarFilled>{'★'.repeat(ratingGiven)}</StarFilled>
+      <StarHollow>{'☆'.repeat(ratingMax - ratingGiven)}</StarHollow>
+      {` ${reviewCount} Reviews`}
     </DeviceRatingBase>
   );
 };
