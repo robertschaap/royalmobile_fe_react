@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 import routes from '../constants/routes';
 import formatRoute from '../utils/formatRoute';
 
@@ -23,7 +23,7 @@ const BannerBase = styled(Link)`
     ${({ theme }) => theme.color.secondary} 120%
   );
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     justify-content: space-between;
     padding: ${({ theme }) => theme.spacing(8)};
     height: 200px;
@@ -35,7 +35,7 @@ const BannerLeft = styled.span`
     font-weight: 700;
     text-align: right;
 
-    @media ${breakpoint_up.md} {
+    ${media_breakpoint_up.md} {
       text-align: unset;
       font-size: 40px;
     }
@@ -47,7 +47,7 @@ const BannerRight = styled.span`
     text-shadow: 0px 2px 2px rgba(1,1,1,0.16);
     display: none;
 
-    @media ${breakpoint_up.md} {
+    ${media_breakpoint_up.md} {
       display: unset;
     }
 `;
