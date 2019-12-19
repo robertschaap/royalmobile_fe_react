@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media_breakpoint_up } from '../styles/theme';
 
 import OrderSummaryText from './OrderSummaryText';
 import PageSection from './PageSection';
@@ -16,6 +17,22 @@ const Card = styled.div<CardProps>`
   margin-bottom: ${({ marginBottom, theme }) => theme.spacing(marginBottom || 0)};
 `;
 
+const SubTotalCard = styled(Card)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const SubTotal = styled.span`
+  font-weight: 700;
+  font-size: 20px;
+  color: ${({ theme }) => theme.color.primary};
+
+  ${media_breakpoint_up.md} {
+    font-size: 32px;
+  }
+`;
+
 const ProductPageSummary: React.FC = () => {
   return (
     <PageSection>
@@ -24,15 +41,17 @@ const ProductPageSummary: React.FC = () => {
       <Card marginBottom={2}>
         10gb data
       </Card>
-      <Card marginBottom={4}>
+      <SubTotalCard marginBottom={4}>
         Your monthly payment
-      </Card>
+        <SubTotal>40,00</SubTotal>
+      </SubTotalCard>
       <Card marginBottom={2}>
         10gb data
       </Card>
-      <Card>
+      <SubTotalCard>
         Your one-time payment
-      </Card>
+        <SubTotal>40,00</SubTotal>
+      </SubTotalCard>
     </PageSection>
   );
 };
