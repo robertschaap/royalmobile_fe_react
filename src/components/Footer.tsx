@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       <Link to={routes.CONTACT_PAGE}>
         {useContentCopy('navigation.contact')}
       </Link>
-      <div><b>Royal</b>Mobile 2019</div>
+      <div><b>{useContentCopy('common.royal')}</b>{useContentCopy('common.mobile')} 2019</div>
     </FooterBase>
   );
 };
