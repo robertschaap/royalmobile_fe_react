@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 import routes from '../constants/routes';
 import formatRoute from '../utils/formatRoute';
 
@@ -16,7 +16,7 @@ const ProductListingItem = styled(Link)`
   border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(4)};
     flex-direction: column;
     align-items: center;
@@ -27,14 +27,14 @@ const DeviceImage = styled.div`
   width: 115px;
   margin-right: ${({ theme }) => theme.spacing(4)};
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     margin-right: unset;
     margin-bottom: ${({ theme }) => theme.spacing(3)};
   }
 `;
 
 const DeviceInformation = styled.div`
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +54,7 @@ const DevicePrice = styled.div`
 `;
 
 const DeviceOptions = styled.div`
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     display: none;
   }
 `;
