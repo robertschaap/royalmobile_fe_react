@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
+import { useContentCopy } from '../hooks';
 import routes from '../constants/routes';
 
 import Link from './Link';
@@ -23,8 +24,8 @@ const HeaderLogo: React.FC = () => {
     <Link
       data-testid="header-logo"
       to={routes.HOME_PAGE}>
-      <HeaderLogoBold>Royal</HeaderLogoBold>
-      <HeaderLogoBase>Mobile</HeaderLogoBase>
+      <HeaderLogoBold>{useContentCopy('common.royal')}</HeaderLogoBold>
+      <HeaderLogoBase>{useContentCopy('common.mobile')}</HeaderLogoBase>
     </Link>
   );
 };
