@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 
 import {
   ForYourBusinessLink,
@@ -12,7 +12,7 @@ import {
 const NavigationSmallBase = styled.nav`
   font-size: 12px;
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     font-size: unset;
   }
 `;
@@ -26,7 +26,7 @@ const NavigationGroup = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(2)};
   border-radius: 8px;
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     display: none;
   }
 `;
