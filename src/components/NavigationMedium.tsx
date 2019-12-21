@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 
 import {
   ForYourBusinessLink,
@@ -16,7 +16,7 @@ const NavigationMediumBase = styled.nav`
   border-radius: 8px;
   overflow: hidden;
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     display: flex;
   }
 `;
