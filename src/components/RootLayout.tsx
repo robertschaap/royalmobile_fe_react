@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 import routes from '../constants/routes';
 
 import Footer from './Footer';
@@ -15,7 +15,7 @@ const RootLayoutBase = styled.div`
   max-width: 960px;
   padding: 0 ${({ theme }) => theme.spacing(4)};
 
-  @media ${breakpoint_up.lg} {
+  ${media_breakpoint_up.lg} {
     padding: 0 ${({ theme }) => theme.spacing(0)};
   }
 `;
