@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../styles/theme';
 
 import { GridBase, GridItem } from './Grid';
 
@@ -39,11 +39,11 @@ const Bold = styled.div`
   font-weight: 700;
   color: ${({ theme }) => theme.color.primary};
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     font-size: 24px;
   }
 
-  @media ${breakpoint_up.md} {
+  ${media_breakpoint_up.md} {
     font-size: 32px;
   }
 `;
@@ -51,7 +51,7 @@ const Bold = styled.div`
 const BenefitsSmall = styled.div`
   margin: 0 ${({ theme }) => theme.spacing(4)};
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     display: none;
   }
 `;
@@ -62,7 +62,7 @@ const BenefitsMedium = styled.ul`
   list-style-type: none;
   display: none;
 
-  @media ${breakpoint_up.sm} {
+  ${media_breakpoint_up.sm} {
     display: block;
   }
 `;
