@@ -6,12 +6,6 @@ const breakpoints = {
   lg: 1024,
 };
 
-export const breakpoint_up = {
-  sm: `(min-width: ${breakpoints.sm}px)`,
-  md: `(min-width: ${breakpoints.md}px)`,
-  lg: `(min-width: ${breakpoints.lg}px)`,
-};
-
 export const media_breakpoint_up = {
   sm: `@media (min-width: ${breakpoints.sm}px)`,
   md: `@media (min-width: ${breakpoints.md}px)`,
