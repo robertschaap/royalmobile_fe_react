@@ -26,6 +26,7 @@ export const MyAccountLink: React.FC = () => (
     {useContentCopy('navigation.myAccount')}
   </Link>
 );
+
 export const HelpLink: React.FC = () => (
   <Link
     data-testid="help-link"
