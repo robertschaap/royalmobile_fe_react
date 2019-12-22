@@ -8,7 +8,7 @@ export const initialState = {
   subscriptions: initialSubscriptionsState,
 };
 
-export const rootReducer = combineReducers({
+export const rootReducer = () => combineReducers({
   products: productsReducer,
   subscriptions: subscriptionsReducer,
 });

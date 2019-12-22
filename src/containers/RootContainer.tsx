@@ -20,7 +20,7 @@ import ThemeProviderContainer from './ThemeProviderContainer';
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
-  rootReducer,
+  rootReducer(),
   initialState,
   compose(
     applyMiddleware(sagaMiddleware),
