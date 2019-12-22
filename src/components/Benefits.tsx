@@ -9,12 +9,16 @@ const BenefitsItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
+  padding:
+    ${({ theme }) => theme.spacing(3)}
+    ${({ theme }) => theme.spacing(4)};
   border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
 
   ${media_breakpoint_up.md} {
-    padding: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(8)};
+    padding:
+    ${({ theme }) => theme.spacing(6)}
+    ${({ theme }) => theme.spacing(8)};
   }
 `;
 
