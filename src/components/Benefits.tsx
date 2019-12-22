@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useContentCopy } from '../hooks';
 import { media_breakpoint_up } from '../styles/theme';
 
 import { GridBase, GridItem } from './Grid';
@@ -50,9 +51,9 @@ const Benefits: React.FC = () => {
           md={2}
           lg={2}>
           <BenefitsItem>
-            <BenefitsItemCallout>GET</BenefitsItemCallout>
+            <BenefitsItemCallout>{useContentCopy('benefits.get')}</BenefitsItemCallout>
             <BenefitsItemDescription>
-              Three months free inside of your regular bundle when you refer a friend
+              {useContentCopy('benefits.threeMonthsFree')}
             </BenefitsItemDescription>
           </BenefitsItem>
         </GridItem>
@@ -60,9 +61,9 @@ const Benefits: React.FC = () => {
           md={2}
           lg={2}>
           <BenefitsItem>
-            <BenefitsItemCallout>GET</BenefitsItemCallout>
+            <BenefitsItemCallout>{useContentCopy('benefits.get')}</BenefitsItemCallout>
             <BenefitsItemDescription>
-              Double data in your bundle plus a 5 euro discount when you combine with <b>Royal</b>Internet
+              {useContentCopy('benefits.doubleData')}
             </BenefitsItemDescription>
           </BenefitsItem>
         </GridItem>

@@ -17,6 +17,10 @@ const contentCopy: ContentCopy = Object.freeze({
   'navigation.home': 'Home',
   'navigation.myAccount': 'My Account',
 
+  'benefits.get': 'GET',
+  'benefits.threeMonthsFree': 'Three months free inside of your regular bundle when you refer a friend',
+  'benefits.doubleData': 'Double data in your bundle plus a 5 euro discount when you combine with Royal Internet',
+
   'usp.freeShipping': 'Free Shipping on All Orders',
   'usp.noConnectionFeeAcquisition': 'No Connection Fee For New Customers',
   'usp.noFalsePromises': 'Guaranteed no False Promises',
