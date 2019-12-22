@@ -16,6 +16,7 @@ const contentCopy: ContentCopy = Object.freeze({
   'navigation.help': 'Help',
   'navigation.home': 'Home',
   'navigation.myAccount': 'My Account',
+  'navigation.ourProducts': 'Our Products',
 
   'benefits.get': 'GET',
   'benefits.threeMonthsFree': 'Three months free inside of your regular bundle when you refer a friend',

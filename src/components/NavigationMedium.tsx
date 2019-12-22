@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useContentCopy } from '../hooks';
 import { media_breakpoint_up } from '../styles/theme';
 
 import {
@@ -39,7 +40,7 @@ const Navigation: React.FC = () => {
   return (
     <NavigationMediumBase>
       <NavigationLeft>
-        Our Products
+        {useContentCopy('navigation.ourProducts')}
       </NavigationLeft>
       <NavigationMiddle>
         <ProductsForYouLink />
