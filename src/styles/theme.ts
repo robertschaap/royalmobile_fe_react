@@ -26,11 +26,9 @@ const color = {
   white: 'white',
 };
 
-const theme = {
+export default Object.freeze({
   breakpoints,
   color,
   spacing,
   zIndex,
-};
-
-export default theme;
+});
