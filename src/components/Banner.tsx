@@ -31,25 +31,25 @@ const BannerBase = styled(Link)`
 `;
 
 const BannerLeft = styled.span`
-    font-size: 32px;
-    font-weight: 700;
-    text-align: right;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: right;
 
-    ${media_breakpoint_up.md} {
-      text-align: unset;
-      font-size: 40px;
-    }
+  ${media_breakpoint_up.md} {
+    text-align: unset;
+    font-size: 40px;
+  }
 `;
 
 const BannerRight = styled.span`
-    font-size: 111px;
-    font-weight: 700;
-    text-shadow: 0px 2px 2px rgba(1,1,1,0.16);
-    display: none;
+  font-size: 111px;
+  font-weight: 700;
+  text-shadow: 0px 2px 2px rgba(1,1,1,0.16);
+  display: none;
 
-    ${media_breakpoint_up.md} {
-      display: unset;
-    }
+  ${media_breakpoint_up.md} {
+    display: unset;
+  }
 `;
 
 const Banner: React.FC = () => {
