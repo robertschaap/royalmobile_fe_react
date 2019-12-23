@@ -1,11 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import createSagaMiddleware from '@redux-saga/core';
 
-import { rootReducer, initialState } from '../reducers';
-import rootSaga from '../sagas';
 import routes from '../constants/routes';
 
 import CampaignsPageContainer from './CampaignsPageContainer';
@@ -15,25 +10,13 @@ import HomePageContainer from './HomePageContainer';
 import OrderPageContainer from './OrderPageContainer';
 import ProductPageContainer from './ProductPageContainer';
 import RootLayout from '../components/RootLayout';
+
 import ThemeProviderContainer from './ThemeProviderContainer';
-
-const sagaMiddleware = createSagaMiddleware();
-
-const store = createStore(
-  rootReducer(),
-  initialState,
-  compose(
-    applyMiddleware(sagaMiddleware),
-    // eslint-disable-next-line no-underscore-dangle
-    ...((window as any).__REDUX_DEVTOOLS_EXTENSION__ ? [(window as any).__REDUX_DEVTOOLS_EXTENSION__()] : []),
-  ),
-);
-
-sagaMiddleware.run(rootSaga);
+import StoreProviderContainer from './StoreProviderContainer';
 
 const Root: React.FC = () => {
   return (
-    <Provider store={store}>
+    <StoreProviderContainer>
       <ThemeProviderContainer>
         <BrowserRouter>
           <RootLayout>
@@ -47,7 +30,7 @@ const Root: React.FC = () => {
           </RootLayout>
         </BrowserRouter>
       </ThemeProviderContainer>
-    </Provider>
+    </StoreProviderContainer>
   );
 };
 
