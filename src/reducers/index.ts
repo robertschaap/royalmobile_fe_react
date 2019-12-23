@@ -13,4 +13,4 @@ export const rootReducer = () => combineReducers({
   subscriptions: subscriptionsReducer,
 });
 
-export type StoreState = ReturnType<typeof rootReducer>;
+export type StoreState = ReturnType<ReturnType<typeof rootReducer>>
