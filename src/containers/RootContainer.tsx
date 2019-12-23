@@ -14,6 +14,8 @@ import RootLayout from '../components/RootLayout';
 import ThemeProviderContainer from './ThemeProviderContainer';
 import StoreProviderContainer from './StoreProviderContainer';
 
+import '../styles/normalize.css';
+
 const Root: React.FC = () => {
   return (
     <StoreProviderContainer>
