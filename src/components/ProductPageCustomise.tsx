@@ -8,6 +8,7 @@ import PageSection from './PageSection';
 import SectionHeader from './SectionHeader';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
+import { useContentCopy } from '../hooks';
 
 const ProductDescription = styled.div`
   border: 1px solid ${({ theme }) => theme.color.grey};
@@ -71,7 +72,7 @@ const DeviceDescription = styled.div`
 const ProductPageCustomise: React.FC = () => {
   return (
     <PageSection>
-      <SectionHeader>Customise your device</SectionHeader>
+      <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
       <Card>
         <DeviceImage>
           <img width="100%" alt="phone" src={phone} />
