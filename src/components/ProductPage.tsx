@@ -6,6 +6,7 @@ import ProductPageSummary from './ProductPageSummary';
 import ProductPageConfigure from './ProductPageConfigure';
 import ProductPageCustomise from './ProductPageCustomise';
 import PageSection from './PageSection';
+import { useContentCopy } from '../hooks';
 
 const OrderButton = styled(Button)`
   margin-bottom: ${({ theme }) => theme.spacing(3)};
@@ -20,11 +21,11 @@ const ProductPage: React.FC = () => {
       <PageSection>
         <OrderButton
           variant="primary">
-          I'm ready to order!
+          {useContentCopy('order.readyToOrder')}
         </OrderButton>
         <Button
           variant="secondary">
-          I'm ready to renew my contract!
+          {useContentCopy('order.renewContract')}
         </Button>
       </PageSection>
     </>
