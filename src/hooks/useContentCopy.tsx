@@ -5,7 +5,7 @@ interface ContentCopy {
 }
 
 const contentCopy: ContentCopy = Object.freeze({
-  'common.errorMissing': "Something should've been here, but it isn't.",
+  'common.errorMissing': 'Something should\'ve been here, but it isn\'t.',
   'common.mobile': 'Mobile',
   'common.royal': 'Royal',
   'common.royalMobile': 'RoyalMobile',
