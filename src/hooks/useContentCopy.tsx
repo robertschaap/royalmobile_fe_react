@@ -27,6 +27,7 @@ const contentCopy: ContentCopy = Object.freeze({
 
   'product.configurePlan': 'Configure your plan',
   'product.customiseDevice': 'Customise your device',
+  'product.summingUp': 'Summing it  all up',
 
   'usp.freeShipping': 'Free Shipping on All Orders',
   'usp.noConnectionFeeAcquisition': 'No Connection Fee For New Customers',

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
+import { useContentCopy } from '../hooks';
 
 import OrderSummaryText from './OrderSummaryText';
 import PageSection from './PageSection';
@@ -36,7 +37,7 @@ const SubTotal = styled.span`
 const ProductPageSummary: React.FC = () => {
   return (
     <PageSection>
-      <SectionHeader>Summing it all up</SectionHeader>
+      <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
       <OrderSummaryText />
       <Card marginBottom={2}>
         10gb data
