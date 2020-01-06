@@ -5,11 +5,12 @@ import DurationListing from './DurationListing';
 import SubscriptionListing from './SubscriptionListing';
 import PaymentSelector from './PaymentSelector';
 import PageSection from './PageSection';
+import { useContentCopy } from '../hooks';
 
 const ProductPageConfigure: React.FC = () => {
   return (
     <PageSection>
-      <SectionHeader>Configure your plan</SectionHeader>
+      <SectionHeader>{useContentCopy('product.configurePlan')}</SectionHeader>
       <DurationListing />
       <SubscriptionListing />
       <PaymentSelector />

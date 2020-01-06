@@ -25,6 +25,7 @@ const contentCopy: ContentCopy = Object.freeze({
   'order.readyToOrder': 'I\'m ready to order!',
   'order.renewContract': 'I\'m ready to renew my contract!',
 
+  'product.configurePlan': 'Configure your plan',
   'product.customiseDevice': 'Customise your device',
 
   'usp.freeShipping': 'Free Shipping on All Orders',
