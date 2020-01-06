@@ -62,7 +62,9 @@ const Toggle: React.FC<ToggleProps> = (props) => {
 
   return (
     <ToggleBase>
-      <ToggleInput checked={isActive} />
+      <ToggleInput
+        data-testid="toggle-input"
+        checked={isActive} />
       <ToggleSlider />
     </ToggleBase>
   );
