@@ -1,5 +1,5 @@
 export interface ContentCopy {
-  [key: string]: string;
+  readonly [key: string]: string;
 }
 
 export const contentCopy: ContentCopy = Object.freeze({
