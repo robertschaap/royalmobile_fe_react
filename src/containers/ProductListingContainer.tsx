@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectProducts, fetchProducts } from '../ducks/products';
 
 import Button from '../components/Button';
+import ContentCopy from '../components/ContentCopy';
 import ErrorMessage from '../components/ErrorMessage';
 import Loader from '../components/Loader';
 import PageSection from '../components/PageSection';
@@ -37,7 +38,7 @@ const ProductListingContainer: React.FC = () => {
         variant="secondary"
         disabled={productsState.isFetching}
         onClick={handleLoadMoreClick}>
-        Load More
+        <ContentCopy messageId="common.loadMore" />
       </Button>
     </PageSection>
   );
