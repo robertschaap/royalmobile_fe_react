@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
+import { GridBase, GridItem } from './Grid';
 import Toggle from './Toggle';
 
 const ToggleWrapper = styled.div`
@@ -81,11 +82,15 @@ const PaymentSelector: React.FC = () => {
         <ToggleLabel>Yes!</ToggleLabel>
       </ToggleWrapper>
 
-      <PaymentBase>
-        <PaymentAdjustmentAmount>50,-</PaymentAdjustmentAmount>
-        <PaymentAdjustmentDescription>per month, your new up front is</PaymentAdjustmentDescription>
-        <AdjustedPaymentAmount>50,-</AdjustedPaymentAmount>
-      </PaymentBase>
+      <GridBase>
+        <GridItem lg={2}>
+          <PaymentBase>
+            <PaymentAdjustmentAmount>50,-</PaymentAdjustmentAmount>
+            <PaymentAdjustmentDescription>per month, your new up front is</PaymentAdjustmentDescription>
+            <AdjustedPaymentAmount>50,-</AdjustedPaymentAmount>
+          </PaymentBase>
+        </GridItem>
+      </GridBase>
     </>
   );
 };
