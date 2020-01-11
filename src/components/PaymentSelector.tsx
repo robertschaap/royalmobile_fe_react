@@ -57,7 +57,6 @@ const PaymentAdjustmentAmount = styled.div`
 
 const PaymentAdjustmentDescription = styled.div`
   flex: auto;
-  font-size: 12px;
   margin: 0 ${({ theme }) => theme.spacing(2)};
 
   ${media_breakpoint_up.sm} {
@@ -83,7 +82,7 @@ const PaymentSelector: React.FC = () => {
 
       <PaymentBase>
         <PaymentAdjustmentAmount>50,-</PaymentAdjustmentAmount>
-        <PaymentAdjustmentDescription>per month, your new up front amount is</PaymentAdjustmentDescription>
+        <PaymentAdjustmentDescription>per month, your new up front is</PaymentAdjustmentDescription>
         <AdjustedPaymentAmount>50,-</AdjustedPaymentAmount>
       </PaymentBase>
     </>
