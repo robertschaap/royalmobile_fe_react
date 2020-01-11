@@ -26,6 +26,8 @@ export const contentCopy: ContentCopy = Object.freeze({
 
   'product.configurePlan': 'Configure your plan',
   'product.customiseDevice': 'Customise your device',
+  'product.monthlyPayment': 'Your monthly payment',
+  'product.oneTimePayment': 'Your one-time payment',
   'product.summingUp': 'Summing it  all up',
 
   'usp.freeShipping': 'Free Shipping on All Orders',

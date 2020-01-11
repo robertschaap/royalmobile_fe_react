@@ -70,7 +70,7 @@ const ProductPageSummary: React.FC = () => {
         </SummaryList>
       </Card>
       <SubTotalCard marginBottom={4}>
-        Your monthly payment
+        {useContentCopy('product.monthlyPayment')}
         <SubTotal>19,00</SubTotal>
       </SubTotalCard>
       <Card marginBottom={2}>
@@ -82,7 +82,7 @@ const ProductPageSummary: React.FC = () => {
         </SummaryList>
       </Card>
       <SubTotalCard>
-        Your one-time payment
+        {useContentCopy('product.oneTimePayment')}
         <SubTotal>265,00</SubTotal>
       </SubTotalCard>
     </PageSection>
