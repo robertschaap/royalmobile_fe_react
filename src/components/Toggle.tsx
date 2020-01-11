@@ -6,6 +6,7 @@ const ToggleBase = styled.label`
   display: inline-block;
   width: 64px;
   height: 34px;
+  flex: none;
 `;
 
 const ToggleSlider = styled.span`
