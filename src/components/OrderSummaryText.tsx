@@ -28,12 +28,8 @@ const OrderSummaryText: React.FC = () => {
         Your total one-time payment is {oneTimeCost}.
       </p>
       <p>
-        No funny business.
-      </p>
-      <p>
-        No sudden price hikes after a few months.
-      </p>
-      <p>
+        No funny business.<br />
+        No sudden price hikes after a few months.<br />
         That’s it.
       </p>
     </OrderSummaryTextBase>
