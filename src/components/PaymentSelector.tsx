@@ -58,6 +58,7 @@ const PaymentAdjustmentAmount = styled.div`
 const PaymentAdjustmentDescription = styled.div`
   flex: auto;
   margin: 0 ${({ theme }) => theme.spacing(2)};
+  padding: ${({ theme }) => theme.spacing(1)} 0;
 
   ${media_breakpoint_up.sm} {
     font-size: 16px;
