@@ -6,19 +6,26 @@ const OrderSummaryTextBase = styled.div`
 `;
 
 const OrderSummaryText: React.FC = () => {
+  const device = 'iPhone X 16gb Lime';
+  const plan = '10gb data bundle';
+  const monthlyAmountGross = '20,00';
+  const monthlyAmountNet = '19,00';
+  const monthlyDiscount = '1,00';
+  const oneTimeCost = '265,00';
+
   return (
     <OrderSummaryTextBase>
       <p>
-        This is the summary of your order. You’re ordering the iPhone X 16gb Lime with our 10gb data bundle for 20,00 per month.
+        This is the summary of your order. You’re ordering the {device} with our {plan} for {monthlyAmountGross} per month.
       </p>
       <p>
-        On top of this you get a 1,00 discount so your total monthly payment is 19,00.
+        On top of this you get a {monthlyDiscount} discount so your total monthly payment is {monthlyAmountNet}.
       </p>
       <p>
-        Your one-time up front cost is 265,00 for the phone. Youv’e been discounted for the connection fee. You’ve also been discounted for the shipping fee.
+        Your one-time up front cost is {oneTimeCost} for the phone. Youv’e been discounted for the connection fee. You’ve also been discounted for the shipping fee.
       </p>
       <p>
-        Your total one-time payment is 265,00.
+        Your total one-time payment is {oneTimeCost}.
       </p>
       <p>
         No funny business.
