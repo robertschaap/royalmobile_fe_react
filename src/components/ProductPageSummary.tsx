@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 import { useContentCopy } from '../hooks';
 
@@ -34,24 +34,56 @@ const SubTotal = styled.span`
   }
 `;
 
+const SummaryList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+`;
+
+interface SummaryListItemProps {
+  isDiscount?: boolean;
+}
+
+const SummaryListItem = styled.li<SummaryListItemProps>`
+  display: flex;
+  justify-content: space-between;
+
+  ${({ isDiscount, theme }) => (isDiscount
+    ? css` color: ${theme.color.primary};`
+    : css``
+  )}
+`;
+
 const ProductPageSummary: React.FC = () => {
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
       <OrderSummaryText />
       <Card marginBottom={2}>
-        10gb data
+        <SummaryList>
+          <SummaryListItem>10gb data<span>20,00</span></SummaryListItem>
+          <SummaryListItem>unlimited calls</SummaryListItem>
+          <SummaryListItem>unlimited texts</SummaryListItem>
+          <SummaryListItem>unlimited roaming</SummaryListItem>
+          <SummaryListItem>iPhone X 16gb Lime<span>0,00</span></SummaryListItem>
+          <SummaryListItem isDiscount>Discounts<span>-1,00</span></SummaryListItem>
+        </SummaryList>
       </Card>
       <SubTotalCard marginBottom={4}>
         Your monthly payment
-        <SubTotal>40,00</SubTotal>
+        <SubTotal>19,00</SubTotal>
       </SubTotalCard>
       <Card marginBottom={2}>
-        10gb data
+        <SummaryList>
+          <SummaryListItem>iPhone X 16gb Lime<span>265,00</span></SummaryListItem>
+          <SummaryListItem>Connection Fee<span>10,00</span></SummaryListItem>
+          <SummaryListItem>Shipping<span>7,50</span></SummaryListItem>
+          <SummaryListItem isDiscount>Discounts<span>-17,50</span></SummaryListItem>
+        </SummaryList>
       </Card>
       <SubTotalCard>
         Your one-time payment
-        <SubTotal>40,00</SubTotal>
+        <SubTotal>265,00</SubTotal>
       </SubTotalCard>
     </PageSection>
   );
