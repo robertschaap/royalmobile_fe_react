@@ -60,10 +60,16 @@ const ProductPageSummary: React.FC = () => {
     <PageSection>
       <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
       <GridBase>
-        <GridItem md={2} lg={2}>
+        <GridItem
+          md={2}
+          lg={2}
+          mdOrder={1}
+          lgOrder={1}>
           <OrderSummaryText />
         </GridItem>
-        <GridItem md={2} lg={2}>
+        <GridItem
+          md={2}
+          lg={2}>
           <Card marginBottom={2}>
             <SummaryList>
               <SummaryListItem>10gb data<span>20,00</span></SummaryListItem>
