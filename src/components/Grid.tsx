@@ -47,6 +47,12 @@ interface GridItemProps {
   sm?: number;
   md?: number;
   lg?: number;
+
+  xsOrder?: number;
+  smOrder?: number;
+  mdOrder?: number;
+  lgOrder?: number;
+
   spacing?: number;
 }
 
@@ -57,23 +63,27 @@ interface GridItemProps {
  */
 export const GridItem = styled.div<GridItemProps>`
   flex: 0 1 calc(${({ xs }) => calculatePercentage(xs)}% - ${gutter_column.xs}px);
+  order: ${({ xsOrder }) => xsOrder || 0};
   margin: 0 ${gutter_column.xs / 2}px;
   margin-bottom: ${gutter_row.xs}px;
 
   ${media_breakpoint_up.sm} {
     flex: 0 1 calc(${({ sm }) => calculatePercentage(sm)}% - ${gutter_column.sm}px);
+    order: ${({ smOrder }) => smOrder || 0};
     margin: 0 ${gutter_column.sm / 2}px;
     margin-bottom: ${gutter_row.sm}px;
   }
 
   ${media_breakpoint_up.md} {
     flex: 0 1 calc(${({ md }) => calculatePercentage(md)}% - ${gutter_column.md}px);
+    order: ${({ mdOrder }) => mdOrder || 0};
     margin: 0 ${gutter_column.md / 2}px;
     margin-bottom: ${gutter_row.md}px;
   }
 
   ${media_breakpoint_up.lg} {
     flex: 0 1 calc(${({ lg }) => calculatePercentage(lg)}% - ${gutter_column.lg}px);
+    order: ${({ lgOrder }) => lgOrder || 0};
     margin: 0 ${gutter_column.lg / 2}px;
     margin-bottom: ${gutter_row.lg}px;
   }
