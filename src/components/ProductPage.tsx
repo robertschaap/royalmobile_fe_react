@@ -10,7 +10,7 @@ import { useContentCopy } from '../hooks';
 import { GridBase, GridItem } from './Grid';
 
 const OrderButton = styled(Button)`
-  margin-bottom: ${({ theme }) => theme.spacing(3)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
 const ProductPage: React.FC = () => {
