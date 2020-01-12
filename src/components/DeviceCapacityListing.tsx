@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media_breakpoint_up } from '../styles/theme';
 
 const DeviceCapacityListingBase = styled.div`
   display: flex;
@@ -22,6 +23,11 @@ const DeviceCapacityListingItem = styled.button<DeviceCapacityListingItemProps>`
   ${({ isSelected, theme }) => isSelected && `
     border: 2px solid ${theme.color.primary};
   `}
+
+  ${media_breakpoint_up.md} {
+    flex: none;
+    padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
 const DeviceCapacityListing: React.FC = () => {
