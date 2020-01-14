@@ -6,10 +6,10 @@ import DeviceColorListing from './DeviceColorListing';
 import DeviceRating from './DeviceRating';
 import PageSection from './PageSection';
 import SectionHeader from './SectionHeader';
+import DeviceDiscounts from './DeviceDiscounts';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
 import { useContentCopy } from '../hooks';
-import { media_breakpoint_up } from '../styles/theme';
 
 const ProductDescription = styled.div`
   border: 1px solid ${({ theme }) => theme.color.grey};
@@ -35,32 +35,6 @@ const DeviceName = styled.div`
 
 const DeviceManufacturer = styled.div``;
 
-const DeviceDiscounts = styled.ul`
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-
-  ${media_breakpoint_up.md} {
-    flex-direction: row;
-  }
-`;
-
-const DeviceDiscountItem = styled.li`
-  margin-bottom: 6px;
-
-  > span {
-    background-color: ${({ theme }) => theme.color.primary};
-    color: ${({ theme }) => theme.color.white};
-    display: inline-block;
-    padding: 0 ${({ theme }) => theme.spacing(2)};
-  }
-
-  ${media_breakpoint_up.md} {
-    margin-right: ${({ theme }) => theme.spacing(1)};
-  }
-`;
 
 const DeviceShit = styled.div`
   padding: 0 ${({ theme }) => theme.spacing(4)};
@@ -89,17 +63,7 @@ const ProductPageCustomise: React.FC = () => {
         <div>
           <DeviceName>Device name</DeviceName>
           <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
-          <DeviceDiscounts>
-            <DeviceDiscountItem>
-              <span>Sale</span>
-            </DeviceDiscountItem>
-            <DeviceDiscountItem>
-              <span>Sale</span>
-            </DeviceDiscountItem>
-            <DeviceDiscountItem>
-              <span>Sale</span>
-            </DeviceDiscountItem>
-          </DeviceDiscounts>
+          <DeviceDiscounts />
         </div>
       </Card>
 
