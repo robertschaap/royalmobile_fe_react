@@ -9,6 +9,7 @@ import SectionHeader from './SectionHeader';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
 import { useContentCopy } from '../hooks';
+import { media_breakpoint_up } from '../styles/theme';
 
 const ProductDescription = styled.div`
   border: 1px solid ${({ theme }) => theme.color.grey};
@@ -40,6 +41,10 @@ const DeviceDiscounts = styled.ul`
   padding: 0;
   margin: 0;
   list-style-type: none;
+
+  ${media_breakpoint_up.md} {
+    flex-direction: row;
+  }
 `;
 
 const DeviceDiscountItem = styled.li`
@@ -50,6 +55,10 @@ const DeviceDiscountItem = styled.li`
     color: ${({ theme }) => theme.color.white};
     display: inline-block;
     padding: 0 ${({ theme }) => theme.spacing(2)};
+  }
+
+  ${media_breakpoint_up.md} {
+    margin-right: ${({ theme }) => theme.spacing(1)};
   }
 `;
 
@@ -93,6 +102,7 @@ const ProductPageCustomise: React.FC = () => {
           </DeviceDiscounts>
         </div>
       </Card>
+
       <DeviceShit>
         <DeviceColor>
           <div>Pick your device color</div>
