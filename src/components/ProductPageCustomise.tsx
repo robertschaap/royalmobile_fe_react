@@ -78,6 +78,12 @@ const Flexy = styled.div`
   }
 `;
 
+const DeviceCost = styled.div`
+  font-size: 32px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.color.primary}
+`;
+
 const ProductPageCustomise: React.FC = () => {
   return (
     <PageSection>
@@ -109,6 +115,8 @@ const ProductPageCustomise: React.FC = () => {
             <div>Pick your device capacity</div>
             <DeviceCapacityListing />
           </DeviceCapacity>
+          <div>Phone cost upfront</div>
+          <DeviceCost>265,-</DeviceCost>
         </DeviceShit>
 
         <ProductDescription>
