@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 import DeviceCapacityListing from './DeviceCapacityListing';
 import DeviceColorListing from './DeviceColorListing';
+import DeviceDiscounts from './DeviceDiscounts';
 import DeviceRating from './DeviceRating';
+import Hidden from './Hidden';
 import PageSection from './PageSection';
 import SectionHeader from './SectionHeader';
-import DeviceDiscounts from './DeviceDiscounts';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
 import { useContentCopy } from '../hooks';
@@ -60,14 +61,19 @@ const ProductPageCustomise: React.FC = () => {
         <DeviceImage>
           <img width="100%" alt="phone" src={phone} />
         </DeviceImage>
-        <div>
+        <Hidden sm>
           <DeviceName>Device name</DeviceName>
           <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
           <DeviceDiscounts />
-        </div>
+        </Hidden>
       </Card>
 
       <DeviceShit>
+        <Hidden md lg>
+          <DeviceName>Device name</DeviceName>
+          <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
+          <DeviceDiscounts />
+        </Hidden>
         <DeviceColor>
           <div>Pick your device color</div>
           <DeviceColorListing />
