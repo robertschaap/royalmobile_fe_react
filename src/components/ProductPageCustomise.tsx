@@ -39,6 +39,11 @@ const Card = styled.div`
 const DeviceImage = styled.div`
   width: 115px;
   margin-right: ${({ theme }) => theme.spacing(4)};
+
+  ${media_breakpoint_up.md} {
+    width: 165px;
+    margin-right: 0;
+  }
 `;
 
 const DeviceName = styled.div`
