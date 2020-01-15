@@ -61,7 +61,7 @@ const ProductPageCustomise: React.FC = () => {
         <DeviceImage>
           <img width="100%" alt="phone" src={phone} />
         </DeviceImage>
-        <Hidden sm>
+        <Hidden md lg>
           <DeviceName>Device name</DeviceName>
           <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
           <DeviceDiscounts />
@@ -69,7 +69,7 @@ const ProductPageCustomise: React.FC = () => {
       </Card>
 
       <DeviceShit>
-        <Hidden md lg>
+        <Hidden sm>
           <DeviceName>Device name</DeviceName>
           <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
           <DeviceDiscounts />
