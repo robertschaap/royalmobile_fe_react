@@ -58,7 +58,7 @@ const DeviceName = styled.div`
 const DeviceManufacturer = styled.div``;
 
 
-const DeviceShit = styled.div`
+const DeviceCustomisationOptions = styled.div`
   padding: 0 ${({ theme }) => theme.spacing(4)};
   flex: 0 0 100%;
 
@@ -116,7 +116,7 @@ const ProductPageCustomise: React.FC = () => {
           </Hidden>
         </Card>
 
-        <DeviceShit>
+        <DeviceCustomisationOptions>
           <Hidden sm>
             <DeviceName>Device name</DeviceName>
             <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
@@ -132,7 +132,7 @@ const ProductPageCustomise: React.FC = () => {
           </DeviceCapacity>
           <div>Phone cost upfront</div>
           <DeviceCost>265,-</DeviceCost>
-        </DeviceShit>
+        </DeviceCustomisationOptions>
 
         <ProductDescription>
           <DeviceRating />
