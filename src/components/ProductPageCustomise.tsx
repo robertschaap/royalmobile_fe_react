@@ -100,6 +100,10 @@ const DeviceCost = styled.div`
 `;
 
 const ProductPageCustomise: React.FC = () => {
+  const deviceName = 'iPhone X 16gb Lime';
+  const deviceManufacturer = 'Apple';
+  const deviceCost = '265,-';
+
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
@@ -110,16 +114,16 @@ const ProductPageCustomise: React.FC = () => {
             <img width="100%" alt="phone" src={phone} />
           </DeviceImage>
           <Hidden md lg>
-            <DeviceName>Device name</DeviceName>
-            <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
+            <DeviceName>{deviceName}</DeviceName>
+            <DeviceManufacturer>{deviceManufacturer}</DeviceManufacturer>
             <DeviceDiscounts />
           </Hidden>
         </Card>
 
         <DeviceCustomisationOptions>
           <Hidden sm>
-            <DeviceName>Device name</DeviceName>
-            <DeviceManufacturer>Device manufacturer</DeviceManufacturer>
+            <DeviceName>{deviceName}</DeviceName>
+            <DeviceManufacturer>{deviceManufacturer}</DeviceManufacturer>
             <DeviceDiscounts />
           </Hidden>
           <DeviceColor>
@@ -131,7 +135,7 @@ const ProductPageCustomise: React.FC = () => {
             <DeviceCapacityListing />
           </DeviceCapacity>
           <div>Phone cost upfront</div>
-          <DeviceCost>265,-</DeviceCost>
+          <DeviceCost>{deviceCost}</DeviceCost>
         </DeviceCustomisationOptions>
 
         <ProductDescription>
