@@ -46,7 +46,7 @@ const DeviceImage = styled.div`
   margin-right: ${({ theme }) => theme.spacing(4)};
 
   ${media_breakpoint_up.md} {
-    width: 165px;
+    width: 200px;
     margin-right: 0;
   }
 `;
