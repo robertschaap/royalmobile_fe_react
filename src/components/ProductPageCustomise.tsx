@@ -63,6 +63,7 @@ const DeviceShit = styled.div`
   flex: 0 0 100%;
 
   ${media_breakpoint_up.md} {
+    padding: ${({ theme }) => theme.spacing(4)};
     flex: auto;
   }
 `;
@@ -73,6 +74,10 @@ const DeviceCapacity = styled.div`
 
 const DeviceColor = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(3)};
+
+  ${media_breakpoint_up.md} {
+    margin-top: ${({ theme }) => theme.spacing(8)};
+  }
 `;
 
 const DeviceDescription = styled.div`
