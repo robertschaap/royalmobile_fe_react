@@ -30,9 +30,14 @@ const Card = styled.div`
   border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
   padding: ${({ theme }) => theme.spacing(4)};
+  margin-bottom: ${({ theme }) => theme.spacing(3)};
 
   ${media_breakpoint_up.md} {
     flex: none;
+  }
+
+  ${media_breakpoint_up.lg} {
+    margin-bottom: 0;
   }
 `;
 
