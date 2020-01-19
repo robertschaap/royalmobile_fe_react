@@ -11,10 +11,6 @@ const subscriptions = [
   { id: 4 },
 ];
 
-const SubscriptionListingBase = styled(GridBase)`
-  margin-bottom: ${({ theme }) => theme.spacing(2)} !important;
-`;
-
 interface SubscriptionListingItemProps {
   isSelected: boolean;
 }
@@ -69,7 +65,7 @@ const BenefitsMedium = styled.ul`
 
 const SubscriptionListing: React.FC = () => {
   return (
-    <SubscriptionListingBase>
+    <GridBase>
       {subscriptions.map((subscription, index) => (
         <GridItem
           key={index}
@@ -93,7 +89,7 @@ const SubscriptionListing: React.FC = () => {
           </SubscriptionListingItem>
         </GridItem>
       ))}
-    </SubscriptionListingBase>
+    </GridBase>
   );
 };
 
