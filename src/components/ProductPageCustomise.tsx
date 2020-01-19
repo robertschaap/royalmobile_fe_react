@@ -82,6 +82,10 @@ const DeviceColor = styled.div`
 
 const DeviceDescription = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(2)};
+
+  ${media_breakpoint_up.md} {
+    margin-bottom: ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
 const Flexy = styled.div`
