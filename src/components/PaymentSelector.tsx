@@ -11,6 +11,7 @@ const ToggleWrapper = styled.div`
   align-items: center;
   padding: 0 ${({ theme }) => theme.spacing(4)};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
+  margin-top: 16px;
 
   ${media_breakpoint_up.md} {
     flex-wrap: unset;
