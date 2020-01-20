@@ -52,8 +52,6 @@ interface GridItemProps {
   smOrder?: number;
   mdOrder?: number;
   lgOrder?: number;
-
-  spacing?: number;
 }
 
 /**
