@@ -6,7 +6,7 @@ import SectionHeader from './SectionHeader';
 import { GridBase, GridItem } from './Grid';
 
 const ContactInfo = styled(GridItem)`
-  padContactInfo-left: 16px;
+  padding-left: ${({ theme }) => theme.spacing(4)};
 `;
 
 const ContactPage = () => {
