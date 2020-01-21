@@ -5,6 +5,7 @@ import { GridBase, GridItem } from './Grid';
 import IconFacebook from './IconFacebook';
 import IconLinkedIn from './IconLinkedIn';
 import IconTwitter from './IconTwitter';
+import ExternalLink from './ExternalLink';
 import PageSection from './PageSection';
 import SectionHeader from './SectionHeader';
 
@@ -19,7 +20,7 @@ const SocialIcons = styled.ul`
   list-style-type: none;
 `;
 
-const SocialIcon = styled.li`
+const SocialIcon = styled(ExternalLink)`
   width: 32px;
   height: 32px;
   padding: ${({ theme }) => theme.spacing(2)};
@@ -41,15 +42,9 @@ const ContactPage = () => {
         <ContactInfo md={2} lg={2}>
           <p>We can’t have you contacting us directly because phone lines cost money to operate, but feel free to drop by in one of our stores or reach out to us on social media.</p>
           <SocialIcons>
-            <SocialIcon>
-              <IconTwitter />
-            </SocialIcon>
-            <SocialIcon>
-              <IconFacebook />
-            </SocialIcon>
-            <SocialIcon>
-              <IconLinkedIn />
-            </SocialIcon>
+            <li><SocialIcon href="https://www.twitter.com/royalmobile"><IconTwitter /></SocialIcon></li>
+            <li><SocialIcon href="https://www.facebook.com/royalmobile"><IconFacebook /></SocialIcon></li>
+            <li><SocialIcon href="https://www.linkedin.com/in/royalmobile"><IconLinkedIn /></SocialIcon></li>
           </SocialIcons>
         </ContactInfo>
       </GridBase>
