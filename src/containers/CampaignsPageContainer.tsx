@@ -1,8 +1,10 @@
 import React from 'react';
 
+import CampaignsPage from '../components/CampaignsPage';
+
 const CampaignsPageContainer: React.FC = () => {
   return (
-    <div>CampaignsPageContainer</div>
+    <CampaignsPage />
   );
 };
 
