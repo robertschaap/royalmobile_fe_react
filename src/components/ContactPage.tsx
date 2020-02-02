@@ -34,7 +34,7 @@ const SocialIcon = styled(ExternalLink)`
   }
 `;
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   return (
     <PageSection>
       <SectionHeader>Contact Us</SectionHeader>
