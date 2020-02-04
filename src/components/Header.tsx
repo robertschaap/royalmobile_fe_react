@@ -35,6 +35,10 @@ const HeaderTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${media_breakpoint_up.md} {
+    padding: 0 ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
 const Header: React.FC = () => {
