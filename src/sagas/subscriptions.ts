@@ -3,7 +3,7 @@ import api from '../utils/api';
 import routes from '../constants/routes';
 
 import {
-  FETCH_SUBSCRIPTIONS,
+  Actions,
   fetchSubscriptionsSuccess,
   fetchSubscriptionsError,
 } from '../ducks/subscriptions';
@@ -17,5 +17,5 @@ function* fetchSubscriptionsSaga() {
 }
 
 export default [
-  takeEvery(FETCH_SUBSCRIPTIONS, fetchSubscriptionsSaga),
+  takeEvery(Actions.FETCH_SUBSCRIPTIONS, fetchSubscriptionsSaga),
 ];

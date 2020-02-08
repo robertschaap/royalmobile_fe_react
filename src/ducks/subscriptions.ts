@@ -1,35 +1,37 @@
 import { StoreState } from '../reducers/index';
 import { Subscription } from '../types/subscriptions';
 
-export const FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS';
-export const FETCH_SUBSCRIPTIONS_SUCCESS = 'FETCH_SUBSCRIPTIONS_SUCCESS';
-export const FETCH_SUBSCRIPTIONS_ERROR = 'FETCH_SUBSCRIPTIONS_ERROR';
+export enum Actions {
+  FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS',
+  FETCH_SUBSCRIPTIONS_SUCCESS = 'FETCH_SUBSCRIPTIONS_SUCCESS',
+  FETCH_SUBSCRIPTIONS_ERROR = 'FETCH_SUBSCRIPTIONS_ERROR',
+}
 
 interface FetchSubscriptionsAction {
-  type: typeof FETCH_SUBSCRIPTIONS;
+  type: typeof Actions.FETCH_SUBSCRIPTIONS;
 }
 
 export const fetchSubscriptions = (): SubscriptionsActionTypes => ({
-  type: FETCH_SUBSCRIPTIONS,
+  type: Actions.FETCH_SUBSCRIPTIONS,
 });
 
 interface FetchSubscriptionsSuccessAction {
-  type: typeof FETCH_SUBSCRIPTIONS_SUCCESS;
+  type: typeof Actions.FETCH_SUBSCRIPTIONS_SUCCESS;
   payload: Subscription[]
 }
 
 export const fetchSubscriptionsSuccess = (payload: Subscription[]): SubscriptionsActionTypes => ({
-  type: FETCH_SUBSCRIPTIONS_SUCCESS,
+  type: Actions.FETCH_SUBSCRIPTIONS_SUCCESS,
   payload,
 });
 
 interface FetchSubscriptionsErrorAction {
-  type: typeof FETCH_SUBSCRIPTIONS_ERROR;
+  type: typeof Actions.FETCH_SUBSCRIPTIONS_ERROR;
   error: string;
 }
 
 export const fetchSubscriptionsError = (error: string): SubscriptionsActionTypes => ({
-  type: FETCH_SUBSCRIPTIONS_ERROR,
+  type: Actions.FETCH_SUBSCRIPTIONS_ERROR,
   error,
 });
 
