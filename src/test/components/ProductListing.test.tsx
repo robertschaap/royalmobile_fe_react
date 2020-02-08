@@ -2,7 +2,7 @@ import React from 'react';
 import ProductListing from '../../components/ProductListing';
 
 import { renderWithProviders } from '../helpers';
-import { productsStub } from '../stubs/products';
+import { products } from '../../stubs/products';
 
 describe('<ProductListing />', () => {
   it('should not render if no products are passed', () => {
@@ -15,7 +15,7 @@ describe('<ProductListing />', () => {
 
   it('should render products if passed', () => {
     const { getByTestId } = renderWithProviders(
-      <ProductListing products={productsStub}/>,
+      <ProductListing products={products}/>,
     );
 
     expect(getByTestId('product-listing').children.length).toBeGreaterThan(0);
