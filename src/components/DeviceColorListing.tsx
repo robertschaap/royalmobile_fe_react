@@ -38,7 +38,7 @@ const DeviceColorListing: React.FC<DeviceColorListingProps> = (props) => {
   const { colors = deviceColors } = props;
 
   return (
-    <DeviceColorListingBase>
+    <DeviceColorListingBase data-testid="device-color-listing">
       {colors.map((e, i) => (
         <DeviceColorListingItem
           key={i}
