@@ -3,7 +3,7 @@ import api from '../utils/api';
 import routes from '../constants/routes';
 
 import {
-  FETCH_PRODUCTS,
+  Actions,
   fetchProductsSuccess,
   fetchProductsError,
 } from '../ducks/products';
@@ -17,5 +17,5 @@ function* fetchProductsSaga() {
 }
 
 export default [
-  takeEvery(FETCH_PRODUCTS, fetchProductsSaga),
+  takeEvery(Actions.FETCH_PRODUCTS, fetchProductsSaga),
 ];
