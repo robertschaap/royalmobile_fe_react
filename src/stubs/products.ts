@@ -19,5 +19,10 @@ const product: Product = {
 };
 
 export const products: Product[] = [
-  product,
+  { ...product, id: 1 },
+  { ...product, id: 2 },
+  { ...product, id: 3 },
+  { ...product, id: 4 },
+  { ...product, id: 5 },
+  { ...product, id: 6 },
 ];
