@@ -15,5 +15,8 @@ const subscription: Subscription = {
 };
 
 export const subscriptions: Subscription[] = [
-  subscription,
-]
+  { ...subscription, id: 1 },
+  { ...subscription, id: 2 },
+  { ...subscription, id: 3 },
+  { ...subscription, id: 4 },
+];
