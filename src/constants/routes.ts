@@ -14,7 +14,7 @@ const API = '/api';
 
 const apiRoutes = {
   API_ROOT: `${API}/`,
-  API_GET_PRODUCTS: `${API}/`,
+  API_GET_PRODUCTS: `${API}/products`,
 };
 
 export default {
