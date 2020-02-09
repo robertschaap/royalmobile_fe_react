@@ -38,6 +38,7 @@
   },
   "scripts": {
     "start": "SASS_PATH=src react-scripts start",
+    "start:stub": "REACT_APP_USESTUBS=true npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
