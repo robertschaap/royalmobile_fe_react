@@ -1,12 +1,14 @@
 import { Product } from '../types/products';
 
+const defaultModelId = 'apple-iphone-x';
+
 interface CreateProduct {
   id: number;
   modelId?: string;
 }
 
 const createProduct = (props: CreateProduct): Product => {
-  const { id, modelId = 'apple-iphone-x' } = props;
+  const { id, modelId = defaultModelId } = props;
 
   return {
     id: id,
