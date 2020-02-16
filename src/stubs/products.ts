@@ -9,7 +9,7 @@ interface CreateProductVariant {
   color: string;
 }
 
-const createProductVariant = (props: CreateProductVariant) => {
+const createProductVariant = (props: CreateProductVariant): ProductVariant => {
   const { id, modelId = defaultModelId, capacity, color } = props;
 
   return {
