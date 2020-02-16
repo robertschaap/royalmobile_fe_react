@@ -6,5 +6,5 @@ export interface Subscription {
   data: string;
   benefits_long: string[],
   benefits_short: string;
-  regular_price: '20'
+  regular_price: string;
 }
