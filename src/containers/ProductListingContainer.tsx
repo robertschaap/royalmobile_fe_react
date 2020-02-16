@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectProducts, fetchProducts } from '../ducks/products';
 
@@ -17,9 +17,9 @@ const ProductListingContainer: React.FC = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const handleLoadMoreClick = () => {
+  const handleLoadMoreClick = useCallback(() => {
     dispatch(fetchProducts());
-  };
+  }, [dispatch]);
 
   if (productsState.hasError) {
     return (
