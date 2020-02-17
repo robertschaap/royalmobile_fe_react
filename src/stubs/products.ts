@@ -6,16 +6,18 @@ interface CreateProductVariant {
   id: number
   modelId?: string;
   capacity: string;
-  color: string;
+  colorId: string;
+  colorHex: string;
 }
 
 const createProductVariant = (props: CreateProductVariant): ProductVariant => {
-  const { id, modelId = defaultModelId, capacity, color } = props;
+  const { id, modelId = defaultModelId, capacity, colorId, colorHex } = props;
 
   return {
     id: id,
-    variantId: `${modelId}-${capacity}-${color}`,
-    color: color,
+    variantId: `${modelId}-${capacity}-${colorId}`,
+    color: colorId,
+    colorHex: colorHex,
     capacity: capacity,
     is_in_stock: true,
     is_preorder: true,
@@ -43,7 +45,8 @@ const createProduct = (props: CreateProduct): Product => {
       createProductVariant({
         id: 1,
         capacity: '16gb',
-        color: 'hotpink',
+        colorId: 'pink',
+        colorHex: 'hotpink'
       }),
     ],
   };
