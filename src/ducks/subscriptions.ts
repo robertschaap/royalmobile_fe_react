@@ -40,5 +40,5 @@ export type SubscriptionsActionTypes =
   | FetchSubscriptionsSuccessAction
   | FetchSubscriptionsErrorAction;
 
-export const selectSubscriptions = (state: StoreState) => state.products;
-export const selectProductsCollection = (state: StoreState) => state.products.collection;
+export const selectSubscriptions = (state: StoreState) => state.subscriptions;
+export const selectProductsCollection = (state: StoreState) => state.subscriptions.collection;
