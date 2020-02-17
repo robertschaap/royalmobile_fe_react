@@ -11,7 +11,7 @@ import {
 
 function* fetchSubscriptionsSaga(): SagaIterator {
   yield call(api.get, {
-    url: routes.API_ROOT,
+    url: routes.API_GET_SUBSCRIPTIONS,
     onSuccessAction: fetchSubscriptionsSuccess,
     onErrorAction: fetchSubscriptionsError,
   });
