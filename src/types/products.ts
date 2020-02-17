@@ -3,6 +3,7 @@ export interface ProductVariant {
   id: number;
   variantId: string;
   color: string;
+  colorHex: string;
   capacity: string;
   is_in_stock: boolean;
   is_preorder: boolean;
