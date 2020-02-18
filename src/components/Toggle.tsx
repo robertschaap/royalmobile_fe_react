@@ -56,16 +56,18 @@ const ToggleInput = styled.input.attrs({
 
 interface ToggleProps {
   isActive: boolean;
+  onChange(): void;
 }
 
 const Toggle: React.FC<ToggleProps> = (props) => {
-  const { isActive } = props;
+  const { isActive, onChange } = props;
 
   return (
     <ToggleBase>
       <ToggleInput
         data-testid="toggle-input"
-        checked={isActive} />
+        checked={isActive}
+        onChange={onChange} />
       <ToggleSlider />
     </ToggleBase>
   );
