@@ -1,13 +1,17 @@
 import React from 'react';
 
+import Banner from '../components/Banner';
+import Benefits from '../components/Benefits';
 import PageTitle from '../components/PageTitle';
-import HomePage from '../components/HomePage';
+import ProductListingContainer from './ProductListingContainer';
 
 const HomePageContainer: React.FC = () => {
   return (
     <>
       <PageTitle page="Home" />
-      <HomePage />
+      <Banner />
+      <ProductListingContainer />
+      <Benefits />
     </>
   );
 };
