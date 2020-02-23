@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from '../store';
 import { selectProducts, fetchProducts } from '../ducks/products';
 
 import Button from '../components/Button';

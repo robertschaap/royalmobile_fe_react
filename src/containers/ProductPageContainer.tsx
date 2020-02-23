@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from '../store';
 import { selectProducts, fetchProducts } from '../ducks/products';
 import { selectSubscriptions, fetchSubscriptions } from '../ducks/subscriptions';
 
