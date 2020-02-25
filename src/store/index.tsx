@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-/**
- * TODO: pass action creators to connected components from here so they don't need to know about ducks
- */
+
+export * from '../ducks/product';
+export * from '../ducks/products';
+export * from '../ducks/subscriptions';
+
 export {
   useDispatch,
   useSelector,
