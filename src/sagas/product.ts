@@ -4,7 +4,7 @@ import api from '../utils/api';
 import routes from '../constants/routes';
 
 import {
-  Actions,
+  ProductActions,
   fetchProductSuccess,
   fetchProductError,
 } from '../ducks/product';
@@ -18,5 +18,5 @@ function* fetchProductsSaga(): SagaIterator {
 }
 
 export default [
-  takeEvery(Actions.FETCH_PRODUCT, fetchProductsSaga),
+  takeEvery(ProductActions.FETCH_PRODUCT, fetchProductsSaga),
 ];
