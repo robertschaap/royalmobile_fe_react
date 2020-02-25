@@ -1,37 +1,37 @@
 import { StoreState } from '../reducers';
 import { Subscription } from '../types/subscriptions';
 
-export enum Actions {
+export enum SubscriptionsActions {
   FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS',
   FETCH_SUBSCRIPTIONS_SUCCESS = 'FETCH_SUBSCRIPTIONS_SUCCESS',
   FETCH_SUBSCRIPTIONS_ERROR = 'FETCH_SUBSCRIPTIONS_ERROR',
 }
 
 interface FetchSubscriptionsAction {
-  type: typeof Actions.FETCH_SUBSCRIPTIONS;
+  type: typeof SubscriptionsActions.FETCH_SUBSCRIPTIONS;
 }
 
 export const fetchSubscriptions = (): SubscriptionsActionTypes => ({
-  type: Actions.FETCH_SUBSCRIPTIONS,
+  type: SubscriptionsActions.FETCH_SUBSCRIPTIONS,
 });
 
 interface FetchSubscriptionsSuccessAction {
-  type: typeof Actions.FETCH_SUBSCRIPTIONS_SUCCESS;
+  type: typeof SubscriptionsActions.FETCH_SUBSCRIPTIONS_SUCCESS;
   payload: Subscription[]
 }
 
 export const fetchSubscriptionsSuccess = (payload: Subscription[]): SubscriptionsActionTypes => ({
-  type: Actions.FETCH_SUBSCRIPTIONS_SUCCESS,
+  type: SubscriptionsActions.FETCH_SUBSCRIPTIONS_SUCCESS,
   payload,
 });
 
 interface FetchSubscriptionsErrorAction {
-  type: typeof Actions.FETCH_SUBSCRIPTIONS_ERROR;
+  type: typeof SubscriptionsActions.FETCH_SUBSCRIPTIONS_ERROR;
   error: string;
 }
 
 export const fetchSubscriptionsError = (error: string): SubscriptionsActionTypes => ({
-  type: Actions.FETCH_SUBSCRIPTIONS_ERROR,
+  type: SubscriptionsActions.FETCH_SUBSCRIPTIONS_ERROR,
   error,
 });
 

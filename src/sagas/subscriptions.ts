@@ -4,7 +4,7 @@ import api from '../utils/api';
 import routes from '../constants/routes';
 
 import {
-  Actions,
+  SubscriptionsActions,
   fetchSubscriptionsSuccess,
   fetchSubscriptionsError,
 } from '../ducks/subscriptions';
@@ -18,5 +18,5 @@ function* fetchSubscriptionsSaga(): SagaIterator {
 }
 
 export default [
-  takeEvery(Actions.FETCH_SUBSCRIPTIONS, fetchSubscriptionsSaga),
+  takeEvery(SubscriptionsActions.FETCH_SUBSCRIPTIONS, fetchSubscriptionsSaga),
 ];

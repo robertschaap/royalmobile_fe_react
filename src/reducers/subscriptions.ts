@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 import {
-  Actions,
+  SubscriptionsActions,
   SubscriptionsActionTypes,
 } from '../ducks/subscriptions';
 
@@ -22,15 +22,15 @@ export const initialSubscriptionsState: SubscriptionsState = {
 export const subscriptionsReducer = (state: SubscriptionsState = initialSubscriptionsState, action: SubscriptionsActionTypes) => {
   return produce<SubscriptionsState>(state, (newState) => {
     switch (action.type) {
-      case Actions.FETCH_SUBSCRIPTIONS:
+      case SubscriptionsActions.FETCH_SUBSCRIPTIONS:
         newState.isFetching = true;
         newState.hasError = false;
         break;
-      case Actions.FETCH_SUBSCRIPTIONS_SUCCESS:
+      case SubscriptionsActions.FETCH_SUBSCRIPTIONS_SUCCESS:
         newState.isFetching = false;
         newState.collection = action.payload;
         break;
-      case Actions.FETCH_SUBSCRIPTIONS_ERROR:
+      case SubscriptionsActions.FETCH_SUBSCRIPTIONS_ERROR:
         newState.isFetching = false;
         newState.hasError = true;
         break;
