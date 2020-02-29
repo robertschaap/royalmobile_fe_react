@@ -3,9 +3,9 @@ import produce from 'immer';
 import {
   ProductsActions,
   ProductsActionTypes,
-} from '../store/ducks/products';
+} from '../ducks/products';
 
-import { Product } from '../types/products';
+import { Product } from '../../types/products';
 
 interface ProductsState {
   isFetching: boolean;

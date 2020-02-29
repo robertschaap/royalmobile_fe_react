@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
 import theme from '../../styles/theme';
-import { initialState } from '../../reducers';
+import { initialState } from '../../store/reducers';
 
 export const renderWithTheme = (Component: React.ReactElement) => {
   return render(

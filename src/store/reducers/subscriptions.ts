@@ -3,9 +3,9 @@ import produce from 'immer';
 import {
   SubscriptionsActions,
   SubscriptionsActionTypes,
-} from '../store/ducks/subscriptions';
+} from '../ducks/subscriptions';
 
-import { Subscription } from '../types/subscriptions';
+import { Subscription } from '../../types/subscriptions';
 
 interface SubscriptionsState {
   isFetching: boolean;

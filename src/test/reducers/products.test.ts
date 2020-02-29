@@ -1,4 +1,4 @@
-import { productsReducer } from '../../reducers/products';
+import { productsReducer } from '../../store/reducers/products';
 
 import {
   fetchProducts,

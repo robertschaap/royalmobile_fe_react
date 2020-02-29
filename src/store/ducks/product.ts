@@ -1,4 +1,4 @@
-import { StoreState } from '../../reducers';
+import { StoreState } from '../reducers';
 import { Product } from '../../types/products';
 
 export enum ProductActions {

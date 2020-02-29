@@ -1,4 +1,4 @@
-import { StoreState } from '../../reducers';
+import { StoreState } from '../reducers';
 import { Subscription } from '../../types/subscriptions';
 
 export enum SubscriptionsActions {
