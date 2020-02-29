@@ -6,7 +6,7 @@ import routes from '../constants/routes';
 import RootLayout from '../components/RootLayout';
 
 import ThemeProviderContainer from './ThemeProviderContainer';
-import StoreProviderContainer from './StoreProviderContainer';
+import { StoreProviderContainer } from '../store';
 
 import '../styles/normalize.css';
 

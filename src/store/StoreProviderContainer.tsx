@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from '@redux-saga/core';
 
-import { rootReducer, initialState } from '../store/reducers';
-import rootSaga from '../store/sagas';
+import { rootReducer, initialState } from './reducers';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
