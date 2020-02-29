@@ -1,6 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { useSelector, useDispatch } from '../store';
-import { selectProducts, fetchProducts } from '../ducks/products';
+import { fetchProducts, selectProducts, useDispatch, useSelector } from '../store';
 
 import Button from '../components/Button';
 import ContentCopy from '../components/ContentCopy';
