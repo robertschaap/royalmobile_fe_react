@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from '../store';
-import { selectProducts, fetchProducts } from '../ducks/products';
-import { selectSubscriptions, fetchSubscriptions } from '../ducks/subscriptions';
+import { fetchProducts, fetchSubscriptions, selectProducts, selectSubscriptions, useDispatch, useSelector } from '../store';
 
 import ErrorMessage from '../components/ErrorMessage';
 import PageTitle from '../components/PageTitle';
