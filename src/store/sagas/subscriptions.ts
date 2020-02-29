@@ -1,13 +1,13 @@
 import { call, takeEvery } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
-import api from '../utils/api';
-import routes from '../constants/routes';
+import api from '../../utils/api';
+import routes from '../../constants/routes';
 
 import {
   SubscriptionsActions,
   fetchSubscriptionsSuccess,
   fetchSubscriptionsError,
-} from '../store/ducks/subscriptions';
+} from '../ducks/subscriptions';
 
 function* fetchSubscriptionsSaga(): SagaIterator {
   yield call(api.get, {
