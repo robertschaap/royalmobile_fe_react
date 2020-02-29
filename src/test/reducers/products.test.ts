@@ -5,7 +5,7 @@ import {
   fetchProductsError,
   fetchProductsSuccess,
   ProductsActionTypes,
-} from '../../ducks/products';
+} from '../../store/ducks/products';
 
 describe('Products Reducer', () => {
   it('should return the initial state', () => {

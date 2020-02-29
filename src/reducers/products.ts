@@ -3,7 +3,7 @@ import produce from 'immer';
 import {
   ProductsActions,
   ProductsActionTypes,
-} from '../ducks/products';
+} from '../store/ducks/products';
 
 import { Product } from '../types/products';
 

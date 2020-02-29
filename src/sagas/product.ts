@@ -7,7 +7,7 @@ import {
   ProductActions,
   fetchProductSuccess,
   fetchProductError,
-} from '../ducks/product';
+} from '../store/ducks/product';
 
 function* fetchProductsSaga(): SagaIterator {
   yield call(api.get, {

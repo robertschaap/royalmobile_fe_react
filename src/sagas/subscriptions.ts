@@ -7,7 +7,7 @@ import {
   SubscriptionsActions,
   fetchSubscriptionsSuccess,
   fetchSubscriptionsError,
-} from '../ducks/subscriptions';
+} from '../store/ducks/subscriptions';
 
 function* fetchSubscriptionsSaga(): SagaIterator {
   yield call(api.get, {

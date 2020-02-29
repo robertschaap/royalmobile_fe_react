@@ -3,7 +3,7 @@ import produce from 'immer';
 import {
   SubscriptionsActions,
   SubscriptionsActionTypes,
-} from '../ducks/subscriptions';
+} from '../store/ducks/subscriptions';
 
 import { Subscription } from '../types/subscriptions';
 
