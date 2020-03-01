@@ -6,11 +6,12 @@ const DeviceColorListingBase = styled.div`
 `;
 
 interface DeviceColorListingItemProps {
+  colorHex: string;
   isSelected: boolean;
 }
 
 const DeviceColorListingItem = styled.button<DeviceColorListingItemProps>`
-  background-color: ${({ color }) => color};
+  background-color: ${({ colorHex }) => colorHex};
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.color.grey};
   margin-right: ${({ theme }) => theme.spacing(2)};
@@ -22,28 +23,29 @@ const DeviceColorListingItem = styled.button<DeviceColorListingItemProps>`
   `}
 `;
 
-const deviceColors = [
-  { color: '#7ec09a' },
-  { color: '#8097c2' },
-  { color: '#bae596' },
-  { color: '#d59a8d' },
-];
-
 interface DeviceColorListingProps {
-  // TODO: make this required and handle 0-length
-  colors?: { color: string }[];
+  // TODO: create type for this
+  colors: {
+    id: string;
+    color: string;
+    colorHex: string;
+  }[];
+  onClickColor(colorId: string): void;
+  selectedColorId: string;
 }
 
 const DeviceColorListing: React.FC<DeviceColorListingProps> = (props) => {
-  const { colors = deviceColors } = props;
+  const { colors, onClickColor, selectedColorId } = props;
 
   return (
     <DeviceColorListingBase data-testid="device-color-listing">
-      {colors.map((e, i) => (
+      {colors.map(({ color, colorHex, id }) => (
         <DeviceColorListingItem
-          key={i}
-          isSelected={i === 0}
-          color={e.color} />
+          key={id}
+          isSelected={id === selectedColorId}
+          onClick={() => onClickColor(id)}
+          colorHex={colorHex}
+          title={color} />
       ))}
     </DeviceColorListingBase>
   );
