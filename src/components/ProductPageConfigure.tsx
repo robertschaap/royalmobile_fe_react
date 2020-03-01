@@ -13,7 +13,15 @@ const ProductPageConfigure: React.FC = () => {
     { id: 'b', duration: '1 year contract' },
   ];
 
+  const subscriptions = [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+  ];
+
   const [selectedDurationId, setSelectedDurationId] = useState(durations[0].id);
+  const [selectedSubscriptionId, setSelectedSubscriptionId] = useState(subscriptions[0].id);
 
   return (
     <PageSection>
@@ -22,7 +30,10 @@ const ProductPageConfigure: React.FC = () => {
         onClickDuration={(id) => setSelectedDurationId(id)}
         durations={durations}
         selectedDurationId={selectedDurationId}/>
-      <SubscriptionListing />
+      <SubscriptionListing
+        onClickSubscription={(id) => setSelectedSubscriptionId(id)}
+        subscriptions={subscriptions}
+        selectedSubscriptionId={selectedSubscriptionId} />
       <PaymentSelector />
     </PageSection>
   );
