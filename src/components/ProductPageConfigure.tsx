@@ -22,6 +22,7 @@ const ProductPageConfigure: React.FC = () => {
 
   const [selectedDurationId, setSelectedDurationId] = useState(durations[0].id);
   const [selectedSubscriptionId, setSelectedSubscriptionId] = useState(subscriptions[0].id);
+  const [isToggleActive, setIsToggleActive] = useState(false);
 
   return (
     <PageSection>
@@ -34,7 +35,9 @@ const ProductPageConfigure: React.FC = () => {
         onClickSubscription={(id) => setSelectedSubscriptionId(id)}
         subscriptions={subscriptions}
         selectedSubscriptionId={selectedSubscriptionId} />
-      <PaymentSelector />
+      <PaymentSelector
+        onChangeToggle={() => setIsToggleActive(!isToggleActive)}
+        isToggleActive={isToggleActive}/>
     </PageSection>
   );
 };
