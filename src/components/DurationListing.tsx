@@ -39,11 +39,29 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
   }
 `;
 
-const DurationListing: React.FC = () => {
+interface DurationListingProps {
+  onClickDuration(durationId: string): void;
+  selectedDurationId: string;
+  // TODO: add type for this
+  durations: {
+    id: string;
+    duration: string;
+  }[];
+}
+
+const DurationListing: React.FC<DurationListingProps> = (props) => {
+  const { onClickDuration, selectedDurationId, durations } = props;
+
   return (
     <DurationListingBase>
-      <DurationListingItem isSelected={true}>2 year contract</DurationListingItem>
-      <DurationListingItem isSelected={false}>1 year contract</DurationListingItem>
+      {durations.map(({ duration, id }) => (
+        <DurationListingItem
+          key={id}
+          onClick={() => onClickDuration(id)}
+          isSelected={id === selectedDurationId}>
+          {duration}
+        </DurationListingItem>
+      ))}
     </DurationListingBase>
   );
 };
