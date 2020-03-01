@@ -115,8 +115,16 @@ const ProductPageCustomise: React.FC = () => {
     { id: 'd', color: 'wraa', colorHex: '#d59a8d' },
   ];
 
+  const capacities = [
+    { id: 'a', capacity: '16gb' },
+    { id: 'b', capacity: '32gb' },
+    { id: 'c', capacity: '64gb' },
+    { id: 'd', capacity: '128gb' },
+  ];
+
   const [selectedColorId, setSelectedColorId] = useState(colors[0].id);
-  
+  const [selectedCapacityId, setSelectedCapacityId] = useState(capacities[0].id);
+
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
@@ -148,7 +156,10 @@ const ProductPageCustomise: React.FC = () => {
           </DeviceColor>
           <DeviceCapacity>
             <div>Pick your device capacity</div>
-            <DeviceCapacityListing />
+            <DeviceCapacityListing
+              capacities={capacities}
+              onClickCapacity={(id) => setSelectedCapacityId(id)}
+              selectedCapacityId={selectedCapacityId}/>
           </DeviceCapacity>
           <div>Phone cost upfront</div>
           <DeviceCost>{deviceCost}</DeviceCost>
