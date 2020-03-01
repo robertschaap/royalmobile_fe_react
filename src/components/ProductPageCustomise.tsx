@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import DeviceCapacityListing from './DeviceCapacityListing';
@@ -108,6 +108,15 @@ const ProductPageCustomise: React.FC = () => {
   const deviceManufacturer = 'Apple';
   const deviceCost = '265,-';
 
+  const colors = [
+    { id: 'a', color: 'wraa', colorHex: '#7ec09a' },
+    { id: 'b', color: 'wraa', colorHex: '#8097c2' },
+    { id: 'c', color: 'wraa', colorHex: '#bae596' },
+    { id: 'd', color: 'wraa', colorHex: '#d59a8d' },
+  ];
+
+  const [selectedColorId, setSelectedColorId] = useState(colors[0].id);
+  
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
@@ -132,7 +141,10 @@ const ProductPageCustomise: React.FC = () => {
           </Hidden>
           <DeviceColor>
             <div>Pick your device color</div>
-            <DeviceColorListing />
+            <DeviceColorListing
+              colors={colors}
+              onClickColor={(id) => setSelectedColorId(id)}
+              selectedColorId={selectedColorId} />
           </DeviceColor>
           <DeviceCapacity>
             <div>Pick your device capacity</div>
