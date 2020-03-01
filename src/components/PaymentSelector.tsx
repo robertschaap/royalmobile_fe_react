@@ -72,14 +72,24 @@ const AdjustedPaymentAmount = styled(PaymentAdjustmentAmount)`
   background-color: unset;
 `;
 
-const PaymentSelector: React.FC = () => {
+// TODO: check if the Toggle should have this logic so the PaymentSelector doesn't need to know about it
+interface PaymentSelectorProps {
+  onChangeToggle(): void
+  isToggleActive: boolean;
+}
+
+const PaymentSelector: React.FC<PaymentSelectorProps> = (props) => {
+  const { onChangeToggle, isToggleActive } = props;
+
   return (
     <>
       <ToggleWrapper>
         <ToggleDescription>
           Your phone is x up front. Do you want to raise your plan's monthly fee a bit so you can spread it out?
           </ToggleDescription>
-        <Toggle isActive />
+        <Toggle
+          isActive={isToggleActive}
+          onChange={onChangeToggle} />
         <ToggleLabel>Yes!</ToggleLabel>
       </ToggleWrapper>
 
