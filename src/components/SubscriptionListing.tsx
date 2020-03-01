@@ -4,14 +4,8 @@ import { media_breakpoint_up } from '../styles/theme';
 
 import { GridBase, GridItem } from './Grid';
 
-const subscriptions = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-];
-
 interface SubscriptionListingItemProps {
+  onClick(subscriptionId: string): void;
   isSelected: boolean;
 }
 
@@ -63,15 +57,26 @@ const BenefitsMedium = styled.ul`
   }
 `;
 
-const SubscriptionListing: React.FC = () => {
+interface SubscriptionListingProps {
+  onClickSubscription(subscriptionId: string): void;
+  selectedSubscriptionId: string;
+  subscriptions: {
+    id: string;
+  }[],
+}
+
+const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
+  const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
+
   return (
     <GridBase>
-      {subscriptions.map((subscription, index) => (
+      {subscriptions.map(({ id }) => (
         <GridItem
-          key={index}
+          key={id}
           lg={2}>
           <SubscriptionListingItem
-            isSelected={index === 0}>
+            onClick={() => onClickSubscription(id)}
+            isSelected={id === selectedSubscriptionId}>
             <div>
               <div>Data</div>
               <Bold>10gb</Bold>
