@@ -30,13 +30,29 @@ const DeviceCapacityListingItem = styled.button<DeviceCapacityListingItemProps>`
   }
 `;
 
-const DeviceCapacityListing: React.FC = () => {
+interface DeviceCapacityListingProps {
+  onClickCapacity(capacityId: string): void;
+  selectedCapacityId: string;
+  // TODO: create type for this
+  capacities: {
+    id: string;
+    capacity: string;
+  }[];
+}
+
+const DeviceCapacityListing: React.FC<DeviceCapacityListingProps> = (props) => {
+  const { onClickCapacity, selectedCapacityId, capacities } = props;
+
   return (
     <DeviceCapacityListingBase>
-      <DeviceCapacityListingItem isSelected={true}>16gb</DeviceCapacityListingItem>
-      <DeviceCapacityListingItem isSelected={false}>32gb</DeviceCapacityListingItem>
-      <DeviceCapacityListingItem isSelected={false}>64gb</DeviceCapacityListingItem>
-      <DeviceCapacityListingItem isSelected={false}>128gb</DeviceCapacityListingItem>
+      {capacities.map(({ id, capacity}) => (
+        <DeviceCapacityListingItem
+          key={id}
+          onClick={() => onClickCapacity(id)}
+          isSelected={id === selectedCapacityId}>
+          {capacity}
+        </DeviceCapacityListingItem>
+      ))}
     </DeviceCapacityListingBase>
   );
 };
