@@ -69,7 +69,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
   const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
 
   return (
-    <GridBase>
+    <GridBase data-testid="subscription-listing">
       {subscriptions.map(({ id }) => (
         <GridItem
           key={id}

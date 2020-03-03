@@ -5,13 +5,14 @@ import { renderWithProviders } from '../helpers';
 
 describe('<SubscriptionListing />', () => {
   it('should render without crashing', () => {
-    renderWithProviders(
+    const { getByTestId } = renderWithProviders(
       <SubscriptionListing
-        subscriptions={[]}
         onClickSubscription={jest.fn()}
         selectedSubscriptionId={''}
-      />
+        subscriptions={[]} />
     );
+
+    expect(getByTestId('subscription-listing').children.length).toBe(0);
   });
 });
 
