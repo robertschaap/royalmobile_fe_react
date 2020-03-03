@@ -75,6 +75,8 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
           key={id}
           lg={2}>
           <SubscriptionListingItem
+            data-testid="subscription-listing-item"
+            data-testprop-is-selected={id === selectedSubscriptionId}
             onClick={() => onClickSubscription(id)}
             isSelected={id === selectedSubscriptionId}>
             <div>
