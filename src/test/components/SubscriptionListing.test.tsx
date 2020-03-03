@@ -26,7 +26,7 @@ describe('<SubscriptionListing />', () => {
     const { getByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
-        selectedSubscriptionId={subscriptions[0].id}
+        selectedSubscriptionId={''}
         subscriptions={subscriptions} />
     );
 
