@@ -48,4 +48,4 @@ describe('<SubscriptionListing />', () => {
   });
 });
 
-// has an onclick handler
+// TODO: add test for clicking and selecting item when interface is proper
