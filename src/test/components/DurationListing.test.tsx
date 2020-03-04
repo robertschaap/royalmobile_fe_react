@@ -5,6 +5,12 @@ import { renderWithTheme } from '../helpers';
 
 describe('<DurationListing />', () => {
   it('should render without crashing', () => {
-    renderWithTheme(<DurationListing />);
+    renderWithTheme(
+      <DurationListing
+        durations={[]}
+        onClickDuration={jest.fn}
+        selectedDurationId={''}
+      />
+    );
   });
 });
