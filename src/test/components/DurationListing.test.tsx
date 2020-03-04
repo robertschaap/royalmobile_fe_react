@@ -32,4 +32,17 @@ describe('<DurationListing />', () => {
     expect(getByTestId('duration-listing').children.length).toBe(3);
     expect(getByTestId('duration-listing').firstChild).toHaveTextContent('Duration 1');
   });
+
+  it('should highlight the selected duration', () => {
+    const { getByText } = renderWithTheme(
+      <DurationListing
+        durations={durations}
+        onClickDuration={jest.fn()}
+        selectedDurationId='duration-id2' />
+    );
+
+    expect(getByText('Duration 1')).toHaveAttribute('data-testprop-is-selected', 'false');
+    expect(getByText('Duration 2')).toHaveAttribute('data-testprop-is-selected', 'true');
+    expect(getByText('Duration 3')).toHaveAttribute('data-testprop-is-selected', 'false');
+  });
 });

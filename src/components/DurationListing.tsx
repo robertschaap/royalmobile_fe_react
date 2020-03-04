@@ -59,6 +59,7 @@ const DurationListing: React.FC<DurationListingProps> = (props) => {
         <DurationListingItem
           key={id}
           onClick={() => onClickDuration(id)}
+          data-testprop-is-selected={id === selectedDurationId}
           isSelected={id === selectedDurationId}>
           {duration}
         </DurationListingItem>
