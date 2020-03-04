@@ -6,6 +6,7 @@ import { renderWithTheme } from '../helpers';
 const durations = [
   { id: 'duration-id1', duration: 'Duration 1' },
   { id: 'duration-id2', duration: 'Duration 2' },
+  { id: 'duration-id3', duration: 'Duration 3' },
 ];
 
 describe('<DurationListing />', () => {
@@ -28,7 +29,7 @@ describe('<DurationListing />', () => {
         selectedDurationId={''} />
     );
 
-    expect(getByTestId('duration-listing').children.length).toBe(2);
+    expect(getByTestId('duration-listing').children.length).toBe(3);
     expect(getByTestId('duration-listing').firstChild).toHaveTextContent('Duration 1');
   });
 });
