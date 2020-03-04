@@ -53,7 +53,8 @@ const DurationListing: React.FC<DurationListingProps> = (props) => {
   const { onClickDuration, selectedDurationId, durations } = props;
 
   return (
-    <DurationListingBase>
+    <DurationListingBase
+      data-testid="duration-listing">
       {durations.map(({ duration, id }) => (
         <DurationListingItem
           key={id}
