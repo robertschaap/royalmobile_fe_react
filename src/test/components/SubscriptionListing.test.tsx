@@ -14,7 +14,7 @@ describe('<SubscriptionListing />', () => {
     const { getByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
-        selectedSubscriptionId={''}
+        selectedSubscriptionId=''
         subscriptions={[]} />
     );
 
@@ -26,7 +26,7 @@ describe('<SubscriptionListing />', () => {
     const { getByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
-        selectedSubscriptionId={''}
+        selectedSubscriptionId=''
         subscriptions={subscriptions} />
     );
 
@@ -37,7 +37,7 @@ describe('<SubscriptionListing />', () => {
     const { getAllByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
-        selectedSubscriptionId={subscriptions[1].id}
+        selectedSubscriptionId='subscription-id2'
         subscriptions={subscriptions} />
     );
 
