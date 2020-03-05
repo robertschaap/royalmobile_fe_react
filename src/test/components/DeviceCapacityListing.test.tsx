@@ -30,5 +30,6 @@ describe('<DeviceCapacityListing />', () => {
     );
 
     expect(getByTestId('device-capacity-listing').children.length).toBe(3);
+    expect(getByTestId('device-capacity-listing').firstChild).toHaveTextContent('Capacity 1');
   });
 });
