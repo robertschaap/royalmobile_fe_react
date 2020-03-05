@@ -1,7 +1,7 @@
 import React from 'react';
 import DeviceCapacityListing from '../../components/DeviceCapacityListing';
 
-import { renderWithProviders } from '../helpers';
+import { renderWithTheme } from '../helpers';
 
 const capacities = [
   { id: 'capacity-id1', capacity: 'Capacity 1' },
@@ -11,7 +11,7 @@ const capacities = [
 
 describe('<DeviceCapacityListing />', () => {
   it('should render without crashing', () => {
-    const { getByTestId } = renderWithProviders(
+    const { getByTestId } = renderWithTheme(
       <DeviceCapacityListing
         capacities={[]}
         onClickCapacity={jest.fn()}
@@ -22,7 +22,7 @@ describe('<DeviceCapacityListing />', () => {
   });
 
   it('should render a list of device capacities', () => {
-    const { getByTestId } = renderWithProviders(
+    const { getByTestId } = renderWithTheme(
       <DeviceCapacityListing
         capacities={capacities}
         onClickCapacity={jest.fn()}
