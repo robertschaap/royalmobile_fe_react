@@ -50,6 +50,7 @@ const DeviceCapacityListing: React.FC<DeviceCapacityListingProps> = (props) => {
         <DeviceCapacityListingItem
           key={id}
           onClick={() => onClickCapacity(id)}
+          data-testprop-is-selected={id === selectedCapacityId}
           isSelected={id === selectedCapacityId}>
           {capacity}
         </DeviceCapacityListingItem>

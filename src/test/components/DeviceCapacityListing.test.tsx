@@ -32,4 +32,17 @@ describe('<DeviceCapacityListing />', () => {
     expect(getByTestId('device-capacity-listing').children.length).toBe(3);
     expect(getByTestId('device-capacity-listing').firstChild).toHaveTextContent('Capacity 1');
   });
+
+  it('should hightlight the selected device capacity', () => {
+    const { getByText } = renderWithTheme(
+      <DeviceCapacityListing
+        capacities={capacities}
+        onClickCapacity={jest.fn()}
+        selectedCapacityId='capacity-id2' />
+    );
+
+    expect(getByText('Capacity 1')).toHaveAttribute('data-testprop-is-selected', 'false');
+    expect(getByText('Capacity 2')).toHaveAttribute('data-testprop-is-selected', 'true');
+    expect(getByText('Capacity 3')).toHaveAttribute('data-testprop-is-selected', 'false');
+  });
 });
