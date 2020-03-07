@@ -1,4 +1,4 @@
-import formatRoute from '../../utils/formatRoute';
+import formatRoute from '../formatRoute';
 
 describe('formatRoute', () => {
   it('should format keys based on the object passed', () => {
