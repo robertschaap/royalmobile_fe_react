@@ -1,7 +1,7 @@
 import React from 'react';
-import HelpPageContainer from '../../containers/HelpPageContainer';
+import HelpPageContainer from '../HelpPageContainer';
 
-import { renderWithProviders } from '../helpers';
+import { renderWithProviders } from '../../test/helpers';
 
 describe('<HelpPageContainer />', () => {
   it('should render without crashing', () => {

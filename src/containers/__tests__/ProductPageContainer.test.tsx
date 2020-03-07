@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductPageContainer from '../../containers/ProductPageContainer';
+import ProductPageContainer from '../ProductPageContainer';
 
-import { renderWithProviders } from '../helpers';
+import { renderWithProviders } from '../../test/helpers';
 
 describe('<ProductPageContainer />', () => {
   it('should render without crashing', () => {
