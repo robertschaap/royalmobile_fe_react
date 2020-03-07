@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useContentCopy } from '../../hooks/useContentCopy';
+import { useContentCopy } from '../useContentCopy';
 
 it('should render a message when a correct id is passed', () => {
   const { result } = renderHook(() => useContentCopy('navigation.home'));
