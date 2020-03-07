@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { render as renderTest } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
@@ -8,8 +8,10 @@ import configureStore from 'redux-mock-store';
 import theme from '../../styles/theme';
 import { initialState } from '../../store/reducers';
 
+export const render = renderTest;
+
 export const renderWithTheme = (Component: React.ReactElement) => {
-  return render(
+  return renderTest(
     <ThemeProvider theme={theme}>
       {Component}
     </ThemeProvider>,
@@ -21,7 +23,7 @@ const mockStore = configureStore([]);
 export const renderWithProviders = (Component: React.ReactElement, customInitialState?: Object) => {
   const store = mockStore(customInitialState || initialState);
 
-  return render(
+  return renderTest(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
