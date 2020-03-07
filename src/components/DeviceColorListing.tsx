@@ -38,11 +38,13 @@ const DeviceColorListing: React.FC<DeviceColorListingProps> = (props) => {
   const { colors, onClickColor, selectedColorId } = props;
 
   return (
-    <DeviceColorListingBase data-testid="device-color-listing">
+    <DeviceColorListingBase
+      data-testid="device-color-listing">
       {colors.map(({ color, colorHex, id }) => (
         <DeviceColorListingItem
           key={id}
           isSelected={id === selectedColorId}
+          data-testprop-is-selected={id === selectedColorId}
           onClick={() => onClickColor(id)}
           colorHex={colorHex}
           title={color} />

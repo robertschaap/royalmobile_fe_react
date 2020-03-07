@@ -32,4 +32,17 @@ describe('<DeviceColorListing />', () => {
     expect(getByTestId('device-color-listing').children.length).toBe(3);
     expect(getByTestId('device-color-listing').firstChild).toHaveAttribute('title', 'color-1');
   });
+
+  it('should highlight the selected duration', () => {
+    const { getByTestId } = renderWithTheme(
+      <DeviceColorListing
+        colors={colors}
+        onClickColor={jest.fn()}
+        selectedColorId='color-id2' />
+    );
+
+    expect(getByTestId('device-color-listing').children[0]).toHaveAttribute('data-testprop-is-selected', 'false');
+    expect(getByTestId('device-color-listing').children[1]).toHaveAttribute('data-testprop-is-selected', 'true');
+    expect(getByTestId('device-color-listing').children[2]).toHaveAttribute('data-testprop-is-selected', 'false');
+  });
 });
