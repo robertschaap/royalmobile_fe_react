@@ -10,6 +10,17 @@ const colors = [
 ];
 
 describe('<DeviceColorListing />', () => {
+  it('should render without crashing', () => {
+    const { getByTestId } = renderWithTheme(
+      <DeviceColorListing
+        colors={[]}
+        onClickColor={jest.fn()}
+        selectedColorId='' />
+    );
+
+    expect(getByTestId('device-color-listing').children.length).toBe(0);
+  });
+
   it('should render a list of colors', () => {
     const { getByTestId } = renderWithTheme(
       <DeviceColorListing
@@ -19,16 +30,5 @@ describe('<DeviceColorListing />', () => {
     );
 
     expect(getByTestId('device-color-listing').children.length).toBe(3);
-  });
-
-  it('should render a list of colors', () => {
-    const { getByTestId } = renderWithTheme(
-      <DeviceColorListing
-        colors={[]}
-        onClickColor={jest.fn()}
-        selectedColorId='' />
-    );
-
-    expect(getByTestId('device-color-listing').children.length).toBe(0);
   });
 });
