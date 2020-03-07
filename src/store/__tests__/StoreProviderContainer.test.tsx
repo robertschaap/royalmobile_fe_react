@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { StoreProviderContainer } from '../../store';
+import { StoreProviderContainer } from '..';
 
 describe('<StoreProviderContainer />', () => {
   it('should render without crashing', () => {
