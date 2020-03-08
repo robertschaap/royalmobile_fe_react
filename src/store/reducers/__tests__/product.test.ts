@@ -7,6 +7,8 @@ import {
   ProductActionTypes,
 } from '../../ducks/product';
 
+import { Product } from '../../../types/products';
+
 describe('Products Reducer', () => {
   it('should return the initial state', () => {
     expect(productReducer(undefined, {} as ProductActionTypes)).toEqual({
@@ -25,10 +27,10 @@ describe('Products Reducer', () => {
   });
 
   it('should handle FETCH_PRODUCT_SUCCESS', () => {
-    expect(productReducer(undefined, fetchProductSuccess([]))).toEqual({
+    expect(productReducer(undefined, fetchProductSuccess({} as Product))).toEqual({
       isFetching: false,
       hasError: false,
-      collection: undefined,
+      collection: {},
     });
   });
 
