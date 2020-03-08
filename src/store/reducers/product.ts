@@ -28,7 +28,7 @@ export const productReducer = (state: ProductState = initialProductState, action
         break;
       case ProductActions.FETCH_PRODUCT_SUCCESS:
         newState.isFetching = false;
-        newState.collection = action.payload[0];
+        newState.collection = action.payload;
         break;
       case ProductActions.FETCH_PRODUCT_ERROR:
         newState.isFetching = false;

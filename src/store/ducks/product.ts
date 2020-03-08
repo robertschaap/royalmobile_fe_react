@@ -17,10 +17,10 @@ export const fetchProduct = (): ProductActionTypes => ({
 
 interface FetchProductSucesssAction {
   type: typeof ProductActions.FETCH_PRODUCT_SUCCESS;
-  payload: Product[];
+  payload: Product;
 }
 
-export const fetchProductSuccess = (payload: Product[]): ProductActionTypes => ({
+export const fetchProductSuccess = (payload: Product): ProductActionTypes => ({
   type: ProductActions.FETCH_PRODUCT_SUCCESS,
   payload,
 });
