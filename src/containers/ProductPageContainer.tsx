@@ -12,15 +12,15 @@ import Loader from '../components/Loader';
 
 const ProductPageContainer: React.FC = () => {
   const dispatch = useDispatch();
-  const productsState = useSelector(selectProducts);
+  const productState = useSelector(selectProduct);
   const subscriptionsState = useSelector(selectSubscriptions);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProduct());
     dispatch(fetchSubscriptions());
   }, [dispatch]);
 
-  if (productsState.hasError || subscriptionsState.hasError) {
+  if (productState.hasError || subscriptionsState.hasError) {
     return (
       <>
         <PageTitle page="Product" />
@@ -31,7 +31,7 @@ const ProductPageContainer: React.FC = () => {
     );
   }
 
-  if (productsState.isFetching || subscriptionsState.isFetching) {
+  if (productState.isFetching || subscriptionsState.isFetching) {
     return (
       <>
         <PageTitle page="Product" />
