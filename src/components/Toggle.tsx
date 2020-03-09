@@ -66,7 +66,7 @@ const Toggle: React.FC<ToggleProps> = (props) => {
     <ToggleBase>
       <ToggleInput
         data-testid="toggle-input"
-        checked={isActive}
+        defaultChecked={isActive}
         onChange={onChange} />
       <ToggleSlider />
     </ToggleBase>
