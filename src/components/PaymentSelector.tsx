@@ -72,7 +72,6 @@ const AdjustedPaymentAmount = styled(PaymentAdjustmentAmount)`
   background-color: unset;
 `;
 
-// TODO: check if the Toggle should have this logic so the PaymentSelector doesn't need to know about it
 interface PaymentSelectorProps {
   onChangeToggle(): void
   isToggleActive: boolean;
