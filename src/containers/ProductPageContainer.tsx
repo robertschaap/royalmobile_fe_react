@@ -10,6 +10,8 @@ import ProductPageSummary from '../components/ProductPageSummary';
 import PageSection from '../components/PageSection';
 import Loader from '../components/Loader';
 
+import noop from '../utils/noop';
+
 const ProductPageContainer: React.FC = () => {
   const dispatch = useDispatch();
   const productState = useSelector(selectProduct);
@@ -48,7 +50,9 @@ const ProductPageContainer: React.FC = () => {
       <ProductPageCustomise />
       <ProductPageConfigure />
       <ProductPageSummary />
-      <ProductPageOrder />
+      <ProductPageOrder
+        onClickOrder={noop}
+        onClickRenewContract={noop} />
     </>
   );
 };
