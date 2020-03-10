@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fetchProducts, fetchSubscriptions, selectProducts, selectSubscriptions, useDispatch, useSelector } from '../store';
+import { fetchProduct, fetchSubscriptions, selectProduct, selectSubscriptions, useDispatch, useSelector } from '../store';
 
 import ErrorMessage from '../components/ErrorMessage';
 import PageTitle from '../components/PageTitle';
