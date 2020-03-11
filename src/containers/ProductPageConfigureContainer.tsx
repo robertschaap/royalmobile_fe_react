@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import {
   selectProductSelection,
   setProductSelectedDurationId,
+  setProductSelectedSubscriptionId,
   useDispatch,
   useSelector,
 } from '../store';
@@ -32,7 +33,10 @@ const ProductPageConfigureContainer: React.FC = () => {
     dispatch(setProductSelectedDurationId(id));
   }, [dispatch]);
 
-  const [selectedSubscriptionId, setSelectedSubscriptionId] = useState(subscriptions[0].id);
+  const onClickSubscription = useCallback(id => {
+    dispatch(setProductSelectedSubscriptionId(id));
+  }, [dispatch]);
+
   const [isToggleActive, setIsToggleActive] = useState(false);
 
 
@@ -44,9 +48,9 @@ const ProductPageConfigureContainer: React.FC = () => {
         durations={durations}
         selectedDurationId={productSelection.durationId || durations[0].id}/>
       <SubscriptionListing
-        onClickSubscription={(id) => setSelectedSubscriptionId(id)}
+        onClickSubscription={onClickSubscription}
         subscriptions={subscriptions}
-        selectedSubscriptionId={selectedSubscriptionId} />
+        selectedSubscriptionId={productSelection.subscriptionId || subscriptions[0].id} />
       <PaymentSelector
         onChangeToggle={() => setIsToggleActive(!isToggleActive)}
         isToggleActive={isToggleActive}/>
