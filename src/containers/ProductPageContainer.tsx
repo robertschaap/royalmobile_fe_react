@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { fetchProduct, fetchSubscriptions, selectProduct, selectSubscriptions, useDispatch, useSelector } from '../store';
 
 import ErrorMessage from '../components/ErrorMessage';
+import Loader from '../components/Loader';
+import PageSection from '../components/PageSection';
 import PageTitle from '../components/PageTitle';
-import ProductPageConfigure from '../components/ProductPageConfigure';
+import ProductPageConfigureContainer from '../containers/ProductPageConfigureContainer';
 import ProductPageCustomise from '../components/ProductPageCustomise';
 import ProductPageOrder from '../components/ProductPageOrder';
 import ProductPageSummary from '../components/ProductPageSummary';
-import PageSection from '../components/PageSection';
-import Loader from '../components/Loader';
 
 import noop from '../utils/noop';
 
@@ -48,7 +48,7 @@ const ProductPageContainer: React.FC = () => {
     <>
       <PageTitle page="Product" />
       <ProductPageCustomise />
-      <ProductPageConfigure />
+      <ProductPageConfigureContainer />
       <ProductPageSummary />
       <ProductPageOrder
         onClickOrder={noop}

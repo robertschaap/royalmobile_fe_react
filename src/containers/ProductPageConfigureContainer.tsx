@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import SectionHeader from './SectionHeader';
-import DurationListing from './DurationListing';
-import SubscriptionListing from './SubscriptionListing';
-import PaymentSelector from './PaymentSelector';
-import PageSection from './PageSection';
+import SectionHeader from '../components/SectionHeader';
+import DurationListing from '../components/DurationListing';
+import SubscriptionListing from '../components/SubscriptionListing';
+import PaymentSelector from '../components/PaymentSelector';
+import PageSection from '../components/PageSection';
 import { useContentCopy } from '../hooks';
 
-const ProductPageConfigure: React.FC = () => {
+const ProductPageConfigureContainer: React.FC = () => {
   const durations = [
     { id: 'a', duration: '2 year contract' },
     { id: 'b', duration: '1 year contract' },
@@ -42,4 +42,4 @@ const ProductPageConfigure: React.FC = () => {
   );
 };
 
-export default ProductPageConfigure;
+export default ProductPageConfigureContainer;
