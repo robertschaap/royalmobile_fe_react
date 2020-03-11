@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useState, useCallback } from 'react';
+import {
+  selectProductSelection,
+  setProductSelectedDurationId,
+  useDispatch,
+  useSelector,
+} from '../store';
 import SectionHeader from '../components/SectionHeader';
 import DurationListing from '../components/DurationListing';
 import SubscriptionListing from '../components/SubscriptionListing';
@@ -20,17 +25,24 @@ const ProductPageConfigureContainer: React.FC = () => {
     { id: '4' },
   ];
 
-  const [selectedDurationId, setSelectedDurationId] = useState(durations[0].id);
+  const dispatch = useDispatch();
+  const productSelection = useSelector(selectProductSelection);
+
+  const onClickDuration = useCallback(id => {
+    dispatch(setProductSelectedDurationId(id));
+  }, [dispatch]);
+
   const [selectedSubscriptionId, setSelectedSubscriptionId] = useState(subscriptions[0].id);
   const [isToggleActive, setIsToggleActive] = useState(false);
+
 
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.configurePlan')}</SectionHeader>
       <DurationListing
-        onClickDuration={(id) => setSelectedDurationId(id)}
+        onClickDuration={onClickDuration}
         durations={durations}
-        selectedDurationId={selectedDurationId}/>
+        selectedDurationId={productSelection.durationId || durations[0].id}/>
       <SubscriptionListing
         onClickSubscription={(id) => setSelectedSubscriptionId(id)}
         subscriptions={subscriptions}
