@@ -5,6 +5,10 @@ export enum ProductActions {
   FETCH_PRODUCT = 'FETCH_PRODUCT',
   FETCH_PRODUCT_SUCCESS = 'FETCH_PRODUCT_SUCCESS',
   FETCH_PRODUCT_ERROR = 'FETCH_PRODUCT_ERROR',
+  SET_PRODUCT_SELECTED_DURATION_ID = 'SET_PRODUCT_SELECTED_DURATION_ID',
+  SET_PRODUCT_SELECTED_PAYMENTPLAN_ID = 'SET_PRODUCT_SELECTED_PAYMENTPLAN_ID',
+  SET_PRODUCT_SELECTED_SUBSCRIPTION_ID = 'SET_PRODUCT_SELECTED_SUBSCRIPTION_ID',
+  SET_PRODUCT_SELECTED_VARIANT_ID = 'SET_PRODUCT_SELECTED_VARIANT_ID',
 }
 
 interface FetchProductAction {
@@ -35,10 +39,55 @@ export const fetchProductError = (error: string): ProductActionTypes => ({
   error,
 });
 
+interface SetProductSelectedDurationIdAction {
+  type: typeof ProductActions.SET_PRODUCT_SELECTED_DURATION_ID;
+  payload: string;
+}
+
+export const setProductSelectedDurationId = (payload: string): ProductActionTypes => ({
+  type: ProductActions.SET_PRODUCT_SELECTED_DURATION_ID,
+  payload,
+});
+
+interface SetProductSelectedPaymentPlanIdAction {
+  type: typeof ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID;
+  payload: string;
+}
+
+export const setProductSelectedPaymentPlanId = (payload: string): ProductActionTypes => ({
+  type: ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID,
+  payload,
+});
+
+interface SetProductSelectedSubscriptionIdAction {
+  type: typeof ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID;
+  payload: string;
+}
+
+export const setProductSelectedSubscriptionId = (payload: string): ProductActionTypes => ({
+  type: ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID,
+  payload,
+});
+
+interface SetProductSelectedVariantIdAction {
+  type: typeof ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID;
+  payload: string;
+}
+
+export const setProductSelectedVariantId = (payload: string): ProductActionTypes => ({
+  type: ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID,
+  payload,
+});
+
 export type ProductActionTypes =
   | FetchProductAction
   | FetchProductSucesssAction
-  | FetchProductErrorAction;
+  | FetchProductErrorAction
+  | SetProductSelectedDurationIdAction
+  | SetProductSelectedPaymentPlanIdAction
+  | SetProductSelectedSubscriptionIdAction
+  | SetProductSelectedVariantIdAction;
 
 export const selectProduct = (state: StoreState) => state.product;
 export const selectProductCollection = (state: StoreState) => state.product.collection;
+export const selectProductSelection = (state: StoreState) => state.product.selection;
