@@ -12,7 +12,7 @@ const createSubscription = (props: CreateSubscripton): Subscription => {
   return {
     id: id,
     subscriptionId: `royalmobile-${data}-${duration}year`,
-    duration: `${duration}_year`,
+    durationId: `${duration}_year`,
     data: data,
     benefits_long: [
       'unlimited calls',

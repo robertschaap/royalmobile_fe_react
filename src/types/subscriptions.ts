@@ -2,7 +2,7 @@
 export interface Subscription {
   id: number;
   subscriptionId: string;
-  duration: string;
+  durationId: string;
   data: string;
   benefits_long: string[],
   benefits_short: string;
