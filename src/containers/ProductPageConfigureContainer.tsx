@@ -14,10 +14,7 @@ import PageSection from '../components/PageSection';
 import { useContentCopy } from '../hooks';
 
 const ProductPageConfigureContainer: React.FC = () => {
-  const durations = [
-    { id: 'a', duration: '2 year contract' },
-    { id: 'b', duration: '1 year contract' },
-  ];
+  const durations = ['2 year contract', '1 year contract'];
 
   const subscriptions = [
     { id: '1' },
@@ -46,7 +43,7 @@ const ProductPageConfigureContainer: React.FC = () => {
       <DurationListing
         onClickDuration={onClickDuration}
         durations={durations}
-        selectedDurationId={productSelection.durationId || durations[0].id}/>
+        selectedDurationId={productSelection.durationId || durations[0]} />
       <SubscriptionListing
         onClickSubscription={onClickSubscription}
         subscriptions={subscriptions}

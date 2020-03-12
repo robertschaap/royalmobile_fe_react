@@ -42,11 +42,7 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
 interface DurationListingProps {
   onClickDuration(durationId: string): void;
   selectedDurationId: string;
-  // TODO: add type for this
-  durations: {
-    id: string;
-    duration: string;
-  }[];
+  durations: string[];
 }
 
 const DurationListing: React.FC<DurationListingProps> = (props) => {
@@ -55,13 +51,13 @@ const DurationListing: React.FC<DurationListingProps> = (props) => {
   return (
     <DurationListingBase
       data-testid="duration-listing">
-      {durations.map(({ duration, id }) => (
+      {durations.map((durationId, id) => (
         <DurationListingItem
           key={id}
-          onClick={() => onClickDuration(id)}
-          data-testprop-is-selected={id === selectedDurationId}
-          isSelected={id === selectedDurationId}>
-          {duration}
+          onClick={() => onClickDuration(durationId)}
+          data-testprop-is-selected={durationId === selectedDurationId}
+          isSelected={durationId === selectedDurationId}>
+          {durationId}
         </DurationListingItem>
       ))}
     </DurationListingBase>
