@@ -36,7 +36,6 @@ const ProductPageConfigureContainer: React.FC = () => {
 
   const [isToggleActive, setIsToggleActive] = useState(false);
 
-
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.configurePlan')}</SectionHeader>
