@@ -6,6 +6,7 @@ interface CreateSubscripton {
   duration: string;
   price: string;
 }
+
 const createSubscription = (props: CreateSubscripton): Subscription => {
   const { id, data, duration, price } = props;
 
