@@ -8,15 +8,17 @@ const subscriptions = [
 ] as Subscription[];
 
 describe('SubscriptionUtil', () => {
-  it('should return an array of subscription duration ids', () => {
-    expect(
-      SubscriptionUtil.getSubscriptionDurations(subscriptions),
-    ).toEqual(['duration-id1']);
-  });
+  describe('getSubscriptionDurations', () => {
+    it('should return an array of subscription duration ids', () => {
+      expect(
+        SubscriptionUtil.getSubscriptionDurations(subscriptions),
+      ).toEqual(['duration-id1']);
+    });
 
-  it('should return an empty array if no subscriptions are passed', () => {
-    expect(
-      SubscriptionUtil.getSubscriptionDurations([])
-    ).toEqual([]);
-  })
+    it('should return an empty array if no subscriptions are passed', () => {
+      expect(
+        SubscriptionUtil.getSubscriptionDurations([])
+      ).toEqual([]);
+    });
+  });
 });
