@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
+import ContentCopy from './ContentCopy';
+
 const DurationListingBase = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(4)};
 
@@ -39,6 +41,11 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
   }
 `;
 
+const content: { readonly [key: string]: string } = {
+  '1_year': 'subscription.duration.1year',
+  '2_year': 'subscription.duration.2year',
+}
+
 interface DurationListingProps {
   onClickDuration(durationId: string): void;
   selectedDurationId: string;
@@ -57,7 +64,7 @@ const DurationListing: React.FC<DurationListingProps> = (props) => {
           onClick={() => onClickDuration(durationId)}
           data-testprop-is-selected={durationId === selectedDurationId}
           isSelected={durationId === selectedDurationId}>
-          {durationId}
+          <ContentCopy messageId={content[durationId]}/>
         </DurationListingItem>
       ))}
     </DurationListingBase>

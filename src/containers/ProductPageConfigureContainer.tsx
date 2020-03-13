@@ -14,7 +14,7 @@ import PageSection from '../components/PageSection';
 import { useContentCopy } from '../hooks';
 
 const ProductPageConfigureContainer: React.FC = () => {
-  const durations = ['2 year contract', '1 year contract'];
+  const durations = ['2_year', '1_year'];
 
   const subscriptions = [
     { id: '1' },
