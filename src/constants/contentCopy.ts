@@ -30,6 +30,9 @@ export const contentCopy: ContentCopy = Object.freeze({
   'product.oneTimePayment': 'Your one-time payment',
   'product.summingUp': 'Summing it  all up',
 
+  'subscription.duration.1year': '1 year contract',
+  'subscription.duration.2year': '2 year contract',
+
   'usp.freeShipping': 'Free Shipping on All Orders',
   'usp.noConnectionFeeAcquisition': 'No Connection Fee For New Customers',
   'usp.noFalsePromises': 'Guaranteed no False Promises',
