@@ -5,7 +5,7 @@ interface ContentCopyProps {
   messageId: string;
 }
 
-const ContentCopy: React.FC<ContentCopyProps> = (props) => {
+const ContentCopy: React.FC<ContentCopyProps> = React.memo((props) => {
   const { messageId } = props;
 
   return (
@@ -13,6 +13,6 @@ const ContentCopy: React.FC<ContentCopyProps> = (props) => {
       {useContentCopy(messageId)}
     </>
   );
-};
+});
 
 export default ContentCopy;
