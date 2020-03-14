@@ -65,7 +65,7 @@ interface SubscriptionListingProps {
 }
 
 // TODO: capitalise text
-const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
+const SubscriptionListing: React.FC<SubscriptionListingProps> = React.memo((props) => {
   const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
 
   return (
@@ -99,6 +99,6 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
       ))}
     </GridBase>
   );
-};
+});
 
 export default SubscriptionListing;
