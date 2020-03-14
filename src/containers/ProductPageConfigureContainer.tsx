@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   selectProductSelection,
   selectSubscriptionsCollection,
@@ -20,8 +20,13 @@ const ProductPageConfigureContainer: React.FC = () => {
   const productSelection = useSelector(selectProductSelection);
   const subscriptions = useSelector(selectSubscriptionsCollection);
 
-  const durations = SubscriptionUtil.getSubscriptionDurations(subscriptions);
-  const subscriptionsByDuration = SubscriptionUtil.getSubscriptionsByDuration(subscriptions, productSelection.durationId || durations[0]);
+  const durations = useMemo(() => {
+    return SubscriptionUtil.getSubscriptionDurations(subscriptions);
+  }, [subscriptions]);
+
+  const subscriptionsByDuration = useMemo(() => {
+    return SubscriptionUtil.getSubscriptionsByDuration(subscriptions, productSelection.durationId || durations[0]);
+  }, [subscriptions, productSelection.durationId]);
 
   const onClickDuration = useCallback(id => {
     dispatch(setProductSelectedDurationId(id));
