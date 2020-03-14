@@ -26,7 +26,7 @@ const ProductPageConfigureContainer: React.FC = () => {
 
   const subscriptionsByDuration = useMemo(() => {
     return SubscriptionUtil.getSubscriptionsByDuration(subscriptions, productSelection.durationId || durations[0]);
-  }, [subscriptions, productSelection.durationId]);
+  }, [subscriptions, productSelection.durationId, durations]);
 
   const onClickDuration = useCallback(id => {
     dispatch(setProductSelectedDurationId(id));
