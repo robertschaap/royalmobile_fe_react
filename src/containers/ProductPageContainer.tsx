@@ -44,6 +44,11 @@ const ProductPageContainer: React.FC = () => {
     );
   }
 
+  // TODO: consider if no product/subscription being found is a valid usecase
+  if (!productState.collection || !subscriptionsState.collection.length) {
+    return null;
+  }
+
   return (
     <>
       <PageTitle page="Product" />
