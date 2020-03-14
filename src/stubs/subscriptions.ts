@@ -27,12 +27,12 @@ const createSubscription = (props: CreateSubscripton): Subscription => {
 
 export const subscriptions: Subscription[] = [
   createSubscription({ id: 1, data: '20gb', duration: '1', price: '20' }),
-  createSubscription({ id: 2, data: '20gb', duration: '1', price: '20' }),
-  createSubscription({ id: 3, data: '20gb', duration: '1', price: '20' }),
-  createSubscription({ id: 4, data: '20gb', duration: '1', price: '20' }),
+  createSubscription({ id: 2, data: '40gb', duration: '1', price: '30' }),
+  createSubscription({ id: 3, data: '60gb', duration: '1', price: '40' }),
+  createSubscription({ id: 4, data: '80gb', duration: '1', price: '50' }),
 
-  createSubscription({ id: 5, data: '20gb', duration: '2', price: '20' }),
-  createSubscription({ id: 6, data: '20gb', duration: '2', price: '20' }),
-  createSubscription({ id: 7, data: '20gb', duration: '2', price: '20' }),
-  createSubscription({ id: 8, data: '20gb', duration: '2', price: '20' }),
+  createSubscription({ id: 5, data: '20gb', duration: '2', price: '18' }),
+  createSubscription({ id: 6, data: '40gb', duration: '2', price: '26' }),
+  createSubscription({ id: 7, data: '60gb', duration: '2', price: '34' }),
+  createSubscription({ id: 8, data: '80gb', duration: '2', price: '42' }),
 ];
