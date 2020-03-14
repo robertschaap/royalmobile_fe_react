@@ -6,11 +6,8 @@ import DeviceColorListing from './DeviceColorListing';
 import DeviceDiscounts from './DeviceDiscounts';
 import DeviceRating from './DeviceRating';
 import Hidden from './Hidden';
-import PageSection from './PageSection';
-import SectionHeader from './SectionHeader';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
-import { useContentCopy } from '../hooks';
 import { media_breakpoint_up } from '../styles/theme';
 
 const ProductDescription = styled.div`
@@ -103,76 +100,69 @@ const DeviceCost = styled.div`
   color: ${({ theme }) => theme.color.primary}
 `;
 
-const ProductPageCustomise: React.FC = () => {
-  const deviceName = 'iPhone X 16gb Lime';
-  const deviceManufacturer = 'Apple';
-  const deviceCost = '265,-';
+interface ProductPageCustomiseProps {
+  capacities: {
+    id: string;
+    capacity: string;
+  }[];
+  colors: {
+    id: string;
+    color: string;
+    colorHex: string;
+  }[];
+  deviceCost: string;
+  deviceManufacturer: string;
+  deviceName: string;
+}
 
-  const colors = [
-    { id: 'a', color: 'wraa', colorHex: '#7ec09a' },
-    { id: 'b', color: 'wraa', colorHex: '#8097c2' },
-    { id: 'c', color: 'wraa', colorHex: '#bae596' },
-    { id: 'd', color: 'wraa', colorHex: '#d59a8d' },
-  ];
-
-  const capacities = [
-    { id: 'a', capacity: '16gb' },
-    { id: 'b', capacity: '32gb' },
-    { id: 'c', capacity: '64gb' },
-    { id: 'd', capacity: '128gb' },
-  ];
-
+const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
+  const { capacities, colors, deviceCost, deviceManufacturer, deviceName } = props;
   const [selectedColorId, setSelectedColorId] = useState(colors[0].id);
   const [selectedCapacityId, setSelectedCapacityId] = useState(capacities[0].id);
 
   return (
-    <PageSection>
-      <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
-      <Flexy>
+    <Flexy>
+      <Card>
+        <DeviceImage>
+          <img width="100%" alt="phone" src={phone} />
+        </DeviceImage>
+        <Hidden md lg>
+          <DeviceName>{deviceName}</DeviceName>
+          <DeviceManufacturer>{deviceManufacturer}</DeviceManufacturer>
+          <DeviceDiscounts />
+        </Hidden>
+      </Card>
 
-        <Card>
-          <DeviceImage>
-            <img width="100%" alt="phone" src={phone} />
-          </DeviceImage>
-          <Hidden md lg>
-            <DeviceName>{deviceName}</DeviceName>
-            <DeviceManufacturer>{deviceManufacturer}</DeviceManufacturer>
-            <DeviceDiscounts />
-          </Hidden>
-        </Card>
+      <DeviceCustomisationOptions>
+        <Hidden sm>
+          <DeviceName>{deviceName}</DeviceName>
+          <DeviceManufacturer>{deviceManufacturer}</DeviceManufacturer>
+          <DeviceDiscounts />
+        </Hidden>
+        <DeviceColor>
+          <div>Pick your device color</div>
+          <DeviceColorListing
+            colors={colors}
+            onClickColor={(id) => setSelectedColorId(id)}
+            selectedColorId={selectedColorId} />
+        </DeviceColor>
+        <DeviceCapacity>
+          <div>Pick your device capacity</div>
+          <DeviceCapacityListing
+            capacities={capacities}
+            onClickCapacity={(id) => setSelectedCapacityId(id)}
+            selectedCapacityId={selectedCapacityId}/>
+        </DeviceCapacity>
+        <div>Phone cost upfront</div>
+        <DeviceCost>{deviceCost}</DeviceCost>
+      </DeviceCustomisationOptions>
 
-        <DeviceCustomisationOptions>
-          <Hidden sm>
-            <DeviceName>{deviceName}</DeviceName>
-            <DeviceManufacturer>{deviceManufacturer}</DeviceManufacturer>
-            <DeviceDiscounts />
-          </Hidden>
-          <DeviceColor>
-            <div>Pick your device color</div>
-            <DeviceColorListing
-              colors={colors}
-              onClickColor={(id) => setSelectedColorId(id)}
-              selectedColorId={selectedColorId} />
-          </DeviceColor>
-          <DeviceCapacity>
-            <div>Pick your device capacity</div>
-            <DeviceCapacityListing
-              capacities={capacities}
-              onClickCapacity={(id) => setSelectedCapacityId(id)}
-              selectedCapacityId={selectedCapacityId}/>
-          </DeviceCapacity>
-          <div>Phone cost upfront</div>
-          <DeviceCost>{deviceCost}</DeviceCost>
-        </DeviceCustomisationOptions>
-
-        <ProductDescription>
-          <DeviceRating />
-          <DeviceDescription>The iPhone X is Apple’s latest attempt at a near bezel-less device and a minor failure as far as that goes. The device is disgraced by a thick and weird notch, a trend that for some inexplicable reason scores of phone manufactureres seem to have copied. We thouroughly dislike this phone but feel you should buy it anyway because we’ll make money.</DeviceDescription>
-          <div>Device specifications</div>
-        </ProductDescription>
-
-      </Flexy>
-    </PageSection>
+      <ProductDescription>
+        <DeviceRating />
+        <DeviceDescription>The iPhone X is Apple’s latest attempt at a near bezel-less device and a minor failure as far as that goes. The device is disgraced by a thick and weird notch, a trend that for some inexplicable reason scores of phone manufactureres seem to have copied. We thouroughly dislike this phone but feel you should buy it anyway because we’ll make money.</DeviceDescription>
+        <div>Device specifications</div>
+      </ProductDescription>
+    </Flexy>
   );
 };
 

@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 import PageSection from '../components/PageSection';
 import PageTitle from '../components/PageTitle';
 import ProductPageConfigureContainer from '../containers/ProductPageConfigureContainer';
-import ProductPageCustomise from '../components/ProductPageCustomise';
+import ProductPageCustomiseContainer from '../containers/ProductPageCustomiseContainer';
 import ProductPageOrder from '../components/ProductPageOrder';
 import ProductPageSummary from '../components/ProductPageSummary';
 
@@ -52,7 +52,7 @@ const ProductPageContainer: React.FC = () => {
   return (
     <>
       <PageTitle page="Product" />
-      <ProductPageCustomise />
+      <ProductPageCustomiseContainer />
       <ProductPageConfigureContainer />
       <ProductPageSummary />
       <ProductPageOrder
