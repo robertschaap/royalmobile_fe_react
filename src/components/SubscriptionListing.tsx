@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
+import { Subscription } from '../types/subscriptions';
 
 import { GridBase, GridItem } from './Grid';
 
@@ -60,39 +61,38 @@ const BenefitsMedium = styled.ul`
 interface SubscriptionListingProps {
   onClickSubscription(subscriptionId: string): void;
   selectedSubscriptionId: string;
-  subscriptions: {
-    id: string;
-  }[],
+  subscriptions: Subscription[];
 }
 
+// TODO: capitalise text
 const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
   const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
 
   return (
     <GridBase
       data-testid="subscription-listing">
-      {subscriptions.map(({ id }) => (
+      {subscriptions.map(({ benefits_long, benefits_short, data, regular_price, subscriptionId }) => (
         <GridItem
-          key={id}
+          key={subscriptionId}
           lg={2}>
           <SubscriptionListingItem
             data-testid="subscription-listing-item"
-            data-testprop-is-selected={id === selectedSubscriptionId}
-            onClick={() => onClickSubscription(id)}
-            isSelected={id === selectedSubscriptionId}>
+            data-testprop-is-selected={subscriptionId === selectedSubscriptionId}
+            onClick={() => onClickSubscription(subscriptionId)}
+            isSelected={subscriptionId === selectedSubscriptionId}>
             <div>
               <div>Data</div>
-              <Bold>10gb</Bold>
+              <Bold>{data}</Bold>
             </div>
-            <BenefitsSmall>Unlimited<br/>calls, texts, roaming</BenefitsSmall>
+            <BenefitsSmall>{benefits_short}</BenefitsSmall>
             <BenefitsMedium>
-              {['Unlimited calls', 'Unlimited texts', 'Unlimited roaming'].map((e, i) => (
-                <li key={i}>{e}</li>
+              {benefits_long.map((benefit, index) => (
+                <li key={index}>{benefit}</li>
               ))}
             </BenefitsMedium>
             <div>
               <div>Monthly</div>
-              <Bold>20,-</Bold>
+              <Bold>{regular_price},-</Bold>
             </div>
           </SubscriptionListingItem>
         </GridItem>
