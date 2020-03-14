@@ -41,6 +41,11 @@ const Bold = styled.div`
 
 const BenefitsSmall = styled.div`
   margin: 0 ${({ theme }) => theme.spacing(4)};
+  white-space: pre-wrap;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
 
   ${media_breakpoint_up.sm} {
     display: none;
@@ -53,6 +58,10 @@ const BenefitsMedium = styled.ul`
   list-style-type: none;
   display: none;
 
+  > li {
+    text-transform: capitalize;
+  }
+
   ${media_breakpoint_up.sm} {
     display: block;
   }
@@ -64,7 +73,6 @@ interface SubscriptionListingProps {
   subscriptions: Subscription[];
 }
 
-// TODO: capitalise text
 const SubscriptionListing: React.FC<SubscriptionListingProps> = React.memo((props) => {
   const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
 
