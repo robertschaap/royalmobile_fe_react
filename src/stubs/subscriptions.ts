@@ -20,7 +20,7 @@ const createSubscription = (props: CreateSubscripton): Subscription => {
       'unlimited texts',
       'unlimited roaming',
     ],
-    benefits_short: 'unlimited<br/> calls, text, roaming',
+    benefits_short: 'unlimited\n calls, text, roaming',
     regular_price: price,
   };
 }
