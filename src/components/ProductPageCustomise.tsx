@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import DeviceCapacityListing from './DeviceCapacityListing';
@@ -113,12 +113,24 @@ interface ProductPageCustomiseProps {
   deviceCost: string;
   deviceManufacturer: string;
   deviceName: string;
+  onClickCapacity(id: string): void;
+  onClickColor(id: string): void;
+  selectedCapacityId: string;
+  selectedColorId: string;
 }
 
 const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
-  const { capacities, colors, deviceCost, deviceManufacturer, deviceName } = props;
-  const [selectedColorId, setSelectedColorId] = useState(colors[0].id);
-  const [selectedCapacityId, setSelectedCapacityId] = useState(capacities[0].id);
+  const {
+    capacities,
+    colors,
+    deviceCost,
+    deviceManufacturer,
+    deviceName,
+    onClickCapacity,
+    onClickColor,
+    selectedCapacityId,
+    selectedColorId,
+  } = props;
 
   return (
     <Flexy>
@@ -143,15 +155,15 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <div>Pick your device color</div>
           <DeviceColorListing
             colors={colors}
-            onClickColor={(id) => setSelectedColorId(id)}
+            onClickColor={onClickColor}
             selectedColorId={selectedColorId} />
         </DeviceColor>
         <DeviceCapacity>
           <div>Pick your device capacity</div>
           <DeviceCapacityListing
             capacities={capacities}
-            onClickCapacity={(id) => setSelectedCapacityId(id)}
-            selectedCapacityId={selectedCapacityId}/>
+            onClickCapacity={onClickCapacity}
+            selectedCapacityId={selectedCapacityId} />
         </DeviceCapacity>
         <div>Phone cost upfront</div>
         <DeviceCost>{deviceCost}</DeviceCost>

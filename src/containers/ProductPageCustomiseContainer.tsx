@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   useSelector,
   selectProductCollection,
@@ -19,6 +19,9 @@ const ProductPageCustomiseContainer: React.FC = () => {
   const colors = ProductUtil.getProductVariantColorsForCapacity(product!, '16gb');
   const capacities = ProductUtil.getProductVariantCapacitiesForColor(product!, 'lime');
 
+  const [selectedColorId, setSelectedColorId] = useState(colors[0].id);
+  const [selectedCapacityId, setSelectedCapacityId] = useState(capacities[0].id);
+
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
@@ -27,7 +30,13 @@ const ProductPageCustomiseContainer: React.FC = () => {
         colors={colors}
         deviceCost={deviceCost}
         deviceManufacturer={deviceManufacturer}
-        deviceName={deviceName} />
+        deviceName={deviceName}
+
+        selectedColorId={selectedColorId}
+        selectedCapacityId={selectedCapacityId}
+        onClickColor={setSelectedColorId}
+        onClickCapacity={setSelectedCapacityId}
+      />
     </PageSection>
   );
 };
