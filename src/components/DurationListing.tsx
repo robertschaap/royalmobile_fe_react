@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
-import ContentCopy from './ContentCopy';
+import { useContentCopy } from '../hooks';
 
 const DurationListingBase = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(4)};
@@ -64,7 +64,7 @@ const DurationListing: React.FC<DurationListingProps> = React.memo((props) => {
           onClick={() => onClickDuration(durationId)}
           data-testprop-is-selected={durationId === selectedDurationId}
           isSelected={durationId === selectedDurationId}>
-          <ContentCopy messageId={content[durationId]}/>
+          {useContentCopy(content[durationId])}
         </DurationListingItem>
       ))}
     </DurationListingBase>
