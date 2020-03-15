@@ -7,13 +7,14 @@ import {
   useDispatch,
   useSelector,
 } from '../store';
+import { useContentCopy } from '../hooks';
+import SubscriptionUtil from '../utils/SubscriptionUtil';
+
 import SectionHeader from '../components/SectionHeader';
 import DurationListing from '../components/DurationListing';
 import SubscriptionListing from '../components/SubscriptionListing';
 import PaymentSelector from '../components/PaymentSelector';
 import PageSection from '../components/PageSection';
-import { useContentCopy } from '../hooks';
-import SubscriptionUtil from '../utils/SubscriptionUtil';
 
 const ProductPageConfigureContainer: React.FC = () => {
   const dispatch = useDispatch();
