@@ -13,16 +13,15 @@ import ProductPageCustomise from '../components/ProductPageCustomise';
 import SectionHeader from '../components/SectionHeader';
 import ProductUtil from '../utils/ProductUtil';
 
-const deviceName = 'iPhone X 16gb Lime';
-const deviceManufacturer = 'Apple';
-const deviceCost = '265,-';
-
 const ProductPageCustomiseContainer: React.FC = () => {
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
   const product = useSelector(selectProductCollection);
 
-  const selectedVariant = product!.variants.find(i => i.variantId === productSelection.variantId) || product!.variants[0];
+  const selectedVariant = product!.variants.find(variant => variant.variantId === productSelection.variantId) || product!.variants[0];
+  const deviceManufacturer = product!.manufacturer;
+  const deviceName = `${product!.model} ${selectedVariant.capacity} ${selectedVariant.color}`;
+  const deviceCost = `${selectedVariant.regular_price},-`;
 
   const colors = useMemo(() => {
     return ProductUtil.getProductVariantColorsForCapacity(product!, selectedVariant.capacity);
