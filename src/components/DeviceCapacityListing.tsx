@@ -31,7 +31,7 @@ const DeviceCapacityListingItem = styled.button<DeviceCapacityListingItemProps>`
 `;
 
 interface DeviceCapacityListingProps {
-  onClickCapacity(capacityId: string): void;
+  onClickCapacity(id: string): void;
   selectedCapacityId: string;
   // TODO: create type for this
   capacities: {

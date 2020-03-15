@@ -30,7 +30,7 @@ interface DeviceColorListingProps {
     color: string;
     colorHex: string;
   }[];
-  onClickColor(colorId: string): void;
+  onClickColor(id: string): void;
   selectedColorId: string;
 }
 

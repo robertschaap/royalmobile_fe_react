@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import {
-  useSelector,
   selectProductCollection,
+  selectProductSelection,
+  useDispatch,
+  useSelector,
+  setProductSelectedVariantId,
 } from '../store';
 import { useContentCopy } from '../hooks';
 
@@ -15,12 +18,27 @@ const deviceManufacturer = 'Apple';
 const deviceCost = '265,-';
 
 const ProductPageCustomiseContainer: React.FC = () => {
+  const dispatch = useDispatch();
+  const productSelection = useSelector(selectProductSelection);
   const product = useSelector(selectProductCollection);
-  const colors = ProductUtil.getProductVariantColorsForCapacity(product!, '16gb');
-  const capacities = ProductUtil.getProductVariantCapacitiesForColor(product!, 'lime');
 
-  const [selectedColorId, setSelectedColorId] = useState(colors[0].id);
-  const [selectedCapacityId, setSelectedCapacityId] = useState(capacities[0].id);
+  const selectedVariant = product!.variants.find(i => i.variantId === productSelection.variantId) || product!.variants[0];
+
+  const colors = useMemo(() => {
+    return ProductUtil.getProductVariantColorsForCapacity(product!, selectedVariant.capacity);
+  }, [product, selectedVariant.capacity])
+
+  const capacities = useMemo(() => {
+    return ProductUtil.getProductVariantCapacitiesForColor(product!, selectedVariant.color);
+  }, [product, selectedVariant.color]);
+
+  const onClickCapacity = useCallback((id: string) => {
+    dispatch(setProductSelectedVariantId(id));
+  }, [dispatch]);
+
+  const onClickColor = useCallback((id: string) => {
+    dispatch(setProductSelectedVariantId(id));
+  }, [dispatch]);
 
   return (
     <PageSection>
@@ -31,12 +49,10 @@ const ProductPageCustomiseContainer: React.FC = () => {
         deviceCost={deviceCost}
         deviceManufacturer={deviceManufacturer}
         deviceName={deviceName}
-
-        selectedColorId={selectedColorId}
-        selectedCapacityId={selectedCapacityId}
-        onClickColor={setSelectedColorId}
-        onClickCapacity={setSelectedCapacityId}
-      />
+        onClickCapacity={onClickCapacity}
+        onClickColor={onClickColor}
+        selectedCapacityId={selectedVariant.variantId}
+        selectedColorId={selectedVariant.variantId} />
     </PageSection>
   );
 };
