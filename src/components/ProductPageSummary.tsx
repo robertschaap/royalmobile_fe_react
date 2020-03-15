@@ -4,8 +4,6 @@ import { media_breakpoint_up } from '../styles/theme';
 import { useContentCopy } from '../hooks';
 
 import OrderSummaryText from './OrderSummaryText';
-import PageSection from './PageSection';
-import SectionHeader from './SectionHeader';
 import { GridBase, GridItem } from './Grid';
 
 interface CardProps {
@@ -57,48 +55,45 @@ const SummaryListItem = styled.li<SummaryListItemProps>`
 
 const ProductPageSummary: React.FC = () => {
   return (
-    <PageSection>
-      <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
-      <GridBase>
-        <GridItem
-          md={2}
-          lg={2}
-          mdOrder={1}
-          lgOrder={1}>
-          <OrderSummaryText />
-        </GridItem>
-        <GridItem
-          md={2}
-          lg={2}>
-          <Card marginBottom={2}>
-            <SummaryList>
-              <SummaryListItem>10gb data<span>20,00</span></SummaryListItem>
-              <SummaryListItem>unlimited calls</SummaryListItem>
-              <SummaryListItem>unlimited texts</SummaryListItem>
-              <SummaryListItem>unlimited roaming</SummaryListItem>
-              <SummaryListItem>iPhone X 16gb Lime<span>0,00</span></SummaryListItem>
-              <SummaryListItem isDiscount>Discounts<span>-1,00</span></SummaryListItem>
-            </SummaryList>
-          </Card>
-          <SubTotalCard marginBottom={4}>
-            {useContentCopy('product.monthlyPayment')}
-            <SubTotal>19,00</SubTotal>
-          </SubTotalCard>
-          <Card marginBottom={2}>
-            <SummaryList>
-              <SummaryListItem>iPhone X 16gb Lime<span>265,00</span></SummaryListItem>
-              <SummaryListItem>Connection Fee<span>10,00</span></SummaryListItem>
-              <SummaryListItem>Shipping<span>7,50</span></SummaryListItem>
-              <SummaryListItem isDiscount>Discounts<span>-17,50</span></SummaryListItem>
-            </SummaryList>
-          </Card>
-          <SubTotalCard>
-            {useContentCopy('product.oneTimePayment')}
-            <SubTotal>265,00</SubTotal>
-          </SubTotalCard>
-        </GridItem>
-      </GridBase>
-    </PageSection>
+    <GridBase>
+      <GridItem
+        md={2}
+        lg={2}
+        mdOrder={1}
+        lgOrder={1}>
+        <OrderSummaryText />
+      </GridItem>
+      <GridItem
+        md={2}
+        lg={2}>
+        <Card marginBottom={2}>
+          <SummaryList>
+            <SummaryListItem>10gb data<span>20,00</span></SummaryListItem>
+            <SummaryListItem>unlimited calls</SummaryListItem>
+            <SummaryListItem>unlimited texts</SummaryListItem>
+            <SummaryListItem>unlimited roaming</SummaryListItem>
+            <SummaryListItem>iPhone X 16gb Lime<span>0,00</span></SummaryListItem>
+            <SummaryListItem isDiscount>Discounts<span>-1,00</span></SummaryListItem>
+          </SummaryList>
+        </Card>
+        <SubTotalCard marginBottom={4}>
+          {useContentCopy('product.monthlyPayment')}
+          <SubTotal>19,00</SubTotal>
+        </SubTotalCard>
+        <Card marginBottom={2}>
+          <SummaryList>
+            <SummaryListItem>iPhone X 16gb Lime<span>265,00</span></SummaryListItem>
+            <SummaryListItem>Connection Fee<span>10,00</span></SummaryListItem>
+            <SummaryListItem>Shipping<span>7,50</span></SummaryListItem>
+            <SummaryListItem isDiscount>Discounts<span>-17,50</span></SummaryListItem>
+          </SummaryList>
+        </Card>
+        <SubTotalCard>
+          {useContentCopy('product.oneTimePayment')}
+          <SubTotal>265,00</SubTotal>
+        </SubTotalCard>
+      </GridItem>
+    </GridBase>
   );
 };
 
