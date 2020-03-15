@@ -51,8 +51,7 @@ const ProductPageCustomiseContainer: React.FC = () => {
         deviceName={deviceName}
         onClickCapacity={onClickCapacity}
         onClickColor={onClickColor}
-        selectedCapacityId={selectedVariant.variantId}
-        selectedColorId={selectedVariant.variantId} />
+        selectedVariantId={selectedVariant.variantId} />
     </PageSection>
   );
 };

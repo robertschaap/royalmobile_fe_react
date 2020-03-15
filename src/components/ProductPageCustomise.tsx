@@ -115,8 +115,7 @@ interface ProductPageCustomiseProps {
   deviceName: string;
   onClickCapacity(id: string): void;
   onClickColor(id: string): void;
-  selectedCapacityId: string;
-  selectedColorId: string;
+  selectedVariantId: string;
 }
 
 const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
@@ -128,8 +127,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
     deviceName,
     onClickCapacity,
     onClickColor,
-    selectedCapacityId,
-    selectedColorId,
+    selectedVariantId,
   } = props;
 
   return (
@@ -156,14 +154,14 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <DeviceColorListing
             colors={colors}
             onClickColor={onClickColor}
-            selectedColorId={selectedColorId} />
+            selectedColorId={selectedVariantId} />
         </DeviceColor>
         <DeviceCapacity>
           <div>Pick your device capacity</div>
           <DeviceCapacityListing
             capacities={capacities}
             onClickCapacity={onClickCapacity}
-            selectedCapacityId={selectedCapacityId} />
+            selectedCapacityId={selectedVariantId} />
         </DeviceCapacity>
         <div>Phone cost upfront</div>
         <DeviceCost>{deviceCost}</DeviceCost>
