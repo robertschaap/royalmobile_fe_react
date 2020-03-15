@@ -73,7 +73,7 @@ interface SubscriptionListingProps {
   subscriptions: Subscription[];
 }
 
-const SubscriptionListing: React.FC<SubscriptionListingProps> = React.memo((props) => {
+const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
   const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
 
   return (
@@ -107,6 +107,6 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = React.memo((prop
       ))}
     </GridBase>
   );
-});
+};
 
 export default SubscriptionListing;
