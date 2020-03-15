@@ -1,29 +1,24 @@
 import React from 'react';
+import {
+  useSelector,
+  selectProductCollection,
+} from '../store';
 import { useContentCopy } from '../hooks';
 
 import PageSection from '../components/PageSection';
 import ProductPageCustomise from '../components/ProductPageCustomise';
 import SectionHeader from '../components/SectionHeader';
+import ProductUtil from '../utils/ProductUtil';
 
 const deviceName = 'iPhone X 16gb Lime';
 const deviceManufacturer = 'Apple';
 const deviceCost = '265,-';
 
-const colors = [
-  { id: 'a', color: 'wraa', colorHex: '#7ec09a' },
-  { id: 'b', color: 'wraa', colorHex: '#8097c2' },
-  { id: 'c', color: 'wraa', colorHex: '#bae596' },
-  { id: 'd', color: 'wraa', colorHex: '#d59a8d' },
-];
-
-const capacities = [
-  { id: 'a', capacity: '16gb' },
-  { id: 'b', capacity: '32gb' },
-  { id: 'c', capacity: '64gb' },
-  { id: 'd', capacity: '128gb' },
-];
-
 const ProductPageCustomiseContainer: React.FC = () => {
+  const product = useSelector(selectProductCollection);
+  const colors = ProductUtil.getProductVariantColorsForCapacity(product!, '16gb');
+  const capacities = ProductUtil.getProductVariantCapacitiesForColor(product!, 'lime');
+
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
