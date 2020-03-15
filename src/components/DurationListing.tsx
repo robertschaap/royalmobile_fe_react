@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
 
-import { useContentCopy } from '../hooks';
+import ContentCopy from './ContentCopy';
 
 const DurationListingBase = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(4)};
@@ -52,7 +52,7 @@ interface DurationListingProps {
   durations: string[];
 }
 
-const DurationListing: React.FC<DurationListingProps> = React.memo((props) => {
+const DurationListing: React.FC<DurationListingProps> = (props) => {
   const { onClickDuration, selectedDurationId, durations } = props;
 
   return (
@@ -64,11 +64,11 @@ const DurationListing: React.FC<DurationListingProps> = React.memo((props) => {
           onClick={() => onClickDuration(durationId)}
           data-testprop-is-selected={durationId === selectedDurationId}
           isSelected={durationId === selectedDurationId}>
-          {useContentCopy(content[durationId])}
+          <ContentCopy messageId={content[durationId]} />
         </DurationListingItem>
       ))}
     </DurationListingBase>
   );
-});
+};
 
-export default DurationListing;
+export default React.memo(DurationListing);
