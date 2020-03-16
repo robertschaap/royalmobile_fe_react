@@ -16,7 +16,7 @@ import PageTitle from '../components/PageTitle';
 import ProductPageConfigureContainer from '../containers/ProductPageConfigureContainer';
 import ProductPageCustomiseContainer from '../containers/ProductPageCustomiseContainer';
 import ProductPageOrder from '../components/ProductPageOrder';
-import ProductPageSummary from '../components/ProductPageSummary';
+import ProductPageSummaryContainer from '../containers/ProductPageSummaryContainer';
 
 import noop from '../utils/noop';
 
@@ -62,7 +62,7 @@ const ProductPageContainer: React.FC = () => {
       <PageTitle page="Product" />
       <ProductPageCustomiseContainer />
       <ProductPageConfigureContainer />
-      <ProductPageSummary />
+      <ProductPageSummaryContainer />
       <ProductPageOrder
         onClickOrder={noop}
         onClickRenewContract={noop} />
