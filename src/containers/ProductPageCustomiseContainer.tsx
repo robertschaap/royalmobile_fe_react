@@ -24,11 +24,11 @@ const ProductPageCustomiseContainer: React.FC = () => {
   const deviceCost = `${selectedVariant.regular_price},-`;
 
   const colors = useMemo(() => {
-    return ProductUtil.getProductVariantColorsForCapacity(product!, selectedVariant.capacity);
+    return ProductUtil.getProductVariantColorsForCapacity(product!.variants, selectedVariant.capacity);
   }, [product, selectedVariant.capacity])
 
   const capacities = useMemo(() => {
-    return ProductUtil.getProductVariantCapacitiesForColor(product!, selectedVariant.color);
+    return ProductUtil.getProductVariantCapacitiesForColor(product!.variants, selectedVariant.color);
   }, [product, selectedVariant.color]);
 
   const onClickCapacity = useCallback((id: string) => {

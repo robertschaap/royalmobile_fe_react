@@ -1,10 +1,10 @@
-import { Product } from '../types/products';
+import { ProductVariant } from '../types/products';
 
 /**
  * Returns an array of variants with only capacity related properties
  */
-const getProductVariantCapacitiesForColor = (product: Product, color: string) => {
-  return product.variants.reduce((accumulator, variant) => {
+const getProductVariantCapacitiesForColor = (productVariants: ProductVariant[], color: string) => {
+  return productVariants.reduce((accumulator, variant) => {
     if (variant.color === color) {
       accumulator.push({
         id: variant.variantId,
@@ -19,8 +19,8 @@ const getProductVariantCapacitiesForColor = (product: Product, color: string) =>
 /**
  * Returns an array of variants with only color related properties
  */
-const getProductVariantColorsForCapacity = (product: Product, capacity: string) => {
-  return product.variants.reduce((accumulator, variant) => {
+const getProductVariantColorsForCapacity = (productVariants: ProductVariant[], capacity: string) => {
+  return productVariants.reduce((accumulator, variant) => {
     if (variant.capacity === capacity) {
       accumulator.push({
         id: variant.variantId,
