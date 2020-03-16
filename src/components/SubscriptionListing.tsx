@@ -4,6 +4,7 @@ import { media_breakpoint_up } from '../styles/theme';
 import { Subscription } from '../types/subscriptions';
 
 import { GridBase, GridItem } from './Grid';
+import ContentCopy from './ContentCopy';
 
 interface SubscriptionListingItemProps {
   onClick(subscriptionId: string): void;
@@ -89,7 +90,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
             onClick={() => onClickSubscription(subscriptionId)}
             isSelected={subscriptionId === selectedSubscriptionId}>
             <div>
-              <div>Data</div>
+              <div><ContentCopy messageId="product.monthly" /></div>
               <Bold>{data}</Bold>
             </div>
             <BenefitsSmall>{benefits_short}</BenefitsSmall>
@@ -99,7 +100,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
               ))}
             </BenefitsMedium>
             <div>
-              <div>Monthly</div>
+              <div><ContentCopy messageId="product.data" /></div>
               <Bold>{regular_price},-</Bold>
             </div>
           </SubscriptionListingItem>
