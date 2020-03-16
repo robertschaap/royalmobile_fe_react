@@ -9,6 +9,7 @@ import Hidden from './Hidden';
 
 import phone from '../assets/images/apple_iphone-x_silver.png';
 import { media_breakpoint_up } from '../styles/theme';
+import { useContentCopy } from '../hooks';
 
 const ProductDescription = styled.div`
   border: 1px solid ${({ theme }) => theme.color.grey};
@@ -150,27 +151,27 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <DeviceDiscounts />
         </Hidden>
         <DeviceColor>
-          <div>Pick your device color</div>
+          <div>{useContentCopy("product.pickDeviceColor")}</div>
           <DeviceColorListing
             colors={colors}
             onClickColor={onClickColor}
             selectedColorId={selectedVariantId} />
         </DeviceColor>
         <DeviceCapacity>
-          <div>Pick your device capacity</div>
+          <div>{useContentCopy("product.pickDeviceCapacity")}</div>
           <DeviceCapacityListing
             capacities={capacities}
             onClickCapacity={onClickCapacity}
             selectedCapacityId={selectedVariantId} />
         </DeviceCapacity>
-        <div>Phone cost upfront</div>
+        <div>{useContentCopy("product.phoneCostUpfront")}</div>
         <DeviceCost>{deviceCost}</DeviceCost>
       </DeviceCustomisationOptions>
 
       <ProductDescription>
         <DeviceRating />
         <DeviceDescription>The iPhone X is Apple’s latest attempt at a near bezel-less device and a minor failure as far as that goes. The device is disgraced by a thick and weird notch, a trend that for some inexplicable reason scores of phone manufactureres seem to have copied. We thouroughly dislike this phone but feel you should buy it anyway because we’ll make money.</DeviceDescription>
-        <div>Device specifications</div>
+        <div>{useContentCopy("product.deviceSpecifications")}</div>
       </ProductDescription>
     </Flexy>
   );

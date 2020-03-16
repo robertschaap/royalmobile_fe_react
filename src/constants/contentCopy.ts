@@ -28,7 +28,11 @@ export const contentCopy: ContentCopy = Object.freeze({
   'product.customiseDevice': 'Customise your device',
   'product.monthlyPayment': 'Your monthly payment',
   'product.oneTimePayment': 'Your one-time payment',
-  'product.summingUp': 'Summing it  all up',
+  'product.summingUp': 'Summing it all up',
+  'product.pickDeviceColor': 'Pick your device color',
+  'product.pickDeviceCapacity': 'Pick your device capacity',
+  'product.phoneCostUpfront': 'Phone cost upfront',
+  'product.deviceSpecifications': 'Device Specifications',
 
   'subscription.duration.1year': '1 year contract',
   'subscription.duration.2year': '2 year contract',
