@@ -14,7 +14,7 @@ const API = '/api';
 
 const apiRoutes = {
   API_ROOT: `${API}/`,
-  API_GET_PRODUCT: `${API}/product`,
+  API_GET_PRODUCT: `${API}/product/:id`,
   API_GET_PRODUCTS: `${API}/products`,
   API_GET_SUBSCRIPTIONS: `${API}/subscriptions`,
 };

@@ -26,7 +26,8 @@ const ProductPageContainer: React.FC = () => {
   const subscriptionsState = useSelector(selectSubscriptions);
 
   useEffect(() => {
-    dispatch(fetchProduct());
+    // TODO get from location
+    dispatch(fetchProduct('apple-iphonex'));
     dispatch(fetchSubscriptions());
   }, [dispatch]);
 

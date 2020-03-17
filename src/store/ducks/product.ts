@@ -11,12 +11,14 @@ export enum ProductActions {
   SET_PRODUCT_SELECTED_VARIANT_ID = 'SET_PRODUCT_SELECTED_VARIANT_ID',
 }
 
-interface FetchProductAction {
+export interface FetchProductAction {
   type: typeof ProductActions.FETCH_PRODUCT;
+  payload: string;
 }
 
-export const fetchProduct = (): ProductActionTypes => ({
+export const fetchProduct = (payload: string): ProductActionTypes => ({
   type: ProductActions.FETCH_PRODUCT,
+  payload,
 });
 
 interface FetchProductSucesssAction {
