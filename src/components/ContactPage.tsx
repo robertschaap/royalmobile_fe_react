@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { GridBase, GridItem } from './Grid';
+import ExternalLink from './ExternalLink';
 import IconFacebook from './IconFacebook';
 import IconLinkedIn from './IconLinkedIn';
 import IconTwitter from './IconTwitter';
-import ExternalLink from './ExternalLink';
 import PageSection from './PageSection';
 import SectionHeader from './SectionHeader';
 
