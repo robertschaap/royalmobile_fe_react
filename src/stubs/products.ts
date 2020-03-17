@@ -1,6 +1,6 @@
 import { Product, ProductVariant } from '../types/products';
 
-const defaultModelId = 'apple-iphone-x';
+const defaultModelId = 'apple-iphonex';
 
 interface CreateProductVariant {
   id: number
