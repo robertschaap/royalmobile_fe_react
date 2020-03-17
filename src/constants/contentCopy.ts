@@ -21,6 +21,8 @@ export const contentCopy: ContentCopy = Object.freeze({
   'benefits.threeMonthsFree': 'Three months free inside of your regular bundle when you refer a friend',
   'benefits.doubleData': 'Double data in your bundle plus a 5 euro discount when you combine with Royal Internet',
 
+  'contact.contactUs': 'Contact us',
+
   'order.readyToOrder': 'I\'m ready to order!',
   'order.renewContract': 'I\'m ready to renew my contract!',
 
