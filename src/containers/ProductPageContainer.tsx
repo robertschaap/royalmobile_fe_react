@@ -18,18 +18,21 @@ import ProductPageCustomiseContainer from '../containers/ProductPageCustomiseCon
 import ProductPageOrder from '../components/ProductPageOrder';
 import ProductPageSummaryContainer from '../containers/ProductPageSummaryContainer';
 
+import { useRouteParams } from '../hooks';
 import noop from '../utils/noop';
+import routes from '../constants/routes';
 
 const ProductPageContainer: React.FC = () => {
   const dispatch = useDispatch();
   const productState = useSelector(selectProduct);
   const subscriptionsState = useSelector(selectSubscriptions);
 
+  const { id } = useRouteParams(routes.PRODUCT_PAGE);
+
   useEffect(() => {
-    // TODO get from location
-    dispatch(fetchProduct('apple-iphonex'));
+    dispatch(fetchProduct(id));
     dispatch(fetchSubscriptions());
-  }, [dispatch]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (productState.hasError || subscriptionsState.hasError) {
     return (
