@@ -151,27 +151,27 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <DeviceDiscounts />
         </Hidden>
         <DeviceColor>
-          <div>{useContentCopy("product.pickDeviceColor")}</div>
+          <div>{useContentCopy('product.pickDeviceColor')}</div>
           <DeviceColorListing
             colors={colors}
             onClickColor={onClickColor}
             selectedColorId={selectedVariantId} />
         </DeviceColor>
         <DeviceCapacity>
-          <div>{useContentCopy("product.pickDeviceCapacity")}</div>
+          <div>{useContentCopy('product.pickDeviceCapacity')}</div>
           <DeviceCapacityListing
             capacities={capacities}
             onClickCapacity={onClickCapacity}
             selectedCapacityId={selectedVariantId} />
         </DeviceCapacity>
-        <div>{useContentCopy("product.phoneCostUpfront")}</div>
+        <div>{useContentCopy('product.phoneCostUpfront')}</div>
         <DeviceCost>{deviceCost}</DeviceCost>
       </DeviceCustomisationOptions>
 
       <ProductDescription>
         <DeviceRating />
         <DeviceDescription>The iPhone X is Apple’s latest attempt at a near bezel-less device and a minor failure as far as that goes. The device is disgraced by a thick and weird notch, a trend that for some inexplicable reason scores of phone manufactureres seem to have copied. We thouroughly dislike this phone but feel you should buy it anyway because we’ll make money.</DeviceDescription>
-        <div>{useContentCopy("product.deviceSpecifications")}</div>
+        <div>{useContentCopy('product.deviceSpecifications')}</div>
       </ProductDescription>
     </Flexy>
   );
