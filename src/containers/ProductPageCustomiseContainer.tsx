@@ -18,14 +18,14 @@ const ProductPageCustomiseContainer: React.FC = () => {
   const productSelection = useSelector(selectProductSelection);
   const product = useSelector(selectProductCollection);
 
-  const selectedVariant = product!.variants.find(variant => variant.variantId === productSelection.variantId) || product!.variants[0];
+  const selectedVariant = product!.variants.find((variant) => variant.variantId === productSelection.variantId) || product!.variants[0];
   const deviceManufacturer = product!.manufacturer;
   const deviceName = `${product!.model} ${selectedVariant.capacity} ${selectedVariant.color}`;
   const deviceCost = `${selectedVariant.regular_price},-`;
 
   const colors = useMemo(() => {
     return ProductUtil.getProductVariantColorsForCapacity(product!.variants, selectedVariant.capacity);
-  }, [product, selectedVariant.capacity])
+  }, [product, selectedVariant.capacity]);
 
   const capacities = useMemo(() => {
     return ProductUtil.getProductVariantCapacitiesForColor(product!.variants, selectedVariant.color);
