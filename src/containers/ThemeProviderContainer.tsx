@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 interface ThemeProviderContainerProps {
-  children: any;
+  children: React.ReactNode;
 }
 
 const ThemeProviderContainer: React.FC<ThemeProviderContainerProps> = (props) => {
