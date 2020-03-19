@@ -6,17 +6,17 @@ import {
   selectProduct,
   selectSubscriptions,
   useDispatch,
-  useSelector
+  useSelector,
 } from '../store';
 
 import ErrorMessage from '../components/ErrorMessage';
 import Loader from '../components/Loader';
 import PageSection from '../components/PageSection';
 import PageTitle from '../components/PageTitle';
-import ProductPageConfigureContainer from '../containers/ProductPageConfigureContainer';
-import ProductPageCustomiseContainer from '../containers/ProductPageCustomiseContainer';
+import ProductPageConfigureContainer from './ProductPageConfigureContainer';
+import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
 import ProductPageOrder from '../components/ProductPageOrder';
-import ProductPageSummaryContainer from '../containers/ProductPageSummaryContainer';
+import ProductPageSummaryContainer from './ProductPageSummaryContainer';
 
 import { useRouteParams } from '../hooks';
 import noop from '../utils/noop';
