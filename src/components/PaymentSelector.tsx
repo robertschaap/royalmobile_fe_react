@@ -73,7 +73,7 @@ const AdjustedPaymentAmount = styled(PaymentAdjustmentAmount)`
 `;
 
 interface PaymentSelectorProps {
-  onChangeToggle(): void
+  onChangeToggle(): void;
   isToggleActive: boolean;
 }
 
