@@ -17,7 +17,7 @@ export const fetchSubscriptions = (): SubscriptionsActionTypes => ({
 
 interface FetchSubscriptionsSuccessAction {
   type: typeof SubscriptionsActions.FETCH_SUBSCRIPTIONS_SUCCESS;
-  payload: Subscription[]
+  payload: Subscription[];
 }
 
 export const fetchSubscriptionsSuccess = (payload: Subscription[]): SubscriptionsActionTypes => ({
