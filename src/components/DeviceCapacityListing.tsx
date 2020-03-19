@@ -46,7 +46,7 @@ const DeviceCapacityListing: React.FC<DeviceCapacityListingProps> = (props) => {
   return (
     <DeviceCapacityListingBase
       data-testid="device-capacity-listing">
-      {capacities.map(({ id, capacity}) => (
+      {capacities.map(({ id, capacity }) => (
         <DeviceCapacityListingItem
           key={id}
           onClick={() => onClickCapacity(id)}
