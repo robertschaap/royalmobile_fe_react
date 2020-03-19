@@ -13,7 +13,7 @@ const getProductVariantCapacitiesForColor = (productVariants: ProductVariant[], 
     }
 
     return accumulator;
-  }, [] as { id: string; capacity: string; }[]);
+  }, [] as { id: string; capacity: string }[]);
 };
 
 /**
@@ -30,10 +30,10 @@ const getProductVariantColorsForCapacity = (productVariants: ProductVariant[], c
     }
 
     return accumulator;
-  }, [] as { id: string; color: string; colorHex: string; }[]);
+  }, [] as { id: string; color: string; colorHex: string }[]);
 };
 
 export default {
   getProductVariantCapacitiesForColor,
   getProductVariantColorsForCapacity,
-}
+};
