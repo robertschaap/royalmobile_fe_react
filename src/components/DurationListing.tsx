@@ -44,7 +44,7 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
 const content: { readonly [key: string]: string } = {
   '1_year': 'subscription.duration.1year',
   '2_year': 'subscription.duration.2year',
-}
+};
 
 interface DurationListingProps {
   onClickDuration(durationId: string): void;
