@@ -29,7 +29,7 @@ export const initialProductState: ProductState = {
     subscriptionId: null,
     variantId: null,
   },
-}
+};
 
 export const productReducer = (state: ProductState = initialProductState, action: ProductActionTypes) => {
   return produce<ProductState>(state, (newState) => {
@@ -48,20 +48,20 @@ export const productReducer = (state: ProductState = initialProductState, action
         break;
       case ProductActions.SET_PRODUCT_SELECTED_DURATION_ID:
         newState.selection.durationId = action.payload;
-        break
+        break;
       case ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID:
         newState.selection.paymentPlanId = action.payload;
-        break
+        break;
       case ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID:
         newState.selection.subscriptionId = action.payload;
-        break
+        break;
       case ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID:
         newState.selection.variantId = action.payload;
-        break
+        break;
       default:
         break;
     }
 
     return newState;
   });
-}
+};
