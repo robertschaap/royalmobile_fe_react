@@ -36,7 +36,7 @@ const ProductPageOrder: React.FC<ProductPageOrderProps> = (props) => {
         </GridItem>
       </GridBase>
     </PageSection>
-  )
-}
+  );
+};
 
 export default ProductPageOrder;
