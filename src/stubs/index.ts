@@ -1,5 +1,5 @@
-import { getProduct, getProducts, getSubscriptions } from './apiResponses';
 import { Server } from 'miragejs';
+import { getProduct, getProducts, getSubscriptions } from './apiResponses';
 import routes from '../constants/routes';
 
 export default () => new Server({
