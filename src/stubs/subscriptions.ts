@@ -23,7 +23,7 @@ const createSubscription = (props: CreateSubscripton): Subscription => {
     benefits_short: 'unlimited\n calls, text, roaming',
     regular_price: price,
   };
-}
+};
 
 export const subscriptions: Subscription[] = [
   createSubscription({ id: 1, data: '20gb', duration: '1', price: '20' }),
