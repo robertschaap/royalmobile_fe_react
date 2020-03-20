@@ -3,9 +3,12 @@
     "browser": true,
     "node": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "react-app",
-    "airbnb-base"
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "settings": {
     "import/resolver": {
@@ -15,6 +18,8 @@
     }
   },
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/camelcase": "off",
     "arrow-body-style": "off",
     "camelcase": "off",
     "import/no-extraneous-dependencies": ["error", {
