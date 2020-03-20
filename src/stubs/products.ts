@@ -3,7 +3,7 @@ import { Product, ProductVariant } from '../types/products';
 const defaultModelId = 'apple-iphonex';
 
 interface CreateProductVariant {
-  id: number
+  id: number;
   modelId?: string;
   capacity: string;
   colorId: string;
@@ -62,7 +62,7 @@ const createProduct = (props: CreateProduct): Product => {
       createProductVariant({ id: 16, capacity: '128gb', colorId: 'pink', colorHex: '#d59a8d' }),
     ],
   };
-}
+};
 
 export const products: Product[] = [
   createProduct({ id: 1 }),
