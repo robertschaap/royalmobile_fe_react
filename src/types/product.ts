@@ -1,4 +1,4 @@
-import { ProductVariant } from "./products";
+import { ProductVariant } from './products';
 
 // TODO: complete this with product details information
 interface Product {
