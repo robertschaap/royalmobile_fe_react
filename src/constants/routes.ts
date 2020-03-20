@@ -1,6 +1,7 @@
 const pageRoutes = {
   HOME_PAGE: '/',
   PRODUCT_PAGE: '/product/:id',
+  ORDER_DETAILS_PAGE: '/order/details',
   ORDER_PAGE: '/order',
   CAMPAIGNS_PAGE: '/campaigns/:id',
   CONTACT_PAGE: '/contact',

@@ -34,7 +34,8 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
           Debug:&nbsp;
           <a href={routes.HOME_PAGE}>Home</a> |&nbsp;
           <a href={routes.PRODUCT_PAGE}>Product</a> |&nbsp;
-          <a href={routes.ORDER_PAGE}>Order</a>
+          <a href={routes.ORDER_PAGE}>Order</a> |&nbsp;
+          <a href={routes.ORDER_DETAILS_PAGE}>Order Details</a>
         </div>
       )}
       <Header />
