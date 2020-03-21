@@ -15,7 +15,7 @@ describe('<DeviceColorListing />', () => {
       <DeviceColorListing
         colors={[]}
         onClickColor={jest.fn()}
-        selectedColorId='' />
+        selectedColorId='' />,
     );
 
     expect(getByTestId('device-color-listing').children.length).toBe(0);
@@ -26,7 +26,7 @@ describe('<DeviceColorListing />', () => {
       <DeviceColorListing
         colors={colors}
         onClickColor={jest.fn()}
-        selectedColorId='' />
+        selectedColorId='' />,
     );
 
     expect(getByTestId('device-color-listing').children.length).toBe(3);
@@ -38,7 +38,7 @@ describe('<DeviceColorListing />', () => {
       <DeviceColorListing
         colors={colors}
         onClickColor={jest.fn()}
-        selectedColorId='color-id2' />
+        selectedColorId='color-id2' />,
     );
 
     expect(getByTestId('device-color-listing').children[0]).toHaveAttribute('data-testprop-is-selected', 'false');
