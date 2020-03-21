@@ -80,7 +80,7 @@ describe('Products Reducer', () => {
         paymentPlanId: null,
         subscriptionId: null,
         variantId: null,
-      }
+      },
     });
   });
 
@@ -94,7 +94,7 @@ describe('Products Reducer', () => {
         paymentPlanId: 'payment_plan_id-1',
         subscriptionId: null,
         variantId: null,
-      }
+      },
     });
   });
 
@@ -108,7 +108,7 @@ describe('Products Reducer', () => {
         paymentPlanId: null,
         subscriptionId: 'subscription_id-1',
         variantId: null,
-      }
+      },
     });
   });
 
@@ -122,7 +122,7 @@ describe('Products Reducer', () => {
         paymentPlanId: null,
         subscriptionId: null,
         variantId: 'variant_id-1',
-      }
+      },
     });
   });
 });
