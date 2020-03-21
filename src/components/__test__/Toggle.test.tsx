@@ -9,7 +9,7 @@ describe('<Toggle />', () => {
     const { getByTestId } = renderWithTheme(
       <Toggle
         isActive={true}
-        onChange={jest.fn()} />
+        onChange={jest.fn()} />,
     );
 
     expect(getByTestId('toggle-input')).toHaveAttribute('checked');
@@ -19,7 +19,7 @@ describe('<Toggle />', () => {
     const { getByTestId } = renderWithTheme(
       <Toggle
         isActive={false}
-        onChange={jest.fn()} />
+        onChange={jest.fn()} />,
     );
 
     expect(getByTestId('toggle-input')).not.toHaveAttribute('checked');
@@ -30,7 +30,7 @@ describe('<Toggle />', () => {
     const { getByTestId } = renderWithTheme(
       <Toggle
         isActive={false}
-        onChange={onChange} />
+        onChange={onChange} />,
     );
 
     fireEvent.click(getByTestId('toggle-input'));
