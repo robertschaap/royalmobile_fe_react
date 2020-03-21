@@ -20,9 +20,11 @@ const zIndex = {
 const color = {
   primary: '#ff9e00',
   secondary: '#c3ebeb',
+
+  black: 'black',
+  blue: 'royalblue',
   grey: '#ddd',
   lightGrey: '#eee',
-  black: 'black',
   white: 'white',
 };
 
