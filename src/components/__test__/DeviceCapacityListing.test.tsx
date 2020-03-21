@@ -15,7 +15,7 @@ describe('<DeviceCapacityListing />', () => {
       <DeviceCapacityListing
         capacities={[]}
         onClickCapacity={jest.fn()}
-        selectedCapacityId="" />
+        selectedCapacityId="" />,
     );
 
     expect(getByTestId('device-capacity-listing').children.length).toBe(0);
@@ -26,7 +26,7 @@ describe('<DeviceCapacityListing />', () => {
       <DeviceCapacityListing
         capacities={capacities}
         onClickCapacity={jest.fn()}
-        selectedCapacityId="" />
+        selectedCapacityId="" />,
     );
 
     expect(getByTestId('device-capacity-listing').children.length).toBe(3);
@@ -38,7 +38,7 @@ describe('<DeviceCapacityListing />', () => {
       <DeviceCapacityListing
         capacities={capacities}
         onClickCapacity={jest.fn()}
-        selectedCapacityId='capacity-id2' />
+        selectedCapacityId='capacity-id2' />,
     );
 
     expect(getByText('Capacity 1')).toHaveAttribute('data-testprop-is-selected', 'false');
