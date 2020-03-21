@@ -18,8 +18,8 @@ const LoaderElement = styled.div`
     height: 64px;
     margin: 8px;
     border-radius: 50%;
-    border: 6px solid royalblue;
-    border-color: royalblue transparent royalblue transparent;
+    border: 6px solid ${({ theme }) => theme.color.blue};
+    border-color: ${({ theme }) => theme.color.blue} transparent ${({ theme }) => theme.color.blue} transparent;
     animation: spin 0.5s linear infinite;
   }
 
