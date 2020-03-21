@@ -8,7 +8,7 @@ describe('<PaymentSelector />', () => {
     renderWithTheme(
       <PaymentSelector
         isToggleActive={true}
-        onChangeToggle={jest.fn()} />
+        onChangeToggle={jest.fn()} />,
     );
   });
 });
