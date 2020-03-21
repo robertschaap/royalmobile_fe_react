@@ -13,7 +13,7 @@ describe('<DurationListing />', () => {
       <DurationListing
         durations={[]}
         onClickDuration={jest.fn()}
-        selectedDurationId='' />
+        selectedDurationId='' />,
     );
 
     expect(getByTestId('duration-listing').children.length).toBe(0);
@@ -24,7 +24,7 @@ describe('<DurationListing />', () => {
       <DurationListing
         durations={durations}
         onClickDuration={jest.fn()}
-        selectedDurationId='' />
+        selectedDurationId='' />,
     );
 
     expect(getByTestId('duration-listing').children.length).toBe(3);
@@ -35,7 +35,7 @@ describe('<DurationListing />', () => {
       <DurationListing
         durations={durations}
         onClickDuration={jest.fn()}
-        selectedDurationId='duration-id2' />
+        selectedDurationId='duration-id2' />,
     );
 
     const list = getByTestId('duration-listing').children;
