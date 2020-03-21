@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   a:focus,
   button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px royalblue;
+    box-shadow: 0 0 0 3px ${theme.color.blue};
   }
 `;
 
