@@ -50,7 +50,7 @@ const ToggleInput = styled.input.attrs({
 
   :focus + ${ToggleSlider} {
     transition: 0;
-    box-shadow: 0 0 0 3px royalblue;
+    box-shadow: 0 0 0 3px ${({ theme }) => theme.color.blue};
   }
 `;
 
