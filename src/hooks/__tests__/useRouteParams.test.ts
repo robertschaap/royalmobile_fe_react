@@ -9,7 +9,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('useRouteParams', () => {
   afterEach(() => {
-    (useRouteMatch as jest.Mock).mockReset()
+    (useRouteMatch as jest.Mock).mockReset();
   });
 
   it('should return an empty object if the route is not matched', () => {
