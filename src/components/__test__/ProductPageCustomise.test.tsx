@@ -11,7 +11,7 @@ describe('<ProductPageCustomise />', () => {
         colors={[]}
         deviceCost=''
         deviceManufacturer=''
-        deviceName='' />
+        deviceName='' />,
     );
   });
 });
