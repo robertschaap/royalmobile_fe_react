@@ -15,7 +15,7 @@ describe('<SubscriptionListing />', () => {
       <SubscriptionListing
         onClickSubscription={jest.fn()}
         selectedSubscriptionId=''
-        subscriptions={[]} />
+        subscriptions={[]} />,
     );
 
     expect(getByTestId('subscription-listing').children.length).toBe(0);
@@ -27,7 +27,7 @@ describe('<SubscriptionListing />', () => {
       <SubscriptionListing
         onClickSubscription={jest.fn()}
         selectedSubscriptionId=''
-        subscriptions={subscriptions} />
+        subscriptions={subscriptions} />,
     );
 
     expect(getByTestId('subscription-listing').children.length).toBe(3);
@@ -38,10 +38,10 @@ describe('<SubscriptionListing />', () => {
       <SubscriptionListing
         onClickSubscription={jest.fn()}
         selectedSubscriptionId='subscription-id2'
-        subscriptions={subscriptions} />
+        subscriptions={subscriptions} />,
     );
 
-    const items = getAllByTestId('subscription-listing-item')
+    const items = getAllByTestId('subscription-listing-item');
     expect(items[0]).toHaveAttribute('data-testprop-is-selected', 'false');
     expect(items[1]).toHaveAttribute('data-testprop-is-selected', 'true');
     expect(items[2]).toHaveAttribute('data-testprop-is-selected', 'false');
