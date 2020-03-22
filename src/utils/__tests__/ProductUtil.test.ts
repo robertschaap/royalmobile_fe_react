@@ -12,30 +12,30 @@ describe('ProductUtil', () => {
   describe('getProductVariantCapacitiesForColor', () => {
     it('should return an array of capacity properties for a color', () => {
       expect(
-        ProductUtil.getProductVariantCapacitiesForColor(variants, 'color-id1')
+        ProductUtil.getProductVariantCapacitiesForColor(variants, 'color-id1'),
       ).toEqual([{
         id: 'variant-id1',
         capacity: 'capacity-id1',
-      }])
+      }]);
     });
 
     it('should return an empty array if no variants are passed', () => {
       expect(
-        ProductUtil.getProductVariantCapacitiesForColor([], 'color-id1')
-      ).toEqual([])
+        ProductUtil.getProductVariantCapacitiesForColor([], 'color-id1'),
+      ).toEqual([]);
     });
 
     it('should return an empty array if no matches are found', () => {
       expect(
-        ProductUtil.getProductVariantCapacitiesForColor(variants, 'not-a-valid-id')
-      ).toEqual([])
+        ProductUtil.getProductVariantCapacitiesForColor(variants, 'not-a-valid-id'),
+      ).toEqual([]);
     });
   });
 
   describe('getProductVariantColorsForCapacity', () => {
     it('should return an array of of color properties for a capacity', () => {
       expect(
-        ProductUtil.getProductVariantColorsForCapacity(variants, 'capacity-id1')
+        ProductUtil.getProductVariantColorsForCapacity(variants, 'capacity-id1'),
       ).toEqual([{
         id: 'variant-id1',
         color: 'color-id1',
@@ -45,13 +45,13 @@ describe('ProductUtil', () => {
 
     it('should return an empty array if no variants are passed', () => {
       expect(
-        ProductUtil.getProductVariantColorsForCapacity([], '')
+        ProductUtil.getProductVariantColorsForCapacity([], ''),
       ).toEqual([]);
     });
 
     it('should return an empty array if no matches are found', () => {
       expect(
-        ProductUtil.getProductVariantColorsForCapacity(variants, 'not-a-valid-id')
+        ProductUtil.getProductVariantColorsForCapacity(variants, 'not-a-valid-id'),
       ).toEqual([]);
     });
   });
