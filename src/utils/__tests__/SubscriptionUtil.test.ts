@@ -19,7 +19,7 @@ describe('SubscriptionUtil', () => {
 
     it('should return an empty array if no subscriptions are passed', () => {
       expect(
-        SubscriptionUtil.getSubscriptionDurations([])
+        SubscriptionUtil.getSubscriptionDurations([]),
       ).toEqual([]);
     });
   });
@@ -27,7 +27,7 @@ describe('SubscriptionUtil', () => {
   describe('getSubscriptionsByDuration', () => {
     it('should filter a list of subscriptions by duration id', () => {
       expect(
-        SubscriptionUtil.getSubscriptionsByDuration(subscriptions, 'duration-id1')
+        SubscriptionUtil.getSubscriptionsByDuration(subscriptions, 'duration-id1'),
       ).toEqual([
         { durationId: 'duration-id1' },
         { durationId: 'duration-id1' },
@@ -36,13 +36,13 @@ describe('SubscriptionUtil', () => {
 
     it('should return an empty array if no subscriptions are passed', () => {
       expect(
-        SubscriptionUtil.getSubscriptionsByDuration([], 'duration-id1')
+        SubscriptionUtil.getSubscriptionsByDuration([], 'duration-id1'),
       ).toEqual([]);
     });
 
     it('should return an empty array if no valid duration id is passed', () => {
       expect(
-        SubscriptionUtil.getSubscriptionsByDuration(subscriptions, 'not-a-valid-id')
+        SubscriptionUtil.getSubscriptionsByDuration(subscriptions, 'not-a-valid-id'),
       ).toEqual([]);
     });
   });
