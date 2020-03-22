@@ -8,5 +8,5 @@ describe('dedupeArray', () => {
   it('should de-deuplicate an array', () => {
     expect(dedupeArray([1, 2, 1])).toEqual([1, 2]);
     expect(dedupeArray(['a', 'b', 'a'])).toEqual(['a', 'b']);
-  })
+  });
 });
