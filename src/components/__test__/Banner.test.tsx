@@ -14,6 +14,6 @@ describe('<Banner />', () => {
 
     fireEvent.click(getByTestId('banner'));
 
-    expect(location.pathname).toContain('/campaigns');
+    expect(window.location.pathname).toContain('/campaigns');
   });
 });
