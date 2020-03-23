@@ -21,7 +21,7 @@ describe('<NavigationLinks />', () => {
 
       fireEvent.click(getByTestId('for-your-business-link'));
 
-      expect(location.pathname).toContain('/business');
+      expect(window.location.pathname).toContain('/business');
     });
   });
 
@@ -35,7 +35,7 @@ describe('<NavigationLinks />', () => {
 
       fireEvent.click(getByTestId('help-link'));
 
-      expect(location.pathname).toContain('/help');
+      expect(window.location.pathname).toContain('/help');
     });
   });
 
@@ -49,7 +49,7 @@ describe('<NavigationLinks />', () => {
 
       fireEvent.click(getByTestId('my-account-link'));
 
-      expect(location.pathname).toContain('/myroyalmobile');
+      expect(window.location.pathname).toContain('/myroyalmobile');
     });
   });
 
@@ -63,7 +63,7 @@ describe('<NavigationLinks />', () => {
 
       fireEvent.click(getByTestId('products-for-you-link'));
 
-      expect(location.pathname).toContain('/consumer');
+      expect(window.location.pathname).toContain('/consumer');
     });
   });
 });
