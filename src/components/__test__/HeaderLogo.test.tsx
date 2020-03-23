@@ -14,6 +14,6 @@ describe('<HeaderLogo />', () => {
 
     fireEvent.click(getByTestId('header-logo'));
 
-    expect(location.pathname).toEqual('/');
+    expect(window.location.pathname).toEqual('/');
   });
 });
