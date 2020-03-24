@@ -6,6 +6,7 @@ import Breadcrumbs from './Breadcrumbs';
 import HeaderLogo from './HeaderLogo';
 import HeaderUsps from './HeaderUsps';
 import Navigation from './Navigation';
+import SkipNavigationButton from './SkipNavigationButton';
 
 const HeaderBase = styled.header`
   background-color: rgba(255,255,255,0.97);
@@ -48,6 +49,7 @@ const Header: React.FC = () => {
         <HeaderLogo />
         <HeaderUsps />
       </HeaderTop>
+      <SkipNavigationButton />
       <Navigation />
       <Breadcrumbs />
     </HeaderBase>
