@@ -29,11 +29,11 @@ const ProductPageConfigureContainer: React.FC = () => {
     return SubscriptionUtil.getSubscriptionsByDuration(subscriptions, productSelection.durationId || durations[0]);
   }, [subscriptions, productSelection.durationId, durations]);
 
-  const onClickDuration = useCallback(id => {
+  const onClickDuration = useCallback((id) => {
     dispatch(setProductSelectedDurationId(id));
   }, [dispatch]);
 
-  const onClickSubscription = useCallback(id => {
+  const onClickSubscription = useCallback((id) => {
     dispatch(setProductSelectedSubscriptionId(id));
   }, [dispatch]);
 
