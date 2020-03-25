@@ -3,7 +3,8 @@ export * from './ducks/products';
 export * from './ducks/subscriptions';
 
 export {
-  default as StoreProviderContainer,
+  StoreProviderContainer,
+  store,
 } from './StoreProviderContainer';
 
 export {
