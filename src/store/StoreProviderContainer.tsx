@@ -8,7 +8,7 @@ import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
+export const store = createStore(
   rootReducer(),
   initialState,
   compose(
@@ -24,7 +24,7 @@ interface StoreProviderContainerProps {
   children: React.ReactNode;
 }
 
-const StoreProviderContainer: React.FC<StoreProviderContainerProps> = (props) => {
+export const StoreProviderContainer: React.FC<StoreProviderContainerProps> = (props) => {
   const { children } = props;
 
   return (
@@ -33,5 +33,3 @@ const StoreProviderContainer: React.FC<StoreProviderContainerProps> = (props) =>
     </Provider>
   );
 };
-
-export default StoreProviderContainer;
