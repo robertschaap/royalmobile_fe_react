@@ -1,5 +1,6 @@
 import { StoreState } from '../reducers';
 import { Product } from '../../types/products';
+import { store } from '..';
 
 export enum ProductsActions {
   FETCH_PRODUCTS = 'FETCH_PRODUCTS',
@@ -7,12 +8,14 @@ export enum ProductsActions {
   FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR',
 }
 
-interface FetchProductsAction {
+export interface FetchProductsAction {
   type: typeof ProductsActions.FETCH_PRODUCTS;
+  payload: number;
 }
 
 export const fetchProducts = (): ProductsActionTypes => ({
   type: ProductsActions.FETCH_PRODUCTS,
+  payload: selectProductsPageNumber(store.getState()),
 });
 
 interface FetchProductsSucesssAction {
@@ -42,3 +45,4 @@ export type ProductsActionTypes =
 
 export const selectProducts = (state: StoreState) => state.products;
 export const selectProductsCollection = (state: StoreState) => state.products.collection;
+const selectProductsPageNumber = (state: StoreState) => state.products.pageNumber;

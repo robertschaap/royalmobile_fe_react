@@ -7,11 +7,12 @@ import {
   ProductsActions,
   fetchProductsSuccess,
   fetchProductsError,
+  FetchProductsAction,
 } from '../ducks/products';
 
-function* fetchProductsSaga(): SagaIterator {
+function* fetchProductsSaga({ payload: page }: FetchProductsAction): SagaIterator {
   yield call(api.get, {
-    url: routes.API_GET_PRODUCTS,
+    url: `${routes.API_GET_PRODUCTS}?page=${page + 1}`,
     onSuccessAction: fetchProductsSuccess,
     onErrorAction: fetchProductsError,
   });
