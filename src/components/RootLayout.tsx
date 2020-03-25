@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../styles/theme';
-import routes from '../constants/routes';
 
+import DebugMenu from './DebugMenu';
 import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
@@ -29,15 +29,7 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
 
   return (
     <RootLayoutBase>
-      {true && (
-        <div style={{ backgroundColor: '#ddd' }}>
-          Debug:&nbsp;
-          <a href={routes.HOME_PAGE}>Home</a> |&nbsp;
-          <a href={routes.PRODUCT_PAGE}>Product</a> |&nbsp;
-          <a href={routes.ORDER_PAGE}>Order</a> |&nbsp;
-          <a href={routes.ORDER_DETAILS_PAGE}>Order Details</a>
-        </div>
-      )}
+      <DebugMenu />
       <Header />
       <Main>
         {children}
