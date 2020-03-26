@@ -7,36 +7,47 @@ import {
   ProductsActionTypes,
 } from '../../ducks/products';
 
+const initialState = {
+  isFetching: false,
+  hasError: false,
+  collection: [],
+  pageNumber: 0,
+};
+
 describe('Products Reducer', () => {
   it('should return the initial state', () => {
-    expect(productsReducer(undefined, {} as ProductsActionTypes)).toEqual({
+    expect(productsReducer(initialState, {} as ProductsActionTypes)).toEqual({
       isFetching: false,
       hasError: false,
       collection: [],
+      pageNumber: 0,
     });
   });
 
   it('should handle FETCH_PRODUCTS', () => {
-    expect(productsReducer(undefined, fetchProducts())).toEqual({
+    expect(productsReducer(initialState, fetchProducts())).toEqual({
       isFetching: true,
       hasError: false,
       collection: [],
+      pageNumber: 0,
     });
   });
 
   it('should handle FETCH_PRODUCTS_SUCCESS', () => {
-    expect(productsReducer(undefined, fetchProductsSuccess([]))).toEqual({
+    expect(productsReducer(initialState, fetchProductsSuccess([]))).toEqual({
       isFetching: false,
       hasError: false,
       collection: [],
+      pageNumber: 1,
     });
   });
 
   it('should handle FETCH_PRODUCTS_ERROR', () => {
-    expect(productsReducer(undefined, fetchProductsError('error'))).toEqual({
+    expect(productsReducer(initialState, fetchProductsError('error'))).toEqual({
       isFetching: false,
       hasError: true,
       collection: [],
+      pageNumber: 0,
     });
   });
 });
