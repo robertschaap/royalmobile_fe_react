@@ -14,6 +14,16 @@ const initialState = {
   pageNumber: 0,
 };
 
+jest.mock('../../index', () => ({
+  store: {
+    getState: () => ({
+      products: {
+        pageNumber: 0,
+      },
+    }),
+  },
+}));
+
 describe('Products Reducer', () => {
   it('should return the initial state', () => {
     expect(productsReducer(initialState, {} as ProductsActionTypes)).toEqual({
