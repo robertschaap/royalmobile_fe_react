@@ -13,12 +13,14 @@ const ProductListingContainer: React.FC = () => {
   const productsState = useSelector(selectProducts);
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    if (productsState.pageNumber < 1) {
+      dispatch(fetchProducts(productsState.pageNumber));
+    }
+  }, []);
 
   const handleLoadMoreClick = useCallback(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    dispatch(fetchProducts(productsState.pageNumber));
+  }, [dispatch, productsState.pageNumber]);
 
   if (productsState.hasError) {
     return (
@@ -32,12 +34,14 @@ const ProductListingContainer: React.FC = () => {
     <PageSection>
       <ProductListing
         products={productsState.collection} />
-      <Loader show={productsState.isFetching} />
+      <Loader
+        show={productsState.isFetching} />
       <Button
         variant="secondary"
         disabled={productsState.isFetching}
         onClick={handleLoadMoreClick}>
-        <ContentCopy messageId="common.loadMore" />
+        <ContentCopy
+          messageId="common.loadMore" />
       </Button>
     </PageSection>
   );
