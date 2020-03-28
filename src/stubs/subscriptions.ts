@@ -1,38 +1,38 @@
 import { Subscription } from '../types/subscriptions';
 
-interface CreateSubscripton {
-  id: number;
-  data: string;
-  duration: string;
-  price: string;
-}
-
-const createSubscription = (props: CreateSubscripton): Subscription => {
-  const { id, data, duration, price } = props;
-
+export const SubscriptionFactory = (data?: string, duration?: number, regular_price?: string) => {
   return {
-    id: id,
+    subscriptionId: (i: string) => `subscription-id${i + 1}`,
+    durationId: 'duration-id1',
+    data: '00gb',
+    benefits_long: ['benefit-1', 'benefit-2', 'benefit-3'],
+    benefits_short: 'benefits-short',
+    regular_price: '00',
+  };
+};
+
+const createSubscription = (data: string, duration: number, regular_price: string): Omit<Subscription, 'id'> => {
+  return {
     subscriptionId: `royalmobile-${data}-${duration}year`,
+    data,
     durationId: `${duration}_year`,
-    data: data,
     benefits_long: [
       'unlimited calls',
       'unlimited texts',
       'unlimited roaming',
     ],
     benefits_short: 'unlimited\n calls, text, roaming',
-    regular_price: price,
+    regular_price,
   };
 };
 
-export const subscriptions: Subscription[] = [
-  createSubscription({ id: 1, data: '20gb', duration: '1', price: '20' }),
-  createSubscription({ id: 2, data: '40gb', duration: '1', price: '30' }),
-  createSubscription({ id: 3, data: '60gb', duration: '1', price: '40' }),
-  createSubscription({ id: 4, data: '80gb', duration: '1', price: '50' }),
-
-  createSubscription({ id: 5, data: '20gb', duration: '2', price: '18' }),
-  createSubscription({ id: 6, data: '40gb', duration: '2', price: '26' }),
-  createSubscription({ id: 7, data: '60gb', duration: '2', price: '34' }),
-  createSubscription({ id: 8, data: '80gb', duration: '2', price: '42' }),
-];
+export const seedSubscriptions = (server: any) => {
+  server.create('subscription', createSubscription('20gb', 1, '20'));
+  server.create('subscription', createSubscription('40gb', 1, '30'));
+  server.create('subscription', createSubscription('60gb', 1, '40'));
+  server.create('subscription', createSubscription('80gb', 1, '50'));
+  server.create('subscription', createSubscription('20gb', 2, '18'));
+  server.create('subscription', createSubscription('40gb', 2, '26'));
+  server.create('subscription', createSubscription('60gb', 2, '34'));
+  server.create('subscription', createSubscription('80gb', 2, '42'));
+};
