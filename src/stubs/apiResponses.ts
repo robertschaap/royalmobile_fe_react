@@ -7,6 +7,7 @@ export const getProduct = (schema: any, request: any) => {
   });
 };
 
+// This purposely ignores pagination
 export const getProducts = (schema: any, _request: any) => {
   return new Response(200, {}, {
     status: 'success',
