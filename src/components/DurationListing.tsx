@@ -31,6 +31,10 @@ const DurationListingItem = styled.button<DurationListingItemProps>`
     border: 2px solid ${theme.color.primary};
   `}
 
+  &:hover {
+    cursor: pointer;
+  }
+
   ${media_breakpoint_up.md} {
     width: unset;
     margin-right: ${({ theme }) => theme.spacing(2)};
