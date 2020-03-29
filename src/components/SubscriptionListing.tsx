@@ -24,6 +24,10 @@ const SubscriptionListingItem = styled.button<SubscriptionListingItemProps>`
   ${({ isSelected, theme }) => isSelected && `
     border: 2px solid ${theme.color.primary};
   `}
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Bold = styled.div`
@@ -90,7 +94,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
             onClick={() => onClickSubscription(subscriptionId)}
             isSelected={subscriptionId === selectedSubscriptionId}>
             <div>
-              <div><ContentCopy messageId="product.monthly" /></div>
+              <div><ContentCopy messageId="product.data" /></div>
               <Bold>{data}</Bold>
             </div>
             <BenefitsSmall>{benefits_short}</BenefitsSmall>
@@ -100,7 +104,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
               ))}
             </BenefitsMedium>
             <div>
-              <div><ContentCopy messageId="product.data" /></div>
+              <div><ContentCopy messageId="product.monthly" /></div>
               <Bold>{regular_price},-</Bold>
             </div>
           </SubscriptionListingItem>
