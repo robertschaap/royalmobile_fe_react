@@ -1,74 +1,112 @@
 import { Product, ProductVariant } from '../types/products';
 
-const defaultModelId = 'apple-iphonex';
+type ProductFactoryReturnType = Omit<Product, 'id' |'model' | 'modelId'> & {
+  model(id: number): string;
+  modelId(id: number): string;
+};
+
+export const ProductFactory = (): ProductFactoryReturnType => {
+  return {
+    manufacturer: 'manufacturer-1',
+    model: (id) => `Model ${id + 1}`,
+    modelId: (id) => `manufacturer-modelid${id + 1}`,
+    variants: [{
+      id: 1,
+      variantId: 'model-id1-00gb-color1',
+      color: 'color1',
+      colorHex: '#cccccc',
+      capacity: '00gb',
+      is_in_stock: true,
+      is_preorder: true,
+      regular_price: '000',
+      discounted_price: '000',
+      has_discounts: true,
+    }, {
+      id: 2,
+      variantId: 'model-id1-00gb-color2',
+      color: 'color2',
+      colorHex: '#dddddd',
+      capacity: '00gb',
+      is_in_stock: true,
+      is_preorder: true,
+      regular_price: '000',
+      discounted_price: '000',
+      has_discounts: true,
+    }],
+    specifications: {},
+  };
+};
 
 interface CreateProductVariant {
   id: number;
   modelId?: string;
   capacity: string;
-  colorId: string;
+  color: string;
   colorHex: string;
+  is_in_stock?: boolean;
+  is_preorder?: boolean;
+  regular_price?: string;
+  discounted_price?: string;
+  has_discounts?: boolean;
 }
 
 const createProductVariant = (props: CreateProductVariant): ProductVariant => {
-  const { id, modelId = defaultModelId, capacity, colorId, colorHex } = props;
+  const {
+    capacity,
+    color,
+    colorHex,
+    id,
+    modelId,
+    is_in_stock = true,
+    is_preorder = true,
+    regular_price = '265',
+    discounted_price = '239',
+    has_discounts = true,
+  } = props;
 
   return {
-    id: id,
-    variantId: `${modelId}-${capacity}-${colorId}`,
-    color: colorId,
-    colorHex: colorHex,
-    capacity: capacity,
-    is_in_stock: true,
-    is_preorder: true,
-    regular_price: '265',
-    discounted_price: '239',
-    has_discounts: true,
+    id,
+    variantId: `${modelId}-${capacity}-${color}`,
+    color,
+    colorHex,
+    capacity,
+    is_in_stock,
+    is_preorder,
+    regular_price,
+    discounted_price,
+    has_discounts,
   };
 };
 
-interface CreateProduct {
-  id: number;
-  modelId?: string;
-}
+const createDefaultProductVariants = (modelId: string): ProductVariant[] => {
+  const defaultColors = [
+    { color: 'lime', colorHex: '#7ec09a' },
+    { color: 'purple', colorHex: '#8097c2' },
+    { color: 'green', colorHex: '#bae596' },
+    { color: 'pink', colorHex: '#d59a8d' },
+  ];
 
-const createProduct = (props: CreateProduct): Product => {
-  const { id, modelId = defaultModelId } = props;
+  const colorsByCapacity = ['16gb', '32gb', '64gb', '128gb'].reduce((acc, capacity) => {
+    const colorsForCapacity = defaultColors.map((color) => ({
+      capacity,
+      ...color,
+    }));
 
-  return {
-    id: id,
-    manufacturer: 'Apple',
-    model: 'iPhone X',
-    modelId: modelId,
-    variants: [
-      createProductVariant({ id: 1, capacity: '16gb', colorId: 'lime', colorHex: '#7ec09a' }),
-      createProductVariant({ id: 2, capacity: '16gb', colorId: 'purple', colorHex: '#8097c2' }),
-      createProductVariant({ id: 3, capacity: '16gb', colorId: 'green', colorHex: '#bae596' }),
-      createProductVariant({ id: 4, capacity: '16gb', colorId: 'pink', colorHex: '#d59a8d' }),
+    return acc.concat(colorsForCapacity);
+  }, [] as { [key: string]: string }[]);
 
-      createProductVariant({ id: 5, capacity: '32gb', colorId: 'lime', colorHex: '#7ec09a' }),
-      createProductVariant({ id: 6, capacity: '32gb', colorId: 'purple', colorHex: '#8097c2' }),
-      createProductVariant({ id: 7, capacity: '32gb', colorId: 'green', colorHex: '#bae596' }),
-      createProductVariant({ id: 8, capacity: '32gb', colorId: 'pink', colorHex: '#d59a8d' }),
 
-      createProductVariant({ id: 9, capacity: '64gb', colorId: 'lime', colorHex: '#7ec09a' }),
-      createProductVariant({ id: 10, capacity: '64gb', colorId: 'purple', colorHex: '#8097c2' }),
-      createProductVariant({ id: 11, capacity: '64gb', colorId: 'green', colorHex: '#bae596' }),
-      createProductVariant({ id: 12, capacity: '64gb', colorId: 'pink', colorHex: '#d59a8d' }),
+  const productVariants = colorsByCapacity.map(({ capacity, color, colorHex }, id: number) => {
+    return createProductVariant({ id, modelId, capacity, color, colorHex });
+  });
 
-      createProductVariant({ id: 13, capacity: '128gb', colorId: 'lime', colorHex: '#7ec09a' }),
-      createProductVariant({ id: 14, capacity: '128gb', colorId: 'purple', colorHex: '#8097c2' }),
-      createProductVariant({ id: 15, capacity: '128gb', colorId: 'green', colorHex: '#bae596' }),
-      createProductVariant({ id: 16, capacity: '128gb', colorId: 'pink', colorHex: '#d59a8d' }),
-    ],
-  };
+  return productVariants;
 };
 
-export const products: Product[] = [
-  createProduct({ id: 1 }),
-  createProduct({ id: 2 }),
-  createProduct({ id: 3 }),
-  createProduct({ id: 4 }),
-  createProduct({ id: 5 }),
-  createProduct({ id: 6 }),
-];
+export const seedProducts = (server: any) => {
+  server.createList('product', 6, { manufacturer: 'Apple', model: 'iPhone X', modelId: 'apple-iphonex' }).forEach((product: any) => {
+    product.update({
+      variants: createDefaultProductVariants(product.modelId),
+    });
+  });
+};
