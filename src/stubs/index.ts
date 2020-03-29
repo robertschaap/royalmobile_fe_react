@@ -1,7 +1,7 @@
 import { Server, Model, Factory } from 'miragejs';
 
 import { getProduct, getProducts, getSubscriptions } from './apiResponses';
-import { products } from './products';
+import { ProductFactory, seedProducts } from './products';
 import { SubscriptionFactory, seedSubscriptions } from './subscriptions';
 import routes from '../constants/routes';
 
@@ -13,16 +13,15 @@ export default () => new Server({
     this.get(routes.API_GET_SUBSCRIPTIONS, getSubscriptions);
   },
   models: {
+    product: Model,
     subscription: Model,
   },
   factories: {
+    product: Factory.extend(ProductFactory()),
     subscription: Factory.extend(SubscriptionFactory()),
   },
   seeds(server: any) {
+    seedProducts(server);
     seedSubscriptions(server);
-
-    server.db.loadData({
-      products,
-    });
   },
 });
