@@ -53,12 +53,6 @@ const DevicePrice = styled.div`
   color: ${({ theme }) => theme.color.primary};
 `;
 
-const DeviceOptions = styled.div`
-  ${media_breakpoint_up.sm} {
-    display: none;
-  }
-`;
-
 interface ProductListingProps {
   products: Product[];
 }
@@ -82,10 +76,6 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
               <DeviceName>{product.model}</DeviceName>
               <DeviceManufacturer>{product.manufacturer}</DeviceManufacturer>
               <DevicePrice>{product.variants[0].regular_price}</DevicePrice>
-              <DeviceOptions>
-                <div>16gb | 32gb</div>
-                <div>color | color</div>
-              </DeviceOptions>
             </DeviceInformation>
           </ProductListingItem>
         </GridItem>
