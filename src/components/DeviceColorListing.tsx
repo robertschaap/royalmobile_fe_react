@@ -21,6 +21,10 @@ const DeviceColorListingItem = styled.button<DeviceColorListingItemProps>`
   ${({ isSelected, theme }) => isSelected && `
     border: 2px solid ${theme.color.primary};
   `}
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 interface DeviceColorListingProps {
