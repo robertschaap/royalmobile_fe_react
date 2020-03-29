@@ -1,17 +1,16 @@
 import React from 'react';
 
 interface PageTitleProps {
-  title?: string;
   page?: string;
 }
 
 const PageTitle: React.FC<PageTitleProps> = React.memo((props): null => {
-  const { page, title = 'RoyalMobile' } = props;
+  const { page } = props;
 
-  if (!page) {
-    document.title = title;
+  if (page) {
+    document.title = `RoyalMobile - ${page}`;
   } else {
-    document.title = `${title} - ${page}`;
+    document.title = 'RoyalMobile';
   }
 
   return null;
