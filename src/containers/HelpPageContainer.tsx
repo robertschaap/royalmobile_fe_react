@@ -1,8 +1,12 @@
 import React from 'react';
+import PageTitle from '../components/PageTitle';
 
 const HelpPageContainer: React.FC = () => {
   return (
-    <div>HelpPageContainer</div>
+    <>
+      <PageTitle page="Help" />
+      <div>HelpPageContainer</div>
+    </>
   );
 };
 
