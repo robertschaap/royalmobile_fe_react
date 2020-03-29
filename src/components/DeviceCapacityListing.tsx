@@ -24,6 +24,10 @@ const DeviceCapacityListingItem = styled.button<DeviceCapacityListingItemProps>`
     border: 2px solid ${theme.color.primary};
   `}
 
+  &:hover {
+    cursor: pointer;
+  }
+
   ${media_breakpoint_up.md} {
     flex: none;
     padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(4)};
