@@ -1,9 +1,9 @@
 import { Response } from 'miragejs';
 
-export const getProduct = (schema: any, _request: any) => {
+export const getProduct = (schema: any, request: any) => {
   return new Response(200, {}, {
     status: 'success',
-    data: schema.db.products.findBy({ modelId: 'apple-iphonex' }),
+    data: schema.db.products.findBy({ modelId: request.params.id }),
   });
 };
 
