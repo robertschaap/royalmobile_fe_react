@@ -1,8 +1,13 @@
 import { Subscription } from '../types/subscriptions';
 
-export const SubscriptionFactory = (data?: string, duration?: number, regular_price?: string) => {
+type SubscriptionFactoryReturnType = Omit<Subscription, 'id' | 'subscriptionId'> & {
+  id?: number;
+  subscriptionId(id: number): string;
+};
+
+export const SubscriptionFactory = (): SubscriptionFactoryReturnType => {
   return {
-    subscriptionId: (i: string) => `subscription-id${i + 1}`,
+    subscriptionId: (id) => `subscription-id${id + 1}`,
     durationId: 'duration-id1',
     data: '00gb',
     benefits_long: ['benefit-1', 'benefit-2', 'benefit-3'],
