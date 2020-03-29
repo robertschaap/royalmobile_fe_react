@@ -14,8 +14,9 @@ HTML5 | CSS3 | JavaScript | React | Redux-Saga
 * setup cypress
 
 ### Home Page
-* pagination logic around devices
 * setup cypress tests
+* setup integration tests
+* double check unit tests
 
 ### Product Page
 * deal with incorrect product ID
@@ -23,6 +24,8 @@ HTML5 | CSS3 | JavaScript | React | Redux-Saga
 * finalise logic for configure
 * finalise logic for summary
 * setup cypress tests
+* setup integration test
+* double check unit tests
 
 ### Order Page
 * setup page
