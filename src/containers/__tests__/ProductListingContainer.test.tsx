@@ -4,10 +4,6 @@ import ProductListingContainer from '../ProductListingContainer';
 import { renderWithProviders } from '../../test/helpers';
 
 describe('<ProductListingContainer />', () => {
-  it('should render without crashing', () => {
-    renderWithProviders(<ProductListingContainer />);
-  });
-
   it('should render an empty page if there no products', () => {
     const { getByTestId } = renderWithProviders(<ProductListingContainer />, {
       products: {
