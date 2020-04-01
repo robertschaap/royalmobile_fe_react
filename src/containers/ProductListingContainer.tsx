@@ -38,7 +38,7 @@ const ProductListingContainer: React.FC = () => {
         show={productsState.isFetching} />
       <Button
         variant="secondary"
-        disabled={productsState.isFetching}
+        disabled={productsState.collection.length === 0 || productsState.isFetching}
         onClick={handleLoadMoreClick}>
         <ContentCopy
           messageId="common.loadMore" />
