@@ -1,10 +1,10 @@
 import React from 'react';
 import ProductPageSummaryContainer from '../ProductPageSummaryContainer';
 
-import { renderWithTheme } from '../../test/helpers';
+import { renderWithProviders } from '../../test/helpers';
 
 describe('<ProductPageSummaryContainer />', () => {
   it('should render without crashing', () => {
-    renderWithTheme(<ProductPageSummaryContainer />);
+    renderWithProviders(<ProductPageSummaryContainer />);
   });
 });
