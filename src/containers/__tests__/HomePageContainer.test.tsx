@@ -5,6 +5,6 @@ import { renderWithProviders } from '../../test/helpers';
 
 describe('<HomePageContainer />', () => {
   it('should render without crashing', () => {
-    renderWithProviders(<HomePageContainer>""</HomePageContainer>);
+    renderWithProviders(<HomePageContainer />);
   });
 });
