@@ -42,6 +42,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "cypress:open": "cypress open",
     "eject": "react-scripts eject",
     "start:stub": "REACT_APP_USESTUBS=true npm start",
     "start": "SASS_PATH=src react-scripts start",
