@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-plugin-cypress": "^2.10.3",
     "immer": "^5.3.6",
     "miragejs": "^0.1.33",
     "node-sass": "^4.12.0",
