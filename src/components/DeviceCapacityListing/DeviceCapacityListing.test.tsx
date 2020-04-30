@@ -1,5 +1,5 @@
 import React from 'react';
-import DeviceCapacityListing from '../DeviceCapacityListing';
+import DeviceCapacityListing from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
