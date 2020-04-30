@@ -1,7 +1,7 @@
 import React from 'react';
-import ContentCopy from '../ContentCopy';
+import ContentCopy from '../../ContentCopy';
 
-import { renderWithTheme } from '../../test/helpers';
+import { renderWithTheme } from '../../../test/helpers';
 
 describe('<ContentCopy />', () => {
   it('should render without crashing', () => {

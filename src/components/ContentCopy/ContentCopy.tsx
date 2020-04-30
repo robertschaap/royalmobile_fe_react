@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContentCopy } from '../hooks';
+import { useContentCopy } from '../../hooks';
 
 interface ContentCopyProps {
   messageId: string;
