@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import Banner from '../Banner';
+import Banner from './Banner';
 
 import { renderWithProviders } from '../../test/helpers';
 

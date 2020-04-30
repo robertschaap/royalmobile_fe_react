@@ -1,13 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../styles/theme';
-import routes from '../constants/routes';
-import formatRoute from '../utils/formatRoute';
+import { media_breakpoint_up } from '../../styles/theme';
 
-import Link from './Link';
-import PageSection from './PageSection';
+import Link from '../Link';
 
-const BannerBase = styled(Link)`
+export const BannerBase = styled(Link)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -30,7 +26,7 @@ const BannerBase = styled(Link)`
   }
 `;
 
-const BannerLeft = styled.span`
+export const BannerLeft = styled.span`
   font-size: 32px;
   font-weight: 700;
   text-align: right;
@@ -41,7 +37,7 @@ const BannerLeft = styled.span`
   }
 `;
 
-const BannerRight = styled.span`
+export const BannerRight = styled.span`
   font-size: 111px;
   font-weight: 700;
   text-shadow: 0px 2px 2px rgba(1,1,1,0.16);
@@ -51,18 +47,3 @@ const BannerRight = styled.span`
     display: unset;
   }
 `;
-
-const Banner: React.FC = () => {
-  return (
-    <PageSection>
-      <BannerBase
-        data-testid="banner"
-        to={formatRoute(routes.CAMPAIGNS_PAGE, { id: 1 })}>
-        <BannerLeft>Fat Freaking<br />Discounts</BannerLeft>
-        <BannerRight>SALE</BannerRight>
-      </BannerBase>
-    </PageSection>
-  );
-};
-
-export default Banner;
