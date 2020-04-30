@@ -1,5 +1,5 @@
 import React from 'react';
-import DurationListing from '../DurationListing';
+import DurationListing from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
