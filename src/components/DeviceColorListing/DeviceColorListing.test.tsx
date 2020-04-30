@@ -1,5 +1,5 @@
 import React from 'react';
-import DeviceColorListing from '../DeviceColorListing';
+import DeviceColorListing from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
