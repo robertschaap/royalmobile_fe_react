@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import HeaderLogo from '../HeaderLogo';
+import HeaderLogo from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
