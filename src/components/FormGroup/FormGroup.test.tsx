@@ -1,5 +1,5 @@
 import React from 'react';
-import FormGroup from '../FormGroup';
+import FormGroup from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
