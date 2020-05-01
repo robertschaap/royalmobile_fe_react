@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../../styles/theme';
 
 interface HiddenProps {
   sm?: boolean;
@@ -7,7 +7,7 @@ interface HiddenProps {
   lg?: boolean;
 }
 
-const Hidden = styled.div<HiddenProps>`
+export const Hidden = styled.div<HiddenProps>`
   ${({ sm }) => (sm ? 'display: none;' : '')}
 
   ${media_breakpoint_up.md} {
@@ -18,5 +18,3 @@ const Hidden = styled.div<HiddenProps>`
     ${({ lg }) => (lg ? 'display: none;' : 'display: unset')}
   }
 `;
-
-export default Hidden;
