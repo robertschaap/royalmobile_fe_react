@@ -1,14 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../../styles/theme';
 
-import Breadcrumbs from './Breadcrumbs';
-import HeaderLogo from './HeaderLogo';
-import HeaderUsps from './HeaderUsps';
-import Navigation from './Navigation';
-import SkipNavigationButton from './SkipNavigationButton';
-
-const HeaderBase = styled.header`
+export const HeaderBase = styled.header`
   background-color: rgba(255,255,255,0.97);
   position: sticky;
   top: 0;
@@ -32,7 +25,7 @@ const HeaderBase = styled.header`
   }
 `;
 
-const HeaderTop = styled.div`
+export const HeaderTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,19 +34,3 @@ const HeaderTop = styled.div`
     padding: 0 ${({ theme }) => theme.spacing(4)};
   }
 `;
-
-const Header: React.FC = () => {
-  return (
-    <HeaderBase>
-      <HeaderTop>
-        <HeaderLogo />
-        <HeaderUsps />
-      </HeaderTop>
-      <SkipNavigationButton />
-      <Navigation />
-      <Breadcrumbs />
-    </HeaderBase>
-  );
-};
-
-export default Header;
