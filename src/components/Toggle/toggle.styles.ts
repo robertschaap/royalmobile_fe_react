@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const ToggleBase = styled.label`
+export const ToggleBase = styled.label`
   position: relative;
   display: inline-block;
   width: 64px;
@@ -9,7 +8,7 @@ const ToggleBase = styled.label`
   flex: none;
 `;
 
-const ToggleSlider = styled.span`
+export const ToggleSlider = styled.span`
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -33,7 +32,7 @@ const ToggleSlider = styled.span`
   }
 `;
 
-const ToggleInput = styled.input.attrs({
+export const ToggleInput = styled.input.attrs({
   type: 'checkbox',
 })`
   opacity: 0;
@@ -53,24 +52,3 @@ const ToggleInput = styled.input.attrs({
     box-shadow: 0 0 0 3px ${({ theme }) => theme.color.blue};
   }
 `;
-
-interface ToggleProps {
-  isActive: boolean;
-  onChange(): void;
-}
-
-const Toggle: React.FC<ToggleProps> = (props) => {
-  const { isActive, onChange } = props;
-
-  return (
-    <ToggleBase>
-      <ToggleInput
-        data-testid="toggle-input"
-        defaultChecked={isActive}
-        onChange={onChange} />
-      <ToggleSlider />
-    </ToggleBase>
-  );
-};
-
-export default Toggle;

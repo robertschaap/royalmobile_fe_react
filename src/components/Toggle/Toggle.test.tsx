@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import Toggle from '../Toggle';
+import Toggle from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
