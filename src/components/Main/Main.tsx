@@ -1,9 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const MainBase = styled.main`
-  flex: auto;
-`;
+import * as S from './main.styles';
 
 interface MainProps {
   children: React.ReactNode;
@@ -13,9 +9,9 @@ const Main: React.FC<MainProps> = (props) => {
   const { children } = props;
 
   return (
-    <MainBase>
+    <S.MainBase>
       {children}
-    </MainBase>
+    </S.MainBase>
   );
 };
 
