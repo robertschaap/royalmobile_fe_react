@@ -1,14 +1,13 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const LoaderBase = styled.div`
+export const LoaderBase = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 32px 0;
 `;
 
-const LoaderElement = styled.div`
+export const LoaderElement = styled.div`
   display: inline-block;
 
   &:after {
@@ -32,23 +31,3 @@ const LoaderElement = styled.div`
     }
   }
 `;
-
-interface LoaderProps {
-  show: boolean;
-}
-
-const Loader: React.FC<LoaderProps> = (props) => {
-  const { show } = props;
-
-  if (!show) {
-    return null;
-  }
-
-  return (
-    <LoaderBase>
-      <LoaderElement data-testid="loader" />
-    </LoaderBase>
-  );
-};
-
-export default Loader;
