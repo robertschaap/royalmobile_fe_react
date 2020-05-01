@@ -5,7 +5,7 @@ import {
   GridBase,
   GridItem,
   calculatePercentage,
-} from '../Grid';
+} from './grid.styles';
 
 
 describe('<Grid />', () => {
