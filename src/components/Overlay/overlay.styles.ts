@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Overlay = styled.div`
+export const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -9,5 +9,3 @@ const Overlay = styled.div`
   z-index: ${({ theme }) => theme.zIndex.overlay}
   background-color: rgba(0,0,0,0.3);
 `;
-
-export default Overlay;
