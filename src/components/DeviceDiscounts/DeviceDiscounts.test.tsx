@@ -1,5 +1,5 @@
 import React from 'react';
-import DeviceDiscounts from '../DeviceDiscounts';
+import DeviceDiscounts from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
