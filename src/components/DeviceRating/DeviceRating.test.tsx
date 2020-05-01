@@ -1,5 +1,5 @@
 import React from 'react';
-import DeviceRating from '../DeviceRating';
+import DeviceRating from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
