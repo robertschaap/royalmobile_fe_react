@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from './Link';
-import routes from '../constants/routes';
-import { useContentCopy } from '../hooks/useContentCopy';
+import Link from '../Link';
+import routes from '../../constants/routes';
+import { useContentCopy } from '../../hooks/useContentCopy';
 
 export const ProductsForYouLink: React.FC = () => (
   <Link

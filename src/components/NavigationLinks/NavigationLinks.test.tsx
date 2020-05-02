@@ -6,7 +6,7 @@ import {
   HelpLink,
   MyAccountLink,
   ProductsForYouLink,
-} from '../NavigationLinks';
+} from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
