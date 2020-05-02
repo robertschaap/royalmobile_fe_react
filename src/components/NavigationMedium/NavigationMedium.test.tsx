@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationMedium from '../NavigationMedium';
+import NavigationMedium from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
