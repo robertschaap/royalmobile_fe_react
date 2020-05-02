@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '../../test/helpers';
 
-import PageTitle from '../PageTitle';
+import PageTitle from '.';
 
 describe('<PageTitle />', () => {
   it('should set the default title if no props are passed', () => {
