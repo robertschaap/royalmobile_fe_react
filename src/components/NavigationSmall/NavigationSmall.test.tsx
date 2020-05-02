@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationSmall from '../NavigationSmall';
+import NavigationSmall from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
