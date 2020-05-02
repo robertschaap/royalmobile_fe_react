@@ -1,7 +1,7 @@
 import React from 'react';
-import routes from '../constants/routes';
+import routes from '../../constants/routes';
 
-import Link from './Link';
+import Link from '../Link';
 
 // TODO: handle through env
 const DEBUG = true;
