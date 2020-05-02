@@ -1,18 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import Button from './Button';
-
-const SkipNavigationButtonBase = styled(Button)`
-  position: absolute;
-  top: -100px;
-
-  &:focus {
-    position: relative;
-    top: 0;
-    margin: ${({ theme }) => theme.spacing(2)} 0;
-  }
-`;
+import * as S from './skip-navigation-button.styles';
 
 const SkipNavigationButton: React.FC = () => {
   const onClick = () => {
@@ -35,11 +22,11 @@ const SkipNavigationButton: React.FC = () => {
   };
 
   return (
-    <SkipNavigationButtonBase
+    <S.SkipNavigationButtonBase
       variant="secondary"
       onClick={onClick}>
       Skip navigation
-    </SkipNavigationButtonBase>
+    </S.SkipNavigationButtonBase>
   );
 };
 

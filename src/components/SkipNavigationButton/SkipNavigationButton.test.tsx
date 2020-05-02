@@ -1,5 +1,5 @@
 import React from 'react';
-import SkipNavigationButton from '../SkipNavigationButton';
+import SkipNavigationButton from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
