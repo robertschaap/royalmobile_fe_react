@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderUsps from '../HeaderUsps';
+import HeaderUsps from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
