@@ -1,5 +1,5 @@
 import React from 'react';
-import PaymentSelector from '../PaymentSelector';
+import PaymentSelector from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
