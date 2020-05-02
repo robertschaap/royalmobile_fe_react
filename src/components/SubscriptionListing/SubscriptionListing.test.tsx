@@ -1,5 +1,5 @@
 import React from 'react';
-import SubscriptionListing from '../SubscriptionListing';
+import SubscriptionListing from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
