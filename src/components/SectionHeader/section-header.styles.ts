@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../styles/theme';
+import { media_breakpoint_up } from '../../styles/theme';
 
-const SectionHeader = styled.h2`
+export const SectionHeader = styled.h2`
   font-size: 22px;
   font-weight: 500;
   margin-top: 0;
@@ -12,5 +12,3 @@ const SectionHeader = styled.h2`
     font-size: 32px;
   }
 `;
-
-export default SectionHeader;
