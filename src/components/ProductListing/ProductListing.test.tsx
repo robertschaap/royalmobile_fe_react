@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductListing from '../ProductListing';
+import ProductListing from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 import { products } from '../../stubs/products';
