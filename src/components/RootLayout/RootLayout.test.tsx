@@ -1,5 +1,5 @@
 import React from 'react';
-import RootLayout from '../RootLayout';
+import RootLayout from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
