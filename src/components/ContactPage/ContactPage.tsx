@@ -3,9 +3,7 @@ import * as S from './contact-page.styles';
 import { useContentCopy } from '../../hooks';
 
 import { GridBase } from '../Grid';
-import IconFacebook from '../IconFacebook';
-import IconLinkedIn from '../IconLinkedIn';
-import IconTwitter from '../IconTwitter';
+import { IconFacebook, IconLinkedIn, IconTwitter } from '../Icons';
 import PageSection from '../PageSection';
 import SectionHeader from '../SectionHeader';
 

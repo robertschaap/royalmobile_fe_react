@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '../../test/helpers';
 
-import IconLinkedIn from '../IconLinkedIn';
+import IconTwitter from './IconTwitter';
 
-describe('<IconLinkedIn />', () => {
+describe('<IconTwitter />', () => {
   it('should render without crashing', () => {
-    render(<IconLinkedIn />);
+    render(<IconTwitter />);
   });
 });
