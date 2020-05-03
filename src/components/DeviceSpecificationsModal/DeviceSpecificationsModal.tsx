@@ -1,8 +1,8 @@
 import React from 'react';
-import { useContentCopy } from '../hooks';
+import { useContentCopy } from '../../hooks';
 
-import Modal from './Modal';
-import Overlay from './Overlay';
+import Modal from '../Modal';
+import Overlay from '../Overlay';
 
 const DeviceSpecificationsModal: React.FC = () => {
   return (
