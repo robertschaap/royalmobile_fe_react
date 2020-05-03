@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductPageCustomise from '../ProductPageCustomise';
+import ProductPageCustomise from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
