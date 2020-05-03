@@ -1,5 +1,5 @@
 import React from 'react';
-import CampaignsPage from '../CampaignsPage';
+import CampaignsPage from '.';
 
 import { renderWithProviders } from '../../test/helpers';
 
