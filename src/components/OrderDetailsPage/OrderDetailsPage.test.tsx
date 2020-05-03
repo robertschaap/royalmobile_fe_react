@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderDetailsPage from '../OrderDetailsPage';
+import OrderDetailsPage from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
