@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from '../FormFields';
+import { Input } from './FormFields';
 
 import { renderWithProviders } from '../../test/helpers';
 

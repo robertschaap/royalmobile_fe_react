@@ -1,19 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import * as S from './form-fields.styles';
 
-import FormGroup from './FormGroup';
-
-const InputField = styled.input`
-  border: unset;
-  padding: ${({ theme }) => theme.spacing(2)};
-  border-bottom: 2px solid ${({ theme }) => theme.color.grey};
-  outline: none;
-
-  &:focus {
-    border-bottom: 2px solid ${({ theme }) => theme.color.blue};
-    background-color: ${({ theme }) => theme.color.lightGrey};
-  }
-`;
+import FormGroup from '../FormGroup';
 
 interface InputProps {
   error: string;
