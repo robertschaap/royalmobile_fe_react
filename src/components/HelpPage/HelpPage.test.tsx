@@ -1,5 +1,5 @@
 import React from 'react';
-import HelpPage from '../HelpPage';
+import HelpPage from '.';
 
 import { render } from '../../test/helpers';
 
