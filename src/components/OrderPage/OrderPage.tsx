@@ -1,15 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import { useContentCopy } from '../hooks';
-import noop from '../utils/noop';
+import * as S from './order-page.styles';
+import { useContentCopy } from '../../hooks';
+import noop from '../../utils/noop';
 
-import Button from './Button';
-import PageSection from './PageSection';
-import SectionHeader from './SectionHeader';
-
-const OrderButton = styled(Button)`
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-`;
+import Button from '../Button';
+import PageSection from '../PageSection';
+import SectionHeader from '../SectionHeader';
 
 const OrderPage: React.FC = () => {
   return (
@@ -20,11 +16,11 @@ const OrderPage: React.FC = () => {
         <div>A Cart Item</div>
       </div>
       <div>Subtotal</div>
-      <OrderButton
+      <S.OrderButton
         variant="primary"
         onClick={noop}>
         {useContentCopy('I\'m ready to pay!')}
-      </OrderButton>
+      </S.OrderButton>
       <Button
         variant="secondary"
         onClick={noop}>

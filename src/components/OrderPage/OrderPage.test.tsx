@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderPage from '../OrderPage';
+import OrderPage from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
