@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderSummaryText from '../OrderSummaryText';
+import OrderSummaryText from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 

@@ -1,9 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const OrderSummaryTextBase = styled.div`
-  padding: 0 ${({ theme }) => theme.spacing(4)};
-`;
+import * as S from './order-summary-text.styles';
 
 const OrderSummaryText: React.FC = () => {
   const device = 'iPhone X 16gb Lime';
@@ -14,7 +10,7 @@ const OrderSummaryText: React.FC = () => {
   const oneTimeCost = '265,00';
 
   return (
-    <OrderSummaryTextBase>
+    <S.OrderSummaryTextBase>
       <p>
         This is the summary of your order. You’re ordering the {device} with our {plan} for {monthlyAmountGross} per month.
       </p>
@@ -32,7 +28,7 @@ const OrderSummaryText: React.FC = () => {
         No sudden price hikes after a few months.<br />
         That’s it.
       </p>
-    </OrderSummaryTextBase>
+    </S.OrderSummaryTextBase>
   );
 };
 
