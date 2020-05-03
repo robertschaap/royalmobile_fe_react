@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactPage from '../ContactPage';
+import ContactPage from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
