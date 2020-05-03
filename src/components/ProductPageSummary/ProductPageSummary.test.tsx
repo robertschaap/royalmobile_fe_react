@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductPageSummary from '../ProductPageSummary';
+import ProductPageSummary from '.';
 
 import { renderWithTheme } from '../../test/helpers';
 
