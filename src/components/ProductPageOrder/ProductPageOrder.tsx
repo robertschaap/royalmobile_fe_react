@@ -1,15 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import * as S from './product-page-order.styles';
 
-import { useContentCopy } from '../hooks';
+import { useContentCopy } from '../../hooks';
 
-import { GridBase, GridItem } from './Grid';
-import Button from './Button';
-import PageSection from './PageSection';
-
-const OrderButton = styled(Button)`
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-`;
+import { GridBase, GridItem } from '../Grid';
+import Button from '../Button';
+import PageSection from '../PageSection';
 
 interface ProductPageOrderProps {
   onClickOrder(): void;
@@ -23,11 +19,11 @@ const ProductPageOrder: React.FC<ProductPageOrderProps> = (props) => {
     <PageSection>
       <GridBase>
         <GridItem lg={2}>
-          <OrderButton
+          <S.OrderButton
             variant="primary"
             onClick={onClickOrder}>
             {useContentCopy('order.readyToOrder')}
-          </OrderButton>
+          </S.OrderButton>
           <Button
             variant="secondary"
             onClick={onClickRenewContract}>
