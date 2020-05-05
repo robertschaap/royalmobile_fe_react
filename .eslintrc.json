@@ -29,7 +29,7 @@
     "no-confusing-arrow": "off",
     "no-param-reassign": ["error", {
       "props": true,
-      "ignorePropertyModificationsFor": ["newState"]
+      "ignorePropertyModificationsFor": ["draft", "newState"]
     }],
     "no-unused-expressions": "off"
   },
