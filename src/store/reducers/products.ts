@@ -21,26 +21,24 @@ export const initialProductsState: ProductsState = {
   pageNumber: 0,
 };
 
-export const productsReducer = (state: ProductsState = initialProductsState, action: ProductsActionTypes) => {
-  return produce<ProductsState>(state, (newState) => {
-    switch (action.type) {
-      case ProductsActions.FETCH_PRODUCTS:
-        newState.isFetching = true;
-        newState.hasError = false;
-        break;
-      case ProductsActions.FETCH_PRODUCTS_SUCCESS:
-        newState.isFetching = false;
-        newState.pageNumber = state.pageNumber + 1;
-        newState.collection = [...state.collection, ...action.payload];
-        break;
-      case ProductsActions.FETCH_PRODUCTS_ERROR:
-        newState.isFetching = false;
-        newState.hasError = true;
-        break;
-      default:
-        break;
-    }
+export const productsReducer = produce((draft: ProductsState = initialProductsState, action: ProductsActionTypes) => {
+  switch (action.type) {
+    case ProductsActions.FETCH_PRODUCTS:
+      draft.isFetching = true;
+      draft.hasError = false;
+      break;
+    case ProductsActions.FETCH_PRODUCTS_SUCCESS:
+      draft.isFetching = false;
+      draft.pageNumber += 1;
+      draft.collection = [...draft.collection, ...action.payload];
+      break;
+    case ProductsActions.FETCH_PRODUCTS_ERROR:
+      draft.isFetching = false;
+      draft.hasError = true;
+      break;
+    default:
+      break;
+  }
 
-    return newState;
-  });
-};
+  return draft;
+});
