@@ -38,7 +38,7 @@ export const Input: React.FC<InputProps> = (props) => {
       isRequired={isRequired}
       isValid={isValid}
       label={label}>
-      <InputField
+      <S.InputField
         name={name}
         onChange={onChange}
         placeholder={placeholder}
