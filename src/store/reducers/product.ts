@@ -31,37 +31,35 @@ export const initialProductState: ProductState = {
   },
 };
 
-export const productReducer = (state: ProductState = initialProductState, action: ProductActionTypes) => {
-  return produce<ProductState>(state, (newState) => {
-    switch (action.type) {
-      case ProductActions.FETCH_PRODUCT:
-        newState.isFetching = true;
-        newState.hasError = false;
-        break;
-      case ProductActions.FETCH_PRODUCT_SUCCESS:
-        newState.isFetching = false;
-        newState.collection = action.payload;
-        break;
-      case ProductActions.FETCH_PRODUCT_ERROR:
-        newState.isFetching = false;
-        newState.hasError = true;
-        break;
-      case ProductActions.SET_PRODUCT_SELECTED_DURATION_ID:
-        newState.selection.durationId = action.payload;
-        break;
-      case ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID:
-        newState.selection.paymentPlanId = action.payload;
-        break;
-      case ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID:
-        newState.selection.subscriptionId = action.payload;
-        break;
-      case ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID:
-        newState.selection.variantId = action.payload;
-        break;
-      default:
-        break;
-    }
+export const productReducer = produce((draft: ProductState = initialProductState, action: ProductActionTypes) => {
+  switch (action.type) {
+    case ProductActions.FETCH_PRODUCT:
+      draft.isFetching = true;
+      draft.hasError = false;
+      break;
+    case ProductActions.FETCH_PRODUCT_SUCCESS:
+      draft.isFetching = false;
+      draft.collection = action.payload;
+      break;
+    case ProductActions.FETCH_PRODUCT_ERROR:
+      draft.isFetching = false;
+      draft.hasError = true;
+      break;
+    case ProductActions.SET_PRODUCT_SELECTED_DURATION_ID:
+      draft.selection.durationId = action.payload;
+      break;
+    case ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID:
+      draft.selection.paymentPlanId = action.payload;
+      break;
+    case ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID:
+      draft.selection.subscriptionId = action.payload;
+      break;
+    case ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID:
+      draft.selection.variantId = action.payload;
+      break;
+    default:
+      break;
+  }
 
-    return newState;
-  });
-};
+  return draft;
+});
