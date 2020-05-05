@@ -1,4 +1,5 @@
 import React from 'react';
+import * as S from './help-page.styles';
 import routes from '../../constants/routes';
 
 import { GridBase } from '../Grid';
