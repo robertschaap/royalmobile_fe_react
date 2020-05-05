@@ -19,25 +19,23 @@ export const initialSubscriptionsState: SubscriptionsState = {
   collection: [],
 };
 
-export const subscriptionsReducer = (state: SubscriptionsState = initialSubscriptionsState, action: SubscriptionsActionTypes) => {
-  return produce<SubscriptionsState>(state, (newState) => {
-    switch (action.type) {
-      case SubscriptionsActions.FETCH_SUBSCRIPTIONS:
-        newState.isFetching = true;
-        newState.hasError = false;
-        break;
-      case SubscriptionsActions.FETCH_SUBSCRIPTIONS_SUCCESS:
-        newState.isFetching = false;
-        newState.collection = action.payload;
-        break;
-      case SubscriptionsActions.FETCH_SUBSCRIPTIONS_ERROR:
-        newState.isFetching = false;
-        newState.hasError = true;
-        break;
-      default:
-        break;
-    }
+export const subscriptionsReducer = produce((draft: SubscriptionsState = initialSubscriptionsState, action: SubscriptionsActionTypes) => {
+  switch (action.type) {
+    case SubscriptionsActions.FETCH_SUBSCRIPTIONS:
+      draft.isFetching = true;
+      draft.hasError = false;
+      break;
+    case SubscriptionsActions.FETCH_SUBSCRIPTIONS_SUCCESS:
+      draft.isFetching = false;
+      draft.collection = action.payload;
+      break;
+    case SubscriptionsActions.FETCH_SUBSCRIPTIONS_ERROR:
+      draft.isFetching = false;
+      draft.hasError = true;
+      break;
+    default:
+      break;
+  }
 
-    return newState;
-  });
-};
+  return draft;
+});
