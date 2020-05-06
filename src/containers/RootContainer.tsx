@@ -11,6 +11,7 @@ import { StoreProviderContainer } from '../store';
 import '../styles/normalize.css';
 
 const CampaignsPageContainer = React.lazy(() => import('./CampaignsPageContainer'));
+const ConsumerPageContainer = React.lazy(() => import('./ConsumerPageContainer'));
 const ContactPageContainer = React.lazy(() => import('./ContactPageContainer'));
 const ErrorPageContainer = React.lazy(() => import('./ErrorPageContainer'));
 const HelpPageContainer = React.lazy(() => import('./HelpPageContainer'));
@@ -34,7 +35,7 @@ const Root: React.FC = () => {
                 <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPageContainer} />
                 <Route path={routes.CONTACT_PAGE} component={ContactPageContainer} />
                 <Route path={routes.HELP_PAGE} component={HelpPageContainer} />
-                <Route path={routes.CONSUMER_PAGE} component={ErrorPageContainer} />
+                <Route path={routes.CONSUMER_PAGE} component={ConsumerPageContainer} />
                 <Route path={routes.BUSINESS_PAGE} component={ErrorPageContainer} />
                 <Route component={ErrorPageContainer} />
               </Switch>
