@@ -34,6 +34,8 @@ const Root: React.FC = () => {
                 <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPageContainer} />
                 <Route path={routes.CONTACT_PAGE} component={ContactPageContainer} />
                 <Route path={routes.HELP_PAGE} component={HelpPageContainer} />
+                <Route path={routes.CONSUMER_PAGE} component={ErrorPageContainer} />
+                <Route path={routes.BUSINESS_PAGE} component={ErrorPageContainer} />
                 <Route component={ErrorPageContainer} />
               </Switch>
             </Suspense>
