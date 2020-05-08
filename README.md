@@ -36,12 +36,3 @@ HTML5 | CSS3 | JavaScript | React | Redux-Saga
 
 ### My Account
 * add login menu
-
-### Products for You
-* add some placeholder content
-
-### Producst for Your Business
-* add some placeholder content
-
-### Help
-* add some placeholder content
