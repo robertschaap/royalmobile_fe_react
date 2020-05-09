@@ -1,7 +1,7 @@
 import React from 'react';
 import DeviceColorListing from '.';
 
-import { renderWithTheme } from '../../test/helpers';
+import { renderWithTheme } from '../../../test/helpers';
 
 const colors = [
   { id: 'color-id1', color: 'color-1', colorHex: '#ccc' },

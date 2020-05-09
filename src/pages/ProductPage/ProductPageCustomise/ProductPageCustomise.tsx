@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './product-page-customise.styles';
 
 import DeviceCapacityListing from '../DeviceCapacityListing';
-import DeviceColorListing from '../../../components/DeviceColorListing';
+import DeviceColorListing from '../DeviceColorListing';
 import DeviceDiscounts from '../../../components/DeviceDiscounts';
 import DeviceRating from '../../../components/DeviceRating';
 import Hidden from '../../../components/Hidden';
