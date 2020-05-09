@@ -5,13 +5,13 @@ import {
   useDispatch,
   useSelector,
   setProductSelectedVariantId,
-} from '../store';
-import { useContentCopy } from '../hooks';
+} from '../../store';
+import { useContentCopy } from '../../hooks';
 
-import PageSection from '../components/PageSection';
-import ProductPageCustomise from '../components/ProductPageCustomise';
-import SectionHeader from '../components/SectionHeader';
-import ProductUtil from '../utils/ProductUtil';
+import PageSection from '../../components/PageSection';
+import ProductPageCustomise from '../../components/ProductPageCustomise';
+import SectionHeader from '../../components/SectionHeader';
+import ProductUtil from '../../utils/ProductUtil';
 
 const ProductPageCustomiseContainer: React.FC = () => {
   const dispatch = useDispatch();

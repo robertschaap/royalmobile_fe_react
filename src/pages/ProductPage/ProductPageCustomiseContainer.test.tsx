@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductPageCustomiseContainer from '../ProductPageCustomiseContainer';
+import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
 
 import { renderWithProviders } from '../../test/helpers';
 
