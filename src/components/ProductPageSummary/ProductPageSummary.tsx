@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './product-page-summary.styles';
 import { useContentCopy } from '../../hooks';
 
-import OrderSummaryText from '../OrderSummaryText/OrderSummaryText';
+import OrderSummaryText from '../../pages/ProductPage/OrderSummaryText/OrderSummaryText';
 import { GridBase, GridItem } from '../Grid';
 
 const ProductPageSummary: React.FC = () => {
