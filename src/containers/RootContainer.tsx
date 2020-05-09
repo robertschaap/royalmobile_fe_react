@@ -16,7 +16,7 @@ const ConsumerPageContainer = React.lazy(() => import('./ConsumerPageContainer')
 const ContactPageContainer = React.lazy(() => import('./ContactPageContainer'));
 const ErrorPageContainer = React.lazy(() => import('./ErrorPageContainer'));
 const HelpPageContainer = React.lazy(() => import('./HelpPageContainer'));
-const HomePageContainer = React.lazy(() => import('./HomePageContainer'));
+const HomePage = React.lazy(() => import('../pages/HomePage'));
 const OrderDetailsPageContainer = React.lazy(() => import('./OrderDetailsPageContainer'));
 const OrderPageContainer = React.lazy(() => import('./OrderPageContainer'));
 const ProductPageContainer = React.lazy(() => import('./ProductPageContainer'));
@@ -29,7 +29,7 @@ const Root: React.FC = () => {
           <RootLayout>
             <Suspense fallback={null}>
               <Switch>
-                <Route exact path={routes.HOME_PAGE} component={HomePageContainer} />
+                <Route exact path={routes.HOME_PAGE} component={HomePage} />
                 <Route path={routes.PRODUCT_PAGE} component={ProductPageContainer} />
                 <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPageContainer} />
                 <Route path={routes.ORDER_PAGE} component={OrderPageContainer} />

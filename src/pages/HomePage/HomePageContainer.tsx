@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Banner from '../components/Banner';
-import Benefits from '../components/Benefits';
-import PageTitle from '../components/PageTitle';
-import ProductListingContainer from './ProductListingContainer';
+import Banner from '../../components/Banner';
+import Benefits from '../../components/Benefits';
+import PageTitle from '../../components/PageTitle';
+import ProductListingContainer from '../../containers/ProductListingContainer';
 
 const HomePageContainer: React.FC = () => {
   return (
