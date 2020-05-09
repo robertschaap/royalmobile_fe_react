@@ -3,13 +3,13 @@ import React from 'react';
 import {
   useSelector,
   selectProductSelection,
-} from '../store';
+} from '../../store';
 
-import { useContentCopy } from '../hooks';
+import { useContentCopy } from '../../hooks';
 
-import PageSection from '../components/PageSection';
-import ProductPageSummary from '../components/ProductPageSummary';
-import SectionHeader from '../components/SectionHeader';
+import PageSection from '../../components/PageSection';
+import ProductPageSummary from '../../components/ProductPageSummary';
+import SectionHeader from '../../components/SectionHeader';
 
 const ProductPageSummaryContainer: React.FC = () => {
   const selection = useSelector(selectProductSelection);

@@ -16,7 +16,7 @@ import PageTitle from '../../components/PageTitle';
 import ProductPageConfigureContainer from './ProductPageConfigureContainer';
 import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
 import ProductPageOrder from '../../components/ProductPageOrder';
-import ProductPageSummaryContainer from '../../containers/ProductPageSummaryContainer';
+import ProductPageSummaryContainer from './ProductPageSummaryContainer';
 
 import { useRouteParams } from '../../hooks';
 import noop from '../../utils/noop';
