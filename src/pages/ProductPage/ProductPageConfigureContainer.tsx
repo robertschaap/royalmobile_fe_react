@@ -11,7 +11,7 @@ import { useContentCopy } from '../../hooks';
 import SubscriptionUtil from '../../utils/SubscriptionUtil';
 
 import SectionHeader from '../../components/SectionHeader';
-import DurationListing from '../../components/DurationListing';
+import DurationListing from './DurationListing';
 import SubscriptionListing from '../../components/SubscriptionListing';
 import PaymentSelector from '../../components/PaymentSelector';
 import PageSection from '../../components/PageSection';

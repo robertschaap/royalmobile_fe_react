@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './duration-listing.styles';
 
-import ContentCopy from '../ContentCopy';
+import ContentCopy from '../../../components/ContentCopy';
 
 const content: { readonly [key: string]: string } = {
   '1_year': 'subscription.duration.1year',

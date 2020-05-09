@@ -1,7 +1,7 @@
 import React from 'react';
 import DurationListing from '.';
 
-import { renderWithTheme } from '../../test/helpers';
+import { renderWithTheme } from '../../../test/helpers';
 
 const durations = ['duration-id1', 'duration-id2', 'duration-id3'];
 
