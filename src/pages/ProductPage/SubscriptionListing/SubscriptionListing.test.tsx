@@ -1,7 +1,7 @@
 import React from 'react';
 import SubscriptionListing from '.';
 
-import { renderWithProviders } from '../../test/helpers';
+import { renderWithProviders } from '../../../test/helpers';
 
 const subscriptions = [
   { id: 'subscription-id1' },

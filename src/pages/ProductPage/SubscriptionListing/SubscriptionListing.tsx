@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './subscription-listing.styles';
-import { Subscription } from '../../types/subscriptions';
+import { Subscription } from '../../../types/subscriptions';
 
-import { GridBase, GridItem } from '../Grid';
-import ContentCopy from '../ContentCopy';
+import { GridBase, GridItem } from '../../../components/Grid';
+import ContentCopy from '../../../components/ContentCopy';
 
 interface SubscriptionListingProps {
   onClickSubscription(subscriptionId: string): void;
