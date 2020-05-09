@@ -15,7 +15,7 @@ import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import ProductPageConfigureContainer from './ProductPageConfigureContainer';
 import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
-import ProductPageOrder from '../../components/ProductPageOrder';
+import ProductPageOrder from './ProductPageOrder';
 import ProductPageSummaryContainer from './ProductPageSummaryContainer';
 
 import { useRouteParams } from '../../hooks';

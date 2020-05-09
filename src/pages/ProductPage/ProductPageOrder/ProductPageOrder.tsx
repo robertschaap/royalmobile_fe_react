@@ -1,11 +1,11 @@
 import React from 'react';
 import * as S from './product-page-order.styles';
 
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../../hooks';
 
-import { GridBase, GridItem } from '../Grid';
-import Button from '../Button';
-import PageSection from '../PageSection';
+import { GridBase, GridItem } from '../../../components/Grid';
+import Button from '../../../components/Button';
+import PageSection from '../../../components/PageSection';
 
 interface ProductPageOrderProps {
   onClickOrder(): void;
