@@ -7,20 +7,20 @@ import {
   selectSubscriptions,
   useDispatch,
   useSelector,
-} from '../store';
+} from '../../store';
 
-import ErrorMessage from '../components/ErrorMessage';
-import Loader from '../components/Loader';
-import PageSection from '../components/PageSection';
-import PageTitle from '../components/PageTitle';
-import ProductPageConfigureContainer from './ProductPageConfigureContainer';
-import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
-import ProductPageOrder from '../components/ProductPageOrder';
-import ProductPageSummaryContainer from './ProductPageSummaryContainer';
+import ErrorMessage from '../../components/ErrorMessage';
+import Loader from '../../components/Loader';
+import PageSection from '../../components/PageSection';
+import PageTitle from '../../components/PageTitle';
+import ProductPageConfigureContainer from '../../containers/ProductPageConfigureContainer';
+import ProductPageCustomiseContainer from '../../containers/ProductPageCustomiseContainer';
+import ProductPageOrder from '../../components/ProductPageOrder';
+import ProductPageSummaryContainer from '../../containers/ProductPageSummaryContainer';
 
-import { useRouteParams } from '../hooks';
-import noop from '../utils/noop';
-import routes from '../constants/routes';
+import { useRouteParams } from '../../hooks';
+import noop from '../../utils/noop';
+import routes from '../../constants/routes';
 
 const ProductPageContainer: React.FC = () => {
   const dispatch = useDispatch();
