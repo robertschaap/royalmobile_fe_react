@@ -3,7 +3,7 @@ import React from 'react';
 import Banner from '../../components/Banner';
 import Benefits from '../../components/Benefits';
 import PageTitle from '../../components/PageTitle';
-import ProductListingContainer from '../../containers/ProductListingContainer';
+import ProductListingContainer from './ProductListingContainer';
 
 const HomePageContainer: React.FC = () => {
   return (

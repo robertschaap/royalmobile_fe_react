@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductListingContainer from '../ProductListingContainer';
+import ProductListingContainer from './ProductListingContainer';
 
 import { renderWithProviders } from '../../test/helpers';
 
