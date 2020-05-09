@@ -1,7 +1,7 @@
 import React from 'react';
 import DeviceCapacityListing from '.';
 
-import { renderWithTheme } from '../../test/helpers';
+import { renderWithTheme } from '../../../test/helpers';
 
 const capacities = [
   { id: 'capacity-id1', capacity: 'Capacity 1' },
