@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Banner from '../../components/Banner';
-import Benefits from '../../components/Benefits';
+import Benefits from './Benefits';
 import PageTitle from '../../components/PageTitle';
 import ProductListingContainer from './ProductListingContainer';
 

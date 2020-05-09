@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './benefits.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../../hooks';
 
-import { GridBase, GridItem } from '../Grid';
-import PageSection from '../PageSection';
+import { GridBase, GridItem } from '../../../components/Grid';
+import PageSection from '../../../components/PageSection';
 
 const Benefits: React.FC = () => {
   return (
