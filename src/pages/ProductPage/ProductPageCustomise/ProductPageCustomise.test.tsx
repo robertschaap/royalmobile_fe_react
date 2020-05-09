@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductPageCustomise from '.';
 
-import { renderWithTheme } from '../../test/helpers';
+import { renderWithTheme } from '../../../test/helpers';
 
 describe('<ProductPageCustomise />', () => {
   it('should render without crashing', () => {

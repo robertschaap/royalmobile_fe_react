@@ -1,14 +1,14 @@
 import React from 'react';
 import * as S from './product-page-customise.styles';
 
-import DeviceCapacityListing from '../DeviceCapacityListing';
-import DeviceColorListing from '../DeviceColorListing';
-import DeviceDiscounts from '../DeviceDiscounts';
-import DeviceRating from '../DeviceRating';
-import Hidden from '../Hidden';
+import DeviceCapacityListing from '../../../components/DeviceCapacityListing';
+import DeviceColorListing from '../../../components/DeviceColorListing';
+import DeviceDiscounts from '../../../components/DeviceDiscounts';
+import DeviceRating from '../../../components/DeviceRating';
+import Hidden from '../../../components/Hidden';
 
-import phone from '../../assets/images/apple_iphone-x_silver.png';
-import { useContentCopy } from '../../hooks';
+import phone from '../../../assets/images/apple_iphone-x_silver.png';
+import { useContentCopy } from '../../../hooks';
 
 interface ProductPageCustomiseProps {
   capacities: {

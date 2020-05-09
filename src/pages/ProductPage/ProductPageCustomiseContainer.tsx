@@ -9,7 +9,7 @@ import {
 import { useContentCopy } from '../../hooks';
 
 import PageSection from '../../components/PageSection';
-import ProductPageCustomise from '../../components/ProductPageCustomise';
+import ProductPageCustomise from './ProductPageCustomise';
 import SectionHeader from '../../components/SectionHeader';
 import ProductUtil from '../../utils/ProductUtil';
 
