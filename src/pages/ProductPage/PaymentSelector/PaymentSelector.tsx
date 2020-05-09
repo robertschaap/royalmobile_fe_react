@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from './payment-selector.styles';
 
-import { GridBase, GridItem } from '../Grid';
-import Toggle from '../Toggle';
+import { GridBase, GridItem } from '../../../components/Grid';
+import Toggle from '../../../components/Toggle';
 
 interface PaymentSelectorProps {
   onChangeToggle(): void;

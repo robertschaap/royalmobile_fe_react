@@ -13,7 +13,7 @@ import SubscriptionUtil from '../../utils/SubscriptionUtil';
 import SectionHeader from '../../components/SectionHeader';
 import DurationListing from './DurationListing';
 import SubscriptionListing from './SubscriptionListing';
-import PaymentSelector from '../../components/PaymentSelector';
+import PaymentSelector from './PaymentSelector';
 import PageSection from '../../components/PageSection';
 
 const ProductPageConfigureContainer: React.FC = () => {
