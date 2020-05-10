@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './product-page-summary.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../../hooks';
 
-import OrderSummaryText from '../../pages/ProductPage/OrderSummaryText/OrderSummaryText';
-import { GridBase, GridItem } from '../Grid';
+import OrderSummaryText from '../OrderSummaryText/OrderSummaryText';
+import { GridBase, GridItem } from '../../../components/Grid';
 
 const ProductPageSummary: React.FC = () => {
   return (

@@ -8,7 +8,7 @@ import {
 import { useContentCopy } from '../../hooks';
 
 import PageSection from '../../components/PageSection';
-import ProductPageSummary from '../../components/ProductPageSummary';
+import ProductPageSummary from './ProductPageSummary';
 import SectionHeader from '../../components/SectionHeader';
 
 const ProductPageSummaryContainer: React.FC = () => {
