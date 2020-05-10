@@ -6,7 +6,7 @@ import ContentCopy from '../../components/ContentCopy';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loader from '../../components/Loader';
 import PageSection from '../../components/PageSection';
-import ProductListing from '../../components/ProductListing';
+import ProductListing from './ProductListing';
 
 const ProductListingContainer: React.FC = () => {
   const dispatch = useDispatch();

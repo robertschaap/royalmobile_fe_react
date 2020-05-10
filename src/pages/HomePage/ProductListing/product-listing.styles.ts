@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../../styles/theme';
+import { media_breakpoint_up } from '../../../styles/theme';
 
-import Link from '../Link';
+import Link from '../../../components/Link';
 
 export const ProductListingItem = styled(Link)`
   display: flex;

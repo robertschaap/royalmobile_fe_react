@@ -1,8 +1,8 @@
 import React from 'react';
 import ProductListing from '.';
 
-import { renderWithProviders } from '../../test/helpers';
-import { products } from '../../stubs/products';
+import { renderWithProviders } from '../../../test/helpers';
+import { products } from '../../../stubs/products';
 
 describe('<ProductListing />', () => {
   it('should not render if no products are passed', () => {

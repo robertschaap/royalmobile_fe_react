@@ -1,13 +1,13 @@
 import React from 'react';
 import * as S from './product-listing.styles';
 
-import routes from '../../constants/routes';
-import formatRoute from '../../utils/formatRoute';
+import routes from '../../../constants/routes';
+import formatRoute from '../../../utils/formatRoute';
 
-import phone from '../../assets/images/apple_iphone-x_silver.png';
+import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
-import { Product } from '../../types/products';
-import { GridBase, GridItem } from '../Grid';
+import { Product } from '../../../types/products';
+import { GridBase, GridItem } from '../../../components/Grid';
 
 interface ProductListingProps {
   products: Product[];
