@@ -18,7 +18,7 @@ const ErrorPageContainer = React.lazy(() => import('../pages/ErrorPageContainer'
 const HelpPageContainer = React.lazy(() => import('../pages/HelpPageContainer'));
 const HomePage = React.lazy(() => import('../pages/HomePage'));
 const OrderDetailsPageContainer = React.lazy(() => import('./OrderDetailsPageContainer'));
-const OrderPageContainer = React.lazy(() => import('./OrderPageContainer'));
+const OrderPageContainer = React.lazy(() => import('../pages/OrderPageContainer'));
 const ProductPage = React.lazy(() => import('../pages/ProductPage'));
 
 const Root: React.FC = () => {
