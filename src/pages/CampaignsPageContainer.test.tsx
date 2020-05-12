@@ -1,7 +1,7 @@
 import React from 'react';
-import CampaignsPageContainer from '../CampaignsPageContainer';
+import CampaignsPageContainer from './CampaignsPageContainer';
 
-import { renderWithProviders } from '../../test/helpers';
+import { renderWithProviders } from '../test/helpers';
 
 describe('<CampaignsPageContainer />', () => {
   it('should render without crashing', () => {

@@ -11,7 +11,7 @@ import { StoreProviderContainer } from '../store';
 import '../styles/normalize.css';
 
 const BusinessPageContainer = React.lazy(() => import('../pages/BusinessPageContainer'));
-const CampaignsPageContainer = React.lazy(() => import('./CampaignsPageContainer'));
+const CampaignsPageContainer = React.lazy(() => import('../pages/CampaignsPageContainer'));
 const ConsumerPageContainer = React.lazy(() => import('../pages/ConsumerPageContainer'));
 const ContactPageContainer = React.lazy(() => import('./ContactPageContainer'));
 const ErrorPageContainer = React.lazy(() => import('../pages/ErrorPageContainer'));
