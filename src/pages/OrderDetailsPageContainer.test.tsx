@@ -1,7 +1,7 @@
 import React from 'react';
-import OrderDetailsPageContainer from '../OrderDetailsPageContainer';
+import OrderDetailsPageContainer from './OrderDetailsPageContainer';
 
-import { renderWithProviders } from '../../test/helpers';
+import { renderWithProviders } from '../test/helpers';
 
 describe('<OrderDetailsPageContainer />', () => {
   it('should render without crashing', () => {

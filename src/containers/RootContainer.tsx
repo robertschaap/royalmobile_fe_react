@@ -17,7 +17,7 @@ const ContactPageContainer = React.lazy(() => import('../pages/ContactPageContai
 const ErrorPageContainer = React.lazy(() => import('../pages/ErrorPageContainer'));
 const HelpPageContainer = React.lazy(() => import('../pages/HelpPageContainer'));
 const HomePage = React.lazy(() => import('../pages/HomePage'));
-const OrderDetailsPageContainer = React.lazy(() => import('./OrderDetailsPageContainer'));
+const OrderDetailsPageContainer = React.lazy(() => import('../pages/OrderDetailsPageContainer'));
 const OrderPageContainer = React.lazy(() => import('../pages/OrderPageContainer'));
 const ProductPage = React.lazy(() => import('../pages/ProductPage'));
 
