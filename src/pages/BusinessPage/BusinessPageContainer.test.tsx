@@ -1,10 +1,10 @@
 import React from 'react';
-import ConsumerPageContainer from '../ConsumerPageContainer';
+import BusinessPageContainer from './BusinessPageContainer';
 
 import { renderWithProviders } from '../../test/helpers';
 
-describe('<ConsumerPageContainer />', () => {
+describe('<BusinessPageContainer />', () => {
   it('should render without crashing', () => {
-    renderWithProviders(<ConsumerPageContainer />);
+    renderWithProviders(<BusinessPageContainer />);
   });
 });
