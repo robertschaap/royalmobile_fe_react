@@ -13,7 +13,7 @@ interface SubscriptionsState {
   collection: Subscription[];
 }
 
-export const initialSubscriptionsState: SubscriptionsState = {
+const initialSubscriptionsState: SubscriptionsState = {
   isFetching: false,
   hasError: false,
   collection: [],
