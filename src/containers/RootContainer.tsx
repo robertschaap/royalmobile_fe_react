@@ -13,7 +13,7 @@ import '../styles/normalize.css';
 const BusinessPage = React.lazy(() => import('../pages/BusinessPage'));
 const CampaignsPage = React.lazy(() => import('../pages/CampaignsPage'));
 const ConsumerPage = React.lazy(() => import('../pages/ConsumerPage'));
-const ContactPageContainer = React.lazy(() => import('../pages/ContactPageContainer'));
+const ContactPage = React.lazy(() => import('../pages/ContactPage'));
 const ErrorPageContainer = React.lazy(() => import('../pages/ErrorPageContainer'));
 const HelpPage = React.lazy(() => import('../pages/HelpPage'));
 const HomePage = React.lazy(() => import('../pages/HomePage'));
@@ -34,7 +34,7 @@ const Root: React.FC = () => {
                 <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPageContainer} />
                 <Route path={routes.ORDER_PAGE} component={OrderPageContainer} />
                 <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPage} />
-                <Route path={routes.CONTACT_PAGE} component={ContactPageContainer} />
+                <Route path={routes.CONTACT_PAGE} component={ContactPage} />
                 <Route path={routes.HELP_PAGE} component={HelpPage} />
                 <Route path={routes.CONSUMER_PAGE} component={ConsumerPage} />
                 <Route path={routes.BUSINESS_PAGE} component={BusinessPage} />
