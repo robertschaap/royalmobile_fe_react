@@ -11,7 +11,7 @@ import { StoreProviderContainer } from '../store';
 import '../styles/normalize.css';
 
 const BusinessPage = React.lazy(() => import('../pages/BusinessPage'));
-const CampaignsPageContainer = React.lazy(() => import('../pages/CampaignsPageContainer'));
+const CampaignsPage = React.lazy(() => import('../pages/CampaignsPage'));
 const ConsumerPage = React.lazy(() => import('../pages/ConsumerPage'));
 const ContactPageContainer = React.lazy(() => import('../pages/ContactPageContainer'));
 const ErrorPageContainer = React.lazy(() => import('../pages/ErrorPageContainer'));
@@ -33,7 +33,7 @@ const Root: React.FC = () => {
                 <Route path={routes.PRODUCT_PAGE} component={ProductPage} />
                 <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPageContainer} />
                 <Route path={routes.ORDER_PAGE} component={OrderPageContainer} />
-                <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPageContainer} />
+                <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPage} />
                 <Route path={routes.CONTACT_PAGE} component={ContactPageContainer} />
                 <Route path={routes.HELP_PAGE} component={HelpPageContainer} />
                 <Route path={routes.CONSUMER_PAGE} component={ConsumerPage} />
