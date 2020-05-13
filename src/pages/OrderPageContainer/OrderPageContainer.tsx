@@ -1,7 +1,7 @@
 import React from 'react';
 
-import OrderPage from '../components/OrderPage';
-import PageTitle from '../components/PageTitle';
+import OrderPage from '../../components/OrderPage';
+import PageTitle from '../../components/PageTitle';
 
 const OrderPageContainer: React.FC = () => {
   return (
