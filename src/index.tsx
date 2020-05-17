@@ -4,8 +4,8 @@ import RootContainer from './containers/RootContainer';
 
 (async () => {
   if (process.env.REACT_APP_USESTUBS === 'true') {
-    const { default: setupStubsServer } = await import('./stubs');
-    await setupStubsServer();
+    const { stubsServer } = await import('./stubs');
+    await stubsServer();
   }
 
   ReactDOM.render(

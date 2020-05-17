@@ -5,8 +5,8 @@ import { ProductFactory, seedProducts } from './products';
 import { SubscriptionFactory, seedSubscriptions } from './subscriptions';
 import routes from '../constants/routes';
 
-export default () => new Server({
-  environment: 'development',
+export const stubsServer = (environment = 'development') => new Server({
+  environment,
   routes() {
     this.get(routes.API_GET_PRODUCT, getProduct);
     this.get(routes.API_GET_PRODUCTS, getProducts);
