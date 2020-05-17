@@ -4,6 +4,7 @@ import * as S from './product-listing.styles';
 import routes from '../../../constants/routes';
 import formatRoute from '../../../utils/formatRoute';
 
+// TODO: make dynamic
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
 import { Product } from '../../../types/products';
