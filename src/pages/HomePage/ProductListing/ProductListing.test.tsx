@@ -2,9 +2,20 @@ import React from 'react';
 import ProductListing from '.';
 
 import { renderWithProviders } from '../../../test/helpers';
-import { products } from '../../../stubs/products';
+import { stubsServer } from '../../../stubs';
+import { Product } from '../../../types/products';
+
+let server: any;
 
 describe('<ProductListing />', () => {
+  beforeEach(() => {
+    server = stubsServer('test');
+  });
+
+  afterEach(() => {
+    server.shutdown();
+  });
+
   it('should not render if no products are passed', () => {
     const { getByTestId } = renderWithProviders(
       <ProductListing products={[]} />,
@@ -14,10 +25,12 @@ describe('<ProductListing />', () => {
   });
 
   it('should render products if passed', () => {
+    const products: Product[] = server.createList('product', 2);
+
     const { getByTestId } = renderWithProviders(
-      <ProductListing products={products}/>,
+      <ProductListing products={products} />,
     );
 
-    expect(getByTestId('product-listing').children.length).toBeGreaterThan(0);
+    expect(getByTestId('product-listing').children.length).toBe(2);
   });
 });
