@@ -4,7 +4,7 @@ export * from './ducks/subscriptions';
 
 export {
   StoreProviderContainer,
-  store,
+  createStore,
 } from './StoreProviderContainer';
 
 export {
