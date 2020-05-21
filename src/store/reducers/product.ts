@@ -19,7 +19,7 @@ interface ProductState {
   };
 }
 
-const initialProductState: ProductState = {
+export const initialProductState: ProductState = {
   isFetching: false,
   hasError: false,
   collection: null,
