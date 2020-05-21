@@ -3,13 +3,9 @@ interface RouteParams {
 }
 
 const formatRoute = (route: string, params: RouteParams): string => {
-  let formattedRoute = route;
-
-  for (const param in params) {
-    formattedRoute = formattedRoute.replace(`:${param}`, params[param].toString());
-  }
-
-  return formattedRoute;
+  return Object.entries(params).reduce((formattedRoute, [key, value]) => {
+    return formattedRoute.replace(`:${key}`, value.toString());
+  }, route);
 };
 
 export default formatRoute;
