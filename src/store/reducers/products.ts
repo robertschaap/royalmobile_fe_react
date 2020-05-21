@@ -14,7 +14,7 @@ interface ProductsState {
   pageNumber: number;
 }
 
-const initialProductsState: ProductsState = {
+export const initialProductsState: ProductsState = {
   isFetching: false,
   hasError: false,
   collection: [],
