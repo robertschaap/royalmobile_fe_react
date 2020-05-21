@@ -1,4 +1,4 @@
-import { productsReducer } from '../products';
+import { productsReducer, initialProductsState } from '../products';
 
 import {
   fetchProducts,
@@ -6,13 +6,6 @@ import {
   fetchProductsSuccess,
   ProductsActionTypes,
 } from '../../ducks/products';
-
-const initialState = {
-  isFetching: false,
-  hasError: false,
-  collection: [],
-  pageNumber: 0,
-};
 
 jest.mock('../../index', () => ({
   store: {
@@ -26,7 +19,7 @@ jest.mock('../../index', () => ({
 
 describe('Products Reducer', () => {
   it('should return the initial state', () => {
-    expect(productsReducer(initialState, {} as ProductsActionTypes)).toEqual({
+    expect(productsReducer(initialProductsState, {} as ProductsActionTypes)).toEqual({
       isFetching: false,
       hasError: false,
       collection: [],
@@ -35,7 +28,7 @@ describe('Products Reducer', () => {
   });
 
   it('should handle FETCH_PRODUCTS', () => {
-    expect(productsReducer(initialState, fetchProducts())).toEqual({
+    expect(productsReducer(initialProductsState, fetchProducts())).toEqual({
       isFetching: true,
       hasError: false,
       collection: [],
@@ -44,7 +37,7 @@ describe('Products Reducer', () => {
   });
 
   it('should handle FETCH_PRODUCTS_SUCCESS', () => {
-    expect(productsReducer(initialState, fetchProductsSuccess([]))).toEqual({
+    expect(productsReducer(initialProductsState, fetchProductsSuccess([]))).toEqual({
       isFetching: false,
       hasError: false,
       collection: [],
@@ -53,7 +46,7 @@ describe('Products Reducer', () => {
   });
 
   it('should handle FETCH_PRODUCTS_ERROR', () => {
-    expect(productsReducer(initialState, fetchProductsError('error'))).toEqual({
+    expect(productsReducer(initialProductsState, fetchProductsError('error'))).toEqual({
       isFetching: false,
       hasError: true,
       collection: [],
