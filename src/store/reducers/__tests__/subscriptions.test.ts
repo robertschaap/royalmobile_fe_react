@@ -1,4 +1,4 @@
-import { subscriptionsReducer } from '../subscriptions';
+import { subscriptionsReducer, initialSubscriptionsState } from '../subscriptions';
 
 import {
   fetchSubscriptions,
@@ -9,7 +9,7 @@ import {
 
 describe('Subscriptions Reducer', () => {
   it('should return the initial state', () => {
-    expect(subscriptionsReducer(undefined, {} as SubscriptionsActionTypes)).toEqual({
+    expect(subscriptionsReducer(initialSubscriptionsState, {} as SubscriptionsActionTypes)).toEqual({
       isFetching: false,
       hasError: false,
       collection: [],
@@ -17,7 +17,7 @@ describe('Subscriptions Reducer', () => {
   });
 
   it('should handle FETCH_SUBSCRIPTIONS', () => {
-    expect(subscriptionsReducer(undefined, fetchSubscriptions())).toEqual({
+    expect(subscriptionsReducer(initialSubscriptionsState, fetchSubscriptions())).toEqual({
       isFetching: true,
       hasError: false,
       collection: [],
@@ -25,7 +25,7 @@ describe('Subscriptions Reducer', () => {
   });
 
   it('should handle FETCH_SUBSCRIPTIONS_SUCCESS', () => {
-    expect(subscriptionsReducer(undefined, fetchSubscriptionsSuccess([]))).toEqual({
+    expect(subscriptionsReducer(initialSubscriptionsState, fetchSubscriptionsSuccess([]))).toEqual({
       isFetching: false,
       hasError: false,
       collection: [],
@@ -33,7 +33,7 @@ describe('Subscriptions Reducer', () => {
   });
 
   it('should handle FETCH_SUBSCRIPTIONS_ERROR', () => {
-    expect(subscriptionsReducer(undefined, fetchSubscriptionsError('error'))).toEqual({
+    expect(subscriptionsReducer(initialSubscriptionsState, fetchSubscriptionsError('error'))).toEqual({
       isFetching: false,
       hasError: true,
       collection: [],
