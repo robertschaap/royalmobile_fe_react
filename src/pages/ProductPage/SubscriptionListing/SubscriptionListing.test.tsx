@@ -22,7 +22,7 @@ describe('<SubscriptionListing />', () => {
   });
 
   // TODO: add rendered text to this when implemented
-  it('should render a list of subscriptions', () => {
+  xit('should render a list of subscriptions', () => {
     const { getByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
@@ -33,7 +33,7 @@ describe('<SubscriptionListing />', () => {
     expect(getByTestId('subscription-listing').children.length).toBe(3);
   });
 
-  it('should highlight the selected subscription', () => {
+  xit('should highlight the selected subscription', () => {
     const { getAllByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
