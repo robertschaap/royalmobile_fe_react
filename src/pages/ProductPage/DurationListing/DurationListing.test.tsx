@@ -5,7 +5,7 @@ import { renderWithTheme } from '../../../test/helpers';
 
 const durations = ['duration-id1', 'duration-id2', 'duration-id3'];
 
-jest.mock('../../hooks/useContentCopy');
+jest.mock('../../../hooks/useContentCopy');
 
 describe('<DurationListing />', () => {
   it('should render without crashing', () => {
