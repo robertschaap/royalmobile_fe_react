@@ -2,6 +2,7 @@ import React from 'react';
 import { waitForElementToBeRemoved, fireEvent } from '@testing-library/react';
 
 import ProductListingContainer from './ProductListingContainer';
+import * as productsDuck from '../../store/ducks/products';
 
 import { renderWithProviders } from '../../test/helpers';
 import { stubsServer } from '../../stubs';
@@ -28,11 +29,15 @@ describe('<ProductListingContainer />', () => {
   });
 
   it('should render an empty page if there no products', async () => {
+    const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
+
     server.createList('product', 0);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
     expect(getByTestId('product-listing').children.length).toBe(0);
     expect(getByTestId('button-secondary')).toBeDisabled();
+
+    expect(fetchProductsSpy).toHaveBeenCalled();
     expect(getByTestId('loader')).toBeInTheDocument();
 
     await waitForElementToBeRemoved(() => getByTestId('loader'));
@@ -41,11 +46,15 @@ describe('<ProductListingContainer />', () => {
   });
 
   it('should render products if there are products', async () => {
+    const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
+
     server.createList('product', 2);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
     expect(getByTestId('product-listing').children.length).toBe(0);
     expect(getByTestId('button-secondary')).toBeDisabled();
+
+    expect(fetchProductsSpy).toHaveBeenCalled();
     expect(getByTestId('loader')).toBeInTheDocument();
 
     await waitForElementToBeRemoved(() => getByTestId('loader'));
@@ -55,6 +64,7 @@ describe('<ProductListingContainer />', () => {
   });
 
   it('should load more products when the load more button is clicked', async () => {
+    const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
     server.createList('product', 2);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
@@ -62,6 +72,7 @@ describe('<ProductListingContainer />', () => {
 
     fireEvent.click(getByTestId('button-secondary'));
 
+    expect(fetchProductsSpy).toHaveBeenCalled();
     expect(getByTestId('button-secondary')).toBeDisabled();
     expect(getByTestId('loader')).toBeInTheDocument();
 
