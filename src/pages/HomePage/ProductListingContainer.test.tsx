@@ -1,5 +1,5 @@
 import React from 'react';
-import { waitForElementToBeRemoved } from '@testing-library/react';
+import { waitForElementToBeRemoved, fireEvent } from '@testing-library/react';
 
 import ProductListingContainer from './ProductListingContainer';
 
@@ -44,12 +44,20 @@ describe('<ProductListingContainer />', () => {
     expect(getByTestId('button-secondary')).not.toBeDisabled();
   });
 
-  xit('should load more products when the load more button is clicked', () => {
-    //
-  });
+  it('should load more products when the load more button is clicked', async () => {
+    server.createList('product', 2);
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
-  xit('should show a loading state when loading more products', () => {
-    //
+    await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+    fireEvent.click(getByTestId('button-secondary'));
+
+    expect(getByTestId('button-secondary')).toBeDisabled();
+    expect(getByTestId('loader')).toBeInTheDocument();
+
+    await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+    expect(getByTestId('product-listing').children.length).toBe(4);
   });
 
   xit('should show an error message when there is an error', () => {
