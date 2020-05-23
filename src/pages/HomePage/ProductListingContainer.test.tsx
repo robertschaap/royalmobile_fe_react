@@ -40,7 +40,7 @@ describe('<ProductListingContainer />', () => {
     expect(getByTestId('product-listing').children.length).toBe(0);
   });
 
-  it('should render a page with products', async () => {
+  it('should render products if there are products', async () => {
     server.createList('product', 2);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
