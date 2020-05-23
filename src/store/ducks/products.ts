@@ -12,9 +12,9 @@ export interface FetchProductsAction {
   payload: number;
 }
 
-export const fetchProducts = (payload: number): ProductsActionTypes => ({
+export const fetchProducts = (pageNumber: number): ProductsActionTypes => ({
   type: ProductsActions.FETCH_PRODUCTS,
-  payload,
+  payload: pageNumber,
 });
 
 interface FetchProductsSucesssAction {
