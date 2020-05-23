@@ -18,28 +18,12 @@ describe('<ProductListingContainer />', () => {
     server.shutdown();
   });
 
-  it('should show an error message when there is an error', () => {
-    const { getByTestId } = renderWithProviders(<ProductListingContainer />, {
-      products: {
-        hasError: true,
-      },
-    });
-
-    expect(getByTestId('error-message')).toBeInTheDocument();
-  });
-
   it('should render an empty page if there no products', async () => {
     const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
 
-    server.createList('product', 0);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
-    expect(getByTestId('product-listing').children.length).toBe(0);
-    expect(getByTestId('button-secondary')).toBeDisabled();
-
     expect(fetchProductsSpy).toHaveBeenCalled();
-    expect(getByTestId('loader')).toBeInTheDocument();
-
     await waitForElementToBeRemoved(() => getByTestId('loader'));
 
     expect(getByTestId('product-listing').children.length).toBe(0);
@@ -51,16 +35,10 @@ describe('<ProductListingContainer />', () => {
     server.createList('product', 2);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
-    expect(getByTestId('product-listing').children.length).toBe(0);
-    expect(getByTestId('button-secondary')).toBeDisabled();
-
     expect(fetchProductsSpy).toHaveBeenCalled();
-    expect(getByTestId('loader')).toBeInTheDocument();
-
     await waitForElementToBeRemoved(() => getByTestId('loader'));
 
     expect(getByTestId('product-listing').children.length).toBe(2);
-    expect(getByTestId('button-secondary')).not.toBeDisabled();
   });
 
   it('should load more products when the load more button is clicked', async () => {
@@ -69,15 +47,41 @@ describe('<ProductListingContainer />', () => {
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
     await waitForElementToBeRemoved(() => getByTestId('loader'));
+    expect(getByTestId('product-listing').children.length).toBe(2);
 
     fireEvent.click(getByTestId('button-secondary'));
 
     expect(fetchProductsSpy).toHaveBeenCalled();
-    expect(getByTestId('button-secondary')).toBeDisabled();
-    expect(getByTestId('loader')).toBeInTheDocument();
-
     await waitForElementToBeRemoved(() => getByTestId('loader'));
 
     expect(getByTestId('product-listing').children.length).toBe(4);
+  });
+
+  it('should show an error message when there is an error', () => {
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />, {
+      products: {
+        hasError: true,
+      },
+    });
+
+    expect(getByTestId('error-message')).toBeInTheDocument();
+  });
+
+  it('should be disabled while fetching products', async () => {
+    const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
+
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />);
+
+    expect(fetchProductsSpy).toHaveBeenCalled();
+    expect(getByTestId('loader')).toBeInTheDocument();
+    expect(getByTestId('button-secondary')).toBeDisabled();
+  });
+
+  it('should be disabled when there are no products', async () => {
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />);
+
+    await waitForElementToBeRemoved(() => getByTestId('loader'));
+    expect(getByTestId('product-listing').children.length).toBe(0);
+    expect(getByTestId('button-secondary')).toBeDisabled();
   });
 });
