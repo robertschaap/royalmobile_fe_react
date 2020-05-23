@@ -30,8 +30,18 @@ describe('<ProductListingContainer />', () => {
     expect(getByTestId('product-listing').children.length).toBe(0);
   });
 
-  xit('should render a page with products', () => {
-    //
+  it('should render a page with products', async () => {
+    server.createList('product', 2);
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />);
+
+    expect(getByTestId('product-listing').children.length).toBe(0);
+    expect(getByTestId('button-secondary')).toBeDisabled();
+    expect(getByTestId('loader')).toBeInTheDocument();
+
+    await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+    expect(getByTestId('product-listing').children.length).toBe(2);
+    expect(getByTestId('button-secondary')).not.toBeDisabled();
   });
 
   xit('should load more products when the load more button is clicked', () => {
