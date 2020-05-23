@@ -1,19 +1,33 @@
 import React from 'react';
+import { waitForElementToBeRemoved } from '@testing-library/react';
+
 import ProductListingContainer from './ProductListingContainer';
 
 import { renderWithProviders } from '../../test/helpers';
+import { stubsServer } from '../../stubs';
+
+let server: any;
 
 describe('<ProductListingContainer />', () => {
-  it('should render an empty page if there no products', () => {
-    const { getByTestId } = renderWithProviders(<ProductListingContainer />, {
-      products: {
-        pageNumber: 0,
-        collection: [],
-      },
-    });
+  beforeEach(() => {
+    server = stubsServer('test');
+  });
+
+  afterEach(() => {
+    server.shutdown();
+  });
+
+  it('should render an empty page if there no products', async () => {
+    server.createList('product', 0);
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
     expect(getByTestId('product-listing').children.length).toBe(0);
     expect(getByTestId('button-secondary')).toBeDisabled();
+    expect(getByTestId('loader')).toBeInTheDocument();
+
+    await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+    expect(getByTestId('product-listing').children.length).toBe(0);
   });
 
   xit('should render a page with products', () => {
