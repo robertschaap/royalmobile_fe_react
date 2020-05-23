@@ -17,6 +17,16 @@ describe('<ProductListingContainer />', () => {
     server.shutdown();
   });
 
+  it('should show an error message when there is an error', () => {
+    const { getByTestId } = renderWithProviders(<ProductListingContainer />, {
+      products: {
+        hasError: true,
+      },
+    });
+
+    expect(getByTestId('error-message')).toBeInTheDocument();
+  });
+
   it('should render an empty page if there no products', async () => {
     server.createList('product', 0);
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
@@ -58,9 +68,5 @@ describe('<ProductListingContainer />', () => {
     await waitForElementToBeRemoved(() => getByTestId('loader'));
 
     expect(getByTestId('product-listing').children.length).toBe(4);
-  });
-
-  xit('should show an error message when there is an error', () => {
-    //
   });
 });

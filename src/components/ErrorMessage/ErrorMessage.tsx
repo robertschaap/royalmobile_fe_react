@@ -10,7 +10,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
   const { messageId } = props;
 
   return (
-    <S.ErrorMessageBase>
+    <S.ErrorMessageBase data-testid="error-message">
       <S.Frown>:(</S.Frown>
       {useContentCopy(messageId)}
     </S.ErrorMessageBase>
