@@ -9,6 +9,8 @@ import Hidden from '../../../components/Hidden';
 
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
 import { useContentCopy } from '../../../hooks';
+import { ProductVariant } from '../../../types/products';
+import StringUtil from '../../../utils/StringUtil';
 
 interface ProductPageCustomiseProps {
   capacities: {
@@ -20,25 +22,27 @@ interface ProductPageCustomiseProps {
     color: string;
     colorHex: string;
   }[];
-  deviceCost: string;
   deviceManufacturer: string;
-  deviceName: string;
+  deviceModel: string;
   onClickCapacity(id: string): void;
   onClickColor(id: string): void;
-  selectedVariantId: string;
+  selectedVariant: ProductVariant;
 }
 
 const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
   const {
     capacities,
     colors,
-    deviceCost,
     deviceManufacturer,
-    deviceName,
+    deviceModel,
     onClickCapacity,
     onClickColor,
-    selectedVariantId,
+    selectedVariant,
   } = props;
+
+  const deviceColor = StringUtil.capitalise(selectedVariant.color);
+  const deviceCost = `${selectedVariant.regular_price},-`;
+  const deviceName = `${deviceModel} ${selectedVariant.capacity} ${deviceColor}`;
 
   return (
     <S.Flexy>
@@ -64,14 +68,14 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <DeviceColorListing
             colors={colors}
             onClickColor={onClickColor}
-            selectedColorId={selectedVariantId} />
+            selectedColorId={selectedVariant.variantId} />
         </S.DeviceColor>
         <S.DeviceCapacity>
           <div>{useContentCopy('product.pickDeviceCapacity')}</div>
           <DeviceCapacityListing
             capacities={capacities}
             onClickCapacity={onClickCapacity}
-            selectedCapacityId={selectedVariantId} />
+            selectedCapacityId={selectedVariant.variantId} />
         </S.DeviceCapacity>
         <div>{useContentCopy('product.phoneCostUpfront')}</div>
         <S.DeviceCost>{deviceCost}</S.DeviceCost>
