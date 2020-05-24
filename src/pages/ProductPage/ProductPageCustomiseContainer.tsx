@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
 import {
-  selectProductCollection,
   selectProductSelection,
   useDispatch,
   useSelector,
@@ -12,23 +11,28 @@ import PageSection from '../../components/PageSection';
 import ProductPageCustomise from './ProductPageCustomise';
 import SectionHeader from '../../components/SectionHeader';
 import ProductUtil from '../../utils/ProductUtil';
+import { Product } from '../../types/products';
 
-const ProductPageCustomiseContainer: React.FC = () => {
+interface ProductPageCustomiseContainerProps {
+  product: Product;
+}
+
+const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps> = (props) => {
+  const { product } = props;
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
-  const product = useSelector(selectProductCollection);
 
-  const selectedVariant = product!.variants.find((variant) => variant.variantId === productSelection.variantId) || product!.variants[0];
-  const deviceManufacturer = product!.manufacturer;
-  const deviceName = `${product!.model} ${selectedVariant.capacity} ${selectedVariant.color}`;
+  const selectedVariant = product.variants.find((variant) => variant.variantId === productSelection.variantId) || product.variants[0];
+  const deviceManufacturer = product.manufacturer;
+  const deviceName = `${product.model} ${selectedVariant.capacity} ${selectedVariant.color}`;
   const deviceCost = `${selectedVariant.regular_price},-`;
 
   const colors = useMemo(() => {
-    return ProductUtil.getProductVariantColorsForCapacity(product!.variants, selectedVariant.capacity);
+    return ProductUtil.getProductVariantColorsForCapacity(product.variants, selectedVariant.capacity);
   }, [product, selectedVariant.capacity]);
 
   const capacities = useMemo(() => {
-    return ProductUtil.getProductVariantCapacitiesForColor(product!.variants, selectedVariant.color);
+    return ProductUtil.getProductVariantCapacitiesForColor(product.variants, selectedVariant.color);
   }, [product, selectedVariant.color]);
 
   const onClickCapacity = useCallback((id: string) => {

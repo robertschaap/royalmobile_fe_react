@@ -70,7 +70,8 @@ const ProductPageContainer: React.FC = () => {
   return (
     <>
       <PageTitle page="Product" />
-      <ProductPageCustomiseContainer />
+      <ProductPageCustomiseContainer
+        product={productState.collection} />
       <ProductPageConfigureContainer />
       <ProductPageSummaryContainer />
       <ProductPageOrder
