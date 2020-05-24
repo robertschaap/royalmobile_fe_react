@@ -32,7 +32,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
             <S.DeviceInformation>
               <S.DeviceName>{product.model}</S.DeviceName>
               <S.DeviceManufacturer>{product.manufacturer}</S.DeviceManufacturer>
-              <S.DevicePrice>{product.variants[0].regular_price}</S.DevicePrice>
+              <S.DevicePrice>{product.variants[0].regular_price},-</S.DevicePrice>
             </S.DeviceInformation>
           </S.ProductListingItem>
         </GridItem>
