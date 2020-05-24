@@ -41,9 +41,23 @@ describe('<ProductListingContainer />', () => {
     expect(getByTestId('product-listing').children.length).toBe(2);
   });
 
+  it('should not refetch products is they were already loaded', async () => {
+    const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
+
+    renderWithProviders(<ProductListingContainer />, {
+      products: {
+        pageNumber: 4,
+        collection: [],
+      },
+    });
+
+    expect(fetchProductsSpy).toHaveBeenCalled();
+  });
+
   it('should load more products when the load more button is clicked', async () => {
     const fetchProductsSpy = jest.spyOn(productsDuck, 'fetchProducts');
     server.createList('product', 2);
+
     const { getByTestId } = renderWithProviders(<ProductListingContainer />);
 
     await waitForElementToBeRemoved(() => getByTestId('loader'));
