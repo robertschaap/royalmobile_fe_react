@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './device-color-listing.styles';
 
+import StringUtil from '../../../utils/StringUtil';
+
 interface DeviceColorListingProps {
   // TODO: create type for this
   colors: {
@@ -25,7 +27,7 @@ const DeviceColorListing: React.FC<DeviceColorListingProps> = (props) => {
           data-testprop-is-selected={id === selectedColorId}
           onClick={() => onClickColor(id)}
           colorHex={colorHex}
-          title={color} />
+          title={StringUtil.capitalise(color)} />
       ))}
     </S.DeviceColorListingBase>
   );
