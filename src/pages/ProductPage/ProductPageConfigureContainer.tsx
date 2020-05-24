@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import {
   selectProductSelection,
-  selectSubscriptionsCollection,
   setProductSelectedDurationId,
   setProductSelectedSubscriptionId,
   useDispatch,
@@ -15,11 +14,16 @@ import DurationListing from './DurationListing';
 import SubscriptionListing from './SubscriptionListing';
 import PaymentSelector from './PaymentSelector';
 import PageSection from '../../components/PageSection';
+import { Subscription } from '../../types/subscriptions';
 
-const ProductPageConfigureContainer: React.FC = () => {
+interface ProductPageConfigureContainerProps {
+  subscriptions: Subscription[];
+}
+
+const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps> = (props) => {
+  const { subscriptions } = props;
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
-  const subscriptions = useSelector(selectSubscriptionsCollection);
 
   const durations = useMemo(() => {
     return SubscriptionUtil.getSubscriptionDurations(subscriptions);

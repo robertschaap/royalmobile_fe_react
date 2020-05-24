@@ -72,7 +72,8 @@ const ProductPageContainer: React.FC = () => {
       <PageTitle page="Product" />
       <ProductPageCustomiseContainer
         product={productState.collection} />
-      <ProductPageConfigureContainer />
+      <ProductPageConfigureContainer
+        subscriptions={subscriptionsState.collection} />
       <ProductPageSummaryContainer />
       <ProductPageOrder
         onClickOrder={noop}
