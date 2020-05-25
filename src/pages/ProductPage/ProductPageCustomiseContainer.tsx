@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useEffect } from 'react';
 import {
   selectProductSelection,
   useDispatch,
@@ -21,6 +21,10 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
   const { product } = props;
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
+
+  useEffect(() => {
+    dispatch(setProductSelectedVariantId(product.variants[0].variantId));
+  }, []);
 
   const selectedVariant = useMemo(() => {
     return product.variants.find((variant) => variant.variantId === productSelection.variantId) || product.variants[0];
@@ -45,14 +49,16 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
-      <ProductPageCustomise
-        capacities={capacities}
-        colors={colors}
-        deviceManufacturer={product.manufacturer}
-        deviceModel={product.model}
-        onClickCapacity={onClickCapacity}
-        onClickColor={onClickColor}
-        selectedVariant={selectedVariant} />
+      {productSelection.variantId && (
+        <ProductPageCustomise
+          capacities={capacities}
+          colors={colors}
+          deviceManufacturer={product.manufacturer}
+          deviceModel={product.model}
+          onClickCapacity={onClickCapacity}
+          onClickColor={onClickColor}
+          selectedVariant={selectedVariant} />
+      )}
     </PageSection>
   );
 };
