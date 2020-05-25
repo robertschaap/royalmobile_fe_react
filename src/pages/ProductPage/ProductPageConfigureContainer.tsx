@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import {
   selectProductSelection,
   setProductSelectedDurationId,
@@ -25,13 +25,18 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
 
+  useEffect(() => {
+    dispatch(setProductSelectedDurationId(subscriptions[0].durationId));
+    dispatch(setProductSelectedSubscriptionId(subscriptions[0].subscriptionId));
+  }, []);
+
   const durations = useMemo(() => {
     return SubscriptionUtil.getSubscriptionDurations(subscriptions);
   }, [subscriptions]);
 
   const subscriptionsByDuration = useMemo(() => {
-    return SubscriptionUtil.getSubscriptionsByDuration(subscriptions, productSelection.durationId || durations[0]);
-  }, [subscriptions, productSelection.durationId, durations]);
+    return SubscriptionUtil.getSubscriptionsByDuration(subscriptions, productSelection.durationId || '');
+  }, [subscriptions, productSelection.durationId]);
 
   const onClickDuration = useCallback((id) => {
     dispatch(setProductSelectedDurationId(id));
@@ -46,17 +51,21 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.configurePlan')}</SectionHeader>
-      <DurationListing
-        onClickDuration={onClickDuration}
-        durations={durations}
-        selectedDurationId={productSelection.durationId || durations[0]} />
-      <SubscriptionListing
-        onClickSubscription={onClickSubscription}
-        subscriptions={subscriptionsByDuration}
-        selectedSubscriptionId={productSelection.subscriptionId || subscriptionsByDuration[0].subscriptionId} />
-      <PaymentSelector
-        onChangeToggle={() => setIsToggleActive(!isToggleActive)}
-        isToggleActive={isToggleActive}/>
+      {productSelection.durationId && productSelection.subscriptionId && (
+        <>
+          <DurationListing
+            onClickDuration={onClickDuration}
+            durations={durations}
+            selectedDurationId={productSelection.durationId} />
+          <SubscriptionListing
+            onClickSubscription={onClickSubscription}
+            subscriptions={subscriptionsByDuration}
+            selectedSubscriptionId={productSelection.subscriptionId} />
+          <PaymentSelector
+            onChangeToggle={() => setIsToggleActive(!isToggleActive)}
+            isToggleActive={isToggleActive}/>
+        </>
+      )}
     </PageSection>
   );
 };
