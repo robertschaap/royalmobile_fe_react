@@ -38,11 +38,7 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
     return ProductUtil.getProductVariantCapacitiesForColor(product.variants, selectedVariant.color);
   }, [product, selectedVariant.color]);
 
-  const onClickCapacity = useCallback((id: string) => {
-    dispatch(setProductSelectedVariantId(id));
-  }, [dispatch]);
-
-  const onClickColor = useCallback((id: string) => {
+  const onClickColorOrCapacity = useCallback((id: string) => {
     dispatch(setProductSelectedVariantId(id));
   }, [dispatch]);
 
@@ -55,8 +51,7 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
           colors={colors}
           deviceManufacturer={product.manufacturer}
           deviceModel={product.model}
-          onClickCapacity={onClickCapacity}
-          onClickColor={onClickColor}
+          onClickColorOrCapacity={onClickColorOrCapacity}
           selectedVariant={selectedVariant} />
       )}
     </PageSection>

@@ -24,8 +24,7 @@ interface ProductPageCustomiseProps {
   }[];
   deviceManufacturer: string;
   deviceModel: string;
-  onClickCapacity(id: string): void;
-  onClickColor(id: string): void;
+  onClickColorOrCapacity(id: string): void;
   selectedVariant: ProductVariant;
 }
 
@@ -35,8 +34,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
     colors,
     deviceManufacturer,
     deviceModel,
-    onClickCapacity,
-    onClickColor,
+    onClickColorOrCapacity,
     selectedVariant,
   } = props;
 
@@ -67,14 +65,14 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <div>{useContentCopy('product.pickDeviceColor')}</div>
           <DeviceColorListing
             colors={colors}
-            onClickColor={onClickColor}
+            onClickColor={onClickColorOrCapacity}
             selectedColorId={selectedVariant.variantId} />
         </S.DeviceColor>
         <S.DeviceCapacity>
           <div>{useContentCopy('product.pickDeviceCapacity')}</div>
           <DeviceCapacityListing
             capacities={capacities}
-            onClickCapacity={onClickCapacity}
+            onClickCapacity={onClickColorOrCapacity}
             selectedCapacityId={selectedVariant.variantId} />
         </S.DeviceCapacity>
         <div>{useContentCopy('product.phoneCostUpfront')}</div>
