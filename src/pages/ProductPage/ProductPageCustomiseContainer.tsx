@@ -22,7 +22,9 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
 
-  const selectedVariant = product.variants.find((variant) => variant.variantId === productSelection.variantId) || product.variants[0];
+  const selectedVariant = useMemo(() => {
+    return product.variants.find((variant) => variant.variantId === productSelection.variantId) || product.variants[0];
+  }, [product.variants, productSelection.variantId]);
 
   const colors = useMemo(() => {
     return ProductUtil.getProductVariantColorsForCapacity(product.variants, selectedVariant.capacity);
