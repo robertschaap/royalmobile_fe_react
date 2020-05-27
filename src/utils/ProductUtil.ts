@@ -1,6 +1,13 @@
 import { ProductVariant } from '../types/products';
 
 /**
+ * Returns a variant if matched
+ */
+const getProductVariant = (productVariants: ProductVariant[], variantId: string) => {
+  return productVariants.find((variant) => variant.variantId === variantId);
+};
+
+/**
  * Returns an array of variants with only capacity related properties
  */
 const getProductVariantCapacitiesForColor = (productVariants: ProductVariant[], color: string) => {
@@ -34,6 +41,7 @@ const getProductVariantColorsForCapacity = (productVariants: ProductVariant[], c
 };
 
 export default {
+  getProductVariant,
   getProductVariantCapacitiesForColor,
   getProductVariantColorsForCapacity,
 };
