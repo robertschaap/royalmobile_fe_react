@@ -16,7 +16,7 @@ const ProductListingContainer: React.FC = () => {
     if (productsState.pageNumber < 1) {
       dispatch(fetchProducts(productsState.pageNumber));
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleLoadMoreClick = useCallback(() => {
     dispatch(fetchProducts(productsState.pageNumber));
