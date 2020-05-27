@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   selectProductSelection,
   setProductSelectedDurationId,
@@ -24,11 +24,6 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
   const { subscriptions } = props;
   const dispatch = useDispatch();
   const productSelection = useSelector(selectProductSelection);
-
-  useEffect(() => {
-    dispatch(setProductSelectedDurationId(subscriptions[0].durationId));
-    dispatch(setProductSelectedSubscriptionId(subscriptions[0].subscriptionId));
-  }, []);
 
   const durations = useMemo(() => {
     return SubscriptionUtil.getSubscriptionDurations(subscriptions);
