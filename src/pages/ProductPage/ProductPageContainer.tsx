@@ -5,6 +5,9 @@ import {
   fetchSubscriptions,
   selectProduct,
   selectSubscriptions,
+  setProductSelectedDurationId,
+  setProductSelectedSubscriptionId,
+  setProductSelectedVariantId,
   useDispatch,
   useSelector,
 } from '../../store';
@@ -33,6 +36,23 @@ const ProductPageContainer: React.FC = () => {
     dispatch(fetchProduct(id));
     dispatch(fetchSubscriptions());
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    const {
+      durationId,
+      subscriptionId,
+      variantId,
+    } = productState.selection;
+
+    if (productState.collection && !variantId) {
+      dispatch(setProductSelectedVariantId(productState.collection.variants[0].variantId));
+    }
+
+    if (subscriptionsState.collection.length && !durationId && !subscriptionId) {
+      dispatch(setProductSelectedDurationId(subscriptionsState.collection[0].durationId));
+      dispatch(setProductSelectedSubscriptionId(subscriptionsState.collection[0].subscriptionId));
+    }
+  }, [dispatch, productState, subscriptionsState]);
 
   if (productState.hasError || subscriptionsState.hasError) {
     return (
