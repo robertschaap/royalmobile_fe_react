@@ -9,6 +9,31 @@ const variants = [{
 }] as ProductVariant[];
 
 describe('ProductUtil', () => {
+  describe('getProductVariant', () => {
+    it('should return a variant if a match is found', () => {
+      expect(
+        ProductUtil.getProductVariant(variants, 'variant-id1'),
+      ).toEqual({
+        variantId: 'variant-id1',
+        color: 'color-id1',
+        colorHex: 'colorHex-id1',
+        capacity: 'capacity-id1',
+      });
+    });
+
+    it('should return undefined if no variants are passed', () => {
+      expect(
+        ProductUtil.getProductVariant([], 'not-a-valid-id'),
+      ).toEqual(undefined);
+    });
+
+    it('should return undefined if no matches are found', () => {
+      expect(
+        ProductUtil.getProductVariant(variants, 'not-a-valid-id'),
+      ).toEqual(undefined);
+    });
+  });
+
   describe('getProductVariantCapacitiesForColor', () => {
     it('should return an array of capacity properties for a color', () => {
       expect(
