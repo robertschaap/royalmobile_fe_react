@@ -5,7 +5,7 @@ import {
   selectProductSelection,
 } from '../../store';
 
-import { useContentCopy } from '../../hooks';
+import { useContentCopy, useOrderSummary } from '../../hooks';
 import ProductUtil from '../../utils/ProductUtil';
 import SubscriptionUtil from '../../utils/SubscriptionUtil';
 import { Product } from '../../types/products';
@@ -23,6 +23,7 @@ interface ProductPageSummaryContainerProps {
 const ProductPageSummaryContainer: React.FC<ProductPageSummaryContainerProps> = (props) => {
   const { product, subscriptions } = props;
   const selection = useSelector(selectProductSelection);
+  const orderSummary = useOrderSummary(product.variants, subscriptions, selection);
 
   const selectedVariant = ProductUtil.getProductVariant(product.variants, selection.variantId || '');
   const selectedSubscription = SubscriptionUtil.getSubscription(subscriptions, selection.subscriptionId || '');
@@ -30,12 +31,10 @@ const ProductPageSummaryContainer: React.FC<ProductPageSummaryContainerProps> = 
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
-      {selectedVariant && selectedSubscription && (
+      {orderSummary && (
         <ProductPageSummary
           deviceModel={product.model}
-          selectedVariant={selectedVariant}
-          selectedSubscription={selectedSubscription}
-          />
+          orderSummary={orderSummary} />
       )}
       <pre>{JSON.stringify(selection, null, 2)}</pre>
       <pre>{JSON.stringify(selectedVariant, null, 2)}</pre>

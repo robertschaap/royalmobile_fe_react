@@ -1,24 +1,38 @@
 import React from 'react';
 import * as S from './order-summary-text.styles';
 
-const OrderSummaryText: React.FC = () => {
-  const device = 'iPhone X 16gb Lime';
-  const plan = '10gb data bundle';
-  const monthlyAmountGross = '20,00';
-  const monthlyAmountNet = '19,00';
-  const monthlyDiscount = '1,00';
-  const oneTimeCost = '265,00';
+interface OrderSummaryTextProps {
+  deviceCostOneTimePayment: string;
+  deviceName: string;
+  oneTimePaymentTotal: string;
+  selectedSubscriptionData: string;
+  selectedSubscriptionPrice: string;
+}
+
+const OrderSummaryText: React.FC<OrderSummaryTextProps> = (props) => {
+  const {
+    deviceCostOneTimePayment,
+    deviceName,
+    selectedSubscriptionData,
+    selectedSubscriptionPrice,
+  } = props;
+
+  const plan = `${selectedSubscriptionData} data bundle`;
+  const monthlyAmountGross = selectedSubscriptionPrice;
+  const monthlyDiscount = '0,00';
+  const monthlyAmountNet = selectedSubscriptionPrice;
+  const oneTimeCost = deviceCostOneTimePayment;
 
   return (
     <S.OrderSummaryTextBase>
       <p>
-        This is the summary of your order. You’re ordering the {device} with our {plan} for {monthlyAmountGross} per month.
+        This is the summary of your order. You’re ordering the {deviceName} with our {plan} for {monthlyAmountGross} per month.
       </p>
       <p>
         On top of this you get a {monthlyDiscount} discount so your total monthly payment is {monthlyAmountNet}.
       </p>
       <p>
-        Your one-time up front cost is {oneTimeCost} for the phone. Youv’e been discounted for the connection fee. You’ve also been discounted for the shipping fee.
+        Your one-time up front cost is {deviceCostOneTimePayment} for the phone. Youv’e been discounted for the connection fee. You’ve also been discounted for the shipping fee.
       </p>
       <p>
         Your total one-time payment is {oneTimeCost}.
