@@ -41,8 +41,6 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
     dispatch(setProductSelectedSubscriptionId(id));
   }, [dispatch]);
 
-  const [isToggleActive, setIsToggleActive] = useState(false);
-
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.configurePlan')}</SectionHeader>
@@ -56,9 +54,7 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
             onClickSubscription={onClickSubscription}
             subscriptions={subscriptionsByDuration}
             selectedSubscriptionId={productSelection.subscriptionId} />
-          <PaymentSelector
-            onChangeToggle={() => setIsToggleActive(!isToggleActive)}
-            isToggleActive={isToggleActive}/>
+          <PaymentSelector />
         </>
       )}
     </PageSection>

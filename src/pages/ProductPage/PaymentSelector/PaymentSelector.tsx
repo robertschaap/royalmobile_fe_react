@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as S from './payment-selector.styles';
 
-import { GridBase, GridItem } from '../../../components/Grid';
 import Toggle from '../../../components/Toggle';
 
-interface PaymentSelectorProps {
-  onChangeToggle(): void;
-  isToggleActive: boolean;
-}
+const PaymentSelector: React.FC = () => {
+  const [isToggleActive, setIsToggleActive] = useState(false);
+  const [show, setShow] = useState(true);
 
-const PaymentSelector: React.FC<PaymentSelectorProps> = (props) => {
-  const { onChangeToggle, isToggleActive } = props;
+  useEffect(() => {
+    if (isToggleActive) {
+      setTimeout(() => {
+        setShow(false);
+      }, 3000);
+    }
+  }, [isToggleActive]);
+
+  if (!show) {
+    return (
+      null
+    );
+  }
 
   return (
     <>
@@ -20,19 +29,13 @@ const PaymentSelector: React.FC<PaymentSelectorProps> = (props) => {
           </S.ToggleDescription>
         <Toggle
           isActive={isToggleActive}
-          onChange={onChangeToggle} />
+          onChange={() => setIsToggleActive(!isToggleActive)} />
         <S.ToggleLabel>Yes!</S.ToggleLabel>
       </S.ToggleWrapper>
 
-      <GridBase>
-        <GridItem lg={2}>
-          <S.PaymentBase>
-            <S.PaymentAdjustmentAmount>50,-</S.PaymentAdjustmentAmount>
-            <S.PaymentAdjustmentDescription>per month, your new up front is</S.PaymentAdjustmentDescription>
-            <S.AdjustedPaymentAmount>50,-</S.AdjustedPaymentAmount>
-          </S.PaymentBase>
-        </GridItem>
-      </GridBase>
+      {isToggleActive && (
+        <S.PaymentBase>Well, you can't.</S.PaymentBase>
+      )}
     </>
   );
 };

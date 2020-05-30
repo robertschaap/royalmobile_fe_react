@@ -39,31 +39,5 @@ export const PaymentBase = styled.div`
   align-items: center;
   border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
-`;
-
-export const PaymentAdjustmentAmount = styled.div`
-  background-color: ${({ theme }) => theme.color.lightGrey};
   padding: ${({ theme }) => theme.spacing(4)};
-  color: ${({ theme }) => theme.color.primary};
-  font-size: 20px;
-  font-weight: 700;
-
-  ${media_breakpoint_up.md} {
-    font-size: 32px;
-  }
-`;
-
-export const PaymentAdjustmentDescription = styled.div`
-  flex: auto;
-  margin: 0 ${({ theme }) => theme.spacing(2)};
-  padding: ${({ theme }) => theme.spacing(1)} 0;
-
-  ${media_breakpoint_up.sm} {
-    font-size: 16px;
-    margin: 0 ${({ theme }) => theme.spacing(4)};
-  }
-`;
-
-export const AdjustedPaymentAmount = styled(PaymentAdjustmentAmount)`
-  background-color: unset;
 `;
