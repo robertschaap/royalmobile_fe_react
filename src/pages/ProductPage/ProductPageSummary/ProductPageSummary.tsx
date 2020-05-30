@@ -38,7 +38,7 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
           <S.SummaryList>
             <S.SummaryListItem>{orderSummary.selectedSubscription.data} data<span>{orderSummary.monthlySubscriptionCost}</span></S.SummaryListItem>
             {orderSummary.selectedSubscription.benefits_long.map((benefit, index) => (
-              <S.SummaryListItem key={index}>{benefit}</S.SummaryListItem>
+              <S.SummaryListItem key={index}>{StringUtil.capitalise(benefit)}</S.SummaryListItem>
             ))}
             <S.SummaryListItem>{deviceName}<span>0,00</span></S.SummaryListItem>
             <S.SummaryListItem isDiscount>Discounts<span>0,00</span></S.SummaryListItem>
