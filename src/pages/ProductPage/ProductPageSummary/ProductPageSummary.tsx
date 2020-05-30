@@ -28,12 +28,8 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
         mdOrder={1}
         lgOrder={1}>
         <OrderSummaryText
-          deviceCostOneTimePayment={orderSummary.oneTimePaymentTotal}
           deviceName={deviceName}
-          oneTimePaymentTotal={orderSummary.oneTimePaymentTotal}
-          selectedSubscriptionData={orderSummary.selectedSubscription.data}
-          selectedSubscriptionPrice={orderSummary.monthlySubscriptionCost}
-        />
+          orderSummary={orderSummary} />
       </GridItem>
       <GridItem
         md={2}
