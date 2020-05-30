@@ -4,8 +4,8 @@ import * as S from './duration-listing.styles';
 import ContentCopy from '../../../components/ContentCopy';
 
 const content: { readonly [key: string]: string } = {
-  '1_year': 'subscription.duration.1year',
-  '2_year': 'subscription.duration.2year',
+  '1year': 'subscription.duration.1year',
+  '2year': 'subscription.duration.2year',
 };
 
 interface DurationListingProps {

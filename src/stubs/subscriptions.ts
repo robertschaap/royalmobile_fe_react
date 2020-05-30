@@ -20,7 +20,7 @@ const createSubscription = (data: string, duration: number, regular_price: strin
   return {
     subscriptionId: `royalmobile-${data}-${duration}year`,
     data,
-    durationId: `${duration}_year`,
+    durationId: `${duration}year`,
     benefits_long: [
       'unlimited calls',
       'unlimited texts',
