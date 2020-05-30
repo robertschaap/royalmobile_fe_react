@@ -18,11 +18,10 @@ import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import ProductPageConfigureContainer from './ProductPageConfigureContainer';
 import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
-import ProductPageOrder from './ProductPageOrder';
+import ProductPageOrderContainer from './ProductPageOrderContainer';
 import ProductPageSummaryContainer from './ProductPageSummaryContainer';
 
 import { useRouteParams } from '../../hooks';
-import noop from '../../utils/noop';
 import routes from '../../constants/routes';
 
 const ProductPageContainer: React.FC = () => {
@@ -97,9 +96,7 @@ const ProductPageContainer: React.FC = () => {
       <ProductPageSummaryContainer
         product={productState.collection}
         subscriptions={subscriptionsState.collection} />
-      <ProductPageOrder
-        onClickOrder={noop}
-        onClickRenewContract={noop} />
+      <ProductPageOrderContainer />
     </>
   );
 };
