@@ -8,23 +8,30 @@ import Button from '../../../components/Button';
 import PageSection from '../../../components/PageSection';
 
 interface ProductPageOrderProps {
+  hasSelection: boolean;
   onClickOrder(): void;
   onClickRenewContract(): void;
 }
 
 const ProductPageOrder: React.FC<ProductPageOrderProps> = (props) => {
-  const { onClickOrder, onClickRenewContract } = props;
+  const {
+    hasSelection,
+    onClickOrder,
+    onClickRenewContract,
+  } = props;
 
   return (
     <PageSection>
       <GridBase>
         <GridItem lg={2}>
           <S.OrderButton
+            disabled={!hasSelection}
             variant="primary"
             onClick={onClickOrder}>
             {useContentCopy('order.readyToOrder')}
           </S.OrderButton>
           <Button
+            disabled={!hasSelection}
             variant="secondary"
             onClick={onClickRenewContract}>
             {useContentCopy('order.renewContract')}
