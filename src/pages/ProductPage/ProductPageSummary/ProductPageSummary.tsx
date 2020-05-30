@@ -1,11 +1,35 @@
 import React from 'react';
 import * as S from './product-page-summary.styles';
 import { useContentCopy } from '../../../hooks';
+import { ProductVariant } from '../../../types/products';
+import { Subscription } from '../../../types/subscriptions';
 
 import OrderSummaryText from '../OrderSummaryText/OrderSummaryText';
 import { GridBase, GridItem } from '../../../components/Grid';
+import StringUtil from '../../../utils/StringUtil';
 
-const ProductPageSummary: React.FC = () => {
+interface ProductPageSummaryProps {
+  deviceModel: string;
+  selectedSubscription: Subscription;
+  selectedVariant: ProductVariant;
+}
+
+const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
+  const {
+    deviceModel,
+    selectedSubscription,
+    selectedVariant,
+  } = props;
+
+  const deviceColor = StringUtil.capitalise(selectedVariant.color);
+  const deviceName = `${deviceModel} ${selectedVariant.capacity} ${deviceColor}`;
+
+  const monthlyPaymentTotal = selectedSubscription.regular_price;
+  const oneTimePaymentTotal = selectedVariant.discounted_price;
+
+  // makes sure this comes from the api instead of FE calculation
+  const oneTimeDiscounts = Number(selectedVariant.regular_price) - Number(selectedVariant.discounted_price);
+
   return (
     <GridBase>
       <GridItem
@@ -20,29 +44,29 @@ const ProductPageSummary: React.FC = () => {
         lg={2}>
         <S.Card marginBottom={2}>
           <S.SummaryList>
-            <S.SummaryListItem>10gb data<span>20,00</span></S.SummaryListItem>
-            <S.SummaryListItem>unlimited calls</S.SummaryListItem>
-            <S.SummaryListItem>unlimited texts</S.SummaryListItem>
-            <S.SummaryListItem>unlimited roaming</S.SummaryListItem>
-            <S.SummaryListItem>iPhone X 16gb Lime<span>0,00</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>Discounts<span>-1,00</span></S.SummaryListItem>
+            <S.SummaryListItem>{selectedSubscription.data} data<span>{selectedSubscription.regular_price}</span></S.SummaryListItem>
+            {selectedSubscription.benefits_long.map((benefit, index) => (
+              <S.SummaryListItem key={index}>{benefit}</S.SummaryListItem>
+            ))}
+            <S.SummaryListItem>{deviceName}<span>0,00</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>Discounts<span>0,00</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard marginBottom={4}>
           {useContentCopy('product.monthlyPayment')}
-          <S.SubTotal>19,00</S.SubTotal>
+          <S.SubTotal>{monthlyPaymentTotal}</S.SubTotal>
         </S.SubTotalCard>
         <S.Card marginBottom={2}>
-          <S.SummaryList>
-            <S.SummaryListItem>iPhone X 16gb Lime<span>265,00</span></S.SummaryListItem>
-            <S.SummaryListItem>Connection Fee<span>10,00</span></S.SummaryListItem>
-            <S.SummaryListItem>Shipping<span>7,50</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>Discounts<span>-17,50</span></S.SummaryListItem>
+          < S.SummaryList>
+            <S.SummaryListItem>{deviceName}<span>{selectedVariant.regular_price}</span></S.SummaryListItem>
+            <S.SummaryListItem>Connection Fee<span>0,00</span></S.SummaryListItem>
+            <S.SummaryListItem>Shipping<span>0,00</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>Discounts<span>{oneTimeDiscounts.toString()}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard>
           {useContentCopy('product.oneTimePayment')}
-          <S.SubTotal>265,00</S.SubTotal>
+          <S.SubTotal>{oneTimePaymentTotal}</S.SubTotal>
         </S.SubTotalCard>
       </GridItem>
     </GridBase>

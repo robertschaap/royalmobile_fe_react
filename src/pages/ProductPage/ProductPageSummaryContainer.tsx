@@ -30,7 +30,13 @@ const ProductPageSummaryContainer: React.FC<ProductPageSummaryContainerProps> = 
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
-      <ProductPageSummary />
+      {selectedVariant && selectedSubscription && (
+        <ProductPageSummary
+          deviceModel={product.model}
+          selectedVariant={selectedVariant}
+          selectedSubscription={selectedSubscription}
+          />
+      )}
       <pre>{JSON.stringify(selection, null, 2)}</pre>
       <pre>{JSON.stringify(selectedVariant, null, 2)}</pre>
       <pre>{JSON.stringify(selectedSubscription, null, 2)}</pre>
