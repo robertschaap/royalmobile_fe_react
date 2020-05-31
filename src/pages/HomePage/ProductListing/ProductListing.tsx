@@ -3,6 +3,7 @@ import * as S from './product-listing.styles';
 
 import routes from '../../../constants/routes';
 import formatRoute from '../../../utils/formatRoute';
+import StringUtil from '../../../utils/StringUtil';
 
 // TODO: make dynamic
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
@@ -32,7 +33,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
             <S.DeviceInformation>
               <S.DeviceName>{product.model}</S.DeviceName>
               <S.DeviceManufacturer>{product.manufacturer}</S.DeviceManufacturer>
-              <S.DevicePrice>{product.variants[0].regular_price},-</S.DevicePrice>
+              <S.DevicePrice>{StringUtil.formatRoundedPrice(product.variants[0].regular_price)}</S.DevicePrice>
             </S.DeviceInformation>
           </S.ProductListingItem>
         </GridItem>
