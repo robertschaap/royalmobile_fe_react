@@ -41,7 +41,7 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
               <S.SummaryListItem key={index}>{StringUtil.capitalise(benefit)}</S.SummaryListItem>
             ))}
             <S.SummaryListItem>{deviceName}<span>{orderSummary.monthlyDeviceCost}</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>Discounts<span>-{orderSummary.monthlyDiscountTotal}</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>{useContentCopy('product.discounts')}<span>-{orderSummary.monthlyDiscountTotal}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard marginBottom={4}>
@@ -51,9 +51,9 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
         <S.Card marginBottom={2}>
           < S.SummaryList>
             <S.SummaryListItem>{deviceName}<span>{orderSummary.oneTimeDeviceCost}</span></S.SummaryListItem>
-            <S.SummaryListItem>Connection Fee<span>{orderSummary.connectionFee}</span></S.SummaryListItem>
-            <S.SummaryListItem>Shipping<span>{orderSummary.shippingFee}</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>Discounts<span>-{orderSummary.oneTimeDiscountTotal}</span></S.SummaryListItem>
+            <S.SummaryListItem>{useContentCopy('product.connectionFee')}<span>{orderSummary.connectionFee}</span></S.SummaryListItem>
+            <S.SummaryListItem>{useContentCopy('product.shippingFee')}<span>{orderSummary.shippingFee}</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>{useContentCopy('product.discounts')}<span>-{orderSummary.oneTimeDiscountTotal}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard>
