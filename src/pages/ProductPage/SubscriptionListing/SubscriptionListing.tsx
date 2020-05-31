@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './subscription-listing.styles';
 import { Subscription } from '../../../types/subscriptions';
+import StringUtil from '../../../utils/StringUtil';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import ContentCopy from '../../../components/ContentCopy';
@@ -12,7 +13,11 @@ interface SubscriptionListingProps {
 }
 
 const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
-  const { onClickSubscription, selectedSubscriptionId, subscriptions } = props;
+  const {
+    onClickSubscription,
+    selectedSubscriptionId,
+    subscriptions,
+  } = props;
 
   return (
     <GridBase
@@ -38,7 +43,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
             </S.BenefitsMedium>
             <div>
               <div><ContentCopy messageId="product.monthly" /></div>
-              <S.Bold>{regular_price},-</S.Bold>
+              <S.Bold>{StringUtil.formatRoundedPrice(regular_price)}</S.Bold>
             </div>
           </S.SubscriptionListingItem>
         </GridItem>
