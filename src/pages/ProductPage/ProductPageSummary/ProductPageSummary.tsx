@@ -40,8 +40,8 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
             {orderSummary.selectedSubscription.benefits_long.map((benefit, index) => (
               <S.SummaryListItem key={index}>{StringUtil.capitalise(benefit)}</S.SummaryListItem>
             ))}
-            <S.SummaryListItem>{deviceName}<span>0,00</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>Discounts<span>0,00</span></S.SummaryListItem>
+            <S.SummaryListItem>{deviceName}<span>{orderSummary.monthlyDeviceCost}</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>Discounts<span>-{orderSummary.monthlyDiscountTotal}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard marginBottom={4}>
@@ -53,7 +53,7 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
             <S.SummaryListItem>{deviceName}<span>{orderSummary.oneTimeDeviceCost}</span></S.SummaryListItem>
             <S.SummaryListItem>Connection Fee<span>{orderSummary.connectionFee}</span></S.SummaryListItem>
             <S.SummaryListItem>Shipping<span>{orderSummary.shippingFee}</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>Discounts<span>{orderSummary.oneTimeDiscountTotal}</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>Discounts<span>-{orderSummary.oneTimeDiscountTotal}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard>
