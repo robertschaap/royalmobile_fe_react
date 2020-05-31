@@ -8,7 +8,14 @@ const formatPrice = (string: string): string => {
   return `${number || '0'},${decimal.padEnd(2, '0')}`;
 };
 
+const formatRoundedPrice = (string: string): string => {
+  const [number] = string.split(',');
+
+  return `${number || 0},-`;
+};
+
 export default {
   capitalise,
   formatPrice,
+  formatRoundedPrice,
 };
