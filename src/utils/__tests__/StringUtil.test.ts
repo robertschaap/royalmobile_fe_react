@@ -20,4 +20,13 @@ describe('StringUtil', () => {
       expect(StringUtil.formatPrice(',00')).toEqual('0,00');
     });
   });
+
+  describe('formatRoundedPrice', () => {
+    it('should format a price without decimals', () => {
+      expect(StringUtil.formatRoundedPrice('')).toEqual('0,-');
+      expect(StringUtil.formatRoundedPrice('0')).toEqual('0,-');
+      expect(StringUtil.formatRoundedPrice('0,0')).toEqual('0,-');
+      expect(StringUtil.formatRoundedPrice('0,00')).toEqual('0,-');
+    });
+  });
 });
