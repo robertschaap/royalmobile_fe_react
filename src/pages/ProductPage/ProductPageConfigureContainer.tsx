@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import {
   selectProductSelection,
   setProductSelectedDurationId,
@@ -7,14 +7,14 @@ import {
   useSelector,
 } from '../../store';
 import { useContentCopy } from '../../hooks';
+import { Subscription } from '../../types/subscriptions';
 import SubscriptionUtil from '../../utils/SubscriptionUtil';
 
 import SectionHeader from '../../components/SectionHeader';
+import PageSection from '../../components/PageSection';
 import DurationListing from './DurationListing';
 import SubscriptionListing from './SubscriptionListing';
 import PaymentSelector from './PaymentSelector';
-import PageSection from '../../components/PageSection';
-import { Subscription } from '../../types/subscriptions';
 
 interface ProductPageConfigureContainerProps {
   subscriptions: Subscription[];
@@ -35,7 +35,13 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
 
   const onClickDuration = useCallback((id) => {
     dispatch(setProductSelectedDurationId(id));
-  }, [dispatch]);
+
+    if (productSelection.subscriptionId && productSelection.durationId) {
+      const subscriptionId = productSelection.subscriptionId.replace(productSelection.durationId, id);
+
+      dispatch(setProductSelectedSubscriptionId(subscriptionId));
+    }
+  }, [dispatch, productSelection.durationId, productSelection.subscriptionId]);
 
   const onClickSubscription = useCallback((id) => {
     dispatch(setProductSelectedSubscriptionId(id));
