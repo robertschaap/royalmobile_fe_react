@@ -29,6 +29,8 @@ export const contentCopy: ContentCopy = Object.freeze({
   'order.keepShopping': 'I want to keep shopping',
   'order.totalMonthlyPayment': 'Total monthly payment',
   'order.totalOneTimePayment': 'Total one-time payment',
+  'order.monthlyPayment': 'Monthly payment',
+  'order.oneTimePayment': 'Oone-time payment',
 
   'product.configurePlan.shippingFee': 'Shipping',
   'product.configurePlan': 'Configure your plan',

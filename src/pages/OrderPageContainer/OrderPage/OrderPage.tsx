@@ -3,21 +3,38 @@ import * as S from './order-page.styles';
 import { useContentCopy } from '../../../hooks';
 import noop from '../../../utils/noop';
 
+import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
+import ContentCopy from '../../../components/ContentCopy';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
-import { GridBase, GridItem } from '../../../components/Grid';
+
+import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
 const OrderPage: React.FC = () => {
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('Your order')}</SectionHeader>
-      <div>
-        <div>A Cart Item</div>
-        <div>A Cart Item</div>
-      </div>
+        {['item', 'item'].map((item, index) => (
+          <S.CartItem>
+            <S.DeviceImage>
+              <img width="100%" alt="phone" src={phone} />
+            </S.DeviceImage>
+            {item}
+            <S.CartItemTotal>
+              <S.CartItemTotalType>
+                <ContentCopy messageId='order.monthlyPayment' />
+                <span>0</span>
+              </S.CartItemTotalType>
+              <S.CartItemTotalType>
+                <ContentCopy messageId='order.oneTimePayment' />
+                <span>0</span>
+              </S.CartItemTotalType>
+            </S.CartItemTotal>
+            <S.CartItemRemove>Remove from order</S.CartItemRemove>
+          </S.CartItem>
+        ))}
 
-      <PageSection>
         <GridBase>
           <GridItem
             md={2}
@@ -36,7 +53,6 @@ const OrderPage: React.FC = () => {
             </S.TotalCard>
           </GridItem>
         </GridBase>
-      </PageSection>
 
       <S.OrderButton
         variant="primary"
