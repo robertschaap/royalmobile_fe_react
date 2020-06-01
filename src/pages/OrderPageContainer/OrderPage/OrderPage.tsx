@@ -6,6 +6,7 @@ import noop from '../../../utils/noop';
 import Button from '../../../components/Button';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
+import { GridBase, GridItem } from '../../../components/Grid';
 
 const OrderPage: React.FC = () => {
   return (
@@ -15,7 +16,28 @@ const OrderPage: React.FC = () => {
         <div>A Cart Item</div>
         <div>A Cart Item</div>
       </div>
-      <div>Subtotal</div>
+
+      <PageSection>
+        <GridBase>
+          <GridItem
+            md={2}
+            lg={2}>
+            <S.TotalCard>
+              {useContentCopy('order.totalMonthlyPayment')}
+              <S.Total>Total</S.Total>
+            </S.TotalCard>
+          </GridItem>
+          <GridItem
+            md={2}
+            lg={2}>
+            <S.TotalCard>
+              {useContentCopy('order.totalOneTimePayment')}
+              <S.Total>Total</S.Total>
+            </S.TotalCard>
+          </GridItem>
+        </GridBase>
+      </PageSection>
+
       <S.OrderButton
         variant="primary"
         onClick={noop}>
