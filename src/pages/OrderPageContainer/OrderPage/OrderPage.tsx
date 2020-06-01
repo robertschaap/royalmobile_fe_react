@@ -41,12 +41,12 @@ const OrderPage: React.FC = () => {
       <S.OrderButton
         variant="primary"
         onClick={noop}>
-        {useContentCopy('I\'m ready to pay!')}
+        {useContentCopy('order.readyToPay')}
       </S.OrderButton>
       <Button
         variant="secondary"
         onClick={noop}>
-        {useContentCopy('I want to keep shopping')}
+        {useContentCopy('order.keepShopping')}
       </Button>
     </PageSection>
   );
