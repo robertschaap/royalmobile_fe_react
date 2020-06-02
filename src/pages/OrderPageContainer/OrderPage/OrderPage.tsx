@@ -14,7 +14,7 @@ import phone from '../../../assets/images/apple_iphone-x_silver.png';
 const OrderPage: React.FC = () => {
   return (
     <PageSection>
-      <SectionHeader>{useContentCopy('Your order')}</SectionHeader>
+      <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
         {['item', 'item'].map((item, index) => (
           <S.CartItem>
             <S.DeviceImage>
@@ -24,11 +24,11 @@ const OrderPage: React.FC = () => {
             <S.CartItemTotal>
               <S.CartItemTotalType>
                 <ContentCopy messageId='order.monthlyPayment' />
-                <span>0</span>
+                <span>0,00</span>
               </S.CartItemTotalType>
               <S.CartItemTotalType>
                 <ContentCopy messageId='order.oneTimePayment' />
-                <span>0</span>
+                <span>0,00</span>
               </S.CartItemTotalType>
             </S.CartItemTotal>
             <S.CartItemRemove>
@@ -43,7 +43,7 @@ const OrderPage: React.FC = () => {
             lg={2}>
             <S.TotalCard>
               {useContentCopy('order.totalMonthlyPayment')}
-              <S.Total>Total</S.Total>
+              <S.Total>0,00</S.Total>
             </S.TotalCard>
           </GridItem>
           <GridItem
@@ -51,7 +51,7 @@ const OrderPage: React.FC = () => {
             lg={2}>
             <S.TotalCard>
               {useContentCopy('order.totalOneTimePayment')}
-              <S.Total>Total</S.Total>
+              <S.Total>0,00</S.Total>
             </S.TotalCard>
           </GridItem>
         </GridBase>

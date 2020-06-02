@@ -23,15 +23,16 @@ export const contentCopy: ContentCopy = Object.freeze({
 
   'contact.contactUs': 'Contact us',
 
-  'order.readyToOrder': 'I\'m ready to order!',
-  'order.renewContract': 'I\'m ready to renew my contract!',
-  'order.readyToPay': 'I\'m ready to pay!',
   'order.keepShopping': 'I want to keep shopping',
-  'order.totalMonthlyPayment': 'Total monthly payment',
-  'order.totalOneTimePayment': 'Total one-time payment',
   'order.monthlyPayment': 'Monthly payment',
   'order.oneTimePayment': 'One-time payment',
+  'order.order': 'Your order',
+  'order.readyToOrder': 'I\'m ready to order!',
+  'order.readyToPay': 'I\'m ready to pay!',
   'order.removeCartItem': 'Remove from order',
+  'order.renewContract': 'I\'m ready to renew my contract!',
+  'order.totalMonthlyPayment': 'Total monthly payment',
+  'order.totalOneTimePayment': 'Total one-time payment',
 
   'product.configurePlan.shippingFee': 'Shipping',
   'product.configurePlan': 'Configure your plan',
