@@ -31,7 +31,9 @@ const OrderPage: React.FC = () => {
                 <span>0</span>
               </S.CartItemTotalType>
             </S.CartItemTotal>
-            <S.CartItemRemove>Remove from order</S.CartItemRemove>
+            <S.CartItemRemove>
+              <ContentCopy messageId='order.removeCartItem' />
+            </S.CartItemRemove>
           </S.CartItem>
         ))}
 
