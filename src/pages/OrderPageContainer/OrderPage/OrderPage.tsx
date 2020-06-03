@@ -22,7 +22,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
     <PageSection>
       <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
         {['item', 'item'].map((item, index) => (
-          <S.CartItem>
+          <S.CartItem key={index}>
             <S.DeviceImage>
               <img width="100%" alt="phone" src={phone} />
             </S.DeviceImage>
