@@ -11,7 +11,13 @@ import SectionHeader from '../../../components/SectionHeader';
 
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
-const OrderPage: React.FC = () => {
+interface OrderPageProps {
+  onClickRemove(): void;
+}
+
+const OrderPage: React.FC<OrderPageProps> = (props) => {
+  const { onClickRemove } = props;
+
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
@@ -32,7 +38,9 @@ const OrderPage: React.FC = () => {
               </S.CartItemTotalType>
             </S.CartItemTotal>
             <S.CartItemRemove>
-              <ContentCopy messageId='order.removeCartItem' />
+              <S.CartItemRemoveButton onClick={onClickRemove}>
+                <ContentCopy messageId='order.removeCartItem' />
+              </S.CartItemRemoveButton>
             </S.CartItemRemove>
           </S.CartItem>
         ))}

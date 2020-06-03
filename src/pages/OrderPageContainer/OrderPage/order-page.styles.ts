@@ -33,6 +33,10 @@ export const CartItemRemove = styled.div`
   flex: 0 0 100%;
 `;
 
+export const CartItemRemoveButton = styled.button`
+  border: none;
+`;
+
 export const DeviceImage = styled.div`
   width: 50px;
   margin-bottom: ${({ theme }) => theme.spacing(4)};
