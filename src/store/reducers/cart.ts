@@ -1,4 +1,5 @@
 import produce from 'immer';
+import { CartActionTypes } from '../ducks/cart';
 
 interface CartState {
   isFetching: boolean;
@@ -16,7 +17,7 @@ export const initialCartState: CartState = {
   },
 };
 
-export const cartReducer = produce((draft: CartState = initialCartState, action: any) => {
+export const cartReducer = produce((draft: CartState = initialCartState, action: CartActionTypes) => {
   switch (action.type) {
     default:
       break;
