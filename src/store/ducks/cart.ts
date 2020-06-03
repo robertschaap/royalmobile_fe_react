@@ -1,5 +1,9 @@
+import { Cart } from '../../types/cart';
+
 export enum CartActions {
   FETCH_CART = 'FETCH_CART',
+  FETCH_CART_SUCCESS = 'FETCH_CART_SUCCESS',
+  FETCH_CART_ERROR = 'FETCH_CART_ERROR',
 }
 
 export interface FetchCartAction {
@@ -7,10 +11,32 @@ export interface FetchCartAction {
   payload: string;
 }
 
-export const fetchCart = (payload: string): FetchCartAction => ({
+export const fetchCart = (payload: string): CartActionTypes => ({
   type: CartActions.FETCH_CART,
   payload,
 });
 
+interface FetchCartSuccessAction {
+  type: CartActions.FETCH_CART_SUCCESS;
+  payload: Cart;
+}
+
+export const fetchCartSuccess = (payload: Cart): CartActionTypes => ({
+  type: CartActions.FETCH_CART_SUCCESS,
+  payload,
+});
+
+interface FetchCartErrorAction {
+  type: CartActions.FETCH_CART_ERROR;
+  error: string;
+}
+
+export const fetchCartError = (error: string): CartActionTypes => ({
+  type: CartActions.FETCH_CART_ERROR,
+  error,
+});
+
 export type CartActionTypes =
-  | FetchCartAction;
+  | FetchCartAction
+  | FetchCartSuccessAction
+  | FetchCartErrorAction;

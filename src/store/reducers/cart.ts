@@ -25,6 +25,15 @@ export const cartReducer = produce((draft: CartState = initialCartState, action:
       draft.isFetching = true;
       draft.hasError = false;
       break;
+    case CartActions.FETCH_CART_SUCCESS:
+      draft.isFetching = false;
+      draft.collection.id = action.payload.id;
+      draft.collection.items = action.payload.items;
+      break;
+    case CartActions.FETCH_CART_ERROR:
+      draft.isFetching = false;
+      draft.hasError = true;
+      break;
     default:
       break;
   }
