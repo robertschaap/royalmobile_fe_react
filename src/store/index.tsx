@@ -1,3 +1,4 @@
+export * from './ducks/cart';
 export * from './ducks/product';
 export * from './ducks/products';
 export * from './ducks/subscriptions';
