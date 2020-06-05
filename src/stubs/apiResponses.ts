@@ -21,3 +21,13 @@ export const getSubscriptions = (schema: any, _request: any) => {
     data: schema.db.subscriptions,
   });
 };
+
+export const getCart = (schema: any, _request: any) => {
+  return new Response(200, {}, {
+    status: 'success',
+    data: {
+      id: 'cart-id',
+      items: ['1', '2', '3'],
+    },
+  });
+};
