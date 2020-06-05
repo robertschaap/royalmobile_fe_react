@@ -13,10 +13,11 @@ import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
 interface OrderPageProps {
   onClickRemove(): void;
+  onClickReturn(): void;
 }
 
 const OrderPage: React.FC<OrderPageProps> = (props) => {
-  const { onClickRemove } = props;
+  const { onClickRemove, onClickReturn } = props;
 
   return (
     <PageSection>
@@ -71,7 +72,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
       </S.OrderButton>
       <Button
         variant="secondary"
-        onClick={noop}>
+        onClick={onClickReturn}>
         {useContentCopy('order.keepShopping')}
       </Button>
     </PageSection>
