@@ -1,3 +1,4 @@
+import { StoreState } from '../reducers';
 import { Cart } from '../../types/cart';
 
 export enum CartActions {
@@ -40,3 +41,6 @@ export type CartActionTypes =
   | FetchCartAction
   | FetchCartSuccessAction
   | FetchCartErrorAction;
+
+export const selectCart = (state: StoreState) => state.cart;
+export const selectCartCollection = (state: StoreState) => state.cart.collection;
