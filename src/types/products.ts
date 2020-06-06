@@ -11,6 +11,14 @@ export interface ProductVariant {
   has_discounts: boolean;
 }
 
+export type ProductColor = Pick<ProductVariant, 'color' | 'colorHex'> & {
+  variantId: string;
+};
+
+export type ProductCapacity = Pick<ProductVariant, 'capacity'> & {
+  variantId: string;
+};
+
 export interface Product {
   id: number;
   manufacturer: string;

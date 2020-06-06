@@ -9,19 +9,12 @@ import Hidden from '../../../components/Hidden';
 
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
 import { useContentCopy } from '../../../hooks';
-import { ProductVariant } from '../../../types/products';
+import { ProductVariant, ProductCapacity, ProductColor } from '../../../types/products';
 import StringUtil from '../../../utils/StringUtil';
 
 interface ProductPageCustomiseProps {
-  capacities: {
-    id: string;
-    capacity: string;
-  }[];
-  colors: {
-    id: string;
-    color: string;
-    colorHex: string;
-  }[];
+  capacities: ProductCapacity[];
+  colors: ProductColor[];
   deviceManufacturer: string;
   deviceModel: string;
   onClickColorOrCapacity(id: string): void;

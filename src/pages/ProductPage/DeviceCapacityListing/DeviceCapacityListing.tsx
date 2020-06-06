@@ -1,14 +1,11 @@
 import React from 'react';
 import * as S from './device-capacity-listing.styles';
+import { ProductCapacity } from '../../../types/products';
 
 interface DeviceCapacityListingProps {
   onClickCapacity(id: string): void;
   selectedCapacityId: string;
-  // TODO: create type for this
-  capacities: {
-    id: string;
-    capacity: string;
-  }[];
+  capacities: ProductCapacity[];
 }
 
 const DeviceCapacityListing: React.FC<DeviceCapacityListingProps> = (props) => {
@@ -17,12 +14,12 @@ const DeviceCapacityListing: React.FC<DeviceCapacityListingProps> = (props) => {
   return (
     <S.DeviceCapacityListingBase
       data-testid="device-capacity-listing">
-      {capacities.map(({ id, capacity }) => (
+      {capacities.map(({ variantId, capacity }) => (
         <S.DeviceCapacityListingItem
-          key={id}
-          onClick={() => onClickCapacity(id)}
-          data-testprop-is-selected={id === selectedCapacityId}
-          isSelected={id === selectedCapacityId}>
+          key={variantId}
+          onClick={() => onClickCapacity(variantId)}
+          data-testprop-is-selected={variantId === selectedCapacityId}
+          isSelected={variantId === selectedCapacityId}>
           {capacity}
         </S.DeviceCapacityListingItem>
       ))}

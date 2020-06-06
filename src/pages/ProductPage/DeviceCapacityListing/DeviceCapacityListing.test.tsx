@@ -4,9 +4,9 @@ import DeviceCapacityListing from '.';
 import { renderWithTheme } from '../../../test/helpers';
 
 const capacities = [
-  { id: 'capacity-id1', capacity: 'Capacity 1' },
-  { id: 'capacity-id2', capacity: 'Capacity 2' },
-  { id: 'capacity-id3', capacity: 'Capacity 3' },
+  { variantId: 'capacity-id1', capacity: 'Capacity 1' },
+  { variantId: 'capacity-id2', capacity: 'Capacity 2' },
+  { variantId: 'capacity-id3', capacity: 'Capacity 3' },
 ];
 
 describe('<DeviceCapacityListing />', () => {

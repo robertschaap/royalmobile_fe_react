@@ -4,9 +4,9 @@ import DeviceColorListing from '.';
 import { renderWithTheme } from '../../../test/helpers';
 
 const colors = [
-  { id: 'color-id1', color: 'color-1', colorHex: '#ccc' },
-  { id: 'color-id2', color: 'color-2', colorHex: '#ccc' },
-  { id: 'color-id3', color: 'color-3', colorHex: '#ccc' },
+  { variantId: 'color-id1', color: 'color-1', colorHex: '#ccc' },
+  { variantId: 'color-id2', color: 'color-2', colorHex: '#ccc' },
+  { variantId: 'color-id3', color: 'color-3', colorHex: '#ccc' },
 ];
 
 describe('<DeviceColorListing />', () => {
