@@ -33,6 +33,7 @@ export const contentCopy: ContentCopy = Object.freeze({
   'order.renewContract': 'I\'m ready to renew my contract!',
   'order.totalMonthlyPayment': 'Total monthly payment',
   'order.totalOneTimePayment': 'Total one-time payment',
+  'order.emptyCart': 'Your shopping cart is empty',
 
   'product.configurePlan.shippingFee': 'Shipping',
   'product.configurePlan': 'Configure your plan',

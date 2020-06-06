@@ -57,7 +57,7 @@ const OrderPageContainer: React.FC = () => {
       <>
         <PageTitle page="Order" />
         <PageSection>
-          Empty cart
+        <ErrorMessage messageId="order.emptyCart" />
         </PageSection>
       </>
     );
