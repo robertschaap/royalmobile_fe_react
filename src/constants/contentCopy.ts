@@ -35,7 +35,6 @@ export const contentCopy: ContentCopy = Object.freeze({
   'order.totalOneTimePayment': 'Total one-time payment',
   'order.emptyCart': 'Your shopping cart is empty',
 
-  'product.configurePlan.shippingFee': 'Shipping',
   'product.configurePlan': 'Configure your plan',
   'product.connectionFee': 'Connection Fee',
   'product.customiseDevice': 'Customise your device',
@@ -48,6 +47,7 @@ export const contentCopy: ContentCopy = Object.freeze({
   'product.phoneCostUpfront': 'Phone cost upfront',
   'product.pickDeviceCapacity': 'Pick your device capacity',
   'product.pickDeviceColor': 'Pick your device color',
+  'product.shippingFee': 'Shipping',
   'product.summingUp': 'Summing it all up',
 
   'subscription.duration.1year': '1 year contract',
