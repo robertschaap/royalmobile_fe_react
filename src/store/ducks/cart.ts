@@ -43,11 +43,16 @@ export const fetchCartError = (error: string): CartActionTypes => ({
 
 export interface AddCartItemAction {
   type: typeof CartActions.ADD_CART_ITEM;
-  payload: string;
+  cartId?: string;
+  payload: {
+    variantId: string;
+    subscriptionId: string;
+  };
 }
 
-export const addCartItem = (payload: string): CartActionTypes => ({
+export const addCartItem = (payload: AddCartItemAction['payload'], cartId?: string): CartActionTypes => ({
   type: CartActions.ADD_CART_ITEM,
+  cartId,
   payload,
 });
 
@@ -56,7 +61,7 @@ interface AddCartItemSuccessAction {
   payload: Cart;
 }
 
-export const addCarItemSuccess = (payload: Cart): CartActionTypes => ({
+export const addCartItemSuccess = (payload: Cart): CartActionTypes => ({
   type: CartActions.ADD_CART_ITEM_SUCCESS,
   payload,
 });
@@ -66,7 +71,7 @@ interface AddCartItemErrorAction {
   error: string;
 }
 
-export const addCarItemError = (error: string): CartActionTypes => ({
+export const addCartItemError = (error: string): CartActionTypes => ({
   type: CartActions.ADD_CART_ITEM_ERROR,
   error,
 });

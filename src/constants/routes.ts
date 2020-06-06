@@ -16,9 +16,11 @@ const API = '/api';
 const apiRoutes = {
   API_ROOT: `${API}/`,
   API_GET_CART: `${API}/cart/:id`,
+  API_ADD_CART_ITEM: `${API}/cart/item`,
   API_GET_PRODUCT: `${API}/product/:id`,
   API_GET_PRODUCTS: `${API}/products`,
   API_GET_SUBSCRIPTIONS: `${API}/subscriptions`,
+
 };
 
 export default {
