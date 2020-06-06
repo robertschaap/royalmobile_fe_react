@@ -28,6 +28,7 @@ export const getCart = (schema: any, _request: any) => {
     data: {
       id: 'cart-id',
       items: ['1', '2', '3'],
+      totals: {},
     },
   });
 };

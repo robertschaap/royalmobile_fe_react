@@ -14,6 +14,7 @@ import routes from '../constants/routes';
 export const stubsServer = (environment = 'development') => new Server({
   environment,
   routes() {
+    this.patch(routes.API_ADD_CART_ITEM, getCart); // TODO create specific handler
     this.get(routes.API_GET_CART, getCart);
     this.get(routes.API_GET_PRODUCT, getProduct);
     this.get(routes.API_GET_PRODUCTS, getProducts);
