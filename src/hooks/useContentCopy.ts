@@ -3,7 +3,6 @@ import contentCopy, { ContentCopy } from '../constants/contentCopy';
 
 const ContentContext = createContext<ContentCopy>(contentCopy);
 
-// eslint-disable-next-line import/prefer-default-export
 export const useContentCopy = (messageId: string): string => {
   const copy = useContext(ContentContext);
 

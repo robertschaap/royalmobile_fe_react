@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export interface Subscription {
   id: number;
   subscriptionId: string;
