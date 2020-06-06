@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { fetchCart, selectProductSelection, useDispatch, useSelector, selectCart } from '../../store';
+import {
+  addCartItem,
+  fetchCart,
+  selectCart,
+  selectProductSelection,
+  useDispatch,
+  useSelector,
+} from '../../store';
 
 import ErrorMessage from '../../components/ErrorMessage';
 import Loader from '../../components/Loader';
@@ -19,12 +26,23 @@ const OrderPageContainer: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const cartId = StorageUtil.getCartId() || 'blaat';
+    const cartId = StorageUtil.getCartId();
+    const { subscriptionId, variantId } = selection;
 
-    if (cartId) {
+    if (cartId && !subscriptionId && !variantId) {
       dispatch(fetchCart(cartId));
     }
+
+    if (variantId && subscriptionId) {
+      dispatch(addCartItem({ variantId, subscriptionId }, cartId ?? undefined));
+    }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (cartState.collection?.id) {
+      StorageUtil.setCartId(cartState.collection.id);
+    }
+  }, [cartState.collection]);
 
   const onClickReturn = () => {
     history.push(routes.HOME_PAGE);
@@ -57,7 +75,7 @@ const OrderPageContainer: React.FC = () => {
       <>
         <PageTitle page="Order" />
         <PageSection>
-        <ErrorMessage messageId="order.emptyCart" />
+          <ErrorMessage messageId="order.emptyCart" />
         </PageSection>
       </>
     );
@@ -70,7 +88,6 @@ const OrderPageContainer: React.FC = () => {
         cartItems={cartState.collection.items}
         onClickRemove={noop}
         onClickReturn={onClickReturn} />
-      <pre>{JSON.stringify(selection, null, 2)}</pre>
     </>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './order-page.styles';
 import { useContentCopy } from '../../../hooks';
 import noop from '../../../utils/noop';
+import { CartItem } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
@@ -14,7 +15,7 @@ import phone from '../../../assets/images/apple_iphone-x_silver.png';
 interface OrderPageProps {
   onClickRemove(): void;
   onClickReturn(): void;
-  cartItems: string[];
+  cartItems: CartItem[];
 }
 
 const OrderPage: React.FC<OrderPageProps> = (props) => {
@@ -23,12 +24,12 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
-        {cartItems.map((item, index) => (
+        {cartItems.map((_, index) => (
           <S.CartItem key={index}>
             <S.DeviceImage>
               <img width="100%" alt="phone" src={phone} />
             </S.DeviceImage>
-            {item}
+            {index}
             <S.CartItemTotal>
               <S.CartItemTotalType>
                 <ContentCopy messageId='order.monthlyPayment' />
