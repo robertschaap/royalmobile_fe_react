@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   addCartItem,
@@ -44,9 +44,13 @@ const OrderPageContainer: React.FC = () => {
     }
   }, [cartState.collection]);
 
-  const onClickReturn = () => {
+  const onClickReturn = useCallback(() => {
     history.push(routes.HOME_PAGE);
-  };
+  }, [history]);
+
+  const onClickOrder = useCallback(() => {
+    history.push(routes.ORDER_DETAILS_PAGE);
+  }, [history]);
 
   if (cartState.hasError) {
     return (
@@ -87,7 +91,8 @@ const OrderPageContainer: React.FC = () => {
       <OrderPage
         cartItems={cartState.collection.items}
         onClickRemove={noop}
-        onClickReturn={onClickReturn} />
+        onClickReturn={onClickReturn}
+        onClickOrder={onClickOrder} />
     </>
   );
 };

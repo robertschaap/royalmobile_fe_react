@@ -1,7 +1,6 @@
 import React from 'react';
 import * as S from './order-page.styles';
 import { useContentCopy } from '../../../hooks';
-import noop from '../../../utils/noop';
 import { CartItem } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';
@@ -13,13 +12,19 @@ import SectionHeader from '../../../components/SectionHeader';
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
 interface OrderPageProps {
+  cartItems: CartItem[];
+  onClickOrder(): void;
   onClickRemove(): void;
   onClickReturn(): void;
-  cartItems: CartItem[];
 }
 
 const OrderPage: React.FC<OrderPageProps> = (props) => {
-  const { cartItems, onClickRemove, onClickReturn } = props;
+  const {
+    cartItems,
+    onClickOrder,
+    onClickRemove,
+    onClickReturn,
+  } = props;
 
   return (
     <PageSection>
@@ -69,7 +74,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
 
       <S.OrderButton
         variant="primary"
-        onClick={noop}>
+        onClick={onClickOrder}>
         {useContentCopy('order.readyToPay')}
       </S.OrderButton>
       <Button
