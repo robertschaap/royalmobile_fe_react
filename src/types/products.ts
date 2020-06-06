@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export interface ProductVariant {
   id: number;
   variantId: string;
