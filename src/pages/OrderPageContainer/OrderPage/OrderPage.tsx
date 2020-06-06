@@ -14,15 +14,16 @@ import phone from '../../../assets/images/apple_iphone-x_silver.png';
 interface OrderPageProps {
   onClickRemove(): void;
   onClickReturn(): void;
+  cartItems: string[];
 }
 
 const OrderPage: React.FC<OrderPageProps> = (props) => {
-  const { onClickRemove, onClickReturn } = props;
+  const { cartItems, onClickRemove, onClickReturn } = props;
 
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
-        {['item', 'item'].map((item, index) => (
+        {cartItems.map((item, index) => (
           <S.CartItem key={index}>
             <S.DeviceImage>
               <img width="100%" alt="phone" src={phone} />
