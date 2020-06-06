@@ -5,6 +5,10 @@ export enum CartActions {
   FETCH_CART = 'FETCH_CART',
   FETCH_CART_SUCCESS = 'FETCH_CART_SUCCESS',
   FETCH_CART_ERROR = 'FETCH_CART_ERROR',
+
+  ADD_CART_ITEM = 'ADD_CART_ITEM',
+  ADD_CART_ITEM_SUCCESS = 'ADD_CART_ITEM_SUCCESS',
+  ADD_CART_ITEM_ERROR = 'ADD_CART_ITEM_ERROR',
 }
 
 export interface FetchCartAction {
@@ -37,10 +41,43 @@ export const fetchCartError = (error: string): CartActionTypes => ({
   error,
 });
 
+export interface AddCartItemAction {
+  type: typeof CartActions.ADD_CART_ITEM;
+  payload: string;
+}
+
+export const addCartItem = (payload: string): CartActionTypes => ({
+  type: CartActions.ADD_CART_ITEM,
+  payload,
+});
+
+interface AddCartItemSuccessAction {
+  type: CartActions.ADD_CART_ITEM_SUCCESS;
+  payload: Cart;
+}
+
+export const addCarItemSuccess = (payload: Cart): CartActionTypes => ({
+  type: CartActions.ADD_CART_ITEM_SUCCESS,
+  payload,
+});
+
+interface AddCartItemErrorAction {
+  type: CartActions.ADD_CART_ITEM_ERROR;
+  error: string;
+}
+
+export const addCarItemError = (error: string): CartActionTypes => ({
+  type: CartActions.ADD_CART_ITEM_ERROR,
+  error,
+});
+
 export type CartActionTypes =
   | FetchCartAction
   | FetchCartSuccessAction
-  | FetchCartErrorAction;
+  | FetchCartErrorAction
+  | AddCartItemAction
+  | AddCartItemSuccessAction
+  | AddCartItemErrorAction;
 
 export const selectCart = (state: StoreState) => state.cart;
 export const selectCartCollection = (state: StoreState) => state.cart.collection;
