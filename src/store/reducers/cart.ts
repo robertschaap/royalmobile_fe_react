@@ -1,22 +1,17 @@
 import produce from 'immer';
 import { CartActionTypes, CartActions } from '../ducks/cart';
+import { Cart } from '../../types/cart';
 
 interface CartState {
   isFetching: boolean;
   hasError: boolean;
-  collection: {
-    id: string | null;
-    items: [];
-  };
+  collection?: Cart;
 }
 
 export const initialCartState: CartState = {
   isFetching: false,
   hasError: false,
-  collection: {
-    id: null,
-    items: [],
-  },
+  collection: undefined,
 };
 
 export const cartReducer = produce((draft: CartState = initialCartState, action: CartActionTypes) => {
@@ -27,8 +22,7 @@ export const cartReducer = produce((draft: CartState = initialCartState, action:
       break;
     case CartActions.FETCH_CART_SUCCESS:
       draft.isFetching = false;
-      draft.collection.id = action.payload.id;
-      draft.collection.items = action.payload.items;
+      draft.collection = action.payload;
       break;
     case CartActions.FETCH_CART_ERROR:
       draft.isFetching = false;
