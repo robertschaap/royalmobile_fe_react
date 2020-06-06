@@ -52,7 +52,7 @@ const OrderPageContainer: React.FC = () => {
     );
   }
 
-  if (!cartState.collection.items) {
+  if (!cartState.collection.items.length) {
     return (
       <>
         <PageTitle page="Order" />
