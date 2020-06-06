@@ -11,6 +11,10 @@ interface ApiCallPostProps extends ApiCallProps {
   body: Object;
 }
 
+interface ApiCallPatchProps extends ApiCallProps {
+  body: Object;
+}
+
 function* apiCall(props: ApiCallProps) {
   const {
     onSuccessAction,
@@ -47,7 +51,18 @@ function* post(props: ApiCallPostProps) {
   yield apiCall({ ...props, options });
 }
 
+function* patch(props: ApiCallPatchProps) {
+  const options = {
+    method: 'patch',
+    body: JSON.stringify(props.body),
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  };
+
+  yield apiCall({ ...props, options });
+}
+
 export default {
   get,
+  patch,
   post,
 };
