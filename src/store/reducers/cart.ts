@@ -18,16 +18,19 @@ export const cartReducer = produce((draft: CartState = initialCartState, action:
   switch (action.type) {
     case CartActions.FETCH_CART:
     case CartActions.ADD_CART_ITEM:
+    case CartActions.DELETE_CART_ITEM:
       draft.isFetching = true;
       draft.hasError = false;
       break;
     case CartActions.FETCH_CART_SUCCESS:
     case CartActions.ADD_CART_ITEM_SUCCESS:
+    case CartActions.DELETE_CART_ITEM_SUCCESS:
       draft.isFetching = false;
       draft.collection = action.payload;
       break;
     case CartActions.FETCH_CART_ERROR:
     case CartActions.ADD_CART_ITEM_ERROR:
+    case CartActions.DELETE_CART_ITEM_ERROR:
       draft.isFetching = false;
       draft.hasError = true;
       break;

@@ -9,6 +9,10 @@ export enum CartActions {
   ADD_CART_ITEM = 'ADD_CART_ITEM',
   ADD_CART_ITEM_SUCCESS = 'ADD_CART_ITEM_SUCCESS',
   ADD_CART_ITEM_ERROR = 'ADD_CART_ITEM_ERROR',
+
+  DELETE_CART_ITEM = 'DELETE_CART_ITEM',
+  DELETE_CART_ITEM_SUCCESS = 'DELETE_CART_ITEM_SUCCESS',
+  DELETE_CART_ITEM_ERROR = 'DELETE_CART_ITEM_ERROR',
 }
 
 export interface FetchCartAction {
@@ -76,13 +80,48 @@ export const addCartItemError = (error: string): CartActionTypes => ({
   error,
 });
 
+export interface DeleteCartItemAction {
+  type: typeof CartActions.DELETE_CART_ITEM;
+  cartId: string;
+  payload: string;
+}
+
+export const deleteCartItem = (payload: string, cartId: string): CartActionTypes => ({
+  type: CartActions.DELETE_CART_ITEM,
+  cartId,
+  payload,
+});
+
+interface DeleteCartItemSuccessAction {
+  type: CartActions.DELETE_CART_ITEM_SUCCESS;
+  payload: Cart;
+}
+
+export const deleteCartItemSuccess = (payload: Cart): CartActionTypes => ({
+  type: CartActions.DELETE_CART_ITEM_SUCCESS,
+  payload,
+});
+
+interface DeleteCartItemErrorAction {
+  type: CartActions.DELETE_CART_ITEM_ERROR;
+  error: string;
+}
+
+export const deleteCartItemError = (error: string): CartActionTypes => ({
+  type: CartActions.DELETE_CART_ITEM_ERROR,
+  error,
+});
+
 export type CartActionTypes =
   | FetchCartAction
   | FetchCartSuccessAction
   | FetchCartErrorAction
   | AddCartItemAction
   | AddCartItemSuccessAction
-  | AddCartItemErrorAction;
+  | AddCartItemErrorAction
+  | DeleteCartItemAction
+  | DeleteCartItemSuccessAction
+  | DeleteCartItemErrorAction;
 
 export const selectCart = (state: StoreState) => state.cart;
 export const selectCartCollection = (state: StoreState) => state.cart.collection;
