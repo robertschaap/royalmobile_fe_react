@@ -5,13 +5,16 @@ import formatRoute from '../../utils/formatRoute';
 import routes from '../../constants/routes';
 
 import {
+  AddCartItemAction,
   addCartItemError,
   addCartItemSuccess,
-  AddCartItemAction,
   CartActions,
+  DeleteCartItemAction,
   FetchCartAction,
   fetchCartError,
   fetchCartSuccess,
+  deleteCartItemSuccess,
+  deleteCartItemError,
 } from '../ducks/cart';
 
 function* fetchCartSaga({ payload: cartId }: FetchCartAction): SagaIterator {
@@ -24,14 +27,23 @@ function* fetchCartSaga({ payload: cartId }: FetchCartAction): SagaIterator {
 
 function* addCartItemSaga({ payload, cartId }: AddCartItemAction): SagaIterator {
   yield call(api.patch, {
-    url: routes.API_ADD_CART_ITEM,
-    body: { ...payload, cartId },
+    url: formatRoute(routes.API_ADD_CART_ITEM, { id: cartId ?? '' }),
+    body: { ...payload },
     onSuccessAction: addCartItemSuccess,
     onErrorAction: addCartItemError,
+  });
+}
+
+function* deleteCartItemSaga({ payload, cartId }: DeleteCartItemAction): SagaIterator {
+  yield call(api.delete, {
+    url: formatRoute(routes.API_REMOVE_CART_ITEM, { id: cartId, itemId: payload }),
+    onSuccessAction: deleteCartItemSuccess,
+    onErrorAction: deleteCartItemError,
   });
 }
 
 export default [
   takeEvery(CartActions.FETCH_CART, fetchCartSaga),
   takeEvery(CartActions.ADD_CART_ITEM, addCartItemSaga),
+  takeEvery(CartActions.DELETE_CART_ITEM, deleteCartItemSaga),
 ];

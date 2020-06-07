@@ -14,7 +14,7 @@ import phone from '../../../assets/images/apple_iphone-x_silver.png';
 interface OrderPageProps {
   cartItems: CartItem[];
   onClickOrder(): void;
-  onClickRemove(): void;
+  onClickRemove(cartItemId: string): void;
   onClickReturn(): void;
 }
 
@@ -46,7 +46,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
               </S.CartItemTotalType>
             </S.CartItemTotal>
             <S.CartItemRemove>
-              <S.CartItemRemoveButton onClick={onClickRemove}>
+              <S.CartItemRemoveButton onClick={() => onClickRemove(index.toString())}>
                 <ContentCopy messageId='order.removeCartItem' />
               </S.CartItemRemoveButton>
             </S.CartItemRemove>

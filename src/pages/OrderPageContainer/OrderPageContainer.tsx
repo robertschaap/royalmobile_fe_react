@@ -7,6 +7,7 @@ import {
   selectProductSelection,
   useDispatch,
   useSelector,
+  deleteCartItem,
 } from '../../store';
 
 import ErrorMessage from '../../components/ErrorMessage';
@@ -44,6 +45,12 @@ const OrderPageContainer: React.FC = () => {
     }
   }, [cartState.collection]);
 
+  const onClickRemove = useCallback((cartItemId: string) => {
+    if (cartState.collection?.id) {
+      dispatch(deleteCartItem(cartState.collection.id, cartItemId));
+    }
+  }, [dispatch, cartState.collection]);
+
   const onClickReturn = useCallback(() => {
     history.push(routes.HOME_PAGE);
   }, [history]);
@@ -74,7 +81,7 @@ const OrderPageContainer: React.FC = () => {
     );
   }
 
-  if (!cartState.collection) {
+  if (!cartState.collection?.items.length) {
     return (
       <>
         <PageTitle page="Order" />
@@ -90,7 +97,7 @@ const OrderPageContainer: React.FC = () => {
       <PageTitle page="Order" />
       <OrderPage
         cartItems={cartState.collection.items}
-        onClickRemove={noop}
+        onClickRemove={onClickRemove}
         onClickReturn={onClickReturn}
         onClickOrder={onClickOrder} />
     </>
