@@ -1,6 +1,7 @@
 import { Server, Model, Factory } from 'miragejs';
 
 import {
+  deleteCartItem,
   getCart,
   getProduct,
   getProducts,
@@ -15,11 +16,12 @@ import routes from '../constants/routes';
 export const stubsServer = (environment = 'development') => new Server({
   environment,
   routes() {
-    this.patch(routes.API_ADD_CART_ITEM, patchCartItem);
+    this.patch(routes.API_ADD_CART_ITEM, patchCartItem); // probably post is better
     this.get(routes.API_GET_CART, getCart);
     this.get(routes.API_GET_PRODUCT, getProduct);
     this.get(routes.API_GET_PRODUCTS, getProducts);
     this.get(routes.API_GET_SUBSCRIPTIONS, getSubscriptions);
+    this.delete(routes.API_REMOVE_CART_ITEM, deleteCartItem);
   },
   models: {
     product: Model,

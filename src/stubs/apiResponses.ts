@@ -51,3 +51,16 @@ export const patchCartItem = (schema: any, _request: any) => {
     },
   });
 };
+
+export const deleteCartItem = (schema: any, _request: any) => {
+  cartItem.shift();
+
+  return new Response(200, {}, {
+    status: 'success',
+    data: {
+      id: 'cart-id',
+      items: cartItem,
+      totals: {},
+    },
+  });
+};
