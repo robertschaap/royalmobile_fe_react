@@ -5,18 +5,13 @@ import {
   ProductActionTypes,
 } from '../ducks/product';
 
-import { Product } from '../../types/products';
+import { Product, ProductSelection } from '../../types/products';
 
 interface ProductState {
   isFetching: boolean;
   hasError: boolean;
   collection: Product | null;
-  selection: {
-    durationId: string | null;
-    paymentPlanId: string | null;
-    subscriptionId: string | null;
-    variantId: string | null;
-  };
+  selection: ProductSelection;
 }
 
 const initialProductSelection = {

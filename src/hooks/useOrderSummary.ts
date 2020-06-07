@@ -1,7 +1,7 @@
 import ProductUtil from '../utils/ProductUtil';
 import SubscriptionUtil from '../utils/SubscriptionUtil';
 import StringUtil from '../utils/StringUtil';
-import { ProductVariant } from '../types/products';
+import { ProductVariant, ProductSelection } from '../types/products';
 import { Subscription } from '../types/subscriptions';
 
 export interface OrderSummary {
@@ -18,7 +18,7 @@ export interface OrderSummary {
   monthlySubscriptionCost: string;
 }
 
-export const useOrderSummary = (productVariants: ProductVariant[], subscriptions: Subscription[], selection: { [k: string]: string | null }): OrderSummary | null => {
+export const useOrderSummary = (productVariants: ProductVariant[], subscriptions: Subscription[], selection: ProductSelection): OrderSummary | null => {
   const selectedVariant = ProductUtil.getProductVariant(productVariants, selection.variantId || '');
   const selectedSubscription = SubscriptionUtil.getSubscription(subscriptions, selection.subscriptionId || '');
 

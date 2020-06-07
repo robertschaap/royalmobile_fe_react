@@ -1,3 +1,12 @@
+export interface Product {
+  id: number;
+  manufacturer: string;
+  model: string;
+  modelId: string;
+  variants: ProductVariant[];
+  specifications?: {};
+}
+
 export interface ProductVariant {
   id: number;
   variantId: string;
@@ -19,11 +28,9 @@ export type ProductCapacity = Pick<ProductVariant, 'capacity'> & {
   variantId: string;
 };
 
-export interface Product {
-  id: number;
-  manufacturer: string;
-  model: string;
-  modelId: string;
-  variants: ProductVariant[];
-  specifications?: {};
+export interface ProductSelection {
+  durationId: string | null;
+  paymentPlanId: string | null;
+  subscriptionId: string | null;
+  variantId: string | null;
 }
