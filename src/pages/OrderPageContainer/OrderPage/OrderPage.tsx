@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './order-page.styles';
 import { useContentCopy } from '../../../hooks';
-import { CartItem } from '../../../types/cart';
+import { Cart } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
@@ -10,9 +10,10 @@ import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
 
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
+import StringUtil from '../../../utils/StringUtil';
 
 interface OrderPageProps {
-  cartItems: CartItem[];
+  cart: Cart;
   onClickOrder(): void;
   onClickRemove(cartItemId: string): void;
   onClickReturn(): void;
@@ -20,7 +21,7 @@ interface OrderPageProps {
 
 const OrderPage: React.FC<OrderPageProps> = (props) => {
   const {
-    cartItems,
+    cart,
     onClickOrder,
     onClickRemove,
     onClickReturn,
@@ -29,20 +30,27 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
   return (
     <PageSection>
       <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
-        {cartItems.map((_, index) => (
+        {cart.items.map((item, index) => (
           <S.CartItem key={index}>
             <S.DeviceImage>
               <img width="100%" alt="phone" src={phone} />
             </S.DeviceImage>
-            {index}
+            <div>
+              <S.DeviceName>
+                {item.product.model}{' '}
+                {item.product.variants[0].capacity}{' '}
+                {StringUtil.capitalise(item.product.variants[0].color)}
+              </S.DeviceName>
+              <div>{item.product.manufacturer}</div>
+            </div>
             <S.CartItemTotal>
               <S.CartItemTotalType>
                 <ContentCopy messageId='order.monthlyPayment' />
-                <span>0,00</span>
+                <span>{StringUtil.formatPrice(item.totals.monthly_price)}</span>
               </S.CartItemTotalType>
               <S.CartItemTotalType>
                 <ContentCopy messageId='order.oneTimePayment' />
-                <span>0,00</span>
+                <span>{StringUtil.formatPrice(item.totals.onetime_price)}</span>
               </S.CartItemTotalType>
             </S.CartItemTotal>
             <S.CartItemRemove>
@@ -59,7 +67,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
             lg={2}>
             <S.TotalCard>
               {useContentCopy('order.totalMonthlyPayment')}
-              <S.Total>0,00</S.Total>
+              <S.Total>{StringUtil.formatPrice(cart.totals.monthly_price)}</S.Total>
             </S.TotalCard>
           </GridItem>
           <GridItem
@@ -67,7 +75,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
             lg={2}>
             <S.TotalCard>
               {useContentCopy('order.totalOneTimePayment')}
-              <S.Total>0,00</S.Total>
+              <S.Total>{StringUtil.formatPrice(cart.totals.onetime_price)}</S.Total>
             </S.TotalCard>
           </GridItem>
         </GridBase>

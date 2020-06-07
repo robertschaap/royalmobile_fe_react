@@ -43,6 +43,10 @@ export const DeviceImage = styled.div`
   margin-right: ${({ theme }) => theme.spacing(4)};
 `;
 
+export const DeviceName = styled.div`
+  font-weight: 700;
+`;
+
 export const TotalCard = styled.div`
   display: flex;
   justify-content: space-between;

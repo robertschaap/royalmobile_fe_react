@@ -97,7 +97,7 @@ const OrderPageContainer: React.FC = () => {
     <>
       <PageTitle page="Order" />
       <OrderPage
-        cartItems={cartState.collection.items}
+        cart={cartState.collection}
         onClickRemove={onClickRemove}
         onClickReturn={onClickReturn}
         onClickOrder={onClickOrder} />
