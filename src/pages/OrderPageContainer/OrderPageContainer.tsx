@@ -2,12 +2,13 @@ import React, { useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   addCartItem,
+  deleteCartItem,
+  deleteProductSelection,
   fetchCart,
   selectCart,
   selectProductSelection,
   useDispatch,
   useSelector,
-  deleteCartItem,
 } from '../../store';
 
 import ErrorMessage from '../../components/ErrorMessage';
@@ -16,7 +17,6 @@ import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import OrderPage from './OrderPage';
 
-import noop from '../../utils/noop';
 import StorageUtil from '../../utils/StorageUtil';
 import routes from '../../constants/routes';
 
@@ -36,6 +36,7 @@ const OrderPageContainer: React.FC = () => {
 
     if (variantId && subscriptionId) {
       dispatch(addCartItem({ variantId, subscriptionId }, cartId ?? undefined));
+      dispatch(deleteProductSelection());
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
