@@ -1,21 +1,17 @@
 import { put } from 'redux-saga/effects';
 
-interface ApiCallProps {
+interface ApiCallBaseProps {
   onErrorAction: Function;
   onSuccessAction: Function;
   options?: Object;
   url: string;
 }
 
-interface ApiCallPostProps extends ApiCallProps {
-  body: Object;
+interface ApiCallWithOptionalBodyProps extends ApiCallBaseProps {
+  body?: Object;
 }
 
-interface ApiCallPatchProps extends ApiCallProps {
-  body: Object;
-}
-
-function* apiCall(props: ApiCallProps) {
+function* apiCall(props: ApiCallBaseProps) {
   const {
     onSuccessAction,
     onErrorAction,
@@ -37,32 +33,25 @@ function* apiCall(props: ApiCallProps) {
   }
 }
 
-function* get(props: ApiCallProps) {
+function* get(props: ApiCallBaseProps) {
   yield apiCall(props);
 }
 
-function* post(props: ApiCallPostProps) {
-  const options = {
-    method: 'post',
-    body: JSON.stringify(props.body),
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+function withBody(method: string) {
+  return function* methodFunction(props: ApiCallWithOptionalBodyProps) {
+    const options = {
+      method,
+      body: JSON.stringify(props.body),
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    };
+
+    yield apiCall({ ...props, options });
   };
-
-  yield apiCall({ ...props, options });
-}
-
-function* patch(props: ApiCallPatchProps) {
-  const options = {
-    method: 'patch',
-    body: JSON.stringify(props.body),
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  };
-
-  yield apiCall({ ...props, options });
 }
 
 export default {
   get,
-  patch,
-  post,
+  patch: withBody('patch'),
+  post: withBody('post'),
+  delete: withBody('delete'),
 };
