@@ -73,7 +73,10 @@ export const patchCartItem = (schema: any, _request: any) => {
     data: {
       id: 'cart-id',
       items: cartItems,
-      totals: {},
+      totals: {
+        monthly_price: '88,88',
+        onetime_price: '99,99',
+      },
     },
   });
 };
