@@ -27,7 +27,7 @@ function* fetchCartSaga({ payload: cartId }: FetchCartAction): SagaIterator {
 
 function* addCartItemSaga({ payload, cartId }: AddCartItemAction): SagaIterator {
   yield call(api.patch, {
-    url: formatRoute(routes.API_ADD_CART_ITEM, { id: cartId ?? '' }),
+    url: formatRoute(routes.API_ADD_CART_ITEM, { id: cartId ?? 'new' }),
     body: { ...payload },
     onSuccessAction: addCartItemSuccess,
     onErrorAction: addCartItemError,
