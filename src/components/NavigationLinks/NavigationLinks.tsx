@@ -1,7 +1,9 @@
 import React from 'react';
-import Link from '../Link';
+import styled from 'styled-components';
 import routes from '../../constants/routes';
 import { useContentCopy } from '../../hooks/useContentCopy';
+
+import Link from '../Link';
 
 export const ProductsForYouLink: React.FC = () => (
   <Link
@@ -32,5 +34,13 @@ export const HelpLink: React.FC = () => (
     data-testid="help-link"
     to={routes.HELP_PAGE}>
     {useContentCopy('navigation.help')}
+  </Link>
+);
+
+export const OrderLink: React.FC = () => (
+  <Link
+    data-testid="order-link"
+    to={routes.ORDER_PAGE}>
+    <span role="img" aria-label="Go to order page">🛒</span>
   </Link>
 );

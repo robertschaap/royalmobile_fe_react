@@ -6,6 +6,7 @@ import {
   ForYourBusinessLink,
   HelpLink,
   MyAccountLink,
+  OrderLink,
   ProductsForYouLink,
 } from '../NavigationLinks';
 
@@ -24,6 +25,8 @@ const Navigation: React.FC = () => {
         <MyAccountLink />
         <span> | </span>
         <HelpLink />
+        <span> | </span>
+        <OrderLink />
       </S.NavigationGroup>
     </S.NavigationMediumBase>
   );

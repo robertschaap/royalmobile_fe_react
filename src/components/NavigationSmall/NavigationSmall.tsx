@@ -6,6 +6,7 @@ import {
   HelpLink,
   MyAccountLink,
   ProductsForYouLink,
+  OrderLink,
 } from '../NavigationLinks';
 
 const Navigation: React.FC = () => {
@@ -13,7 +14,10 @@ const Navigation: React.FC = () => {
     <S.NavigationSmallBase>
       <S.NavigationTop>
         <MyAccountLink />
-        <HelpLink />
+        <span>
+          <HelpLink /> |&nbsp;
+          <OrderLink />
+        </span>
       </S.NavigationTop>
       <S.NavigationBottom>
         <ProductsForYouLink />
