@@ -1,5 +1,6 @@
 import React from 'react';
 import routes from '../../constants/routes';
+import StorageUtil from '../../utils/StorageUtil';
 
 import Link from '../Link';
 
@@ -14,7 +15,8 @@ const DebugMenu: React.FC = () => {
         <Link to={routes.HOME_PAGE}>Home</Link> |&nbsp;
         <Link to={routes.PRODUCT_PAGE}>Product</Link> |&nbsp;
         <Link to={routes.ORDER_PAGE}>Order</Link> |&nbsp;
-        <Link to={routes.ORDER_DETAILS_PAGE}>Order Details</Link>
+        <Link to={routes.ORDER_DETAILS_PAGE}>Order Details</Link> |&nbsp;
+        <button onClick={() => StorageUtil.clearAll()}>Clear Storage</button>
       </div>
     );
   }
