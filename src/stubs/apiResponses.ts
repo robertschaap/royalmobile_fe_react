@@ -9,14 +9,14 @@ export const getProduct = (schema: any, request: any) => {
 };
 
 // This purposely ignores pagination
-export const getProducts = (schema: any, _request: any) => {
+export const getProducts = (schema: any) => {
   return new Response(200, {}, {
     status: 'success',
     data: schema.db.products,
   });
 };
 
-export const getSubscriptions = (schema: any, _request: any) => {
+export const getSubscriptions = (schema: any) => {
   return new Response(200, {}, {
     status: 'success',
     data: schema.db.subscriptions,
@@ -26,10 +26,9 @@ export const getSubscriptions = (schema: any, _request: any) => {
 // We don't care about the full business logic here, just that
 // modifications either return, add, or remove cart items. On
 // initial fetch we add a default item for dev experience.
-
 const cartItems: CartItem[] = [];
 
-export const getCart = (schema: any, _request: any) => {
+export const getCart = (schema: any) => {
   if (cartItems.length === 0) {
     const item: CartItem = {
       product: schema.db.products[0],
@@ -56,7 +55,7 @@ export const getCart = (schema: any, _request: any) => {
   });
 };
 
-export const patchCartItem = (schema: any, _request: any) => {
+export const patchCartItem = (schema: any) => {
   const item: CartItem = {
     product: schema.db.products[0],
     subscription: schema.db.subscriptions[0],
@@ -81,7 +80,7 @@ export const patchCartItem = (schema: any, _request: any) => {
   });
 };
 
-export const deleteCartItem = (schema: any, _request: any) => {
+export const deleteCartItem = () => {
   cartItems.shift();
 
   return new Response(200, {}, {
