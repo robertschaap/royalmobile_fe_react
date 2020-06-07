@@ -9,6 +9,7 @@ export enum ProductActions {
   SET_PRODUCT_SELECTED_PAYMENTPLAN_ID = 'SET_PRODUCT_SELECTED_PAYMENTPLAN_ID',
   SET_PRODUCT_SELECTED_SUBSCRIPTION_ID = 'SET_PRODUCT_SELECTED_SUBSCRIPTION_ID',
   SET_PRODUCT_SELECTED_VARIANT_ID = 'SET_PRODUCT_SELECTED_VARIANT_ID',
+  DELETE_PRODUCT_SELECTION = 'DELETE_PRODUCT_SELECTION',
 }
 
 export interface FetchProductAction {
@@ -81,6 +82,14 @@ export const setProductSelectedVariantId = (payload: string): ProductActionTypes
   payload,
 });
 
+interface DeleteProductSelectionAction {
+  type: typeof ProductActions.DELETE_PRODUCT_SELECTION;
+}
+
+export const deleteProductSelection = (): ProductActionTypes => ({
+  type: ProductActions.DELETE_PRODUCT_SELECTION,
+});
+
 export type ProductActionTypes =
   | FetchProductAction
   | FetchProductSucesssAction
@@ -88,7 +97,8 @@ export type ProductActionTypes =
   | SetProductSelectedDurationIdAction
   | SetProductSelectedPaymentPlanIdAction
   | SetProductSelectedSubscriptionIdAction
-  | SetProductSelectedVariantIdAction;
+  | SetProductSelectedVariantIdAction
+  | DeleteProductSelectionAction;
 
 export const selectProduct = (state: StoreState) => state.product;
 export const selectProductCollection = (state: StoreState) => state.product.collection;

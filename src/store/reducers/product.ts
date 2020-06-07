@@ -19,16 +19,18 @@ interface ProductState {
   };
 }
 
+const initialProductSelection = {
+  durationId: null,
+  paymentPlanId: null,
+  subscriptionId: null,
+  variantId: null,
+};
+
 export const initialProductState: ProductState = {
   isFetching: false,
   hasError: false,
   collection: null,
-  selection: {
-    durationId: null,
-    paymentPlanId: null,
-    subscriptionId: null,
-    variantId: null,
-  },
+  selection: initialProductSelection,
 };
 
 export const productReducer = produce((draft: ProductState = initialProductState, action: ProductActionTypes) => {
@@ -56,6 +58,9 @@ export const productReducer = produce((draft: ProductState = initialProductState
       break;
     case ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID:
       draft.selection.variantId = action.payload;
+      break;
+    case ProductActions.DELETE_PRODUCT_SELECTION:
+      draft.selection = initialProductSelection;
       break;
     default:
       break;
