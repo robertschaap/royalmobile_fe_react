@@ -22,12 +22,31 @@ export const getSubscriptions = (schema: any, _request: any) => {
   });
 };
 
+/**
+ * We don't care about the full business logic here, just that
+ * modifications either return, add, or remove cart items
+ */
+const cartItem = ['item'];
+
 export const getCart = (schema: any, _request: any) => {
   return new Response(200, {}, {
     status: 'success',
     data: {
       id: 'cart-id',
-      items: ['1', '2', '3'],
+      items: cartItem,
+      totals: {},
+    },
+  });
+};
+
+export const patchCartItem = (schema: any, _request: any) => {
+  cartItem.push('item');
+
+  return new Response(200, {}, {
+    status: 'success',
+    data: {
+      id: 'cart-id',
+      items: cartItem,
       totals: {},
     },
   });
