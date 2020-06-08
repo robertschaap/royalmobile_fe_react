@@ -9,6 +9,7 @@ const pageRoutes = {
   MY_ACCOUNT_PAGE: '/myroyalmobile',
   CONSUMER_PAGE: '/consumer',
   BUSINESS_PAGE: '/business',
+  THANK_YOU_PAGE: '/thankyou',
 };
 
 const API = '/api';
