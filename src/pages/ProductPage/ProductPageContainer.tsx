@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import {
+  deleteProductSelection,
   fetchProduct,
   fetchSubscriptions,
   selectProduct,
@@ -34,6 +35,10 @@ const ProductPageContainer: React.FC = () => {
   useEffect(() => {
     dispatch(fetchProduct(id));
     dispatch(fetchSubscriptions());
+
+    return () => {
+      dispatch(deleteProductSelection());
+    };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {

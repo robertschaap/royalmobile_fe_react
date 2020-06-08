@@ -3,10 +3,8 @@ import { useHistory } from 'react-router-dom';
 import {
   addCartItem,
   deleteCartItem,
-  deleteProductSelection,
   fetchCart,
   selectCart,
-  selectProductSelection,
   useDispatch,
   useSelector,
 } from '../../store';
@@ -22,13 +20,12 @@ import routes from '../../constants/routes';
 
 const OrderPageContainer: React.FC = () => {
   const history = useHistory();
-  const selection = useSelector(selectProductSelection);
   const cartState = useSelector(selectCart);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const cartId = StorageUtil.getCartId();
-    const { subscriptionId, variantId } = selection;
+    const { subscriptionId, variantId } = StorageUtil.getProductSelection();
 
     if (cartId && !subscriptionId && !variantId) {
       dispatch(fetchCart(cartId));
@@ -36,7 +33,7 @@ const OrderPageContainer: React.FC = () => {
 
     if (variantId && subscriptionId) {
       dispatch(addCartItem({ variantId, subscriptionId }, cartId ?? undefined));
-      dispatch(deleteProductSelection());
+      StorageUtil.clearProductSelection();
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
