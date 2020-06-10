@@ -5,7 +5,7 @@ interface FormGroupProps {
   children: React.ReactNode;
   error: string;
   hasError: boolean;
-  hint: string;
+  hint?: string;
   isRequired?: boolean;
   isValid: boolean;
   label: string;
@@ -31,7 +31,7 @@ const FormGroup: React.FC<FormGroupProps> = (props) => {
         {isValid && <S.Icon isValid />}
       </S.FormLabel>
       {children}
-      {hasError ? <S.Error>{error}</S.Error> : <S.Hint>{hint}</S.Hint>}
+      {hasError ? <S.Error>{error}</S.Error> : <S.Hint>{hint}&nbsp;</S.Hint>}
     </S.FormGroupBase>
   );
 };

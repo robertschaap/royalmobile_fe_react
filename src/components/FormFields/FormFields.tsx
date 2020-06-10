@@ -6,7 +6,7 @@ import FormGroup from '../FormGroup';
 interface InputProps {
   error: string;
   hasError: boolean;
-  hint: string;
+  hint?: string;
   isRequired?: boolean;
   isValid: boolean;
   label: string;
