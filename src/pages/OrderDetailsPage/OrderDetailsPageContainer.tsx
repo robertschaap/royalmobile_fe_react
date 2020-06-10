@@ -4,7 +4,7 @@ import { useSelector, selectCartCollection } from '../../store';
 import routes from '../../constants/routes';
 
 import ErrorMessage from '../../components/ErrorMessage';
-import OrderDetailsPage from '../../components/OrderDetailsPage';
+import OrderDetailsPage from './OrderDetailsPage';
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 

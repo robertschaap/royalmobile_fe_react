@@ -1,11 +1,11 @@
 import React from 'react';
 import * as S from './order-details-page.styles';
-import { useContentCopy, useForm } from '../../hooks';
+import { useContentCopy, useForm } from '../../../hooks';
 
-import { Input } from '../FormFields/FormFields';
-import Button from '../Button';
-import PageSection from '../PageSection';
-import SectionHeader from '../SectionHeader';
+import { Input } from '../../../components/FormFields/FormFields';
+import Button from '../../../components/Button';
+import PageSection from '../../../components/PageSection';
+import SectionHeader from '../../../components/SectionHeader';
 
 interface OrderDetailsPageProps {
   onClickReturn(): void;
