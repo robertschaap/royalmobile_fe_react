@@ -19,10 +19,10 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
     initialValues: {
       initials: '',
       lastname: '',
-      sex: '',
+      sex: 'male',
       zipcode: '',
       housenumber: '',
-      country: '',
+      country: 'nl',
       iban: '',
     },
     onSubmit: onSubmitOrder,
