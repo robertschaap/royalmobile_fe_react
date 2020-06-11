@@ -45,39 +45,39 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
         <Input
           {...form.getFieldProps('initials')}
           isRequired
-          label="Initials"
-          placeholder="Initials" />
+          label={useContentCopy('order.form.initials')}
+          placeholder={useContentCopy('order.form.initials')} />
         <Input
           {...form.getFieldProps('lastname')}
           isRequired
-          label="Last name"
-          placeholder="Last name" />
+          label={useContentCopy('order.form.lastName')}
+          placeholder={useContentCopy('order.form.lastName')} />
         <Select
           {...form.getFieldProps('sex')}
           options={sexOptions}
-          label="Sex" />
+          label={useContentCopy('order.form.sex')} />
         <Input
           {...form.getFieldProps('zipcode')}
           isRequired
-          label="Zip Code"
-          placeholder="Zip Code" />
+          label={useContentCopy('order.form.zipCode')}
+          placeholder={useContentCopy('order.form.zipCode')} />
         <Input
           {...form.getFieldProps('housenumber')}
           isRequired
-          label="House number"
-          placeholder="House number" />
+          label={useContentCopy('order.form.houseNumber')}
+          placeholder={useContentCopy('order.form.houseNumber')} />
         <Select
           {...form.getFieldProps('country')}
           options={countryOptions}
-          label="Country" />
+          label={useContentCopy('order.form.country')} />
       </PageSection>
       <PageSection>
         <SectionHeader>{useContentCopy('order.paymentDetails')}</SectionHeader>
         <Input
           {...form.getFieldProps('iban')}
           isRequired
-          label="Bank account"
-          placeholder="Bank account" />
+          label={useContentCopy('order.form.bankAccount')}
+          placeholder={useContentCopy('order.form.bankAccount')} />
         <S.FinaliseOrderButton
           variant="primary"
           onClick={form.onSubmit}>

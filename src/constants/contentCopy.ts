@@ -38,6 +38,14 @@ export const contentCopy: ContentCopy = Object.freeze({
   'order.personalDetails': 'Your personal details',
   'order.paymentDetails': 'Your payment details',
 
+  'order.form.bankAccount': 'Bank Account',
+  'order.form.country': 'Country',
+  'order.form.houseNumber': 'House number',
+  'order.form.initials': 'Initials',
+  'order.form.lastName': 'Last name',
+  'order.form.sex': 'Sex',
+  'order.form.zipCode': 'Zip code',
+
   'product.configurePlan': 'Configure your plan',
   'product.connectionFee': 'Connection Fee',
   'product.customiseDevice': 'Customise your device',
