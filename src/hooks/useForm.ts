@@ -32,6 +32,7 @@ export const useForm = ({ initialValues, onSubmit }: FormProps) => {
   };
 
   return {
+    values,
     getFieldProps,
     onSubmit() {
       onSubmit(values);
