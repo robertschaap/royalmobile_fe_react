@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './order-details-page.styles';
 import { useContentCopy, useForm } from '../../../hooks';
 
-import { Input } from '../../../components/FormFields/FormFields';
+import { Input, Select } from '../../../components/FormFields/FormFields';
 import Button from '../../../components/Button';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
@@ -28,20 +28,51 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
     onSubmit: onSubmitOrder,
   });
 
+  const sexOptions = [
+    { value: 'male', label: 'Male' },
+    { value: 'female', label: 'Female' },
+    { value: 'other', label: 'Other' },
+  ];
+
+  const countryOptions = [
+    { value: 'nl', label: 'Netherlands' },
+  ];
+
   return (
     <>
       <PageSection>
         <SectionHeader>{useContentCopy('order.personalDetails')}</SectionHeader>
-        <Input {...form.getFieldProps('initials')} label="Initials" placeholder="Initials" />
-        <Input {...form.getFieldProps('lastname')} label="Last name" placeholder="Last name" />
-        <Input {...form.getFieldProps('sex')} label="Sex" placeholder="Sex" />
-        <Input {...form.getFieldProps('zipcode')} label="Zip Code" placeholder="Zip Code" />
-        <Input {...form.getFieldProps('housenumber')} label="Huse number" placeholder="House number" />
-        <Input {...form.getFieldProps('country')} label="Country" placeholder="Country" />
+        <Input
+          {...form.getFieldProps('initials')}
+          label="Initials"
+          placeholder="Initials" />
+        <Input
+          {...form.getFieldProps('lastname')}
+          label="Last name"
+          placeholder="Last name" />
+        <Select
+          {...form.getFieldProps('sex')}
+          options={sexOptions}
+          label="Sex" />
+        <Input
+          {...form.getFieldProps('zipcode')}
+          label="Zip Code"
+          placeholder="Zip Code" />
+        <Input
+          {...form.getFieldProps('housenumber')}
+          label="House number"
+          placeholder="House number" />
+        <Select
+          {...form.getFieldProps('country')}
+          options={countryOptions}
+          label="Country" />
       </PageSection>
       <PageSection>
         <SectionHeader>{useContentCopy('order.paymentDetails')}</SectionHeader>
-        <Input {...form.getFieldProps('iban')} label="Bank account" placeholder="Bank account" />
+        <Input
+          {...form.getFieldProps('iban')}
+          label="Bank account"
+          placeholder="Bank account" />
         <S.FinaliseOrderButton
           variant="primary"
           onClick={form.onSubmit}>
