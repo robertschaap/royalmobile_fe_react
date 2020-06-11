@@ -44,10 +44,12 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
         <SectionHeader>{useContentCopy('order.personalDetails')}</SectionHeader>
         <Input
           {...form.getFieldProps('initials')}
+          isRequired
           label="Initials"
           placeholder="Initials" />
         <Input
           {...form.getFieldProps('lastname')}
+          isRequired
           label="Last name"
           placeholder="Last name" />
         <Select
@@ -56,10 +58,12 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
           label="Sex" />
         <Input
           {...form.getFieldProps('zipcode')}
+          isRequired
           label="Zip Code"
           placeholder="Zip Code" />
         <Input
           {...form.getFieldProps('housenumber')}
+          isRequired
           label="House number"
           placeholder="House number" />
         <Select
@@ -71,6 +75,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
         <SectionHeader>{useContentCopy('order.paymentDetails')}</SectionHeader>
         <Input
           {...form.getFieldProps('iban')}
+          isRequired
           label="Bank account"
           placeholder="Bank account" />
         <S.FinaliseOrderButton
