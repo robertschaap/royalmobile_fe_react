@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FormGroupBase = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${({ theme }) => theme.spacing(4)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const FormLabel = styled.label`
