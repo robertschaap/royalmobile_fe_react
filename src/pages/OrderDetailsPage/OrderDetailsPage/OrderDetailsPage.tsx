@@ -9,7 +9,7 @@ import SectionHeader from '../../../components/SectionHeader';
 
 interface OrderDetailsPageProps {
   onClickReturn(): void;
-  onSubmitOrder(v: unknown): void;
+  onSubmitOrder<T>(v: T): void;
 }
 
 const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
