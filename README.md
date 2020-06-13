@@ -13,6 +13,7 @@ HTML5 | CSS3 | JavaScript | React | Redux-Saga
 ### General
 * add hover style for buttons and links
 * build logic to remove focus style on click
+* fix all missing content
 
 ### Product Page
 * setup cypress tests
@@ -20,10 +21,11 @@ HTML5 | CSS3 | JavaScript | React | Redux-Saga
 * double check unit tests
 
 ### Order Page
-* setup page
+* setup cypress tests
+* setup integration test
+* double check unit tests
 
 ### Order Details Page
-* setup form fields
-
-### My Account
-* add login menu
+* setup cypress tests
+* setup integration test
+* double check unit tests
