@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import routes from '../constants/routes';
+import history from '../history';
 
 import RootLayout from '../components/RootLayout';
 
@@ -26,7 +27,7 @@ const Root: React.FC = () => {
   return (
     <StoreProviderContainer>
       <ThemeProviderContainer>
-        <BrowserRouter>
+        <Router history={history}>
           <RootLayout>
             <Suspense fallback={null}>
               <Switch>
@@ -44,7 +45,7 @@ const Root: React.FC = () => {
               </Switch>
             </Suspense>
           </RootLayout>
-        </BrowserRouter>
+        </Router>
       </ThemeProviderContainer>
     </StoreProviderContainer>
   );
