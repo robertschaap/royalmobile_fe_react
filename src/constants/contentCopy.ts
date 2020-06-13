@@ -8,6 +8,7 @@ export const contentCopy: ContentCopy = Object.freeze({
   'common.mobile': 'Mobile',
   'common.royal': 'Royal',
   'common.royalMobile': 'RoyalMobile',
+  'common.sale': 'Sale',
 
   'pages.business': 'For Your Business',
   'pages.consumer': 'Products For You',

@@ -1,17 +1,18 @@
 import React from 'react';
 import * as S from './device-discounts.styles';
+import { useContentCopy } from '../../hooks';
 
 const DeviceDiscounts: React.FC = () => {
   return (
     <S.DeviceDiscountsBase>
       <S.DeviceDiscountItem>
-        <span>Sale</span>
+        <span>{useContentCopy('common.sale')}</span>
       </S.DeviceDiscountItem>
       <S.DeviceDiscountItem>
-        <span>Sale</span>
+        <span>{useContentCopy('common.sale')}</span>
       </S.DeviceDiscountItem>
       <S.DeviceDiscountItem>
-        <span>Sale</span>
+        <span>{useContentCopy('common.sale')}</span>
       </S.DeviceDiscountItem>
     </S.DeviceDiscountsBase>
   );
