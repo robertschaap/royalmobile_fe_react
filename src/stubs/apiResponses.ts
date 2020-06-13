@@ -83,12 +83,20 @@ export const patchCartItem = (schema: any) => {
 export const deleteCartItem = () => {
   cartItems.shift();
 
+  const totals = {
+    monthly_price: '33,33',
+    onetime_price: '44,44',
+  };
+
   return new Response(200, {}, {
     status: 'success',
     data: {
       id: 'cart-id',
       items: cartItems,
-      totals: {},
+      totals: cartItems.length ? totals : {
+        monthly_price: '0,00',
+        onetime_price: '0,00',
+      },
     },
   });
 };
