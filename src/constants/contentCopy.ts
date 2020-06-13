@@ -53,7 +53,6 @@ export const contentCopy: ContentCopy = Object.freeze({
   'product.connectionFee': 'Connection Fee',
   'product.customiseDevice': 'Customise your device',
   'product.data': 'Data',
-  'product.deviceSpecifications': 'Device Specifications',
   'product.discounts': 'Discounts',
   'product.monthly': 'Monthly',
   'product.monthlyPayment': 'Your monthly payment',

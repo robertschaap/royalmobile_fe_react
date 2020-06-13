@@ -76,7 +76,6 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
       <S.ProductDescription>
         <DeviceRating />
         <S.DeviceDescription>{deviceDescription}</S.DeviceDescription>
-        <div>{useContentCopy('product.deviceSpecifications')}</div>
       </S.ProductDescription>
     </S.Flexy>
   );

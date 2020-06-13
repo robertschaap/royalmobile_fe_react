@@ -14,7 +14,6 @@ export const media_breakpoint_up = {
 
 const zIndex = {
   header: 1,
-  overlay: 2,
 };
 
 const color = {
