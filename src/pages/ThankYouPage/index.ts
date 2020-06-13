@@ -1,1 +1,1 @@
-export { default } from './ThankYouPageContainer';
+export { default } from './ThankYouPage';
