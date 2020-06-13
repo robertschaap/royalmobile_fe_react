@@ -9,6 +9,7 @@ import {
   useSelector,
 } from '../../store';
 
+import ContentCopy from '../../components/ContentCopy';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loader from '../../components/Loader';
 import PageSection from '../../components/PageSection';
@@ -60,7 +61,7 @@ const OrderPageContainer: React.FC = () => {
   if (cartState.hasError) {
     return (
       <>
-        <PageTitle page="Order" />
+        <PageTitle page={<ContentCopy messageId="pages.order" />} />
         <PageSection>
           <ErrorMessage messageId="common.errorMissing" />
         </PageSection>
@@ -71,7 +72,7 @@ const OrderPageContainer: React.FC = () => {
   if (cartState.isFetching) {
     return (
       <>
-        <PageTitle page="Order" />
+        <PageTitle page={<ContentCopy messageId="pages.order" />} />
         <PageSection>
           <Loader show />
         </PageSection>
@@ -82,7 +83,7 @@ const OrderPageContainer: React.FC = () => {
   if (!cartState.collection?.items.length) {
     return (
       <>
-        <PageTitle page="Order" />
+        <PageTitle page={<ContentCopy messageId="pages.order" />} />
         <PageSection>
           <ErrorMessage messageId="order.emptyCart" />
         </PageSection>

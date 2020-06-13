@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector, selectCartCollection, placeOrder, useDispatch } from '../../store';
 import routes from '../../constants/routes';
 
+import ContentCopy from '../../components/ContentCopy';
 import ErrorMessage from '../../components/ErrorMessage';
 import OrderDetailsPage from './OrderDetailsPage';
 import PageSection from '../../components/PageSection';
@@ -26,7 +27,7 @@ const OrderDetailsPageContainer: React.FC = () => {
   if (!cart) {
     return (
       <>
-        <PageTitle page="Order Details" />
+        <PageTitle page={<ContentCopy messageId="pages.orderDetails" />} />
         <PageSection>
           <ErrorMessage messageId="common.errorMissing" />
         </PageSection>
@@ -36,7 +37,7 @@ const OrderDetailsPageContainer: React.FC = () => {
 
   return (
     <>
-      <PageTitle page="Order Details" />
+      <PageTitle page={<ContentCopy messageId="pages.orderDetails" />} />
       <OrderDetailsPage
         onClickReturn={onClickReturn}
         onSubmitOrder={onSubmitOrder} />

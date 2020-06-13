@@ -11,11 +11,17 @@ export const contentCopy: ContentCopy = Object.freeze({
   'common.sale': 'Sale',
 
   'pages.business': 'For Your Business',
+  'pages.campaign': 'Campaign',
   'pages.consumer': 'Products For You',
   'pages.contact': 'Contact',
+  'pages.error': 'Error',
   'pages.help': 'Help',
   'pages.home': 'Home',
   'pages.myAccount': 'My Account',
+  'pages.order': 'Order',
+  'pages.orderDetails': 'Order Details',
+  'pages.product': 'Product',
+  'pages.thankYou': 'Thank You',
 
   'navigation.ourProducts': 'Our Products',
 

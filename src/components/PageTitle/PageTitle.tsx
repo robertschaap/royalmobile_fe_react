@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface PageTitleProps {
-  page?: string;
+  page?: string | React.ReactElement;
 }
 
 const PageTitle: React.FC<PageTitleProps> = React.memo((props): null => {

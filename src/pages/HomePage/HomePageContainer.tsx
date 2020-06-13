@@ -1,4 +1,5 @@
 import React from 'react';
+import { useContentCopy } from '../../hooks';
 
 import Banner from '../../components/Banner';
 import Benefits from './Benefits';
@@ -8,7 +9,7 @@ import ProductListingContainer from './ProductListingContainer';
 const HomePageContainer: React.FC = () => {
   return (
     <>
-      <PageTitle page="Home" />
+      <PageTitle page={useContentCopy('pages.home')} />
       <Banner />
       <ProductListingContainer />
       <Benefits />
