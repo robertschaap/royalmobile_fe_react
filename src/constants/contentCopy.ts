@@ -9,12 +9,13 @@ export const contentCopy: ContentCopy = Object.freeze({
   'common.royal': 'Royal',
   'common.royalMobile': 'RoyalMobile',
 
-  'navigation.business': 'For Your Business',
-  'navigation.consumer': 'Products For You',
-  'navigation.contact': 'Contact',
-  'navigation.help': 'Help',
-  'navigation.home': 'Home',
-  'navigation.myAccount': 'My Account',
+  'pages.business': 'For Your Business',
+  'pages.consumer': 'Products For You',
+  'pages.contact': 'Contact',
+  'pages.help': 'Help',
+  'pages.home': 'Home',
+  'pages.myAccount': 'My Account',
+
   'navigation.ourProducts': 'Our Products',
 
   'benefits.get': 'GET',

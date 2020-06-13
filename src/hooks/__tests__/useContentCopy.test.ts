@@ -14,7 +14,7 @@ describe('useContentCopy', () => {
   });
 
   it('should render a message when a correct id is passed', () => {
-    const { result } = renderHook(() => useContentCopy('navigation.home'));
+    const { result } = renderHook(() => useContentCopy('pages.home'));
     expect(result.current).toEqual('Home');
   });
 

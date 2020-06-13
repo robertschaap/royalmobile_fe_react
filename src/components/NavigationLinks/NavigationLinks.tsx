@@ -8,7 +8,7 @@ export const ProductsForYouLink: React.FC = () => (
   <Link
     data-testid="products-for-you-link"
     to={routes.CONSUMER_PAGE}>
-    {useContentCopy('navigation.consumer')}
+    {useContentCopy('pages.consumer')}
   </Link>
 );
 
@@ -16,7 +16,7 @@ export const ForYourBusinessLink: React.FC = () => (
   <Link
     data-testid="for-your-business-link"
     to={routes.BUSINESS_PAGE}>
-    {useContentCopy('navigation.business')}
+    {useContentCopy('pages.business')}
   </Link>
 );
 
@@ -24,7 +24,7 @@ export const MyAccountLink: React.FC = () => (
   <Link
     data-testid="my-account-link"
     to={routes.MY_ACCOUNT_PAGE}>
-    {useContentCopy('navigation.myAccount')}
+    {useContentCopy('pages.myAccount')}
   </Link>
 );
 
@@ -32,7 +32,7 @@ export const HelpLink: React.FC = () => (
   <Link
     data-testid="help-link"
     to={routes.HELP_PAGE}>
-    {useContentCopy('navigation.help')}
+    {useContentCopy('pages.help')}
   </Link>
 );
 

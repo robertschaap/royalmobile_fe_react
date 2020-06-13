@@ -8,7 +8,7 @@ import Link from '../Link';
 const Breadcrumbs: React.FC = () => {
   return (
     <S.BreadcrumbsBase>
-      <Link to={routes.HOME_PAGE}>{useContentCopy('navigation.home')}</Link> |
+      <Link to={routes.HOME_PAGE}>{useContentCopy('pages.home')}</Link> |
     </S.BreadcrumbsBase>
   );
 };
