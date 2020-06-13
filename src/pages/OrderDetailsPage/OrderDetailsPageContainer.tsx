@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, selectCartCollection } from '../../store';
+import { useSelector, selectCartCollection, placeOrder, useDispatch } from '../../store';
 import routes from '../../constants/routes';
 
 import ErrorMessage from '../../components/ErrorMessage';
@@ -11,10 +11,13 @@ import PageTitle from '../../components/PageTitle';
 const OrderDetailsPageContainer: React.FC = () => {
   const cart = useSelector(selectCartCollection);
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const onSubmitOrder = useCallback((values) => {
-    console.log(values);
-  }, []);
+  const onSubmitOrder = useCallback(() => {
+    if (cart?.id) {
+      dispatch(placeOrder(cart.id));
+    }
+  }, [dispatch, cart]);
 
   const onClickReturn = useCallback(() => {
     history.push(routes.HOME_PAGE);

@@ -13,6 +13,10 @@ export enum CartActions {
   DELETE_CART_ITEM = 'DELETE_CART_ITEM',
   DELETE_CART_ITEM_SUCCESS = 'DELETE_CART_ITEM_SUCCESS',
   DELETE_CART_ITEM_ERROR = 'DELETE_CART_ITEM_ERROR',
+
+  PLACE_ORDER = 'PLACE_ORDER',
+  PLACE_ORDER_SUCCESS = 'PLACE_ORDER_SUCCESS',
+  PLACE_ORDER_ERROR = 'PLACE_ORDER_ERROR',
 }
 
 export interface FetchCartAction {
@@ -112,6 +116,34 @@ export const deleteCartItemError = (error: string): CartActionTypes => ({
   error,
 });
 
+export interface PlaceOrderAction {
+  type: CartActions.PLACE_ORDER;
+  payload: string;
+}
+
+export const placeOrder = (payload: string): CartActionTypes => ({
+  type: CartActions.PLACE_ORDER,
+  payload,
+});
+
+interface PlaceOrderSuccessAction {
+  type: CartActions.PLACE_ORDER_SUCCESS;
+}
+
+export const placeOrderSuccess = (): CartActionTypes => ({
+  type: CartActions.PLACE_ORDER_SUCCESS,
+});
+
+interface PlaceOrderErrorAction {
+  type: CartActions.PLACE_ORDER_ERROR;
+  error: string;
+}
+
+export const placeOrderError = (error: string): CartActionTypes => ({
+  type: CartActions.PLACE_ORDER_ERROR,
+  error,
+});
+
 export type CartActionTypes =
   | FetchCartAction
   | FetchCartSuccessAction
@@ -121,7 +153,10 @@ export type CartActionTypes =
   | AddCartItemErrorAction
   | DeleteCartItemAction
   | DeleteCartItemSuccessAction
-  | DeleteCartItemErrorAction;
+  | DeleteCartItemErrorAction
+  | PlaceOrderAction
+  | PlaceOrderSuccessAction
+  | PlaceOrderErrorAction;
 
 export const selectCart = (state: StoreState) => state.cart;
 export const selectCartCollection = (state: StoreState) => state.cart.collection;

@@ -92,3 +92,10 @@ export const deleteCartItem = () => {
     },
   });
 };
+
+export const postOrder = () => {
+  return new Response(200, {}, {
+    status: 'success',
+    data: null,
+  });
+};

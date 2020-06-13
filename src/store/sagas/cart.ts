@@ -3,6 +3,7 @@ import { SagaIterator } from 'redux-saga';
 import api from '../../utils/api';
 import formatRoute from '../../utils/formatRoute';
 import routes from '../../constants/routes';
+import history from '../../history';
 
 import {
   AddCartItemAction,
@@ -10,11 +11,14 @@ import {
   addCartItemSuccess,
   CartActions,
   DeleteCartItemAction,
+  deleteCartItemError,
+  deleteCartItemSuccess,
   FetchCartAction,
   fetchCartError,
   fetchCartSuccess,
-  deleteCartItemSuccess,
-  deleteCartItemError,
+  PlaceOrderAction,
+  placeOrderError,
+  placeOrderSuccess,
 } from '../ducks/cart';
 
 function* fetchCartSaga({ payload: cartId }: FetchCartAction): SagaIterator {
@@ -42,8 +46,23 @@ function* deleteCartItemSaga({ payload, cartId }: DeleteCartItemAction): SagaIte
   });
 }
 
+function* placeOrderSaga({ payload: cartId }: PlaceOrderAction): SagaIterator {
+  yield call(api.post, {
+    url: routes.API_PLACE_ORDER,
+    body: { cartId },
+    onSuccessAction: placeOrderSuccess,
+    onErrorAction: placeOrderError,
+  });
+}
+
+function* placeOrderSuccesSaga(): SagaIterator {
+  yield call(() => history.push(routes.THANK_YOU_PAGE));
+}
+
 export default [
   takeEvery(CartActions.FETCH_CART, fetchCartSaga),
   takeEvery(CartActions.ADD_CART_ITEM, addCartItemSaga),
   takeEvery(CartActions.DELETE_CART_ITEM, deleteCartItemSaga),
+  takeEvery(CartActions.PLACE_ORDER, placeOrderSaga),
+  takeEvery(CartActions.PLACE_ORDER_SUCCESS, placeOrderSuccesSaga),
 ];
