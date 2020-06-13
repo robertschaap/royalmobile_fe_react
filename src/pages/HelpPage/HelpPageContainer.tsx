@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HelpPage from '../../components/HelpPage';
+import HelpPage from './HelpPage';
 import PageTitle from '../../components/PageTitle';
 
 const HelpPageContainer: React.FC = () => {
