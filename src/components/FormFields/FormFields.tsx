@@ -3,7 +3,7 @@ import * as S from './form-fields.styles';
 
 import FormGroup from '../FormGroup';
 
-interface InputProps {
+interface FormFieldProps {
   error: string;
   hasError: boolean;
   hint?: string;
@@ -12,6 +12,9 @@ interface InputProps {
   label: string;
   name: string;
   onChange(v: any): void;
+}
+
+interface InputProps extends FormFieldProps {
   placeholder: string;
   value: string;
 }
@@ -49,15 +52,7 @@ export const Input: React.FC<InputProps> = (props) => {
   );
 };
 
-interface SelectProps {
-  error: string;
-  hasError: boolean;
-  hint?: string;
-  isRequired?: boolean;
-  isValid: boolean;
-  label: string;
-  name: string;
-  onChange(v: any): void;
+interface SelectProps extends FormFieldProps {
   value: string;
   options: {
     value: string;
