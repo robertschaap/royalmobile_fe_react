@@ -20,6 +20,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
       initials: '',
       lastname: '',
       sex: 'male',
+      email: '',
       zipcode: '',
       housenumber: '',
       country: 'nl',
@@ -42,42 +43,51 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
     <>
       <PageSection>
         <SectionHeader>{useContentCopy('order.personalDetails')}</SectionHeader>
-        <Input
-          {...form.getFieldProps('initials')}
-          isRequired
-          label={useContentCopy('order.form.initials')}
-          placeholder={useContentCopy('order.form.initials')} />
-        <Input
-          {...form.getFieldProps('lastname')}
-          isRequired
-          label={useContentCopy('order.form.lastName')}
-          placeholder={useContentCopy('order.form.lastName')} />
-        <Select
-          {...form.getFieldProps('sex')}
-          options={sexOptions}
-          label={useContentCopy('order.form.sex')} />
-        <Input
-          {...form.getFieldProps('zipcode')}
-          isRequired
-          label={useContentCopy('order.form.zipCode')}
-          placeholder={useContentCopy('order.form.zipCode')} />
-        <Input
-          {...form.getFieldProps('housenumber')}
-          isRequired
-          label={useContentCopy('order.form.houseNumber')}
-          placeholder={useContentCopy('order.form.houseNumber')} />
-        <Select
-          {...form.getFieldProps('country')}
-          options={countryOptions}
-          label={useContentCopy('order.form.country')} />
+        <S.Section>
+          <Input
+            {...form.getFieldProps('initials')}
+            isRequired
+            label={useContentCopy('order.form.initials')}
+            placeholder={useContentCopy('order.form.initials')} />
+          <Input
+            {...form.getFieldProps('lastname')}
+            isRequired
+            label={useContentCopy('order.form.lastName')}
+            placeholder={useContentCopy('order.form.lastName')} />
+          <Select
+            {...form.getFieldProps('sex')}
+            options={sexOptions}
+            label={useContentCopy('order.form.sex')} />
+          <Input
+            {...form.getFieldProps('email')}
+            isRequired
+            label={useContentCopy('order.form.email')}
+            placeholder={useContentCopy('order.form.email')} />
+          <Input
+            {...form.getFieldProps('zipcode')}
+            isRequired
+            label={useContentCopy('order.form.zipCode')}
+            placeholder={useContentCopy('order.form.zipCode')} />
+          <Input
+            {...form.getFieldProps('housenumber')}
+            isRequired
+            label={useContentCopy('order.form.houseNumber')}
+            placeholder={useContentCopy('order.form.houseNumber')} />
+          <Select
+            {...form.getFieldProps('country')}
+            options={countryOptions}
+            label={useContentCopy('order.form.country')} />
+        </S.Section>
       </PageSection>
       <PageSection>
         <SectionHeader>{useContentCopy('order.paymentDetails')}</SectionHeader>
-        <Input
-          {...form.getFieldProps('iban')}
-          isRequired
-          label={useContentCopy('order.form.bankAccount')}
-          placeholder={useContentCopy('order.form.bankAccount')} />
+        <S.Section>
+          <Input
+            {...form.getFieldProps('iban')}
+            isRequired
+            label={useContentCopy('order.form.bankAccount')}
+            placeholder={useContentCopy('order.form.bankAccount')} />
+        </S.Section>
         <S.FinaliseOrderButton
           variant="primary"
           onClick={form.onSubmit}>

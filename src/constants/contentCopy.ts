@@ -40,6 +40,7 @@ export const contentCopy: ContentCopy = Object.freeze({
 
   'order.form.bankAccount': 'Bank Account',
   'order.form.country': 'Country',
+  'order.form.email': 'Email',
   'order.form.houseNumber': 'House number',
   'order.form.initials': 'Initials',
   'order.form.lastName': 'Last name',
