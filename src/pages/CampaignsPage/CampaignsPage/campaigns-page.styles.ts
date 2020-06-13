@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../../styles/theme';
+import { media_breakpoint_up } from '../../../styles/theme';
 
-import { GridItem } from '../Grid';
+import { GridItem } from '../../../components/Grid';
 
 export const PaddedGridItem = styled(GridItem)`
   padding: 0 ${({ theme }) => theme.spacing(4)};
