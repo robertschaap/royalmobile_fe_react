@@ -39,6 +39,9 @@ export const cartReducer = produce((draft: CartState = initialCartState, action:
       draft.isFetching = false;
       draft.hasError = true;
       break;
+    case CartActions.INVALIDATE_CART_COLLECTION:
+      draft.collection = undefined;
+      break;
     default:
       break;
   }

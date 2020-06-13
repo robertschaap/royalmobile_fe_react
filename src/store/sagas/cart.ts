@@ -1,4 +1,4 @@
-import { takeEvery, call } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
 import api from '../../utils/api';
 import formatRoute from '../../utils/formatRoute';
@@ -19,6 +19,7 @@ import {
   PlaceOrderAction,
   placeOrderError,
   placeOrderSuccess,
+  invalidateCartCollection,
 } from '../ducks/cart';
 
 function* fetchCartSaga({ payload: cartId }: FetchCartAction): SagaIterator {
@@ -56,6 +57,7 @@ function* placeOrderSaga({ payload: cartId }: PlaceOrderAction): SagaIterator {
 }
 
 function* placeOrderSuccesSaga(): SagaIterator {
+  yield put(invalidateCartCollection());
   yield call(() => history.push(routes.THANK_YOU_PAGE));
 }
 

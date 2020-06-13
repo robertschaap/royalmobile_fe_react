@@ -17,6 +17,8 @@ export enum CartActions {
   PLACE_ORDER = 'PLACE_ORDER',
   PLACE_ORDER_SUCCESS = 'PLACE_ORDER_SUCCESS',
   PLACE_ORDER_ERROR = 'PLACE_ORDER_ERROR',
+
+  INVALIDATE_CART_COLLECTION = 'INVALIDATE_CART_COLLECTION',
 }
 
 export interface FetchCartAction {
@@ -144,6 +146,14 @@ export const placeOrderError = (error: string): CartActionTypes => ({
   error,
 });
 
+interface InvalidateCartCollectionAction {
+  type: CartActions.INVALIDATE_CART_COLLECTION;
+}
+
+export const invalidateCartCollection = () => ({
+  type: CartActions.INVALIDATE_CART_COLLECTION,
+});
+
 export type CartActionTypes =
   | FetchCartAction
   | FetchCartSuccessAction
@@ -156,7 +166,8 @@ export type CartActionTypes =
   | DeleteCartItemErrorAction
   | PlaceOrderAction
   | PlaceOrderSuccessAction
-  | PlaceOrderErrorAction;
+  | PlaceOrderErrorAction
+  | InvalidateCartCollectionAction;
 
 export const selectCart = (state: StoreState) => state.cart;
 export const selectCartCollection = (state: StoreState) => state.cart.collection;
