@@ -20,7 +20,7 @@ export const renderWithTheme = (Component: React.ReactElement) => {
 
 const mockStore = configureStore([]);
 
-export const renderWithProviders = (Component: React.ReactElement, customInitialState?: Object) => {
+export const renderWithProviders = (Component: React.ReactElement, customInitialState?: Record<string, unknown>) => {
   // Mock the store only when we pass a customInitialState so we can test reducers without loading
   // the whole store. Otherwise load the proper store with reducers and sagas for integration
   const store = customInitialState ? mockStore(customInitialState) : createStore();
