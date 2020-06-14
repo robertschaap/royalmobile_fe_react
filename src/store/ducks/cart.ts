@@ -150,7 +150,7 @@ interface InvalidateCartCollectionAction {
   type: CartActions.INVALIDATE_CART_COLLECTION;
 }
 
-export const invalidateCartCollection = () => ({
+export const invalidateCartCollection = (): CartActionTypes => ({
   type: CartActions.INVALIDATE_CART_COLLECTION,
 });
 
