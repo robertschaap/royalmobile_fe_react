@@ -7,16 +7,6 @@ import {
   ProductsActionTypes,
 } from '../../ducks/products';
 
-jest.mock('../../index', () => ({
-  store: {
-    getState: () => ({
-      products: {
-        pageNumber: 0,
-      },
-    }),
-  },
-}));
-
 describe('Products Reducer', () => {
   it('should return the initial state', () => {
     expect(productsReducer(initialProductsState, {} as ProductsActionTypes)).toEqual({
@@ -28,7 +18,7 @@ describe('Products Reducer', () => {
   });
 
   it('should handle FETCH_PRODUCTS', () => {
-    expect(productsReducer(initialProductsState, fetchProducts())).toEqual({
+    expect(productsReducer(initialProductsState, fetchProducts(0))).toEqual({
       isFetching: true,
       hasError: false,
       collection: [],
