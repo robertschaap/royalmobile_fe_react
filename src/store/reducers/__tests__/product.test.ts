@@ -1,3 +1,4 @@
+import produce from 'immer';
 import { productReducer, initialProductState } from '../product';
 
 import {
@@ -9,6 +10,7 @@ import {
   setProductSelectedSubscriptionId,
   setProductSelectedVariantId,
   ProductActionTypes,
+  deleteProductSelection,
 } from '../../ducks/product';
 
 import { Product } from '../../../types/products';
@@ -29,7 +31,7 @@ describe('Products Reducer', () => {
   });
 
   it('should handle FETCH_PRODUCT', () => {
-    expect(productReducer(initialProductState, fetchProduct())).toEqual({
+    expect(productReducer(initialProductState, fetchProduct(''))).toEqual({
       isFetching: true,
       hasError: false,
       collection: null,
@@ -71,58 +73,54 @@ describe('Products Reducer', () => {
   });
 
   it('should handle SET_PRODUCT_SELECTED_DURATION_ID', () => {
-    expect(productReducer(initialProductState, setProductSelectedDurationId('duration_id-1'))).toEqual({
-      isFetching: false,
-      hasError: false,
-      collection: null,
-      selection: {
-        durationId: 'duration_id-1',
-        paymentPlanId: null,
-        subscriptionId: null,
-        variantId: null,
-      },
+    expect(productReducer(initialProductState, setProductSelectedDurationId('duration_id-1')).selection).toEqual({
+      durationId: 'duration_id-1',
+      paymentPlanId: null,
+      subscriptionId: null,
+      variantId: null,
     });
   });
 
   it('should handle SET_PRODUCT_SELECTED_PAYMENTPLAN_ID', () => {
-    expect(productReducer(initialProductState, setProductSelectedPaymentPlanId('payment_plan_id-1'))).toEqual({
-      isFetching: false,
-      hasError: false,
-      collection: null,
-      selection: {
-        durationId: null,
-        paymentPlanId: 'payment_plan_id-1',
-        subscriptionId: null,
-        variantId: null,
-      },
+    expect(productReducer(initialProductState, setProductSelectedPaymentPlanId('payment_plan_id-1')).selection).toEqual({
+      durationId: null,
+      paymentPlanId: 'payment_plan_id-1',
+      subscriptionId: null,
+      variantId: null,
     });
   });
 
   it('should handle SET_PRODUCT_SELECTED_SUBSCRIPTION_ID', () => {
-    expect(productReducer(initialProductState, setProductSelectedSubscriptionId('subscription_id-1'))).toEqual({
-      isFetching: false,
-      hasError: false,
-      collection: null,
-      selection: {
-        durationId: null,
-        paymentPlanId: null,
-        subscriptionId: 'subscription_id-1',
-        variantId: null,
-      },
+    expect(productReducer(initialProductState, setProductSelectedSubscriptionId('subscription_id-1')).selection).toEqual({
+      durationId: null,
+      paymentPlanId: null,
+      subscriptionId: 'subscription_id-1',
+      variantId: null,
     });
   });
 
   it('should handle SET_PRODUCT_SELECTED_VARIANT_ID', () => {
-    expect(productReducer(initialProductState, setProductSelectedVariantId('variant_id-1'))).toEqual({
-      isFetching: false,
-      hasError: false,
-      collection: null,
-      selection: {
-        durationId: null,
-        paymentPlanId: null,
-        subscriptionId: null,
-        variantId: 'variant_id-1',
-      },
+    expect(productReducer(initialProductState, setProductSelectedVariantId('variant_id-1')).selection).toEqual({
+      durationId: null,
+      paymentPlanId: null,
+      subscriptionId: null,
+      variantId: 'variant_id-1',
+    });
+  });
+
+  it('should handle DELETE_PRODUCT_SELECTION', () => {
+    const state = produce(initialProductState, (draft) => {
+      draft.selection.durationId = 'selection';
+      draft.selection.paymentPlanId = 'selection';
+      draft.selection.subscriptionId = 'selection';
+      draft.selection.variantId = 'selection';
+    });
+
+    expect(productReducer(state, deleteProductSelection()).selection).toEqual({
+      durationId: null,
+      paymentPlanId: null,
+      subscriptionId: null,
+      variantId: null,
     });
   });
 });
