@@ -4,7 +4,6 @@ import * as S from './form-group.styles';
 interface FormGroupProps {
   children: React.ReactNode;
   error: string;
-  hasError: boolean;
   hint?: string;
   isRequired?: boolean;
   isValid: boolean;
@@ -15,7 +14,6 @@ const FormGroup: React.FC<FormGroupProps> = (props) => {
   const {
     children,
     error,
-    hasError,
     hint,
     isRequired,
     isValid,
@@ -27,11 +25,10 @@ const FormGroup: React.FC<FormGroupProps> = (props) => {
       <S.FormLabel>
         {label}
         {isRequired && ' * '}
-        {hasError && <S.Icon />}
-        {isValid && <S.Icon isValid />}
+        {isValid ? <S.Icon isValid /> : <S.Icon />}
       </S.FormLabel>
       {children}
-      {hasError ? <S.Error>{error}</S.Error> : <S.Hint>{hint}&nbsp;</S.Hint>}
+      {isValid ? <S.Hint>{hint}&nbsp;</S.Hint> : <S.Error>{error}</S.Error>}
     </S.FormGroupBase>
   );
 };
