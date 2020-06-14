@@ -3,31 +3,31 @@ import * as S from './form-fields.styles';
 
 import FormGroup from '../FormGroup';
 
-interface FormFieldProps {
+interface FormFieldProps<T> {
   error: string;
-  hasError: boolean;
   hint?: string;
   isRequired?: boolean;
   isValid: boolean;
   label: string;
   name: string;
-  onChange(v: any): void;
+  onBlur(v: React.ChangeEvent<T>): void;
+  onChange(v: React.ChangeEvent<T>): void;
 }
 
-interface InputProps extends FormFieldProps {
+interface InputProps<T> extends FormFieldProps<T> {
   placeholder: string;
   value: string;
 }
 
-export const Input: React.FC<InputProps> = (props) => {
+export const Input: React.FC<InputProps<HTMLInputElement>> = (props) => {
   const {
     error,
-    hasError,
     hint,
     isRequired,
     isValid,
     label,
     name,
+    onBlur,
     onChange,
     placeholder,
     value,
@@ -36,7 +36,6 @@ export const Input: React.FC<InputProps> = (props) => {
   return (
     <FormGroup
       error={error}
-      hasError={hasError}
       hint={hint}
       isRequired={isRequired}
       isValid={isValid}
@@ -44,6 +43,7 @@ export const Input: React.FC<InputProps> = (props) => {
       <S.InputField
         name={name}
         onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
         type="text"
         value={value}
@@ -52,23 +52,23 @@ export const Input: React.FC<InputProps> = (props) => {
   );
 };
 
-interface SelectProps extends FormFieldProps {
-  value: string;
+interface SelectProps<T> extends FormFieldProps<T> {
   options: {
-    value: string;
     label: string;
+    value: string;
   }[];
+  value: string;
 }
 
-export const Select: React.FC<SelectProps> = (props) => {
+export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
   const {
     error,
-    hasError,
     hint,
     isRequired,
     isValid,
     label,
     name,
+    onBlur,
     onChange,
     value,
     options,
@@ -77,13 +77,13 @@ export const Select: React.FC<SelectProps> = (props) => {
   return (
     <FormGroup
       error={error}
-      hasError={hasError}
       hint={hint}
       isRequired={isRequired}
       isValid={isValid}
       label={label}>
       <S.SelectField
         name={name}
+        onBlur={onBlur}
         onChange={onChange}
         value={value}>
         {options.map((option) => (
