@@ -1,4 +1,5 @@
 import { Subscription } from '../types/subscriptions';
+import { Server } from '.';
 
 type SubscriptionFactoryReturnType = Omit<Subscription, 'id' | 'subscriptionId'> & {
   id?: number;
@@ -31,7 +32,7 @@ const createSubscription = (data: string, duration: number, regular_price: strin
   };
 };
 
-export const seedSubscriptions = (server: any) => {
+export const seedSubscriptions = (server: Server) => {
   server.create('subscription', createSubscription('20gb', 1, '20'));
   server.create('subscription', createSubscription('40gb', 1, '30'));
   server.create('subscription', createSubscription('60gb', 1, '40'));

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Server, Model, Factory } from 'miragejs';
 
 import {
@@ -14,10 +15,14 @@ import { ProductFactory, seedProducts } from './products';
 import { SubscriptionFactory, seedSubscriptions } from './subscriptions';
 import routes from '../constants/routes';
 
+export type Server = any;
+export type Schema = any;
+export type Request = any;
+
 export const stubsServer = (environment = 'development') => new Server({
   environment,
   routes() {
-    this.patch(routes.API_ADD_CART_ITEM, patchCartItem); // probably post is better
+    this.patch(routes.API_ADD_CART_ITEM, patchCartItem);
     this.get(routes.API_GET_CART, getCart);
     this.get(routes.API_GET_PRODUCT, getProduct);
     this.get(routes.API_GET_PRODUCTS, getProducts);
@@ -33,7 +38,7 @@ export const stubsServer = (environment = 'development') => new Server({
     product: Factory.extend(ProductFactory()),
     subscription: Factory.extend(SubscriptionFactory()),
   },
-  seeds(server: any) {
+  seeds(server: Server) {
     seedProducts(server);
     seedSubscriptions(server);
   },

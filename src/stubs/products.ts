@@ -1,4 +1,5 @@
 import { Product, ProductVariant } from '../types/products';
+import { Server } from '.';
 
 type ProductFactoryReturnType = Omit<Product, 'id' |'model' | 'modelId'> & {
   model(id: number): string;
@@ -103,7 +104,7 @@ const createDefaultProductVariants = (modelId: string): ProductVariant[] => {
   return productVariants;
 };
 
-export const seedProducts = (server: any) => {
+export const seedProducts = (server: Server) => {
   server.createList('product', 6, { manufacturer: 'Apple', model: 'iPhone X', modelId: 'apple-iphonex' }).forEach((product: any) => {
     product.update({
       variants: createDefaultProductVariants(product.modelId),

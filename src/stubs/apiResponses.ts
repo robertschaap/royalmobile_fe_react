@@ -1,7 +1,9 @@
 import { Response } from 'miragejs';
 import { CartItem } from '../types/cart';
 
-export const getProduct = (schema: any, request: any) => {
+import { Schema, Request } from '.';
+
+export const getProduct = (schema: Schema, request: Request) => {
   return new Response(200, {}, {
     status: 'success',
     data: schema.db.products.findBy({ modelId: request.params.id }),
@@ -9,14 +11,14 @@ export const getProduct = (schema: any, request: any) => {
 };
 
 // This purposely ignores pagination
-export const getProducts = (schema: any) => {
+export const getProducts = (schema: Schema) => {
   return new Response(200, {}, {
     status: 'success',
     data: schema.db.products,
   });
 };
 
-export const getSubscriptions = (schema: any) => {
+export const getSubscriptions = (schema: Schema) => {
   return new Response(200, {}, {
     status: 'success',
     data: schema.db.subscriptions,
@@ -28,7 +30,7 @@ export const getSubscriptions = (schema: any) => {
 // initial fetch we add a default item for dev experience.
 const cartItems: CartItem[] = [];
 
-export const getCart = (schema: any) => {
+export const getCart = (schema: Schema) => {
   if (cartItems.length === 0) {
     const item: CartItem = {
       product: schema.db.products[0],
@@ -55,7 +57,7 @@ export const getCart = (schema: any) => {
   });
 };
 
-export const patchCartItem = (schema: any) => {
+export const patchCartItem = (schema: Schema) => {
   const item: CartItem = {
     product: schema.db.products[0],
     subscription: schema.db.subscriptions[0],
