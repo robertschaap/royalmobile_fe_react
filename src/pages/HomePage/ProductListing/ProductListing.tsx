@@ -5,7 +5,6 @@ import routes from '../../../constants/routes';
 import formatRoute from '../../../utils/formatRoute';
 import StringUtil from '../../../utils/StringUtil';
 
-// TODO: make dynamic
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
 
 import { Product } from '../../../types/products';
