@@ -4,11 +4,8 @@ import StorageUtil from '../../utils/StorageUtil';
 
 import Link from '../Link';
 
-// TODO: handle through env
-const DEBUG = true;
-
 const DebugMenu: React.FC = () => {
-  if (DEBUG) {
+  if (process.env.REACT_APP_DEBUG) {
     return (
       <div style={{ backgroundColor: '#ddd' }}>
         Debug:&nbsp;
