@@ -8,7 +8,7 @@ context('Homepage', () => {
 
   it('should skip navigation', () => {
     cy
-      .get('[data-testid="button-secondary"]')
+      .getTestId('button-secondary')
       .first()
       .focus()
       .click();
@@ -21,9 +21,11 @@ context('Homepage', () => {
   });
 
   it('should go to the product page when a product is clicked', () => {
-    cy.get('[data-testid="product-listing"] a')
-      .last()
-      .click();
+    cy.getTestId('product-listing').within(() => {
+      cy.get('a')
+        .last()
+        .click();
+    });
 
     cy.url().should('include', '/product/');
   });
