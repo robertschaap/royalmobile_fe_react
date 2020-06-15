@@ -8,7 +8,7 @@ context('Homepage', () => {
 
   it('should skip navigation', () => {
     cy
-      .get('[data-testid="button-secondary"]')
+      .getTestId('button-secondary')
       .first()
       .focus()
       .click();
