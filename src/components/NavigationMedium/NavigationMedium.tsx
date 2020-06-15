@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './navigation-medium.styles';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import {
   ForYourBusinessLink,
@@ -14,7 +14,7 @@ const Navigation: React.FC = () => {
   return (
     <S.NavigationMediumBase>
       <S.NavigationLeft>
-        {useContentCopy('navigation.ourProducts')}
+        {ContentUtil('navigation.ourProducts')}
       </S.NavigationLeft>
       <S.NavigationMiddle>
         <ProductsForYouLink />

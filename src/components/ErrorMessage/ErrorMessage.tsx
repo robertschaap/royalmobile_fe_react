@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './error-message.styles';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 interface ErrorMessageProps {
   messageId: string;
@@ -12,7 +12,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
   return (
     <S.ErrorMessageBase data-testid="error-message">
       <S.Frown>:(</S.Frown>
-      {useContentCopy(messageId)}
+      {ContentUtil(messageId)}
     </S.ErrorMessageBase>
   );
 };

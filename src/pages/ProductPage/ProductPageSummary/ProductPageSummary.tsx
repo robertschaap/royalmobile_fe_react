@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './product-page-summary.styles';
 import { OrderSummary } from '../../../hooks';
-import { useContentCopy } from '../../../utils/useContentCopy';
+import { ContentUtil } from '../../../utils/ContentUtil';
 import StringUtil from '../../../utils/StringUtil';
 
 import OrderSummaryText from '../OrderSummaryText';
@@ -42,23 +42,23 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
               <S.SummaryListItem key={index}>{StringUtil.capitalise(benefit)}</S.SummaryListItem>
             ))}
             <S.SummaryListItem>{deviceName}<span>{orderSummary.monthlyDeviceCost}</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>{useContentCopy('product.discounts')}<span>-{orderSummary.monthlyDiscountTotal}</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>{ContentUtil('product.discounts')}<span>-{orderSummary.monthlyDiscountTotal}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard marginBottom={4}>
-          {useContentCopy('product.monthlyPayment')}
+          {ContentUtil('product.monthlyPayment')}
           <S.SubTotal>{orderSummary.monthlyPaymentTotal}</S.SubTotal>
         </S.SubTotalCard>
         <S.Card marginBottom={2}>
           < S.SummaryList>
             <S.SummaryListItem>{deviceName}<span>{orderSummary.oneTimeDeviceCost}</span></S.SummaryListItem>
-            <S.SummaryListItem>{useContentCopy('product.connectionFee')}<span>{orderSummary.connectionFee}</span></S.SummaryListItem>
-            <S.SummaryListItem>{useContentCopy('product.shippingFee')}<span>{orderSummary.shippingFee}</span></S.SummaryListItem>
-            <S.SummaryListItem isDiscount>{useContentCopy('product.discounts')}<span>-{orderSummary.oneTimeDiscountTotal}</span></S.SummaryListItem>
+            <S.SummaryListItem>{ContentUtil('product.connectionFee')}<span>{orderSummary.connectionFee}</span></S.SummaryListItem>
+            <S.SummaryListItem>{ContentUtil('product.shippingFee')}<span>{orderSummary.shippingFee}</span></S.SummaryListItem>
+            <S.SummaryListItem isDiscount>{ContentUtil('product.discounts')}<span>-{orderSummary.oneTimeDiscountTotal}</span></S.SummaryListItem>
           </S.SummaryList>
         </S.Card>
         <S.SubTotalCard>
-          {useContentCopy('product.oneTimePayment')}
+          {ContentUtil('product.oneTimePayment')}
           <S.SubTotal>{orderSummary.oneTimePaymentTotal}</S.SubTotal>
         </S.SubTotalCard>
       </GridItem>

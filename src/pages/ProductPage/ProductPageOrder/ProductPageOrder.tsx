@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './product-page-order.styles';
 
-import { useContentCopy } from '../../../utils/useContentCopy';
+import { ContentUtil } from '../../../utils/ContentUtil';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
@@ -28,13 +28,13 @@ const ProductPageOrder: React.FC<ProductPageOrderProps> = (props) => {
             disabled={!hasSelection}
             variant="primary"
             onClick={onClickOrder}>
-            {useContentCopy('order.readyToOrder')}
+            {ContentUtil('order.readyToOrder')}
           </S.OrderButton>
           <Button
             disabled={!hasSelection}
             variant="secondary"
             onClick={onClickRenewContract}>
-            {useContentCopy('order.renewContract')}
+            {ContentUtil('order.renewContract')}
           </Button>
         </GridItem>
       </GridBase>

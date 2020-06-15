@@ -8,7 +8,7 @@ import DeviceRating from '../DeviceRating';
 import Hidden from '../../../components/Hidden';
 
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
-import { useContentCopy } from '../../../utils/useContentCopy';
+import { ContentUtil } from '../../../utils/ContentUtil';
 import { ProductVariant, ProductCapacity, ProductColor } from '../../../types/products';
 import StringUtil from '../../../utils/StringUtil';
 
@@ -56,20 +56,20 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <DeviceDiscounts />
         </Hidden>
         <S.DeviceColor>
-          <div>{useContentCopy('product.pickDeviceColor')}</div>
+          <div>{ContentUtil('product.pickDeviceColor')}</div>
           <DeviceColorListing
             colors={colors}
             onClickColor={onClickColorOrCapacity}
             selectedColorId={selectedVariant.variantId} />
         </S.DeviceColor>
         <S.DeviceCapacity>
-          <div>{useContentCopy('product.pickDeviceCapacity')}</div>
+          <div>{ContentUtil('product.pickDeviceCapacity')}</div>
           <DeviceCapacityListing
             capacities={capacities}
             onClickCapacity={onClickColorOrCapacity}
             selectedCapacityId={selectedVariant.variantId} />
         </S.DeviceCapacity>
-        <div>{useContentCopy('product.phoneCostUpfront')}</div>
+        <div>{ContentUtil('product.phoneCostUpfront')}</div>
         <S.DeviceCost>{deviceCost}</S.DeviceCost>
       </S.DeviceCustomisationOptions>
 

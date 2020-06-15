@@ -5,7 +5,7 @@ import {
   useSelector,
   setProductSelectedVariantId,
 } from '../../store';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import PageSection from '../../components/PageSection';
 import ProductPageCustomise from './ProductPageCustomise';
@@ -40,7 +40,7 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
 
   return (
     <PageSection>
-      <SectionHeader>{useContentCopy('product.customiseDevice')}</SectionHeader>
+      <SectionHeader>{ContentUtil('product.customiseDevice')}</SectionHeader>
       {productSelection.variantId && (
         <ProductPageCustomise
           capacities={capacities}

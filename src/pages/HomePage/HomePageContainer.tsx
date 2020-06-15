@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import Banner from '../../components/Banner';
 import Benefits from './Benefits';
@@ -9,7 +9,7 @@ import ProductListingContainer from './ProductListingContainer';
 const HomePageContainer: React.FC = () => {
   return (
     <>
-      <PageTitle page={useContentCopy('pages.home')} />
+      <PageTitle page={ContentUtil('pages.home')} />
       <Banner />
       <ProductListingContainer />
       <Benefits />

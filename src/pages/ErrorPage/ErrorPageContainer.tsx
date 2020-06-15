@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import ErrorPage from '../../components/ErrorPage';
 import PageTitle from '../../components/PageTitle';
@@ -7,7 +7,7 @@ import PageTitle from '../../components/PageTitle';
 const ErrorPageContainer: React.FC = () => {
   return (
     <>
-      <PageTitle page={useContentCopy('pages.error')} />
+      <PageTitle page={ContentUtil('pages.error')} />
       <ErrorPage />
     </>
   );

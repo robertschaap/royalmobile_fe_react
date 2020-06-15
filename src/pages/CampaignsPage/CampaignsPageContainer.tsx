@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import CampaignsPage from './CampaignsPage';
 import PageTitle from '../../components/PageTitle';
@@ -7,7 +7,7 @@ import PageTitle from '../../components/PageTitle';
 const CampaignsPageContainer: React.FC = () => {
   return (
     <>
-      <PageTitle page={useContentCopy('pages.campaign')} />
+      <PageTitle page={ContentUtil('pages.campaign')} />
       <CampaignsPage />
     </>
   );

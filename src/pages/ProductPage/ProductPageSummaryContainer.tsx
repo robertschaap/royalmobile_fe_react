@@ -5,7 +5,7 @@ import {
   selectProductSelection,
 } from '../../store';
 
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 import { useOrderSummary } from '../../hooks';
 import { Product } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
@@ -26,7 +26,7 @@ const ProductPageSummaryContainer: React.FC<ProductPageSummaryContainerProps> = 
 
   return (
     <PageSection>
-      <SectionHeader>{useContentCopy('product.summingUp')}</SectionHeader>
+      <SectionHeader>{ContentUtil('product.summingUp')}</SectionHeader>
       {orderSummary && (
         <ProductPageSummary
           deviceModel={product.model}

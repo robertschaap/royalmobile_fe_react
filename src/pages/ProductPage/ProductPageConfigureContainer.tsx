@@ -6,7 +6,7 @@ import {
   useDispatch,
   useSelector,
 } from '../../store';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 import { Subscription } from '../../types/subscriptions';
 import SubscriptionUtil from '../../utils/SubscriptionUtil';
 
@@ -49,7 +49,7 @@ const ProductPageConfigureContainer: React.FC<ProductPageConfigureContainerProps
 
   return (
     <PageSection>
-      <SectionHeader>{useContentCopy('product.configurePlan')}</SectionHeader>
+      <SectionHeader>{ContentUtil('product.configurePlan')}</SectionHeader>
       {productSelection.durationId && productSelection.subscriptionId && (
         <>
           <DurationListing

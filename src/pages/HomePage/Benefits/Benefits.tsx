@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './benefits.styles';
-import { useContentCopy } from '../../../utils/useContentCopy';
+import { ContentUtil } from '../../../utils/ContentUtil';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import PageSection from '../../../components/PageSection';
@@ -13,9 +13,9 @@ const Benefits: React.FC = () => {
           md={2}
           lg={2}>
           <S.BenefitsItem>
-            <S.BenefitsItemCallout>{useContentCopy('benefits.get')}</S.BenefitsItemCallout>
+            <S.BenefitsItemCallout>{ContentUtil('benefits.get')}</S.BenefitsItemCallout>
             <S.BenefitsItemDescription>
-              {useContentCopy('benefits.threeMonthsFree')}
+              {ContentUtil('benefits.threeMonthsFree')}
             </S.BenefitsItemDescription>
           </S.BenefitsItem>
         </GridItem>
@@ -23,9 +23,9 @@ const Benefits: React.FC = () => {
           md={2}
           lg={2}>
           <S.BenefitsItem>
-            <S.BenefitsItemCallout>{useContentCopy('benefits.get')}</S.BenefitsItemCallout>
+            <S.BenefitsItemCallout>{ContentUtil('benefits.get')}</S.BenefitsItemCallout>
             <S.BenefitsItemDescription>
-              {useContentCopy('benefits.doubleData')}
+              {ContentUtil('benefits.doubleData')}
             </S.BenefitsItemDescription>
           </S.BenefitsItem>
         </GridItem>

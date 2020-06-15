@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './contact-page.styles';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import { GridBase } from '../Grid';
 import { IconFacebook, IconLinkedIn, IconTwitter } from '../Icons';
@@ -10,7 +10,7 @@ import SectionHeader from '../SectionHeader';
 const ContactPage: React.FC = () => {
   return (
     <PageSection>
-      <SectionHeader>{useContentCopy('contact.contactUs')}</SectionHeader>
+      <SectionHeader>{ContentUtil('contact.contactUs')}</SectionHeader>
       <GridBase>
         <S.ContactInfo md={2} lg={2}>
           <p>We can’t have you contacting us directly because phone lines cost money to operate, but feel free to drop by in one of our stores or reach out to us on social media.</p>

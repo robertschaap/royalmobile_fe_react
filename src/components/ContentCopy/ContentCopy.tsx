@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContentCopy } from '../../utils/useContentCopy';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 interface ContentCopyProps {
   messageId: string;
@@ -10,7 +10,7 @@ const ContentCopy: React.FC<ContentCopyProps> = React.memo((props) => {
 
   return (
     <>
-      {useContentCopy(messageId)}
+      {ContentUtil(messageId)}
     </>
   );
 });

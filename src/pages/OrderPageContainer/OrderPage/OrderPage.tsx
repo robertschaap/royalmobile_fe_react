@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './order-page.styles';
-import { useContentCopy } from '../../../utils/useContentCopy';
+import { ContentUtil } from '../../../utils/ContentUtil';
 import { Cart } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';
@@ -29,7 +29,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
 
   return (
     <PageSection>
-      <SectionHeader>{useContentCopy('order.order')}</SectionHeader>
+      <SectionHeader>{ContentUtil('order.order')}</SectionHeader>
         {cart.items.map((item, index) => (
           <S.CartItem key={index}>
             <S.DeviceImage>
@@ -66,7 +66,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
             md={2}
             lg={2}>
             <S.TotalCard>
-              {useContentCopy('order.totalMonthlyPayment')}
+              {ContentUtil('order.totalMonthlyPayment')}
               <S.Total>{StringUtil.formatPrice(cart.totals.monthly_price)}</S.Total>
             </S.TotalCard>
           </GridItem>
@@ -74,7 +74,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
             md={2}
             lg={2}>
             <S.TotalCard>
-              {useContentCopy('order.totalOneTimePayment')}
+              {ContentUtil('order.totalOneTimePayment')}
               <S.Total>{StringUtil.formatPrice(cart.totals.onetime_price)}</S.Total>
             </S.TotalCard>
           </GridItem>
@@ -83,12 +83,12 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
       <S.OrderButton
         variant="primary"
         onClick={onClickOrder}>
-        {useContentCopy('order.readyToPay')}
+        {ContentUtil('order.readyToPay')}
       </S.OrderButton>
       <Button
         variant="secondary"
         onClick={onClickReturn}>
-        {useContentCopy('order.keepShopping')}
+        {ContentUtil('order.keepShopping')}
       </Button>
     </PageSection>
   );
