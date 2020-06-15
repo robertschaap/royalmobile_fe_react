@@ -9,15 +9,15 @@ import {
   useSelector,
 } from '../../store';
 
-import ContentCopy from '../../components/ContentCopy';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loader from '../../components/Loader';
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import OrderPage from './OrderPage';
 
-import StorageUtil from '../../utils/StorageUtil';
+import { ContentUtil } from '../../utils/ContentUtil';
 import routes from '../../constants/routes';
+import StorageUtil from '../../utils/StorageUtil';
 
 const OrderPageContainer: React.FC = () => {
   const history = useHistory();
@@ -61,7 +61,7 @@ const OrderPageContainer: React.FC = () => {
   if (cartState.hasError) {
     return (
       <>
-        <PageTitle page={<ContentCopy messageId="pages.order" />} />
+        <PageTitle page={ContentUtil('pages.order')} />
         <PageSection>
           <ErrorMessage messageId="common.errorMissing" />
         </PageSection>
@@ -72,7 +72,7 @@ const OrderPageContainer: React.FC = () => {
   if (cartState.isFetching) {
     return (
       <>
-        <PageTitle page={<ContentCopy messageId="pages.order" />} />
+        <PageTitle page={ContentUtil('pages.order')} />
         <PageSection>
           <Loader show />
         </PageSection>
@@ -83,7 +83,7 @@ const OrderPageContainer: React.FC = () => {
   if (!cartState.collection?.items.length) {
     return (
       <>
-        <PageTitle page={<ContentCopy messageId="pages.order" />} />
+        <PageTitle page={ContentUtil('pages.order')} />
         <PageSection>
           <ErrorMessage messageId="order.emptyCart" />
         </PageSection>

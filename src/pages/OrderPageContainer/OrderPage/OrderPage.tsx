@@ -5,7 +5,6 @@ import { Cart } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
-import ContentCopy from '../../../components/ContentCopy';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
 
@@ -45,17 +44,17 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
             </div>
             <S.CartItemTotal>
               <S.CartItemTotalType>
-                <ContentCopy messageId='order.monthlyPayment' />
+                {ContentUtil('order.monthlyPayment')}
                 <span>{StringUtil.formatPrice(item.totals.monthly_price)}</span>
               </S.CartItemTotalType>
               <S.CartItemTotalType>
-                <ContentCopy messageId='order.oneTimePayment' />
+                {ContentUtil('order.oneTimePayment')}
                 <span>{StringUtil.formatPrice(item.totals.onetime_price)}</span>
               </S.CartItemTotalType>
             </S.CartItemTotal>
             <S.CartItemRemove>
               <S.CartItemRemoveButton onClick={() => onClickRemove(index.toString())}>
-                <ContentCopy messageId='order.removeCartItem' />
+                {ContentUtil('order.removeCartItem')}
               </S.CartItemRemoveButton>
             </S.CartItemRemove>
           </S.CartItem>

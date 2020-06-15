@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './duration-listing.styles';
 
-import ContentCopy from '../../../components/ContentCopy';
+import { ContentUtil } from '../../../utils/ContentUtil';
 
 const content: { readonly [key: string]: string } = {
   '1year': 'subscription.duration.1year',
@@ -26,7 +26,7 @@ const DurationListing: React.FC<DurationListingProps> = (props) => {
           onClick={() => onClickDuration(durationId)}
           data-testprop-is-selected={durationId === selectedDurationId}
           isSelected={durationId === selectedDurationId}>
-          <ContentCopy messageId={content[durationId]} />
+          {ContentUtil(content[durationId])}
         </S.DurationListingItem>
       ))}
     </S.DurationListingBase>

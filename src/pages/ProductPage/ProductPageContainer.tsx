@@ -13,7 +13,6 @@ import {
   useSelector,
 } from '../../store';
 
-import ContentCopy from '../../components/ContentCopy';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loader from '../../components/Loader';
 import PageSection from '../../components/PageSection';
@@ -23,6 +22,7 @@ import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
 import ProductPageOrderContainer from './ProductPageOrderContainer';
 import ProductPageSummaryContainer from './ProductPageSummaryContainer';
 
+import { ContentUtil } from '../../utils/ContentUtil';
 import { useRouteParams } from '../../hooks';
 import routes from '../../constants/routes';
 
@@ -62,7 +62,7 @@ const ProductPageContainer: React.FC = () => {
   if (productState.hasError || subscriptionsState.hasError) {
     return (
       <>
-        <PageTitle page={<ContentCopy messageId="pages.product" />} />
+        <PageTitle page={ContentUtil('pages.product')} />
         <PageSection>
           <ErrorMessage messageId="common.errorMissing" />
         </PageSection>
@@ -73,7 +73,7 @@ const ProductPageContainer: React.FC = () => {
   if (productState.isFetching || subscriptionsState.isFetching) {
     return (
       <>
-        <PageTitle page={<ContentCopy messageId="pages.product" />} />
+        <PageTitle page={ContentUtil('pages.product')} />
         <PageSection>
           <Loader show />
         </PageSection>
@@ -84,7 +84,7 @@ const ProductPageContainer: React.FC = () => {
   if (!productState.collection || !subscriptionsState.collection.length) {
     return (
       <>
-        <PageTitle page={<ContentCopy messageId="pages.product" />} />
+        <PageTitle page={ContentUtil('pages.product')} />
         <PageSection>
           <ErrorMessage messageId="common.errorMissing" />
         </PageSection>
@@ -94,7 +94,7 @@ const ProductPageContainer: React.FC = () => {
 
   return (
     <>
-      <PageTitle page={<ContentCopy messageId="pages.product" />} />
+      <PageTitle page={ContentUtil('pages.product')} />
       <ProductPageCustomiseContainer
         product={productState.collection} />
       <ProductPageConfigureContainer

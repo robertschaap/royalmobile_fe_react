@@ -91,6 +91,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
         </S.Section>
         <S.FinaliseOrderButton
           variant="primary"
+          disabled={!form.isValid}
           onClick={form.onSubmit}>
           {ContentUtil('order.finaliseOrder')}
         </S.FinaliseOrderButton>

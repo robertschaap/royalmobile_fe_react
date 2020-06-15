@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
 import { fetchProducts, selectProducts, useDispatch, useSelector } from '../../store';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 import Button from '../../components/Button';
-import ContentCopy from '../../components/ContentCopy';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loader from '../../components/Loader';
 import PageSection from '../../components/PageSection';
@@ -40,8 +40,7 @@ const ProductListingContainer: React.FC = () => {
         variant="secondary"
         disabled={productsState.collection.length === 0 || productsState.isFetching}
         onClick={handleLoadMoreClick}>
-        <ContentCopy
-          messageId="common.loadMore" />
+        {ContentUtil('common.loadMore')}
       </Button>
     </PageSection>
   );

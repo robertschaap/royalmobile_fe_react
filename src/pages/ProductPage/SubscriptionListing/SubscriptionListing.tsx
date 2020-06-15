@@ -1,10 +1,10 @@
 import React from 'react';
 import * as S from './subscription-listing.styles';
+import { ContentUtil } from '../../../utils/ContentUtil';
 import { Subscription } from '../../../types/subscriptions';
 import StringUtil from '../../../utils/StringUtil';
 
 import { GridBase, GridItem } from '../../../components/Grid';
-import ContentCopy from '../../../components/ContentCopy';
 
 interface SubscriptionListingProps {
   onClickSubscription(subscriptionId: string): void;
@@ -32,7 +32,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
             onClick={() => onClickSubscription(subscriptionId)}
             isSelected={subscriptionId === selectedSubscriptionId}>
             <div>
-              <div><ContentCopy messageId="product.data" /></div>
+              <div>{ContentUtil('product.data')}</div>
               <S.Bold>{data}</S.Bold>
             </div>
             <S.BenefitsSmall>{benefits_short}</S.BenefitsSmall>
@@ -42,7 +42,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
               ))}
             </S.BenefitsMedium>
             <div>
-              <div><ContentCopy messageId="product.monthly" /></div>
+              <div>ContentUtil('product.monthly')</div>
               <S.Bold>{StringUtil.formatRoundedPrice(regular_price)}</S.Bold>
             </div>
           </S.SubscriptionListingItem>
