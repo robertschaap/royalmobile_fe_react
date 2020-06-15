@@ -6,7 +6,7 @@ import {
   useDispatch,
   useSelector,
 } from '../../store';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 import { Subscription } from '../../types/subscriptions';
 import SubscriptionUtil from '../../utils/SubscriptionUtil';
 

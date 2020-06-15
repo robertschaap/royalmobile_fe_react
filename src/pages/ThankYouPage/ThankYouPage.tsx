@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './thank-you-page.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';

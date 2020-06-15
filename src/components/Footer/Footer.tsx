@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './footer.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 import routes from '../../constants/routes';
 
 import Link from '../Link';

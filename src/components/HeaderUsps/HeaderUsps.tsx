@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './header-usps.styles';
-import { useContentCopy } from '../../hooks/useContentCopy';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 const HeaderUsps: React.FC = () => {
   return (

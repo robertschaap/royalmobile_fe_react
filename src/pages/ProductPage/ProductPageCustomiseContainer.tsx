@@ -5,7 +5,7 @@ import {
   useSelector,
   setProductSelectedVariantId,
 } from '../../store';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 import PageSection from '../../components/PageSection';
 import ProductPageCustomise from './ProductPageCustomise';

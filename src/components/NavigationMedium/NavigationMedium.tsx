@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './navigation-medium.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 import {
   ForYourBusinessLink,

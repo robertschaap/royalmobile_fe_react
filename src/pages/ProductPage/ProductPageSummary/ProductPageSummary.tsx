@@ -1,9 +1,10 @@
 import React from 'react';
 import * as S from './product-page-summary.styles';
-import { useContentCopy, OrderSummary } from '../../../hooks';
+import { OrderSummary } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
 import StringUtil from '../../../utils/StringUtil';
 
-import OrderSummaryText from '../OrderSummaryText/OrderSummaryText';
+import OrderSummaryText from '../OrderSummaryText';
 import { GridBase, GridItem } from '../../../components/Grid';
 
 interface ProductPageSummaryProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './product-page-order.styles';
 
-import { useContentCopy } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './device-discounts.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 const DeviceDiscounts: React.FC = () => {
   return (

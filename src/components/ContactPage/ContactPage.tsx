@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './contact-page.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 import { GridBase } from '../Grid';
 import { IconFacebook, IconLinkedIn, IconTwitter } from '../Icons';

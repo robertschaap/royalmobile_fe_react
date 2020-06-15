@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './order-page.styles';
-import { useContentCopy } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
 import { Cart } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './help-page.styles';
 import routes from '../../../constants/routes';
-import { useContentCopy } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
 
 import { GridBase } from '../../../components/Grid';
 import Link from '../../../components/Link';

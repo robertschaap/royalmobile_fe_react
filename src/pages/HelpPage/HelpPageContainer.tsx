@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 import HelpPage from './HelpPage';
 import PageTitle from '../../components/PageTitle';

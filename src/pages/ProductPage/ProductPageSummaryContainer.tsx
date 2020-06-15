@@ -5,7 +5,8 @@ import {
   selectProductSelection,
 } from '../../store';
 
-import { useContentCopy, useOrderSummary } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
+import { useOrderSummary } from '../../hooks';
 import { Product } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
 

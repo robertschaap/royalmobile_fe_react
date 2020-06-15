@@ -8,7 +8,7 @@ import DeviceRating from '../DeviceRating';
 import Hidden from '../../../components/Hidden';
 
 import phone from '../../../assets/images/apple_iphone-x_silver.png';
-import { useContentCopy } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
 import { ProductVariant, ProductCapacity, ProductColor } from '../../../types/products';
 import StringUtil from '../../../utils/StringUtil';
 

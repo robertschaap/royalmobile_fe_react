@@ -1,6 +1,6 @@
 import React from 'react';
 import routes from '../../constants/routes';
-import { useContentCopy } from '../../hooks/useContentCopy';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 import Link from '../Link';
 

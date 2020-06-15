@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './order-details-page.styles';
-import { useContentCopy, useForm } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
+import { useForm } from '../../../hooks';
 
 import { Input, Select } from '../../../components/FormFields/FormFields';
 import Button from '../../../components/Button';

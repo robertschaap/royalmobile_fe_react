@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './error-message.styles';
-import { useContentCopy } from '../../hooks';
+import { useContentCopy } from '../../utils/useContentCopy';
 
 interface ErrorMessageProps {
   messageId: string;

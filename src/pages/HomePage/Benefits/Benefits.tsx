@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './benefits.styles';
-import { useContentCopy } from '../../../hooks';
+import { useContentCopy } from '../../../utils/useContentCopy';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import PageSection from '../../../components/PageSection';
