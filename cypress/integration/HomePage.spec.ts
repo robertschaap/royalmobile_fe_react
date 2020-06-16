@@ -1,9 +1,7 @@
-import routes from '../../src/constants/routes';
-
-context('Homepage', () => {
+context('Home Page', () => {
   before(() => {
     cy.server();
-    cy.visit(routes.HOME_PAGE);
+    cy.visit('/');
   });
 
   it('should skip navigation', () => {
