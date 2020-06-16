@@ -42,7 +42,7 @@ const SubscriptionListing: React.FC<SubscriptionListingProps> = (props) => {
               ))}
             </S.BenefitsMedium>
             <div>
-              <div>ContentUtil('product.monthly')</div>
+              <div>{ContentUtil('product.monthly')}</div>
               <S.Bold>{StringUtil.formatRoundedPrice(regular_price)}</S.Bold>
             </div>
           </S.SubscriptionListingItem>
