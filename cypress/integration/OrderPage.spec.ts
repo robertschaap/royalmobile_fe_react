@@ -5,12 +5,4 @@ context('Homepage', () => {
     cy.server();
     cy.visit(routes.ORDER_PAGE);
   });
-
-  it('should skip navigation', () => {
-    cy
-      .getTestId('button-secondary')
-      .first()
-      .focus()
-      .click();
-  });
 });
