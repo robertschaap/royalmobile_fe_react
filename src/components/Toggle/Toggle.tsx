@@ -10,7 +10,7 @@ const Toggle: React.FC<ToggleProps> = (props) => {
   const { isActive, onChange } = props;
 
   return (
-    <S.ToggleBase>
+    <S.ToggleBase data-testid="toggle">
       <S.ToggleInput
         data-testid="toggle-input"
         defaultChecked={isActive}
