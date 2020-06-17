@@ -2,10 +2,10 @@ import React from 'react';
 import ProductListing from '.';
 
 import { renderWithProviders } from '../../../test/helpers';
-import { stubsServer } from '../../../stubs';
+import { stubsServer, Server } from '../../../stubs';
 import { Product } from '../../../types/products';
 
-let server: any;
+let server: Server;
 
 describe('<ProductListing />', () => {
   beforeEach(() => {
