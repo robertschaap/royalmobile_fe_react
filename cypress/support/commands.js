@@ -7,4 +7,6 @@ Cypress.Commands.add('random', { prevSubject: true }, (subject) => {
     const random = Math.floor(Math.random() * subject.length);
     return subject[random];
   }
+
+  return subject;
 });
