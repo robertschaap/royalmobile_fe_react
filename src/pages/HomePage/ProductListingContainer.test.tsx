@@ -5,9 +5,9 @@ import ProductListingContainer from './ProductListingContainer';
 import * as productsDuck from '../../store/ducks/products';
 
 import { renderWithProviders } from '../../test/helpers';
-import { stubsServer } from '../../stubs';
+import { stubsServer, Server } from '../../stubs';
 
-let server: any;
+let server: Server;
 
 describe('<ProductListingContainer />', () => {
   beforeEach(() => {
