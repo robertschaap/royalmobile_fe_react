@@ -4,6 +4,7 @@ export interface ContentCopy {
 
 export const contentCopy: ContentCopy = Object.freeze({
   'common.errorMissing': 'Something should\'ve been here, but it isn\'t.',
+  'common.errorHeader': 'Whoops...',
   'common.loadMore': 'Load More',
   'common.mobile': 'Mobile',
   'common.royal': 'Royal',
