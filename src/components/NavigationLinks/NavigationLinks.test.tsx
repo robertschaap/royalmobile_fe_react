@@ -5,6 +5,7 @@ import {
   ForYourBusinessLink,
   HelpLink,
   MyAccountLink,
+  OrderLink,
   ProductsForYouLink,
 } from '.';
 
@@ -50,6 +51,20 @@ describe('<NavigationLinks />', () => {
       fireEvent.click(getByTestId('my-account-link'));
 
       expect(window.location.pathname).toContain('/myroyalmobile');
+    });
+  });
+
+  describe('<OrderLink />', () => {
+    it('should render without crashing', () => {
+      renderWithProviders(<OrderLink />);
+    });
+
+    it('should redirect the user when clicked on', () => {
+      const { getByTestId } = renderWithProviders(<OrderLink />);
+
+      fireEvent.click(getByTestId('order-link'));
+
+      expect(window.location.pathname).toContain('/order');
     });
   });
 
