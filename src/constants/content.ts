@@ -1,8 +1,8 @@
-export interface ContentCopy {
+export interface Content {
   readonly [key: string]: string;
 }
 
-export const contentCopy: ContentCopy = Object.freeze({
+const content: Content = Object.freeze({
   'common.errorMissing': 'Something should\'ve been here, but it isn\'t.',
   'common.errorHeader': 'Whoops...',
   'common.loadMore': 'Load More',
@@ -78,4 +78,4 @@ export const contentCopy: ContentCopy = Object.freeze({
   'usp.noFalsePromises': 'Guaranteed no False Promises',
 });
 
-export default contentCopy;
+export default content;

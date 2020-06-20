@@ -1,8 +1,8 @@
-import contentCopy from '../constants/contentCopy';
+import content from '../constants/content';
 
 export const ContentUtil = (messageId: string): string => {
-  if (contentCopy && contentCopy[messageId]) {
-    return contentCopy[messageId];
+  if (content && content[messageId]) {
+    return content[messageId];
   }
 
   // eslint-disable-next-line no-console
