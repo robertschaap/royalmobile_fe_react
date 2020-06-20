@@ -4,18 +4,18 @@ import * as S from './form-fields.styles';
 import FormGroup from '../FormGroup';
 
 interface FormFieldProps<T> {
-  error: string;
+  error?: string;
   hint?: string;
   isRequired?: boolean;
   isValid: boolean;
   label: string;
   name: string;
-  onBlur(v: React.ChangeEvent<T>): void;
+  onBlur?(v: React.ChangeEvent<T>): void;
   onChange(v: React.ChangeEvent<T>): void;
 }
 
 interface InputProps<T> extends FormFieldProps<T> {
-  placeholder: string;
+  placeholder?: string;
   value: string;
 }
 

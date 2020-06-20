@@ -3,7 +3,7 @@ import * as S from './form-group.styles';
 
 interface FormGroupProps {
   children: React.ReactNode;
-  error: string;
+  error?: string;
   hint?: string;
   isRequired?: boolean;
   isValid: boolean;
