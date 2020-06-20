@@ -29,55 +29,55 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
   return (
     <PageSection>
       <SectionHeader>{ContentUtil('order.order')}</SectionHeader>
-        {cart.items.map((item, index) => (
-          <S.CartItem key={index}>
-            <S.DeviceImage>
-              <img width="100%" alt="phone" src={phone} />
-            </S.DeviceImage>
-            <div>
-              <S.DeviceName>
-                {item.product.model}{' '}
-                {item.product.variants[0].capacity}{' '}
-                {StringUtil.capitalise(item.product.variants[0].color)}
-              </S.DeviceName>
-              <div>{item.product.manufacturer}</div>
-            </div>
-            <S.CartItemTotal>
-              <S.CartItemTotalType>
-                {ContentUtil('order.monthlyPayment')}
-                <span>{StringUtil.formatPrice(item.totals.monthly_price)}</span>
-              </S.CartItemTotalType>
-              <S.CartItemTotalType>
-                {ContentUtil('order.oneTimePayment')}
-                <span>{StringUtil.formatPrice(item.totals.onetime_price)}</span>
-              </S.CartItemTotalType>
-            </S.CartItemTotal>
-            <S.CartItemRemove>
-              <S.CartItemRemoveButton onClick={() => onClickRemove(index.toString())}>
-                {ContentUtil('order.removeCartItem')}
-              </S.CartItemRemoveButton>
-            </S.CartItemRemove>
-          </S.CartItem>
-        ))}
+      {cart.items.map((item, index) => (
+        <S.CartItem key={index}>
+          <S.DeviceImage>
+            <img width="100%" alt="phone" src={phone} />
+          </S.DeviceImage>
+          <div>
+            <S.DeviceName>
+              {item.product.model}{' '}
+              {item.product.variants[0].capacity}{' '}
+              {StringUtil.capitalise(item.product.variants[0].color)}
+            </S.DeviceName>
+            <div>{item.product.manufacturer}</div>
+          </div>
+          <S.CartItemTotal>
+            <S.CartItemTotalType>
+              {ContentUtil('order.monthlyPayment')}
+              <span>{StringUtil.formatPrice(item.totals.monthly_price)}</span>
+            </S.CartItemTotalType>
+            <S.CartItemTotalType>
+              {ContentUtil('order.oneTimePayment')}
+              <span>{StringUtil.formatPrice(item.totals.onetime_price)}</span>
+            </S.CartItemTotalType>
+          </S.CartItemTotal>
+          <S.CartItemRemove>
+            <S.CartItemRemoveButton onClick={() => onClickRemove(index.toString())}>
+              {ContentUtil('order.removeCartItem')}
+            </S.CartItemRemoveButton>
+          </S.CartItemRemove>
+        </S.CartItem>
+      ))}
 
-        <GridBase>
-          <GridItem
-            md={2}
-            lg={2}>
-            <S.TotalCard>
-              {ContentUtil('order.totalMonthlyPayment')}
-              <S.Total>{StringUtil.formatPrice(cart.totals.monthly_price)}</S.Total>
-            </S.TotalCard>
-          </GridItem>
-          <GridItem
-            md={2}
-            lg={2}>
-            <S.TotalCard>
-              {ContentUtil('order.totalOneTimePayment')}
-              <S.Total>{StringUtil.formatPrice(cart.totals.onetime_price)}</S.Total>
-            </S.TotalCard>
-          </GridItem>
-        </GridBase>
+      <GridBase>
+        <GridItem
+          md={2}
+          lg={2}>
+          <S.TotalCard>
+            {ContentUtil('order.totalMonthlyPayment')}
+            <S.Total>{StringUtil.formatPrice(cart.totals.monthly_price)}</S.Total>
+          </S.TotalCard>
+        </GridItem>
+        <GridItem
+          md={2}
+          lg={2}>
+          <S.TotalCard>
+            {ContentUtil('order.totalOneTimePayment')}
+            <S.Total>{StringUtil.formatPrice(cart.totals.onetime_price)}</S.Total>
+          </S.TotalCard>
+        </GridItem>
+      </GridBase>
 
       <S.OrderButton
         variant="primary"

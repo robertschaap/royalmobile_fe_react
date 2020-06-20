@@ -22,16 +22,17 @@
     "@typescript-eslint/camelcase": "off",
     "arrow-body-style": "off",
     "camelcase": "off",
-    "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "max-len": "off",
-    "object-curly-newline": "off",
     "no-confusing-arrow": "off",
     "no-param-reassign": ["error", {
       "props": true,
       "ignorePropertyModificationsFor": ["draft"]
     }],
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "object-curly-newline": "off"
   },
   "overrides": [
     {

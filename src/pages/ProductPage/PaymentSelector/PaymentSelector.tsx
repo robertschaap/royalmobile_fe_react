@@ -26,7 +26,7 @@ const PaymentSelector: React.FC = () => {
       <S.ToggleWrapper>
         <S.ToggleDescription>
           Your phone is x up front. Do you want to raise your plan's monthly fee a bit so you can spread it out?
-          </S.ToggleDescription>
+        </S.ToggleDescription>
         <Toggle
           isActive={isToggleActive}
           onChange={() => setIsToggleActive(!isToggleActive)} />

@@ -26,4 +26,3 @@ export const NavigationLeft = styled(NavigationGroup)`
 export const NavigationMiddle = styled(NavigationGroup)`
   flex: auto;
 `;
-
