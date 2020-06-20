@@ -24,7 +24,9 @@
     "camelcase": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
-    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "indent": ["error", 2, {
+      "SwitchCase": 1
+    }],
     "max-len": "off",
     "no-confusing-arrow": "off",
     "no-param-reassign": ["error", {
@@ -32,7 +34,12 @@
       "ignorePropertyModificationsFor": ["draft"]
     }],
     "no-unused-expressions": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "spaced-comment": ["error", "always", {
+      "line": {
+        "markers": ["/"]
+      }
+    }]
   },
   "overrides": [
     {

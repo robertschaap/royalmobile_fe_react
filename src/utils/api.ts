@@ -3,12 +3,12 @@ import { put } from 'redux-saga/effects';
 interface ApiCallBaseProps {
   onErrorAction: Function;
   onSuccessAction: Function;
-  options?: Object;
+  options?: Record<string, unknown>;
   url: string;
 }
 
 interface ApiCallWithOptionalBodyProps extends ApiCallBaseProps {
-  body?: Object;
+  body?: Record<string, unknown>;
 }
 
 function* apiCall(props: ApiCallBaseProps) {

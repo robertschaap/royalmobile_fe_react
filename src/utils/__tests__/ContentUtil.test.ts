@@ -1,15 +1,18 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { ContentUtil } from '../ContentUtil';
 
+// eslint-disable-next-line no-console, prefer-destructuring
 const warn = console.warn;
 const mockedWarn = jest.fn();
 
 describe('ContentUtil', () => {
   beforeEach(() => {
+    // eslint-disable-next-line no-console
     console.warn = mockedWarn;
   });
 
   afterEach(() => {
+    // eslint-disable-next-line no-console
     console.warn = warn;
   });
 

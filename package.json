@@ -44,6 +44,7 @@
     "build": "react-scripts build",
     "cypress:open": "cypress open",
     "eject": "react-scripts eject",
+    "lint": "eslint --ext js,ts,tsx, src",
     "start:stub": "REACT_APP_USESTUBS=true REACT_APP_DEBUG=true npm start",
     "start": "SASS_PATH=src REACT_APP_DEBUG=true react-scripts start",
     "test": "react-scripts test"
