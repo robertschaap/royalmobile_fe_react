@@ -18,6 +18,9 @@ import routes from '../constants/routes';
 export type Server = any;
 export type Schema = any;
 export type Request = any;
+export type Row<T> = T & {
+  update(args: Record<string, unknown>): void;
+}
 
 export const stubsServer = (environment = 'development') => new Server({
   environment,
