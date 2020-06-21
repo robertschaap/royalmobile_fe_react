@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './order-details-page.styles';
 import { ContentUtil } from '../../../utils/ContentUtil';
+import { isRequired } from '../../../utils/FormValidators';
 import { useForm } from '../../../hooks';
 
 import { Input, Select } from '../../../components/FormFields/FormFields';
@@ -26,6 +27,14 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
       housenumber: '',
       country: 'nl',
       iban: '',
+    },
+    validators: {
+      initials: [isRequired],
+      lastname: [isRequired],
+      email: [isRequired],
+      zipcode: [isRequired],
+      housenumber: [isRequired],
+      iban: [isRequired],
     },
     onSubmit: onSubmitOrder,
   });
