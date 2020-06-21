@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { FormValidator, FormValidatorResult } from '../utils/FormValidators';
 
 type FormValues = Record<string, string>;
 
 interface FormProps {
   initialValues: FormValues;
-  validators?: Record<string, Function[]>;
+  validators?: Record<string, FormValidator[]>;
   onSubmit(v: FormValues): void;
 }
 
@@ -32,26 +33,26 @@ export const useForm = ({ initialValues, validators, onSubmit }: FormProps) => {
       return;
     }
 
-    let isValid;
+    let result: FormValidatorResult | undefined;
     for (let i = 0; i < validatorsArray.length; i += 1) {
-      isValid = validatorsArray[i](value);
+      result = validatorsArray[i](value);
 
-      if (!isValid) {
+      if (!result.isValid) {
         break;
       }
     }
 
-    if (isValid && errors[name]) {
+    if (result?.isValid && errors[name]) {
       setErrors({
         ...errors,
         [name]: '',
       });
     }
 
-    if (!isValid) {
+    if (result?.isValid === false) {
       setErrors({
         ...errors,
-        [name]: 'your input is wrong, we don\'t know why, just try again',
+        [name]: result.message,
       });
     }
   };

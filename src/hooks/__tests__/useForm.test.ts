@@ -73,7 +73,7 @@ describe('useForm', () => {
       const field = result.current.getFieldProps('firstName');
       const event = { target: { name: 'firstName', value: 'updated-value' } };
 
-      validatorFunction.mockReturnValue(true);
+      validatorFunction.mockReturnValue({ isValid: true });
 
       act(() => {
         field.onBlur(event as React.ChangeEvent<HTMLInputElement>);
@@ -93,7 +93,7 @@ describe('useForm', () => {
       const field = result.current.getFieldProps('firstName');
       const event = { target: { name: 'firstName', value: 'updated-value' } };
 
-      validatorFunction.mockReturnValue(false);
+      validatorFunction.mockReturnValue({ isValid: false, message: 'error-message' });
 
       act(() => {
         field.onBlur(event as React.ChangeEvent<HTMLInputElement>);
@@ -102,9 +102,9 @@ describe('useForm', () => {
       const updatedField = result.current.getFieldProps('firstName');
 
       expect(validatorFunction).toHaveBeenCalled();
-      expect(result.current.errors.firstName).toBeTruthy();
+      expect(result.current.errors.firstName).toBe('error-message');
       expect(result.current.isValid).toBe(false);
-      expect(updatedField.error).not.toBe('');
+      expect(updatedField.error).toBe('error-message');
       expect(updatedField.isValid).toBe(false);
     });
   });
