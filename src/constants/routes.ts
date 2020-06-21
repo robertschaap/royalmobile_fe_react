@@ -23,7 +23,6 @@ const apiRoutes = {
   API_GET_SUBSCRIPTIONS: `${API}/subscriptions`,
   API_REMOVE_CART_ITEM: `${API}/cart/:id/item/:itemId`,
   API_PLACE_ORDER: `${API}/cart/order`,
-
 };
 
 export default {
