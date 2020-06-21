@@ -31,7 +31,7 @@ const ProductPageOrder: React.FC<ProductPageOrderProps> = (props) => {
             {ContentUtil('order.readyToOrder')}
           </S.OrderButton>
           <Button
-            disabled={hasSelection}
+            disabled
             variant="secondary"
             onClick={onClickRenewContract}>
             {ContentUtil('order.renewContract')}
