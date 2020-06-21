@@ -2,14 +2,20 @@ import React from 'react';
 import SubscriptionListing from '.';
 
 import { renderWithProviders } from '../../../test/helpers';
+import { Server, stubsServer } from '../../../stubs';
 
-const subscriptions = [
-  { id: 'subscription-id1' },
-  { id: 'subscription-id2' },
-  { id: 'subscription-id3' },
-];
+let server: Server;
 
 describe('<SubscriptionListing />', () => {
+  beforeAll(() => {
+    server = stubsServer('test');
+    server.createList('subscription', 3);
+  });
+
+  afterAll(() => {
+    server.shutdown();
+  });
+
   it('should render without crashing', () => {
     const { getByTestId } = renderWithProviders(
       <SubscriptionListing
@@ -21,24 +27,23 @@ describe('<SubscriptionListing />', () => {
     expect(getByTestId('subscription-listing').children.length).toBe(0);
   });
 
-  // TODO: add rendered text to this when implemented
-  xit('should render a list of subscriptions', () => {
+  it('should render a list of subscriptions', () => {
     const { getByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
         selectedSubscriptionId=''
-        subscriptions={subscriptions} />,
+        subscriptions={server.db.subscriptions} />,
     );
 
     expect(getByTestId('subscription-listing').children.length).toBe(3);
   });
 
-  xit('should highlight the selected subscription', () => {
+  it('should highlight the selected subscription', () => {
     const { getAllByTestId } = renderWithProviders(
       <SubscriptionListing
         onClickSubscription={jest.fn()}
-        selectedSubscriptionId='subscription-id2'
-        subscriptions={subscriptions} />,
+        selectedSubscriptionId={server.db.subscriptions[1].subscriptionId}
+        subscriptions={server.db.subscriptions} />,
     );
 
     const items = getAllByTestId('subscription-listing-item');
@@ -47,5 +52,3 @@ describe('<SubscriptionListing />', () => {
     expect(items[2]).toHaveAttribute('data-testprop-is-selected', 'false');
   });
 });
-
-// TODO: add test for clicking and selecting item when interface is proper
