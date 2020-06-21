@@ -26,8 +26,11 @@ export const useForm = ({ initialValues, validators, onSubmit }: FormProps) => {
   const onBlur = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
 
-    const isRequired = (v: string) => Boolean(v);
-    const validatorsArray = (validators && validators[name]) ?? [isRequired];
+    const validatorsArray = validators && validators[name];
+
+    if (!validatorsArray) {
+      return;
+    }
 
     let isValid;
     for (let i = 0; i < validatorsArray.length; i += 1) {
