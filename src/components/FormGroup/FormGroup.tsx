@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './form-group.styles';
 
+import { ContentUtil } from '../../utils/ContentUtil';
+
 interface FormGroupProps {
   children: React.ReactNode;
   error?: string;
@@ -28,7 +30,8 @@ const FormGroup: React.FC<FormGroupProps> = (props) => {
         {isValid ? <S.Icon isValid /> : <S.Icon />}
       </S.FormLabel>
       {children}
-      {isValid ? <S.Hint>{hint}&nbsp;</S.Hint> : <S.Error>{error}</S.Error>}
+      {isValid && <S.Hint>{hint}&nbsp;</S.Hint>}
+      {!isValid && error && <S.Error>{ContentUtil(error)}</S.Error>}
     </S.FormGroupBase>
   );
 };
