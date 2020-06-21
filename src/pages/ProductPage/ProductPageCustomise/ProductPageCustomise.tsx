@@ -43,7 +43,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
           <img width="100%" alt="phone" src={phone} />
         </S.DeviceImage>
         <Hidden md lg>
-          <S.DeviceName>{deviceName}</S.DeviceName>
+          <S.DeviceName data-testid="device-name">{deviceName}</S.DeviceName>
           <S.DeviceManufacturer>{deviceManufacturer}</S.DeviceManufacturer>
           <DeviceDiscounts />
         </Hidden>
