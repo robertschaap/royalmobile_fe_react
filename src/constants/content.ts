@@ -11,6 +11,8 @@ const content: Content = Object.freeze({
   'common.royalMobile': 'RoyalMobile',
   'common.sale': 'Sale',
 
+  'form.validate.isRequired': 'This field is required',
+
   'pages.business': 'For Your Business',
   'pages.campaign': 'Campaign',
   'pages.consumer': 'Products For You',
