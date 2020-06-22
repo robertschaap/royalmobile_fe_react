@@ -51,7 +51,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
 
   return (
     <>
-      <PageSection>
+      <PageSection data-testid="order-details-page">
         <SectionHeader>{ContentUtil('order.personalDetails')}</SectionHeader>
         <S.Section>
           <Input
@@ -106,6 +106,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
           {ContentUtil('order.finaliseOrder')}
         </S.FinaliseOrderButton>
         <Button
+          data-testid="return-button"
           variant="secondary"
           onClick={onClickReturn}>
           {ContentUtil('order.keepShopping')}
