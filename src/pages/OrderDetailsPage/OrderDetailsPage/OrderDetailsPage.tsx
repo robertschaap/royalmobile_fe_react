@@ -99,6 +99,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
             placeholder={ContentUtil('order.form.bankAccount')} />
         </S.Section>
         <S.FinaliseOrderButton
+          data-testid="finalise-order-button"
           variant="primary"
           disabled={!form.isValid}
           onClick={form.onSubmit}>

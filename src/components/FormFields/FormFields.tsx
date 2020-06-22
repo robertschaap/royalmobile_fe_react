@@ -41,6 +41,7 @@ export const Input: React.FC<InputProps<HTMLInputElement>> = (props) => {
       isValid={isValid}
       label={label}>
       <S.InputField
+        data-testid={name}
         name={name}
         onChange={onChange}
         onBlur={onBlur}
@@ -82,6 +83,7 @@ export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
       isValid={isValid}
       label={label}>
       <S.SelectField
+        data-testid={name}
         name={name}
         onBlur={onBlur}
         onChange={onChange}
