@@ -22,7 +22,7 @@ const ProductPageSummary: React.FC<ProductPageSummaryProps> = (props) => {
   const deviceName = `${deviceModel} ${orderSummary.selectedVariant.capacity} ${deviceColor}`;
 
   return (
-    <GridBase>
+    <GridBase data-testid="product-page-summary">
       <GridItem
         md={2}
         lg={2}
