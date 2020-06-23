@@ -6,12 +6,12 @@ import createSagaMiddleware from '@redux-saga/core';
 import { rootReducer } from './reducers';
 import rootSaga from './sagas';
 
-export const createStore = () => {
+export const createStore = (customInitialState?: Record<string, unknown>) => {
   const sagaMiddleware = createSagaMiddleware();
 
   const store = createReduxStore(
     rootReducer(),
-    undefined,
+    customInitialState,
     compose(
       applyMiddleware(sagaMiddleware),
       // eslint-disable-next-line no-underscore-dangle
