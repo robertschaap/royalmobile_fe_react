@@ -3,11 +3,6 @@ import { useOrderSummary } from '../useOrderSummary';
 import { ProductSelection, ProductVariant } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
 
-/**
- * test calculated discount
- * rest return shape
- * test formatting
- */
 const variant = {
   variantId: 'variant-id',
   regular_price: '2',
