@@ -15,10 +15,10 @@ describe('<OrderPage />', () => {
     server.create('subscription');
 
     cart = {
-      id: '',
+      id: 'cart-id',
       items: [{
-        product: server.db.product[0],
-        subscription: server.db.susbcription[0],
+        product: server.db.products[0],
+        subscription: server.db.subscriptions[0],
         totals: {
           monthly_price: '0,00',
           onetime_price: '0,00',
