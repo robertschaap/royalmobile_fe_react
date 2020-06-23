@@ -23,16 +23,16 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
   const productSelection = useSelector(selectProductSelection);
 
   const selectedVariant = useMemo(() => {
-    return product.variants.find((variant) => variant.variantId === productSelection.variantId) || product.variants[0];
+    return product.variants.find((variant) => variant.variantId === productSelection.variantId);
   }, [product.variants, productSelection.variantId]);
 
   const colors = useMemo(() => {
-    return ProductUtil.getProductVariantColorsForCapacity(product.variants, selectedVariant.capacity);
-  }, [product, selectedVariant.capacity]);
+    return ProductUtil.getProductVariantColorsForCapacity(product.variants, selectedVariant?.capacity || '');
+  }, [product, selectedVariant]);
 
   const capacities = useMemo(() => {
-    return ProductUtil.getProductVariantCapacitiesForColor(product.variants, selectedVariant.color);
-  }, [product, selectedVariant.color]);
+    return ProductUtil.getProductVariantCapacitiesForColor(product.variants, selectedVariant?.color || '');
+  }, [product, selectedVariant]);
 
   const onClickColorOrCapacity = useCallback((id: string) => {
     dispatch(setProductSelectedVariantId(id));
@@ -41,7 +41,7 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
   return (
     <PageSection>
       <SectionHeader>{ContentUtil('product.customiseDevice')}</SectionHeader>
-      {productSelection.variantId && (
+      {selectedVariant?.variantId && (
         <ProductPageCustomise
           capacities={capacities}
           colors={colors}
