@@ -25,6 +25,7 @@ const ProductPageOrder: React.FC<ProductPageOrderProps> = (props) => {
       <GridBase>
         <GridItem lg={2}>
           <S.OrderButton
+            data-testid="place-order-button"
             disabled={!hasSelection}
             variant="primary"
             onClick={onClickOrder}>

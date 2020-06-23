@@ -13,8 +13,10 @@ const ProductPageOrderContainer: React.FC = () => {
   const hasSelection = Boolean(selection.variantId && selection.subscriptionId);
 
   const onClick = useCallback(() => {
-    StorageUtil.setProductSelection(selection);
-    history.push(routes.ORDER_PAGE);
+    if (selection.variantId && selection.subscriptionId) {
+      StorageUtil.setProductSelection(selection);
+      history.push(routes.ORDER_PAGE);
+    }
   }, [history, selection]);
 
   return (
