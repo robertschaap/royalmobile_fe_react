@@ -39,7 +39,7 @@ describe('ProductUtil', () => {
       expect(
         ProductUtil.getProductVariantCapacitiesForColor(variants, 'color-id1'),
       ).toEqual([{
-        id: 'variant-id1',
+        variantId: 'variant-id1',
         capacity: 'capacity-id1',
       }]);
     });
@@ -62,7 +62,7 @@ describe('ProductUtil', () => {
       expect(
         ProductUtil.getProductVariantColorsForCapacity(variants, 'capacity-id1'),
       ).toEqual([{
-        id: 'variant-id1',
+        variantId: 'variant-id1',
         color: 'color-id1',
         colorHex: 'colorHex-id1',
       }]);
