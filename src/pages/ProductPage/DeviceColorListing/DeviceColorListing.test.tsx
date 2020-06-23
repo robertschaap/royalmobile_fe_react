@@ -30,7 +30,7 @@ describe('<DeviceColorListing />', () => {
     );
 
     expect(getByTestId('device-color-listing').children.length).toBe(3);
-    expect(getByTestId('device-color-listing').firstChild).toHaveAttribute('title', 'color-1');
+    expect(getByTestId('device-color-listing').firstChild).toHaveAttribute('title', 'Color-1');
   });
 
   it('should highlight the selected duration', () => {
