@@ -37,7 +37,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
   const deviceDescription = 'The iPhone X is Apple’s latest attempt at a near bezel-less device and a minor failure as far as that goes. The device is disgraced by a thick and weird notch, a trend that for some inexplicable reason scores of phone manufactureres seem to have copied. We thouroughly dislike this phone but feel you should buy it anyway because we’ll make money.';
 
   return (
-    <S.Flexy>
+    <S.Flexy data-testid="product-page-customise">
       <S.Card>
         <S.DeviceImage>
           <img width="100%" alt="phone" src={phone} />
