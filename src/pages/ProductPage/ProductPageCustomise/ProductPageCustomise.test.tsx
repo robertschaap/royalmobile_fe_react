@@ -8,9 +8,13 @@ import { stubsServer, Server } from '../../../stubs';
 let server: Server;
 
 describe('<ProductPageCustomise />', () => {
-  beforeEach(() => {
+  beforeAll(() => {
     server = stubsServer('test');
     server.create('product');
+  });
+
+  afterAll(() => {
+    server.shutdown();
   });
 
   it('should render without crashing', () => {
