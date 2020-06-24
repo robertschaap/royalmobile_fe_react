@@ -1,16 +1,16 @@
 import React from 'react';
 import { ContentUtil } from '../../utils/ContentUtil';
 
-import ErrorPage from '../../components/ErrorPage';
+import ErrorMessage from '../../components/ErrorMessage';
 import PageTitle from '../../components/PageTitle';
 
-const ConsumerPageContainer: React.FC = () => {
+const BusinessPage: React.FC = () => {
   return (
     <>
       <PageTitle page={ContentUtil('pages.business')} />
-      <ErrorPage />
+      <ErrorMessage messageId="common.errorMissing" />
     </>
   );
 };
 
-export default ConsumerPageContainer;
+export default BusinessPage;
