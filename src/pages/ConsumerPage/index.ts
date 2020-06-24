@@ -1,1 +1,1 @@
-export { default } from './ConsumerPageContainer';
+export { default } from './ConsumerPage';
