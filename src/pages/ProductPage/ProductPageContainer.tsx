@@ -34,8 +34,10 @@ const ProductPageContainer: React.FC = () => {
   const { id } = useRouteParams(routes.PRODUCT_PAGE);
 
   useEffect(() => {
-    dispatch(fetchProduct(id));
-    dispatch(fetchSubscriptions());
+    if (id) {
+      dispatch(fetchProduct(id));
+      dispatch(fetchSubscriptions());
+    }
 
     return () => {
       dispatch(deleteProductSelection());
