@@ -33,6 +33,10 @@ describe('<OrderPage />', () => {
     cart.items.push();
   });
 
+  afterAll(() => {
+    server.shutdown();
+  });
+
   it('should render without crashing', () => {
     renderWithTheme(
       <OrderPage
