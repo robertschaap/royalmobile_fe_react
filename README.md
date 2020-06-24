@@ -9,23 +9,9 @@ HTML5 | CSS3 | JavaScript | React | Redux-Saga
 
 ### Installation Notes
 
-## Stories
-### General
+### TODOs
 * add hover style for buttons and links
 * build logic to remove focus style on click
-* fix all missing content
-
-### Product Page
-* setup cypress tests
-* setup integration test
-* double check unit tests
-
-### Order Page
-* setup cypress tests
-* setup integration test
-* double check unit tests
-
-### Order Details Page
-* setup cypress tests
-* setup integration test
-* double check unit tests
+* cypress test Order Details page
+* cypress test Order page
+* cypress test Product page
