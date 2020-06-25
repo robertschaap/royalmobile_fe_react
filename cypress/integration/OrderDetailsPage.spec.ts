@@ -1,5 +1,5 @@
 context('Order Details Page', () => {
-  beforeEach(() => {
+  before(() => {
     cy.server()
       .visit('/product/apple-iphonex')
       .getTestId('place-order-button')
@@ -9,18 +9,14 @@ context('Order Details Page', () => {
   });
 
   it('should remove a cartItem when the remove button is clicked', () => {
-    cy.getTestId('initials')
-      .type('initials')
-      .getTestId('lastname')
-      .type('lastname')
-      .getTestId('email')
-      .type('email')
-      .getTestId('zipcode')
-      .type('zipcode')
-      .getTestId('housenumber')
-      .type('housenumber')
-      .getTestId('iban')
-      .type('iban');
+    cy.fillForm({
+      initials: 'T',
+      lastname: 'Test',
+      email: 't@test.com',
+      zipcode: '123456',
+      housenumber: '123',
+      iban: 'NLABCD1234567890',
+    });
 
     cy.getTestId('finalise-order-button')
       .click();
