@@ -1,12 +1,11 @@
 context('Home Page', () => {
   before(() => {
-    cy.server();
-    cy.visit('/');
+    cy.server()
+      .visit('/');
   });
 
   it('should skip navigation', () => {
-    cy
-      .getTestId('button-secondary')
+    cy.getTestId('button-secondary')
       .first()
       .focus()
       .click();
@@ -25,6 +24,7 @@ context('Home Page', () => {
         .click();
     });
 
-    cy.url().should('include', '/product/');
+    cy.url()
+      .should('include', '/product/');
   });
 });
