@@ -56,6 +56,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
         <S.Section>
           <Input
             {...form.getFieldProps('initials')}
+            autoFocus
             isRequired
             label={ContentUtil('order.form.initials')}
             placeholder={ContentUtil('order.form.initials')} />
