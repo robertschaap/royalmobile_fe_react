@@ -4,6 +4,7 @@ import * as S from './form-fields.styles';
 import FormGroup from '../FormGroup';
 
 interface FormFieldProps<T> {
+  autoFocus?: boolean;
   error?: string;
   hint?: string;
   isRequired?: boolean;
@@ -21,6 +22,7 @@ interface InputProps<T> extends FormFieldProps<T> {
 
 export const Input: React.FC<InputProps<HTMLInputElement>> = (props) => {
   const {
+    autoFocus,
     error,
     hint,
     isRequired,
@@ -42,13 +44,13 @@ export const Input: React.FC<InputProps<HTMLInputElement>> = (props) => {
       label={label}>
       <S.InputField
         data-testid={name}
+        autoFocus={autoFocus}
         name={name}
-        onChange={onChange}
         onBlur={onBlur}
+        onChange={onChange}
         placeholder={placeholder}
         type="text"
-        value={value}
-      />
+        value={value} />
     </FormGroup>
   );
 };
@@ -63,6 +65,7 @@ interface SelectProps<T> extends FormFieldProps<T> {
 
 export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
   const {
+    autoFocus,
     error,
     hint,
     isRequired,
@@ -71,8 +74,8 @@ export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
     name,
     onBlur,
     onChange,
-    value,
     options,
+    value,
   } = props;
 
   return (
@@ -84,6 +87,7 @@ export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
       label={label}>
       <S.SelectField
         data-testid={name}
+        autoFocus={autoFocus}
         name={name}
         onBlur={onBlur}
         onChange={onChange}
