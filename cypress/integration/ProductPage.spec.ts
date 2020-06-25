@@ -1,7 +1,7 @@
 context('Product Page', () => {
   before(() => {
-    cy.server();
-    cy.visit('/product/apple-iphonex');
+    cy.server()
+      .visit('/product/apple-iphonex');
   });
 
   it('should select a color when one is clicked', () => {
@@ -38,9 +38,10 @@ context('Product Page', () => {
   });
 
   it('should go to the order page when the submit button is clicked', () => {
-    cy.getTestId('button-primary')
+    cy.getTestId('place-order-button')
       .click();
 
-    cy.url().should('include', '/order');
+    cy.url()
+      .should('include', '/order');
   });
 });
