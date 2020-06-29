@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import {
-  deleteProductSelection,
+  invalidateProductCollection,
   fetchProduct,
   fetchSubscriptions,
   selectProduct,
@@ -40,7 +40,7 @@ const ProductPageContainer: React.FC = () => {
     }
 
     return () => {
-      dispatch(deleteProductSelection());
+      dispatch(invalidateProductCollection());
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

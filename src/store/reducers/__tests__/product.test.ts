@@ -3,14 +3,14 @@ import { productReducer, initialProductState } from '../product';
 
 import {
   fetchProduct,
-  fetchProductSuccess,
   fetchProductError,
+  fetchProductSuccess,
+  invalidateProductCollection,
+  ProductActionTypes,
   setProductSelectedDurationId,
   setProductSelectedPaymentPlanId,
   setProductSelectedSubscriptionId,
   setProductSelectedVariantId,
-  ProductActionTypes,
-  deleteProductSelection,
 } from '../../ducks/product';
 
 import { Product } from '../../../types/products';
@@ -108,7 +108,7 @@ describe('Products Reducer', () => {
     });
   });
 
-  it('should handle DELETE_PRODUCT_SELECTION', () => {
+  it('should handle INVALIDATE_PRODUCT_COLLECTION', () => {
     const state = produce(initialProductState, (draft) => {
       draft.selection.durationId = 'selection';
       draft.selection.paymentPlanId = 'selection';
@@ -116,11 +116,13 @@ describe('Products Reducer', () => {
       draft.selection.variantId = 'selection';
     });
 
-    expect(productReducer(state, deleteProductSelection()).selection).toEqual({
+    expect(productReducer(state, invalidateProductCollection()).selection).toEqual({
       durationId: null,
       paymentPlanId: null,
       subscriptionId: null,
       variantId: null,
     });
+
+    expect(productReducer(state, invalidateProductCollection()).collection).toBeNull();
   });
 });

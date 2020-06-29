@@ -94,12 +94,12 @@ describe('<ProductPageContainer />', () => {
     expect(getByTestId('error-message')).toBeInTheDocument();
   });
 
-  it('should delete the product selection when the component unmounts', () => {
-    const deleteProductSelectionSpy = jest.spyOn(productDuck, 'deleteProductSelection');
+  it('should delete the product when the component unmounts', () => {
+    const invalidateProductCollectionSpy = jest.spyOn(productDuck, 'invalidateProductCollection');
 
     const { unmount } = renderWithProviders(<ProductPageContainer />);
 
     unmount();
-    expect(deleteProductSelectionSpy).toHaveBeenCalled();
+    expect(invalidateProductCollectionSpy).toHaveBeenCalled();
   });
 });

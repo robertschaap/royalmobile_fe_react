@@ -54,7 +54,8 @@ export const productReducer = produce((draft: ProductState = initialProductState
     case ProductActions.SET_PRODUCT_SELECTED_VARIANT_ID:
       draft.selection.variantId = action.payload;
       break;
-    case ProductActions.DELETE_PRODUCT_SELECTION:
+    case ProductActions.INVALIDATE_PRODUCT_COLLECTION:
+      draft.collection = null;
       draft.selection = initialProductSelection;
       break;
     default:
