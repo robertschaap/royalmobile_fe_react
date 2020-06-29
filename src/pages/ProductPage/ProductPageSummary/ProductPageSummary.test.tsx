@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 import React from 'react';
-import { ProductSelection, Product } from '../../../types/products';
+import { Product } from '../../../types/products';
 import { Subscription } from '../../../types/subscriptions';
 import { useOrderSummary, OrderSummary } from '../../../hooks';
 import ProductPageSummary from '.';
