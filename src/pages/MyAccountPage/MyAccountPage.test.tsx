@@ -1,5 +1,5 @@
 import React from 'react';
-import MyAccountPage from './MyAccountpage';
+import MyAccountPage from './MyAccountPage';
 
 import { renderWithProviders } from '../../test/helpers';
 
