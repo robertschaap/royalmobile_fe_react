@@ -24,3 +24,4 @@ To run:
 ### TODOs
 * add hover style for buttons and links
 * build logic to remove focus style on click
+* add pre-commit hooks for unit and headless cypress
