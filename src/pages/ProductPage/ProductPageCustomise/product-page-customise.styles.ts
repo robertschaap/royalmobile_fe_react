@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { media_breakpoint_up } from '../../../styles/theme';
 
-
 export const ProductDescription = styled.div`
   border: 1px solid ${({ theme }) => theme.color.grey};
   border-radius: 8px;
@@ -44,8 +43,9 @@ export const DeviceName = styled.div`
   font-weight: 700;
 `;
 
-export const DeviceManufacturer = styled.div``;
-
+export const DeviceManufacturer = styled.div`
+  /* stylelint-disable-line no-empty-source */
+`;
 
 export const DeviceCustomisationOptions = styled.div`
   padding: 0 ${({ theme }) => theme.spacing(4)};

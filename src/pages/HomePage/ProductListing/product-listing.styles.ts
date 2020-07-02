@@ -38,7 +38,9 @@ export const DeviceName = styled.div`
   font-weight: 700;
 `;
 
-export const DeviceManufacturer = styled.div``;
+export const DeviceManufacturer = styled.div`
+  /* stylelint-disable-line no-empty-source */
+`;
 
 export const DevicePrice = styled.div`
   font-size: 32px;

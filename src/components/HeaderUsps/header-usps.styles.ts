@@ -14,7 +14,7 @@ export const HeaderUspsBase = styled.ul`
 `;
 
 export const Check = styled.span`
-  font-family: 'Lucida Grande';
+  font-family: 'Lucida Grande', sans-serif;
   font-weight: 700;
   color: ${({ theme }) => theme.color.primary};
 `;

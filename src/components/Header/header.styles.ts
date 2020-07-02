@@ -12,8 +12,10 @@ export const HeaderBase = styled.header`
   margin-top: ${({ theme }) => theme.spacing(6)};
   margin-bottom: ${({ theme }) => theme.spacing(2)};
 
-  // 4px container width so focused elements
-  // flow naturally under the sticky header
+  /**
+   * 4px container width so focused elements
+   * flow naturally under the sticky header
+   * */
   margin-left: -${({ theme }) => theme.spacing(1)};
   margin-right: -${({ theme }) => theme.spacing(1)};
   padding-left: ${({ theme }) => theme.spacing(1)};

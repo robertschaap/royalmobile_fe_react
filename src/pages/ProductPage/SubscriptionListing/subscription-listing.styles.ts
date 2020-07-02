@@ -8,7 +8,7 @@ interface SubscriptionListingItemProps {
 
 export const SubscriptionListingItem = styled.button<SubscriptionListingItemProps>`
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   background-color: ${({ theme }) => theme.color.white};

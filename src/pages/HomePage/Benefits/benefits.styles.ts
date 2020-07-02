@@ -13,8 +13,8 @@ export const BenefitsItem = styled.div`
 
   ${media_breakpoint_up.md} {
     padding:
-    ${({ theme }) => theme.spacing(6)}
-    ${({ theme }) => theme.spacing(8)};
+      ${({ theme }) => theme.spacing(6)}
+      ${({ theme }) => theme.spacing(8)};
   }
 `;
 
