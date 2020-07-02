@@ -21,7 +21,7 @@ describe('<ProductPageContainer />', () => {
   beforeEach(() => {
     server = stubsServer('test');
     server.create('product');
-    server.create('subscription');
+    server.create('subscription', { durationId: '1year' }); // durationId is just to suppress console error
   });
 
   afterEach(() => {
