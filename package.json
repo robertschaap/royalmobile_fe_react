@@ -6,28 +6,28 @@
     "immer": "^5.3.6",
     "miragejs": "^0.1.33",
     "node-sass": "^4.12.0",
-    "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "redux": "^4.0.5",
+    "react": "^16.13.1",
     "redux-saga": "^1.1.3",
+    "redux": "^4.0.5",
     "styled-components": "^4.4.1",
-    "stylelint": "^13.6.1",
     "stylelint-config-recommended": "^3.0.0",
+    "stylelint": "^13.6.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^3.1.1",
+    "@testing-library/react": "^9.4.0",
     "@types/jest": "^24.0.25",
     "@types/node": "^13.13.4",
-    "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
     "@types/react-redux": "^7.1.7",
     "@types/react-router-dom": "^5.1.5",
+    "@types/react": "^16.9.34",
     "@types/redux-mock-store": "^1.0.2",
     "@types/redux-saga": "^0.10.5",
     "@types/styled-components": "^4.4.2",
@@ -46,8 +46,8 @@
     "build": "react-scripts build",
     "cypress:open": "cypress open",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext js,ts,tsx, src",
     "lint:css": "stylelint stylelint '**/*.ts'",
+    "lint": "eslint --ext js,ts,tsx, src",
     "start:stub": "REACT_APP_USESTUBS=true REACT_APP_DEBUG=true npm start",
     "start": "SASS_PATH=src REACT_APP_DEBUG=true react-scripts start",
     "test": "react-scripts test"
@@ -67,7 +67,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm test -- --watchAll=false"
+      "pre-push": "npm run lint && npm run lint:css && npm test -- --watchAll=false"
     }
   }
 }
