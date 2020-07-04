@@ -20,8 +20,3 @@ To run:
 - From project root
 - Run `npm start`
 - Run `npm run start:stub` to run with back-end stubbed via MirageJS
-
-### TODOs
-* add hover style for buttons and links
-* build logic to remove focus style on click
-* add pre-commit hooks for unit and headless cypress
