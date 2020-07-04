@@ -1,13 +1,13 @@
 import React from 'react';
 import * as S from './product-page-customise.styles';
 
+import DeviceDiscounts from '../../../components/DeviceDiscounts';
+import DeviceImage from '../../../components/DeviceImage';
+import Hidden from '../../../components/Hidden';
 import DeviceCapacityListing from '../DeviceCapacityListing';
 import DeviceColorListing from '../DeviceColorListing';
-import DeviceDiscounts from '../../../components/DeviceDiscounts';
 import DeviceRating from '../DeviceRating';
-import Hidden from '../../../components/Hidden';
 
-import phone from '../../../assets/images/apple_iphone-x_silver.png';
 import { ContentUtil } from '../../../utils/ContentUtil';
 import { ProductVariant, ProductCapacity, ProductColor } from '../../../types/products';
 import StringUtil from '../../../utils/StringUtil';
@@ -40,7 +40,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
     <S.Flexy data-testid="product-page-customise">
       <S.Card>
         <S.DeviceImage>
-          <img width="100%" alt="phone" src={phone} />
+          <DeviceImage modelId="apple_iphone-x" color="silver" />
         </S.DeviceImage>
         <Hidden md lg>
           <S.DeviceName data-testid="device-name">{deviceName}</S.DeviceName>
