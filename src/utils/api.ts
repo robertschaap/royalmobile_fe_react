@@ -11,6 +11,12 @@ interface ApiCallWithOptionalBodyProps extends ApiCallBaseProps {
   body?: Record<string, unknown>;
 }
 
+interface ApiResponse {
+  status: 'success' | 'error';
+  data: unknown;
+  message?: string;
+}
+
 function* apiCall(props: ApiCallBaseProps) {
   const {
     onSuccessAction,
@@ -21,7 +27,7 @@ function* apiCall(props: ApiCallBaseProps) {
 
   try {
     const apiRes = yield fetch(url, options);
-    const res = yield apiRes.json();
+    const res: ApiResponse = yield apiRes.json();
 
     if (res.status === 'success') {
       yield put(onSuccessAction(res.data));
