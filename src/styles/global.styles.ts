@@ -21,4 +21,9 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     box-shadow: 0 0 0 3px ${theme.color.blue};
   }
+
+  a:hover,
+  button:hover {
+    box-shadow: 0 0 0 3px ${theme.color.lightGrey};
+  }
 `;
