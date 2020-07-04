@@ -40,7 +40,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
     <S.Flexy data-testid="product-page-customise">
       <S.Card>
         <S.DeviceImage>
-          <DeviceImage modelId="apple_iphone-x" color="silver" />
+          <DeviceImage modelId="apple-iphone-x" color="silver" />
         </S.DeviceImage>
         <Hidden md lg>
           <S.DeviceName data-testid="device-name">{deviceName}</S.DeviceName>
