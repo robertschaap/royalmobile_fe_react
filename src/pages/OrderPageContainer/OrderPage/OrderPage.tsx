@@ -5,10 +5,10 @@ import { Cart } from '../../../types/cart';
 
 import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
+import DeviceImage from '../../../components/DeviceImage';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
 
-import phone from '../../../assets/images/apple_iphone-x_silver.png';
 import StringUtil from '../../../utils/StringUtil';
 
 interface OrderPageProps {
@@ -32,7 +32,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
       {cart.items.map((item, index) => (
         <S.CartItem key={index}>
           <S.DeviceImage>
-            <img width="100%" alt="phone" src={phone} />
+            <DeviceImage modelId="apple_iphone-x" color="silver" />
           </S.DeviceImage>
           <div>
             <S.DeviceName>
