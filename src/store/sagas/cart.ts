@@ -30,18 +30,18 @@ function* fetchCartSaga({ payload: cartId }: FetchCartAction): SagaIterator {
   });
 }
 
-function* addCartItemSaga({ payload, cartId }: AddCartItemAction): SagaIterator {
+function* addCartItemSaga({ payload: cartItem, cartId }: AddCartItemAction): SagaIterator {
   yield call(api.patch, {
     url: formatRoute(routes.API_ADD_CART_ITEM, { id: cartId ?? 'new' }),
-    body: { ...payload },
+    body: { ...cartItem },
     onSuccessAction: addCartItemSuccess,
     onErrorAction: addCartItemError,
   });
 }
 
-function* deleteCartItemSaga({ payload, cartId }: DeleteCartItemAction): SagaIterator {
+function* deleteCartItemSaga({ payload: itemId, cartId }: DeleteCartItemAction): SagaIterator {
   yield call(api.delete, {
-    url: formatRoute(routes.API_REMOVE_CART_ITEM, { id: cartId, itemId: payload }),
+    url: formatRoute(routes.API_REMOVE_CART_ITEM, { id: cartId, itemId }),
     onSuccessAction: deleteCartItemSuccess,
     onErrorAction: deleteCartItemError,
   });
