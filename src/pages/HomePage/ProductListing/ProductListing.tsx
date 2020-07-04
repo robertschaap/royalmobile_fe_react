@@ -5,10 +5,9 @@ import routes from '../../../constants/routes';
 import formatRoute from '../../../utils/formatRoute';
 import StringUtil from '../../../utils/StringUtil';
 
-import phone from '../../../assets/images/apple_iphone-x_silver.png';
-
 import { Product } from '../../../types/products';
 import { GridBase, GridItem } from '../../../components/Grid';
+import DeviceImage from '../../../components/DeviceImage';
 
 interface ProductListingProps {
   products: Product[];
@@ -27,7 +26,7 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
           lg={4}>
           <S.ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.modelId })}>
             <S.DeviceImage>
-              <img width="100%" alt="phone" src={phone} />
+              <DeviceImage modelId="apple_iphone-x" color="silver" />
             </S.DeviceImage>
             <S.DeviceInformation>
               <S.DeviceName>{product.model}</S.DeviceName>
