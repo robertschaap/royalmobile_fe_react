@@ -26,7 +26,9 @@ const ProductListing: React.FC<ProductListingProps> = (props) => {
           lg={4}>
           <S.ProductListingItem to={formatRoute(routes.PRODUCT_PAGE, { id: product.modelId })}>
             <S.DeviceImage>
-              <DeviceImage modelId="apple-iphone-x" color="silver" />
+              <DeviceImage
+                modelId={product.modelId}
+                color={product.variants[0].color} />
             </S.DeviceImage>
             <S.DeviceInformation>
               <S.DeviceName>{product.model}</S.DeviceName>
