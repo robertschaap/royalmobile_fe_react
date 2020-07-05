@@ -17,6 +17,7 @@ interface ProductPageCustomiseProps {
   colors: ProductColor[];
   deviceManufacturer: string;
   deviceModel: string;
+  deviceModelId: string;
   onClickColorOrCapacity(id: string): void;
   selectedVariant: ProductVariant;
 }
@@ -27,6 +28,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
     colors,
     deviceManufacturer,
     deviceModel,
+    deviceModelId,
     onClickColorOrCapacity,
     selectedVariant,
   } = props;
@@ -40,7 +42,10 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
     <S.Flexy data-testid="product-page-customise">
       <S.Card>
         <S.DeviceImage>
-          <DeviceImage modelId="apple-iphone-x" color="silver" />
+          <DeviceImage
+            key={selectedVariant.color}
+            modelId={deviceModelId}
+            color={selectedVariant.color} />
         </S.DeviceImage>
         <Hidden md lg>
           <S.DeviceName data-testid="device-name">{deviceName}</S.DeviceName>

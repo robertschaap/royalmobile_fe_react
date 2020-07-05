@@ -47,6 +47,7 @@ const ProductPageCustomiseContainer: React.FC<ProductPageCustomiseContainerProps
           colors={colors}
           deviceManufacturer={product.manufacturer}
           deviceModel={product.model}
+          deviceModelId={product.modelId}
           onClickColorOrCapacity={onClickColorOrCapacity}
           selectedVariant={selectedVariant} />
       )}
