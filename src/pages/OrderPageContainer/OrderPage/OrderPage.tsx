@@ -32,7 +32,9 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
       {cart.items.map((item, index) => (
         <S.CartItem key={index}>
           <S.DeviceImage>
-            <DeviceImage modelId="apple-iphone-x" color="silver" />
+            <DeviceImage
+              modelId={item.product.modelId}
+              color={item.product.variants[0].color} />
           </S.DeviceImage>
           <div>
             <S.DeviceName>
