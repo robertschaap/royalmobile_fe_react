@@ -5,7 +5,7 @@ interface DeviceImageProps {
   color: string;
 }
 
-const DeviceImage: React.FC<DeviceImageProps> = (props) => {
+const DeviceImage: React.FC<DeviceImageProps> = React.memo((props) => {
   const { color, modelId } = props;
 
   const [hasError, setHasError] = useState(false);
@@ -26,6 +26,6 @@ const DeviceImage: React.FC<DeviceImageProps> = (props) => {
       src={`/images/${modelId}-${color}.png`}
       width="100%" />
   );
-};
+});
 
 export default DeviceImage;
