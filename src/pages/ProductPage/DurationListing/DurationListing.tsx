@@ -14,7 +14,7 @@ interface DurationListingProps {
   durations: string[];
 }
 
-const DurationListing: React.FC<DurationListingProps> = (props) => {
+const DurationListing: React.FC<DurationListingProps> = React.memo((props) => {
   const { onClickDuration, selectedDurationId, durations } = props;
 
   return (
@@ -31,6 +31,6 @@ const DurationListing: React.FC<DurationListingProps> = (props) => {
       ))}
     </S.DurationListingBase>
   );
-};
+});
 
-export default React.memo(DurationListing);
+export default DurationListing;
