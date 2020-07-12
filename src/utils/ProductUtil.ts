@@ -11,7 +11,7 @@ const getProductVariant = (productVariants: ProductVariant[], variantId: string)
  * Returns an array of variants with only capacity related properties
  */
 const getProductVariantCapacitiesForColor = (productVariants: ProductVariant[], color: string): ProductCapacity[] => {
-  return productVariants.reduce((accumulator, variant) => {
+  return productVariants.reduce<ProductCapacity[]>((accumulator, variant) => {
     if (variant.color === color) {
       accumulator.push({
         variantId: variant.variantId,
@@ -20,14 +20,14 @@ const getProductVariantCapacitiesForColor = (productVariants: ProductVariant[], 
     }
 
     return accumulator;
-  }, [] as ProductCapacity[]);
+  }, []);
 };
 
 /**
  * Returns an array of variants with only color related properties
  */
 const getProductVariantColorsForCapacity = (productVariants: ProductVariant[], capacity: string): ProductColor[] => {
-  return productVariants.reduce((accumulator, variant) => {
+  return productVariants.reduce<ProductColor[]>((accumulator, variant) => {
     if (variant.capacity === capacity) {
       accumulator.push({
         variantId: variant.variantId,
@@ -37,7 +37,7 @@ const getProductVariantColorsForCapacity = (productVariants: ProductVariant[], c
     }
 
     return accumulator;
-  }, [] as ProductColor[]);
+  }, []);
 };
 
 export default {
