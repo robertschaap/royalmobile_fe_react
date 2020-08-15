@@ -4,7 +4,7 @@ export interface Product {
   model: string;
   modelId: string;
   variants: ProductVariant[];
-  specifications?: {};
+  specifications?: Record<string, unknown>;
 }
 
 export interface ProductVariant {
