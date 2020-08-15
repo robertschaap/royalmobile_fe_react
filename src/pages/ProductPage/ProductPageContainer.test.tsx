@@ -7,7 +7,6 @@ import * as productDuck from '../../store/ducks/product';
 import * as subscriptionsDuck from '../../store/ducks/subscriptions';
 import ProductPageContainer from './ProductPageContainer';
 
-
 import { renderWithProviders } from '../../test/helpers';
 import { Server, stubsServer } from '../../stubs';
 

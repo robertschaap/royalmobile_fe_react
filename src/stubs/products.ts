@@ -118,7 +118,6 @@ const createDefaultProductVariants = (modelId: string): ProductVariant[] => {
     return acc.concat(colorsForCapacity);
   }, [] as { [key: string]: string }[]);
 
-
   const productVariants = colorsByCapacity.map(({ capacity, color, colorHex }, id: number) => {
     return createProductVariant({ id, modelId, capacity, color, colorHex });
   });

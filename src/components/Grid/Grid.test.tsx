@@ -7,7 +7,6 @@ import {
   calculatePercentage,
 } from './grid.styles';
 
-
 describe('<Grid />', () => {
   describe('<GridBase />', () => {
     it('should render without crashing', () => {

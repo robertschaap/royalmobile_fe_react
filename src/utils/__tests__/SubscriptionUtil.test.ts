@@ -8,7 +8,6 @@ const subscriptions = [
   { durationId: 'duration-id2', subscriptionId: 'subscription-id4' },
 ] as Subscription[];
 
-
 describe('SubscriptionUtil', () => {
   describe('getSubscription', () => {
     it('should return a subscription if a match is found', () => {
