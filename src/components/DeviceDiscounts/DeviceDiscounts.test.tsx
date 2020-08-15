@@ -1,7 +1,8 @@
 import React from 'react';
-import DeviceDiscounts from '.';
 
 import { renderWithTheme } from '../../test/helpers';
+
+import DeviceDiscounts from '.';
 
 describe('<DeviceDiscounts />', () => {
   it('should render without crashing', () => {

@@ -1,9 +1,10 @@
 import React from 'react';
-import * as S from './banner.styles';
+
 import routes from '../../constants/routes';
 import formatRoute from '../../utils/formatRoute';
-
 import PageSection from '../PageSection';
+
+import * as S from './banner.styles';
 
 interface BannerProps {
   id?: string;

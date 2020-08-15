@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import * as S from './payment-selector.styles';
 
 import Toggle from '../../../components/Toggle';
+
+import * as S from './payment-selector.styles';
 
 const PaymentSelector: React.FC = () => {
   const [isToggleActive, setIsToggleActive] = useState(false);

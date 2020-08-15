@@ -1,7 +1,8 @@
 import React from 'react';
-import BusinessPage from './BusinessPage';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import BusinessPage from './BusinessPage';
 
 describe('<BusinessPage />', () => {
   it('should render without crashing', () => {

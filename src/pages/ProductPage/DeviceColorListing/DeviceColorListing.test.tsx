@@ -1,7 +1,8 @@
 import React from 'react';
-import DeviceColorListing from '.';
 
 import { renderWithTheme } from '../../../test/helpers';
+
+import DeviceColorListing from '.';
 
 const colors = [
   { variantId: 'color-id1', color: 'color-1', colorHex: '#ccc' },

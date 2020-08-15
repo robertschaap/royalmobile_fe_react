@@ -1,8 +1,8 @@
 import React from 'react';
-import { ContentUtil } from '../../utils/ContentUtil';
 
 import ErrorMessage from '../../components/ErrorMessage';
 import PageTitle from '../../components/PageTitle';
+import { ContentUtil } from '../../utils/ContentUtil';
 
 const BusinessPage: React.FC = () => {
   return (

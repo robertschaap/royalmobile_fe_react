@@ -1,11 +1,10 @@
-import { subscriptionsReducer, initialSubscriptionsState } from '../subscriptions';
-
 import {
   fetchSubscriptions,
   fetchSubscriptionsError,
   fetchSubscriptionsSuccess,
   SubscriptionsActionTypes,
 } from '../../ducks/subscriptions';
+import { subscriptionsReducer, initialSubscriptionsState } from '../subscriptions';
 
 describe('Subscriptions Reducer', () => {
   it('should return the initial state', () => {

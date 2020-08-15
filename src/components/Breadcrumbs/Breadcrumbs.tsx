@@ -1,9 +1,10 @@
 import React from 'react';
-import * as S from './breadcrumbs.styles';
-import { ContentUtil } from '../../utils/ContentUtil';
-import routes from '../../constants/routes';
 
+import routes from '../../constants/routes';
+import { ContentUtil } from '../../utils/ContentUtil';
 import Link from '../Link';
+
+import * as S from './breadcrumbs.styles';
 
 const Breadcrumbs: React.FC = () => {
   return (

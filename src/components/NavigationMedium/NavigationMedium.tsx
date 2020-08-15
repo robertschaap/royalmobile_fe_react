@@ -1,7 +1,6 @@
 import React from 'react';
-import * as S from './navigation-medium.styles';
-import { ContentUtil } from '../../utils/ContentUtil';
 
+import { ContentUtil } from '../../utils/ContentUtil';
 import {
   ForYourBusinessLink,
   HelpLink,
@@ -9,6 +8,8 @@ import {
   OrderLink,
   ProductsForYouLink,
 } from '../NavigationLinks';
+
+import * as S from './navigation-medium.styles';
 
 const Navigation: React.FC = () => {
   return (

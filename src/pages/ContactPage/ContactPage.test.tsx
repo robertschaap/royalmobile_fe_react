@@ -1,7 +1,8 @@
 import React from 'react';
-import ContactPage from './ContactPage';
 
 import { renderWithTheme } from '../../test/helpers';
+
+import ContactPage from './ContactPage';
 
 describe('<ContactPage />', () => {
   it('should render without crashing', () => {

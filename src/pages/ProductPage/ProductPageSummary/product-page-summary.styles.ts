@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { media_breakpoint_up } from '../../../styles/theme';
 
 interface CardProps {

@@ -1,18 +1,17 @@
 import React from 'react';
 
+import PageSection from '../../components/PageSection';
+import SectionHeader from '../../components/SectionHeader';
+import { useOrderSummary } from '../../hooks';
 import {
   useSelector,
   selectProductSelection,
 } from '../../store';
-
-import { ContentUtil } from '../../utils/ContentUtil';
-import { useOrderSummary } from '../../hooks';
 import { Product } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
+import { ContentUtil } from '../../utils/ContentUtil';
 
-import PageSection from '../../components/PageSection';
 import ProductPageSummary from './ProductPageSummary';
-import SectionHeader from '../../components/SectionHeader';
 
 interface ProductPageSummaryContainerProps {
   product: Product;

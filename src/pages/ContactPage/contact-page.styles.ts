@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { GridItem } from '../../components/Grid';
 import ExternalLink from '../../components/ExternalLink';
+import { GridItem } from '../../components/Grid';
 
 export const ContactInfo = styled(GridItem)`
   padding-left: ${({ theme }) => theme.spacing(4)};

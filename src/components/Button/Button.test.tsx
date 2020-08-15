@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Button from '.';
-
 import { renderWithTheme } from '../../test/helpers';
+
+import Button from '.';
 
 describe('<Button />', () => {
   it('should render the primary button', () => {

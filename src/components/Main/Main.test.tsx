@@ -1,7 +1,8 @@
 import React from 'react';
-import Main from '.';
 
 import { renderWithTheme } from '../../test/helpers';
+
+import Main from '.';
 
 describe('<Main />', () => {
   it('should render without crashing', () => {

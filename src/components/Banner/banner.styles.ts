@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../../styles/theme';
 
+import { media_breakpoint_up } from '../../styles/theme';
 import Link from '../Link';
 
 export const BannerBase = styled(Link)`

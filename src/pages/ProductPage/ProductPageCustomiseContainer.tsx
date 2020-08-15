@@ -1,17 +1,18 @@
 import React, { useCallback, useMemo } from 'react';
+
+import PageSection from '../../components/PageSection';
+import SectionHeader from '../../components/SectionHeader';
 import {
   selectProductSelection,
   useDispatch,
   useSelector,
   setProductSelectedVariantId,
 } from '../../store';
-import { ContentUtil } from '../../utils/ContentUtil';
-
-import PageSection from '../../components/PageSection';
-import ProductPageCustomise from './ProductPageCustomise';
-import SectionHeader from '../../components/SectionHeader';
-import ProductUtil from '../../utils/ProductUtil';
 import { Product } from '../../types/products';
+import { ContentUtil } from '../../utils/ContentUtil';
+import ProductUtil from '../../utils/ProductUtil';
+
+import ProductPageCustomise from './ProductPageCustomise';
 
 interface ProductPageCustomiseContainerProps {
   product: Product;

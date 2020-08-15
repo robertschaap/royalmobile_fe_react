@@ -1,9 +1,10 @@
 import React from 'react';
-import ProductPageCustomise from '.';
+
+import { stubsServer, Server } from '../../../stubs';
+import { renderWithTheme } from '../../../test/helpers';
 import { Product } from '../../../types/products';
 
-import { renderWithTheme } from '../../../test/helpers';
-import { stubsServer, Server } from '../../../stubs';
+import ProductPageCustomise from '.';
 
 let server: Server;
 

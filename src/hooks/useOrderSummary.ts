@@ -1,8 +1,8 @@
-import ProductUtil from '../utils/ProductUtil';
-import SubscriptionUtil from '../utils/SubscriptionUtil';
-import StringUtil from '../utils/StringUtil';
 import { ProductVariant, ProductSelection } from '../types/products';
 import { Subscription } from '../types/subscriptions';
+import ProductUtil from '../utils/ProductUtil';
+import StringUtil from '../utils/StringUtil';
+import SubscriptionUtil from '../utils/SubscriptionUtil';
 
 export interface OrderSummary {
   connectionFee: string;

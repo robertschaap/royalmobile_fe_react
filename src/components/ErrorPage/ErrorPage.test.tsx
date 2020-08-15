@@ -1,7 +1,8 @@
 import React from 'react';
-import ErrorPage from '.';
 
 import { renderWithTheme } from '../../test/helpers';
+
+import ErrorPage from '.';
 
 describe('<ErrorPage />', () => {
   it('should render without crashing', () => {

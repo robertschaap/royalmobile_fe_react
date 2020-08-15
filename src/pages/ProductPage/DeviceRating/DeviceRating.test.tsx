@@ -1,7 +1,8 @@
 import React from 'react';
-import DeviceRating from '.';
 
 import { renderWithTheme } from '../../../test/helpers';
+
+import DeviceRating from '.';
 
 describe('<DeviceRating />', () => {
   it('should render without crashing', () => {

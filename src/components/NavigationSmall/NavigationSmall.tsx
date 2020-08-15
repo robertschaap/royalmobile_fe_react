@@ -1,5 +1,4 @@
 import React from 'react';
-import * as S from './navigation-small.styles';
 
 import {
   ForYourBusinessLink,
@@ -8,6 +7,8 @@ import {
   ProductsForYouLink,
   OrderLink,
 } from '../NavigationLinks';
+
+import * as S from './navigation-small.styles';
 
 const Navigation: React.FC = () => {
   return (

@@ -1,7 +1,8 @@
 import React from 'react';
-import * as S from './duration-listing.styles';
 
 import { ContentUtil } from '../../../utils/ContentUtil';
+
+import * as S from './duration-listing.styles';
 
 const content: { readonly [key: string]: string } = {
   '1year': 'subscription.duration.1year',

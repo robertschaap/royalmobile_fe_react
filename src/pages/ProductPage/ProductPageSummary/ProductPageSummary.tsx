@@ -1,11 +1,12 @@
 import React from 'react';
-import * as S from './product-page-summary.styles';
+
+import { GridBase, GridItem } from '../../../components/Grid';
 import { OrderSummary } from '../../../hooks';
 import { ContentUtil } from '../../../utils/ContentUtil';
 import StringUtil from '../../../utils/StringUtil';
-
 import OrderSummaryText from '../OrderSummaryText';
-import { GridBase, GridItem } from '../../../components/Grid';
+
+import * as S from './product-page-summary.styles';
 
 interface ProductPageSummaryProps {
   deviceModel: string;

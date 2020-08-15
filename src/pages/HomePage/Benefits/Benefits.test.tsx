@@ -1,7 +1,8 @@
 import React from 'react';
-import Benefits from '.';
 
 import { renderWithTheme } from '../../../test/helpers';
+
+import Benefits from '.';
 
 describe('<Benefits />', () => {
   it('should render without crashing', () => {

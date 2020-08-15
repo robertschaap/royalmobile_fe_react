@@ -1,10 +1,11 @@
 import React from 'react';
-import * as S from './subscription-listing.styles';
-import { ContentUtil } from '../../../utils/ContentUtil';
-import { Subscription } from '../../../types/subscriptions';
-import StringUtil from '../../../utils/StringUtil';
 
 import { GridBase, GridItem } from '../../../components/Grid';
+import { Subscription } from '../../../types/subscriptions';
+import { ContentUtil } from '../../../utils/ContentUtil';
+import StringUtil from '../../../utils/StringUtil';
+
+import * as S from './subscription-listing.styles';
 
 interface SubscriptionListingProps {
   onClickSubscription(subscriptionId: string): void;

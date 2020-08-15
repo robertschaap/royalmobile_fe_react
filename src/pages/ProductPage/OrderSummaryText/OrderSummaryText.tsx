@@ -1,6 +1,8 @@
 import React from 'react';
-import * as S from './order-summary-text.styles';
+
 import { OrderSummary } from '../../../hooks';
+
+import * as S from './order-summary-text.styles';
 
 interface OrderSummaryTextProps {
   deviceName: string;

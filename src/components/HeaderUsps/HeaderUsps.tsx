@@ -1,6 +1,8 @@
 import React from 'react';
-import * as S from './header-usps.styles';
+
 import { ContentUtil } from '../../utils/ContentUtil';
+
+import * as S from './header-usps.styles';
 
 const HeaderUsps: React.FC = () => {
   return (

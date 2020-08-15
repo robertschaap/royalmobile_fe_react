@@ -1,4 +1,5 @@
 import { Subscription } from '../types/subscriptions';
+
 import { Server } from '.';
 
 type SubscriptionFactoryReturnType = Omit<Subscription, 'id' | 'subscriptionId'> & {

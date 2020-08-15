@@ -1,6 +1,6 @@
 import produce from 'immer';
-import { cartReducer, initialCartState } from '../cart';
 
+import { Cart, CartItem } from '../../../types/cart';
 import {
   fetchCart,
   fetchCartSuccess,
@@ -17,8 +17,7 @@ import {
   placeOrderSuccess,
   deleteCartItemSuccess,
 } from '../../ducks/cart';
-
-import { Cart, CartItem } from '../../../types/cart';
+import { cartReducer, initialCartState } from '../cart';
 
 describe('Cart Reducer', () => {
   it('should return the initial state', () => {

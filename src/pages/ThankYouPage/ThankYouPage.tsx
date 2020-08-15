@@ -1,11 +1,12 @@
 import React from 'react';
-import * as S from './thank-you-page.styles';
-import { ContentUtil } from '../../utils/ContentUtil';
 
+import { GridBase, GridItem } from '../../components/Grid';
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import SectionHeader from '../../components/SectionHeader';
-import { GridBase, GridItem } from '../../components/Grid';
+import { ContentUtil } from '../../utils/ContentUtil';
+
+import * as S from './thank-you-page.styles';
 
 const ThankYouPage: React.FC = () => {
   return (

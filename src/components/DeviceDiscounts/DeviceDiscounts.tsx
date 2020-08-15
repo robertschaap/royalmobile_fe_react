@@ -1,6 +1,8 @@
 import React from 'react';
-import * as S from './device-discounts.styles';
+
 import { ContentUtil } from '../../utils/ContentUtil';
+
+import * as S from './device-discounts.styles';
 
 const DeviceDiscounts: React.FC = () => {
   return (

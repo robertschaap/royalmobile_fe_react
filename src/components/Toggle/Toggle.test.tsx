@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import Toggle from '.';
+import React from 'react';
 
 import { renderWithTheme } from '../../test/helpers';
+
+import Toggle from '.';
 
 describe('<Toggle />', () => {
   it('should have the checked attribute when it is active', () => {

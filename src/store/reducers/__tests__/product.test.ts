@@ -1,6 +1,6 @@
 import produce from 'immer';
-import { productReducer, initialProductState } from '../product';
 
+import { Product } from '../../../types/products';
 import {
   fetchProduct,
   fetchProductError,
@@ -12,8 +12,7 @@ import {
   setProductSelectedSubscriptionId,
   setProductSelectedVariantId,
 } from '../../ducks/product';
-
-import { Product } from '../../../types/products';
+import { productReducer, initialProductState } from '../product';
 
 describe('Products Reducer', () => {
   it('should return the initial state', () => {

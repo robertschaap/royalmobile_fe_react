@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { media_breakpoint_up } from '../../../styles/theme';
 
 export const ProductDescription = styled.div`

@@ -1,10 +1,10 @@
 import React from 'react';
-import * as S from './header-logo.styles';
 
-import { ContentUtil } from '../../utils/ContentUtil';
 import routes from '../../constants/routes';
-
+import { ContentUtil } from '../../utils/ContentUtil';
 import Link from '../Link';
+
+import * as S from './header-logo.styles';
 
 const HeaderLogo: React.FC = () => {
   return (

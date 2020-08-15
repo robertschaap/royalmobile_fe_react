@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useOrderSummary } from '../useOrderSummary';
+
 import { ProductSelection, ProductVariant } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
+import { useOrderSummary } from '../useOrderSummary';
 
 const variant = {
   variantId: 'variant-id',

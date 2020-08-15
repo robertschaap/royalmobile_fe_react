@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Server, Model, Factory } from 'miragejs';
 
+import routes from '../constants/routes';
+
 import {
   deleteCartItem,
   getCart,
@@ -10,10 +12,8 @@ import {
   patchCartItem,
   postOrder,
 } from './apiResponses';
-
 import { ProductFactory, seedProducts } from './products';
 import { SubscriptionFactory, seedSubscriptions } from './subscriptions';
-import routes from '../constants/routes';
 
 export type Server = any;
 export type Schema = any;

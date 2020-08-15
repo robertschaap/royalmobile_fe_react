@@ -1,7 +1,8 @@
 import React from 'react';
-import DeviceImage from '.';
 
 import { render } from '../../test/helpers';
+
+import DeviceImage from '.';
 
 describe('<DeviceImage />', () => {
   it('should render without crashing', () => {

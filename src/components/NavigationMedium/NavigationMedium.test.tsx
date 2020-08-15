@@ -1,7 +1,8 @@
 import React from 'react';
-import NavigationMedium from '.';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import NavigationMedium from '.';
 
 describe('<NavigationMedium />', () => {
   it('should render without crashing', () => {

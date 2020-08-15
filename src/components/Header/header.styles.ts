@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { media_breakpoint_up } from '../../styles/theme';
 
 export const HeaderBase = styled.header`
@@ -15,7 +16,7 @@ export const HeaderBase = styled.header`
   /**
    * 4px container width so focused elements
    * flow naturally under the sticky header
-   * */
+   */
   margin-left: -${({ theme }) => theme.spacing(1)};
   margin-right: -${({ theme }) => theme.spacing(1)};
   padding-left: ${({ theme }) => theme.spacing(1)};

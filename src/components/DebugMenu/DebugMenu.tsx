@@ -1,7 +1,7 @@
 import React from 'react';
+
 import routes from '../../constants/routes';
 import StorageUtil from '../../utils/StorageUtil';
-
 import Link from '../Link';
 
 const DebugMenu: React.FC = () => {

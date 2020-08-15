@@ -1,13 +1,12 @@
 import React, { Suspense } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
+import RootLayout from '../components/RootLayout';
 import routes from '../constants/routes';
 import history from '../history';
-
-import RootLayout from '../components/RootLayout';
+import { StoreProviderContainer } from '../store';
 
 import ThemeProviderContainer from './ThemeProviderContainer';
-import { StoreProviderContainer } from '../store';
 
 import '../styles/normalize.css';
 

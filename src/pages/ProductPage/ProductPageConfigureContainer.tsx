@@ -1,4 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
+
+import PageSection from '../../components/PageSection';
+import SectionHeader from '../../components/SectionHeader';
 import {
   selectProductSelection,
   setProductSelectedDurationId,
@@ -6,15 +9,13 @@ import {
   useDispatch,
   useSelector,
 } from '../../store';
-import { ContentUtil } from '../../utils/ContentUtil';
 import { Subscription } from '../../types/subscriptions';
+import { ContentUtil } from '../../utils/ContentUtil';
 import SubscriptionUtil from '../../utils/SubscriptionUtil';
 
-import SectionHeader from '../../components/SectionHeader';
-import PageSection from '../../components/PageSection';
 import DurationListing from './DurationListing';
-import SubscriptionListing from './SubscriptionListing';
 import PaymentSelector from './PaymentSelector';
+import SubscriptionListing from './SubscriptionListing';
 
 interface ProductPageConfigureContainerProps {
   subscriptions: Subscription[];

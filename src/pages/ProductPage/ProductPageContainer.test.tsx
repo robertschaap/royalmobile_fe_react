@@ -1,14 +1,15 @@
-import React from 'react';
 import { waitForElementToBeRemoved } from '@testing-library/react';
-import { Product } from '../../types/products';
-import { Subscription } from '../../types/subscriptions';
+import React from 'react';
+
 import { useRouteParams } from '../../hooks';
 import * as productDuck from '../../store/ducks/product';
 import * as subscriptionsDuck from '../../store/ducks/subscriptions';
-import ProductPageContainer from './ProductPageContainer';
-
-import { renderWithProviders } from '../../test/helpers';
 import { Server, stubsServer } from '../../stubs';
+import { renderWithProviders } from '../../test/helpers';
+import { Product } from '../../types/products';
+import { Subscription } from '../../types/subscriptions';
+
+import ProductPageContainer from './ProductPageContainer';
 
 let server: Server;
 

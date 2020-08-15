@@ -1,7 +1,8 @@
 import React from 'react';
-import ConsumerPage from './ConsumerPage';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import ConsumerPage from './ConsumerPage';
 
 describe('<ConsumerPage />', () => {
   it('should render without crashing', () => {

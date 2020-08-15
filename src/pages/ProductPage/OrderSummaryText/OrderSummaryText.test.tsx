@@ -1,11 +1,12 @@
 import React from 'react';
+
+import { useOrderSummary, OrderSummary } from '../../../hooks';
+import { Server, stubsServer } from '../../../stubs';
+import { renderWithTheme } from '../../../test/helpers';
 import { ProductSelection, ProductVariant } from '../../../types/products';
 import { Subscription } from '../../../types/subscriptions';
-import { useOrderSummary, OrderSummary } from '../../../hooks';
-import OrderSummaryText from '.';
 
-import { renderWithTheme } from '../../../test/helpers';
-import { Server, stubsServer } from '../../../stubs';
+import OrderSummaryText from '.';
 
 let server: Server;
 

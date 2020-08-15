@@ -1,6 +1,7 @@
 import produce from 'immer';
-import { CartActionTypes, CartActions } from '../ducks/cart';
+
 import { Cart } from '../../types/cart';
+import { CartActionTypes, CartActions } from '../ducks/cart';
 
 interface CartState {
   isFetching: boolean;

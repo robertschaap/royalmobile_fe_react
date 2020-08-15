@@ -1,8 +1,9 @@
 import React from 'react';
-import SubscriptionListing from '.';
 
-import { renderWithProviders } from '../../../test/helpers';
 import { Server, stubsServer } from '../../../stubs';
+import { renderWithProviders } from '../../../test/helpers';
+
+import SubscriptionListing from '.';
 
 let server: Server;
 

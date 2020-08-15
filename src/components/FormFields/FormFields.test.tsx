@@ -1,7 +1,8 @@
 import React from 'react';
-import { Input, Select } from './FormFields';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import { Input, Select } from './FormFields';
 
 describe('<FormFields />', () => {
   describe('Input', () => {

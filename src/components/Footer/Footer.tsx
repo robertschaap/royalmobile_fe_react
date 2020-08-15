@@ -1,9 +1,10 @@
 import React from 'react';
-import * as S from './footer.styles';
-import { ContentUtil } from '../../utils/ContentUtil';
-import routes from '../../constants/routes';
 
+import routes from '../../constants/routes';
+import { ContentUtil } from '../../utils/ContentUtil';
 import Link from '../Link';
+
+import * as S from './footer.styles';
 
 const Footer: React.FC = () => {
   return (

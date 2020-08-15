@@ -1,11 +1,10 @@
-import { productsReducer, initialProductsState } from '../products';
-
 import {
   fetchProducts,
   fetchProductsError,
   fetchProductsSuccess,
   ProductsActionTypes,
 } from '../../ducks/products';
+import { productsReducer, initialProductsState } from '../products';
 
 describe('Products Reducer', () => {
   it('should return the initial state', () => {

@@ -1,13 +1,14 @@
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, selectCartCollection, placeOrder, useDispatch } from '../../store';
-import { ContentUtil } from '../../utils/ContentUtil';
-import routes from '../../constants/routes';
 
 import ErrorMessage from '../../components/ErrorMessage';
-import OrderDetailsPage from './OrderDetailsPage';
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
+import routes from '../../constants/routes';
+import { useSelector, selectCartCollection, placeOrder, useDispatch } from '../../store';
+import { ContentUtil } from '../../utils/ContentUtil';
+
+import OrderDetailsPage from './OrderDetailsPage';
 
 const OrderDetailsPageContainer: React.FC = () => {
   const cart = useSelector(selectCartCollection);

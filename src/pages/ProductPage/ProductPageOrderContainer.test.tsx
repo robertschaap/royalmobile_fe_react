@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import ProductPageOrderContainer from './ProductPageOrderContainer';
+import React from 'react';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import ProductPageOrderContainer from './ProductPageOrderContainer';
 
 describe('<ProductPageOrderContainer />', () => {
   it('should not allow placing an order when there is no selection', () => {

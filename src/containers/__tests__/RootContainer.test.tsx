@@ -1,7 +1,7 @@
 import React from 'react';
-import RootContainer from '../RootContainer';
 
 import { renderWithProviders } from '../../test/helpers';
+import RootContainer from '../RootContainer';
 
 describe('<RootContainer />', () => {
   it('should render without crashing', () => {

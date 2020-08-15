@@ -1,5 +1,5 @@
-import { StoreState } from '../reducers';
 import { Product } from '../../types/products';
+import { StoreState } from '../reducers';
 
 export enum ProductActions {
   FETCH_PRODUCT = 'FETCH_PRODUCT',

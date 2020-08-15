@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import routes from '../../constants/routes';
 import { useSelector, selectProductSelection } from '../../store';
 import StorageUtil from '../../utils/StorageUtil';
-import routes from '../../constants/routes';
 
 import ProductPageOrder from './ProductPageOrder';
 

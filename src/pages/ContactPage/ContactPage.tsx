@@ -1,12 +1,13 @@
 import React from 'react';
-import * as S from './contact-page.styles';
-import { ContentUtil } from '../../utils/ContentUtil';
 
 import { GridBase } from '../../components/Grid';
 import { IconFacebook, IconLinkedIn, IconTwitter } from '../../components/Icons';
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import SectionHeader from '../../components/SectionHeader';
+import { ContentUtil } from '../../utils/ContentUtil';
+
+import * as S from './contact-page.styles';
 
 const ContactPage: React.FC = () => {
   return (

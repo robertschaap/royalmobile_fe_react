@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import OrderDetailsPage from '.';
+import React from 'react';
 
 import { renderWithTheme } from '../../../test/helpers';
+
+import OrderDetailsPage from '.';
 
 describe('<OrderDetailsPage />', () => {
   it('should focus the first field', () => {

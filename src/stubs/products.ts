@@ -1,4 +1,5 @@
 import { Product, ProductVariant } from '../types/products';
+
 import { Server, Row } from '.';
 
 type ProductFactoryReturnType = Omit<Product, 'id' |'model' | 'modelId'> & {

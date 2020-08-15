@@ -1,7 +1,8 @@
 import React from 'react';
-import MyAccountPage from './MyAccountPage';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import MyAccountPage from './MyAccountPage';
 
 describe('<MyAccountPage />', () => {
   it('should render without crashing', () => {

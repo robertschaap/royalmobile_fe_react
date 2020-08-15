@@ -1,9 +1,10 @@
 import React from 'react';
-import OrderPage from '.';
 
-import { renderWithTheme } from '../../../test/helpers';
 import { Server, stubsServer } from '../../../stubs';
+import { renderWithTheme } from '../../../test/helpers';
 import { Cart } from '../../../types/cart';
+
+import OrderPage from '.';
 
 let cart: Cart;
 let server: Server;

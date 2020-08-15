@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
 
+import ErrorMessage from '../../components/ErrorMessage';
+import Loader from '../../components/Loader';
+import PageSection from '../../components/PageSection';
+import PageTitle from '../../components/PageTitle';
+import routes from '../../constants/routes';
+import { useRouteParams } from '../../hooks';
 import {
   invalidateProductCollection,
   fetchProduct,
@@ -12,19 +18,12 @@ import {
   useDispatch,
   useSelector,
 } from '../../store';
+import { ContentUtil } from '../../utils/ContentUtil';
 
-import ErrorMessage from '../../components/ErrorMessage';
-import Loader from '../../components/Loader';
-import PageSection from '../../components/PageSection';
-import PageTitle from '../../components/PageTitle';
 import ProductPageConfigureContainer from './ProductPageConfigureContainer';
 import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
 import ProductPageOrderContainer from './ProductPageOrderContainer';
 import ProductPageSummaryContainer from './ProductPageSummaryContainer';
-
-import { ContentUtil } from '../../utils/ContentUtil';
-import { useRouteParams } from '../../hooks';
-import routes from '../../constants/routes';
 
 const ProductPageContainer: React.FC = () => {
   const dispatch = useDispatch();

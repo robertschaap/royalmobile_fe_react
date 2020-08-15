@@ -1,12 +1,13 @@
 /* eslint-disable prefer-destructuring */
 import React from 'react';
+
+import { useOrderSummary, OrderSummary } from '../../../hooks';
+import { Server, stubsServer } from '../../../stubs';
+import { renderWithTheme } from '../../../test/helpers';
 import { Product } from '../../../types/products';
 import { Subscription } from '../../../types/subscriptions';
-import { useOrderSummary, OrderSummary } from '../../../hooks';
-import ProductPageSummary from '.';
 
-import { renderWithTheme } from '../../../test/helpers';
-import { Server, stubsServer } from '../../../stubs';
+import ProductPageSummary from '.';
 
 let server: Server;
 

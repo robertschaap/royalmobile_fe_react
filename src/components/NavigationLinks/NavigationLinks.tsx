@@ -1,7 +1,7 @@
 import React from 'react';
+
 import routes from '../../constants/routes';
 import { ContentUtil } from '../../utils/ContentUtil';
-
 import Link from '../Link';
 
 export const ProductsForYouLink: React.FC = () => (

@@ -1,5 +1,5 @@
-import ProductUtil from '../ProductUtil';
 import { ProductVariant } from '../../types/products';
+import ProductUtil from '../ProductUtil';
 
 const variants = [{
   variantId: 'variant-id1',

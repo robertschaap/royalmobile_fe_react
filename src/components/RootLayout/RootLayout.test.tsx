@@ -1,7 +1,8 @@
 import React from 'react';
-import RootLayout from '.';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import RootLayout from '.';
 
 describe('<RootLayout />', () => {
   it('should render without crashing', () => {

@@ -1,11 +1,12 @@
 import React from 'react';
-import * as S from './header.styles';
 
 import Breadcrumbs from '../Breadcrumbs';
 import HeaderLogo from '../HeaderLogo';
 import HeaderUsps from '../HeaderUsps';
 import Navigation from '../Navigation';
 import SkipNavigationButton from '../SkipNavigationButton';
+
+import * as S from './header.styles';
 
 const Header: React.FC = () => {
   return (

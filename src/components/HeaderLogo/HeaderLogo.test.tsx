@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import HeaderLogo from '.';
+import React from 'react';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import HeaderLogo from '.';
 
 describe('<HeaderLogo />', () => {
   it('should redirect the user when clicked on', () => {

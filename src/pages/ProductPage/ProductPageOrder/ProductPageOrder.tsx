@@ -1,11 +1,11 @@
 import React from 'react';
-import * as S from './product-page-order.styles';
 
+import Button from '../../../components/Button';
+import { GridBase, GridItem } from '../../../components/Grid';
+import PageSection from '../../../components/PageSection';
 import { ContentUtil } from '../../../utils/ContentUtil';
 
-import { GridBase, GridItem } from '../../../components/Grid';
-import Button from '../../../components/Button';
-import PageSection from '../../../components/PageSection';
+import * as S from './product-page-order.styles';
 
 interface ProductPageOrderProps {
   hasSelection: boolean;

@@ -1,6 +1,8 @@
 import React from 'react';
-import * as S from './device-capacity-listing.styles';
+
 import { ProductCapacity } from '../../../types/products';
+
+import * as S from './device-capacity-listing.styles';
 
 interface DeviceCapacityListingProps {
   onClickCapacity(id: string): void;

@@ -1,10 +1,11 @@
 import React from 'react';
-import * as S from './campaigns-page.styles';
 
-import { GridBase } from '../../../components/Grid';
 import Banner from '../../../components/Banner';
+import { GridBase } from '../../../components/Grid';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
+
+import * as S from './campaigns-page.styles';
 
 const CampaignsPage: React.FC = () => {
   return (

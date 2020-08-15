@@ -1,7 +1,8 @@
 import React from 'react';
-import FormGroup from '.';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import FormGroup from '.';
 
 describe('<FormGroup />', () => {
   it('should render without crashing', () => {

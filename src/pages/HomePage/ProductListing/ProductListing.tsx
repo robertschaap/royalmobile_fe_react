@@ -1,13 +1,13 @@
 import React from 'react';
-import * as S from './product-listing.styles';
 
+import DeviceImage from '../../../components/DeviceImage';
+import { GridBase, GridItem } from '../../../components/Grid';
 import routes from '../../../constants/routes';
+import { Product } from '../../../types/products';
 import formatRoute from '../../../utils/formatRoute';
 import StringUtil from '../../../utils/StringUtil';
 
-import { Product } from '../../../types/products';
-import { GridBase, GridItem } from '../../../components/Grid';
-import DeviceImage from '../../../components/DeviceImage';
+import * as S from './product-listing.styles';
 
 interface ProductListingProps {
   products: Product[];

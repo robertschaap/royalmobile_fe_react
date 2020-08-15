@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { render as renderTest } from '@testing-library/react';
-import { ThemeProvider } from 'styled-components';
+import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
-import theme from '../../styles/theme';
 import { createStore } from '../../store';
+import theme from '../../styles/theme';
 
 export const render = renderTest;
 

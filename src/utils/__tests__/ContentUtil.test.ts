@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+
 import { ContentUtil } from '../ContentUtil';
 
 // eslint-disable-next-line no-console, prefer-destructuring

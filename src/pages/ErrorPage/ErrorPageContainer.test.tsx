@@ -1,7 +1,8 @@
 import React from 'react';
-import ErrorPageContainer from './ErrorPageContainer';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import ErrorPageContainer from './ErrorPageContainer';
 
 describe('<ErrorPageContainer />', () => {
   it('should render without crashing', () => {

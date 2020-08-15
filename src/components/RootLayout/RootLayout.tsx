@@ -1,10 +1,11 @@
 import React from 'react';
-import * as S from './root-layout.styles';
 
 import DebugMenu from '../DebugMenu';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
+
+import * as S from './root-layout.styles';
 
 interface RootLayoutProps {
   children: React.ReactNode;

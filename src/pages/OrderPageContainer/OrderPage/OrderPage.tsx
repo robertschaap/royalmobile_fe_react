@@ -1,15 +1,15 @@
 import React from 'react';
-import * as S from './order-page.styles';
-import { ContentUtil } from '../../../utils/ContentUtil';
-import { Cart } from '../../../types/cart';
 
-import { GridBase, GridItem } from '../../../components/Grid';
 import Button from '../../../components/Button';
 import DeviceImage from '../../../components/DeviceImage';
+import { GridBase, GridItem } from '../../../components/Grid';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
-
+import { Cart } from '../../../types/cart';
+import { ContentUtil } from '../../../utils/ContentUtil';
 import StringUtil from '../../../utils/StringUtil';
+
+import * as S from './order-page.styles';
 
 interface OrderPageProps {
   cart: Cart;

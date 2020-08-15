@@ -1,5 +1,7 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/dom';
+import React from 'react';
+
+import { renderWithProviders } from '../../test/helpers';
 
 import {
   ForYourBusinessLink,
@@ -8,8 +10,6 @@ import {
   OrderLink,
   ProductsForYouLink,
 } from '.';
-
-import { renderWithProviders } from '../../test/helpers';
 
 describe('<NavigationLinks />', () => {
   describe('<ForYourBusinessLink />', () => {

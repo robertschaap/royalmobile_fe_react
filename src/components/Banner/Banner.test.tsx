@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import Banner from '.';
+import React from 'react';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import Banner from '.';
 
 describe('<Banner />', () => {
   it('should redirect the user when clicked on', () => {

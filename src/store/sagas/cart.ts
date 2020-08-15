@@ -1,10 +1,10 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
-import api from '../../utils/api';
-import formatRoute from '../../utils/formatRoute';
+import { takeEvery, call, put } from 'redux-saga/effects';
+
 import routes from '../../constants/routes';
 import history from '../../history';
-
+import api from '../../utils/api';
+import formatRoute from '../../utils/formatRoute';
 import {
   AddCartItemAction,
   addCartItemError,

@@ -1,11 +1,12 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import { Product } from '../../types/products';
-import * as productDuck from '../../store/ducks/product';
-import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
+import React from 'react';
 
-import { renderWithProviders } from '../../test/helpers';
+import * as productDuck from '../../store/ducks/product';
 import { Server, stubsServer } from '../../stubs';
+import { renderWithProviders } from '../../test/helpers';
+import { Product } from '../../types/products';
+
+import ProductPageCustomiseContainer from './ProductPageCustomiseContainer';
 
 let server: Server;
 

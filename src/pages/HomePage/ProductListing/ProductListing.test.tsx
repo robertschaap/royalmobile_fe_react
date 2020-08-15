@@ -1,9 +1,10 @@
 import React from 'react';
-import ProductListing from '.';
 
-import { renderWithProviders } from '../../../test/helpers';
 import { stubsServer, Server } from '../../../stubs';
+import { renderWithProviders } from '../../../test/helpers';
 import { Product } from '../../../types/products';
+
+import ProductListing from '.';
 
 let server: Server;
 

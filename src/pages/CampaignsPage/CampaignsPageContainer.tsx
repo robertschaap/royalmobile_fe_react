@@ -1,8 +1,9 @@
 import React from 'react';
+
+import PageTitle from '../../components/PageTitle';
 import { ContentUtil } from '../../utils/ContentUtil';
 
 import CampaignsPage from './CampaignsPage';
-import PageTitle from '../../components/PageTitle';
 
 const CampaignsPageContainer: React.FC = () => {
   return (

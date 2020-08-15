@@ -1,16 +1,16 @@
 import React from 'react';
-import * as S from './product-page-customise.styles';
 
 import DeviceDiscounts from '../../../components/DeviceDiscounts';
 import DeviceImage from '../../../components/DeviceImage';
 import Hidden from '../../../components/Hidden';
+import { ProductVariant, ProductCapacity, ProductColor } from '../../../types/products';
+import { ContentUtil } from '../../../utils/ContentUtil';
+import StringUtil from '../../../utils/StringUtil';
 import DeviceCapacityListing from '../DeviceCapacityListing';
 import DeviceColorListing from '../DeviceColorListing';
 import DeviceRating from '../DeviceRating';
 
-import { ContentUtil } from '../../../utils/ContentUtil';
-import { ProductVariant, ProductCapacity, ProductColor } from '../../../types/products';
-import StringUtil from '../../../utils/StringUtil';
+import * as S from './product-page-customise.styles';
 
 interface ProductPageCustomiseProps {
   capacities: ProductCapacity[];

@@ -1,5 +1,5 @@
-import { StoreState } from '../reducers';
 import { Subscription } from '../../types/subscriptions';
+import { StoreState } from '../reducers';
 
 export enum SubscriptionsActions {
   FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS',

@@ -1,12 +1,13 @@
 /* eslint-disable prefer-destructuring */
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import { Subscription } from '../../types/subscriptions';
-import * as productDuck from '../../store/ducks/product';
-import ProductPageConfigureContainer from './ProductPageConfigureContainer';
+import React from 'react';
 
-import { renderWithProviders } from '../../test/helpers';
+import * as productDuck from '../../store/ducks/product';
 import { Server, stubsServer } from '../../stubs';
+import { renderWithProviders } from '../../test/helpers';
+import { Subscription } from '../../types/subscriptions';
+
+import ProductPageConfigureContainer from './ProductPageConfigureContainer';
 
 let server: Server;
 

@@ -1,4 +1,5 @@
 import { Response } from 'miragejs';
+
 import { CartItem } from '../types/cart';
 
 import { Schema, Request } from '.';

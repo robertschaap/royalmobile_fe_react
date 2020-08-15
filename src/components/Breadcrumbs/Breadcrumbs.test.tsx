@@ -1,7 +1,8 @@
 import React from 'react';
-import Breadcrumbs from '.';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import Breadcrumbs from '.';
 
 describe('<Breadcrumbs />', () => {
   it('should render without crashing', () => {

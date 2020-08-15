@@ -1,7 +1,8 @@
 import React from 'react';
-import * as S from './form-fields.styles';
 
 import FormGroup from '../FormGroup';
+
+import * as S from './form-fields.styles';
 
 interface FormFieldProps<T> {
   autoFocus?: boolean;

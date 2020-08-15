@@ -1,4 +1,5 @@
 import { Subscription } from '../types/subscriptions';
+
 import dedupeArray from './dedupeArray';
 
 const getSubscription = (subscriptions: Subscription[], subscriptionId: string) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NavigationSmall from '../NavigationSmall';
 import NavigationMedium from '../NavigationMedium';
+import NavigationSmall from '../NavigationSmall';
 
 const Navigation: React.FC = () => {
   return (

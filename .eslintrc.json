@@ -26,7 +26,15 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "arrow-body-style": "off",
     "camelcase": "off",
+    "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/order": ["error", {
+      "newlines-between": "always",
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      }
+    }],
     "import/prefer-default-export": "off",
     "indent": ["error", 2, {
       "SwitchCase": 1

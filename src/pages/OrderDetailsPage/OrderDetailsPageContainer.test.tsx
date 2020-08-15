@@ -1,10 +1,11 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import OrderDetailsPageContainer from '.';
-import * as cartDuck from '../../store/ducks/cart';
+import React from 'react';
 
-import { renderWithProviders } from '../../test/helpers';
+import * as cartDuck from '../../store/ducks/cart';
 import { Server, stubsServer } from '../../stubs';
+import { renderWithProviders } from '../../test/helpers';
+
+import OrderDetailsPageContainer from '.';
 
 let server: Server;
 

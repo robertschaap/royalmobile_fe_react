@@ -1,5 +1,5 @@
-import SubscriptionUtil from '../SubscriptionUtil';
 import { Subscription } from '../../types/subscriptions';
+import SubscriptionUtil from '../SubscriptionUtil';
 
 const subscriptions = [
   { durationId: 'duration-id1', subscriptionId: 'subscription-id1' },

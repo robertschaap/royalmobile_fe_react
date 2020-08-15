@@ -1,7 +1,8 @@
 import React from 'react';
-import CampaignsPage from '.';
 
 import { renderWithProviders } from '../../../test/helpers';
+
+import CampaignsPage from '.';
 
 describe('<CampaignsPage />', () => {
   it('should render without crashing', () => {

@@ -1,11 +1,12 @@
 /* eslint-disable prefer-destructuring */
 import React from 'react';
-import ProductPageSummaryContainer from './ProductPageSummaryContainer';
+
+import { stubsServer, Server } from '../../stubs';
+import { renderWithProviders } from '../../test/helpers';
 import { Product } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
 
-import { renderWithProviders } from '../../test/helpers';
-import { stubsServer, Server } from '../../stubs';
+import ProductPageSummaryContainer from './ProductPageSummaryContainer';
 
 let server: Server;
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import Loader from '.';
 
 import { renderWithTheme } from '../../test/helpers';
+
+import Loader from '.';
 
 describe('<Loader />', () => {
   it('should show the loader when passed a true value', () => {

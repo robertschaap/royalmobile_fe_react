@@ -1,13 +1,14 @@
 import React from 'react';
-import * as S from './order-details-page.styles';
-import { ContentUtil } from '../../../utils/ContentUtil';
-import { isRequired } from '../../../utils/FormValidators';
-import { useForm } from '../../../hooks';
 
-import { Input, Select } from '../../../components/FormFields/FormFields';
 import Button from '../../../components/Button';
+import { Input, Select } from '../../../components/FormFields/FormFields';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
+import { useForm } from '../../../hooks';
+import { ContentUtil } from '../../../utils/ContentUtil';
+import { isRequired } from '../../../utils/FormValidators';
+
+import * as S from './order-details-page.styles';
 
 interface OrderDetailsPageProps {
   onClickReturn(): void;

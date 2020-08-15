@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { media_breakpoint_up } from '../../../styles/theme';
 
 import Button from '../../../components/Button';
+import { media_breakpoint_up } from '../../../styles/theme';
 
 export const CartItem = styled.div`
   display: flex;

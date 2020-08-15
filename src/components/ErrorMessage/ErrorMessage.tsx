@@ -1,6 +1,8 @@
 import React from 'react';
-import * as S from './error-message.styles';
+
 import { ContentUtil } from '../../utils/ContentUtil';
+
+import * as S from './error-message.styles';
 
 interface ErrorMessageProps {
   messageId: string;

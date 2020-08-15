@@ -1,5 +1,11 @@
 import React, { useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import ErrorMessage from '../../components/ErrorMessage';
+import Loader from '../../components/Loader';
+import PageSection from '../../components/PageSection';
+import PageTitle from '../../components/PageTitle';
+import routes from '../../constants/routes';
 import {
   addCartItem,
   deleteCartItem,
@@ -8,16 +14,10 @@ import {
   useDispatch,
   useSelector,
 } from '../../store';
-
-import ErrorMessage from '../../components/ErrorMessage';
-import Loader from '../../components/Loader';
-import PageSection from '../../components/PageSection';
-import PageTitle from '../../components/PageTitle';
-import OrderPage from './OrderPage';
-
 import { ContentUtil } from '../../utils/ContentUtil';
-import routes from '../../constants/routes';
 import StorageUtil from '../../utils/StorageUtil';
+
+import OrderPage from './OrderPage';
 
 const OrderPageContainer: React.FC = () => {
   const history = useHistory();

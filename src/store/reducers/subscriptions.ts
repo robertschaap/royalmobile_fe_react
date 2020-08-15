@@ -1,11 +1,10 @@
 import produce from 'immer';
 
+import { Subscription } from '../../types/subscriptions';
 import {
   SubscriptionsActions,
   SubscriptionsActionTypes,
 } from '../ducks/subscriptions';
-
-import { Subscription } from '../../types/subscriptions';
 
 interface SubscriptionsState {
   isFetching: boolean;

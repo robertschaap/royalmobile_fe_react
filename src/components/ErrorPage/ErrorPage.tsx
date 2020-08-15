@@ -1,8 +1,9 @@
 import React from 'react';
-import * as S from './error-page.styles';
 
-import ErrorMessage from '../ErrorMessage';
 import { ContentUtil } from '../../utils/ContentUtil';
+import ErrorMessage from '../ErrorMessage';
+
+import * as S from './error-page.styles';
 
 const ErrorPage: React.FC = () => {
   return (

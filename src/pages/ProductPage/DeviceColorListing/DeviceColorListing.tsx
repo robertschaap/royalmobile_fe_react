@@ -1,8 +1,9 @@
 import React from 'react';
-import * as S from './device-color-listing.styles';
 
-import StringUtil from '../../../utils/StringUtil';
 import { ProductColor } from '../../../types/products';
+import StringUtil from '../../../utils/StringUtil';
+
+import * as S from './device-color-listing.styles';
 
 interface DeviceColorListingProps {
   colors: ProductColor[];

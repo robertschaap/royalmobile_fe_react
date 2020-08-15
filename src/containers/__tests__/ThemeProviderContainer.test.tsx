@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '../../test/helpers';
 
+import { render } from '../../test/helpers';
 import ThemeProviderContainer from '../ThemeProviderContainer';
 
 describe('<ThemeProviderContainer />', () => {

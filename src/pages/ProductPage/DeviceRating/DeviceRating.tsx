@@ -1,4 +1,5 @@
 import React from 'react';
+
 import * as S from './device-rating.styles';
 
 //  TODO: make required once data is passed

@@ -1,7 +1,8 @@
 import React from 'react';
-import * as S from './form-group.styles';
 
 import { ContentUtil } from '../../utils/ContentUtil';
+
+import * as S from './form-group.styles';
 
 interface FormGroupProps {
   children: React.ReactNode;

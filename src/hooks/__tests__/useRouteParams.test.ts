@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-
 import { useRouteMatch } from 'react-router-dom';
+
 import { useRouteParams } from '../useRouteParams';
 
 jest.mock('react-router-dom', () => ({

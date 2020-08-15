@@ -1,9 +1,9 @@
-import { call, takeEvery } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
+import { call, takeEvery } from 'redux-saga/effects';
+
+import routes from '../../constants/routes';
 import api from '../../utils/api';
 import formatRoute from '../../utils/formatRoute';
-import routes from '../../constants/routes';
-
 import {
   ProductActions,
   fetchProductSuccess,

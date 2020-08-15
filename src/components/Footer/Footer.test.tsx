@@ -1,8 +1,9 @@
-import React from 'react';
 import { fireEvent } from '@testing-library/react';
-import Footer from '.';
+import React from 'react';
 
 import { renderWithProviders } from '../../test/helpers';
+
+import Footer from '.';
 
 describe('<Footer />', () => {
   it('should redirect the user to the contact page', () => {

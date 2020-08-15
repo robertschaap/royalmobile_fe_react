@@ -1,7 +1,8 @@
 import React from 'react';
-import HelpPage from '.';
 
 import { renderWithProviders } from '../../../test/helpers';
+
+import HelpPage from '.';
 
 describe('<HelpPage />', () => {
   it('should render without crashing', () => {

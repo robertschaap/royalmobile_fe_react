@@ -1,11 +1,11 @@
-import React from 'react';
 import { waitForElementToBeRemoved, fireEvent } from '@testing-library/react';
+import React from 'react';
+
+import * as productsDuck from '../../store/ducks/products';
+import { stubsServer, Server } from '../../stubs';
+import { renderWithProviders } from '../../test/helpers';
 
 import ProductListingContainer from './ProductListingContainer';
-import * as productsDuck from '../../store/ducks/products';
-
-import { renderWithProviders } from '../../test/helpers';
-import { stubsServer, Server } from '../../stubs';
 
 let server: Server;
 
