@@ -12,7 +12,7 @@ Cypress.Commands.add('random', { prevSubject: true }, (subject) => {
 });
 
 Cypress.Commands.add('fillForm', (formFields) => {
-  Object.entries(formFields).forEach(([dataTestId, value]) => {
+  Object.entries(formFields).forEach(([dataTestId, value]: [string, string]) => {
     cy.get(`[data-testid=${dataTestId}]`).type(value);
   });
 });
