@@ -44,7 +44,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "cypress:open": "cypress open",
+    "cypress": "cypress open",
     "eject": "react-scripts eject",
     "lint:css": "stylelint stylelint '**/*.ts'",
     "lint": "eslint --ext js,ts,tsx, src cypress",
