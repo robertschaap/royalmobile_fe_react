@@ -30,10 +30,12 @@ export const getSubscriptions = (schema: Schema) => {
 // modifications either return, add, or remove cart items. On
 // initial fetch we add a default item for dev experience.
 const cartItems: CartItem[] = [];
+let cartItemId = 0;
 
 export const getCart = (schema: Schema) => {
   if (cartItems.length === 0) {
     const item: CartItem = {
+      id: cartItemId.toString(),
       product: schema.db.products[0],
       subscription: schema.db.subscriptions[0],
       totals: {
@@ -43,6 +45,7 @@ export const getCart = (schema: Schema) => {
     };
 
     cartItems.push(item);
+    cartItemId += 1;
   }
 
   return new Response(200, {}, {
@@ -60,6 +63,7 @@ export const getCart = (schema: Schema) => {
 
 export const patchCartItem = (schema: Schema) => {
   const item: CartItem = {
+    id: cartItemId.toString(),
     product: schema.db.products[0],
     subscription: schema.db.subscriptions[0],
     totals: {
@@ -69,6 +73,7 @@ export const patchCartItem = (schema: Schema) => {
   };
 
   cartItems.push(item);
+  cartItemId += 1;
 
   return new Response(200, {}, {
     status: 'success',
