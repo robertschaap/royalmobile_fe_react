@@ -11,6 +11,7 @@ export interface Cart {
 }
 
 export interface CartItem {
+  id: string;
   product: Product;
   subscription: Subscription;
   totals: {
