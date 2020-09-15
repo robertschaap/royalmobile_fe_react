@@ -50,7 +50,8 @@
     "lint": "eslint --ext js,ts,tsx, src cypress",
     "start:stub": "REACT_APP_USESTUBS=true REACT_APP_DEBUG=true npm start",
     "start": "REACT_APP_DEBUG=true react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage --watchAll=false"
   },
   "proxy": "http://localhost:4000",
   "browserslist": {
