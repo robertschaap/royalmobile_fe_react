@@ -1,25 +1,34 @@
 import StorageUtil from '../StorageUtil';
 
 describe('StorageUtil', () => {
-  afterEach(() => {
-    localStorage.clear();
+  beforeEach(() => {
+    Object.defineProperty(window, 'localStorage', {
+      value: {
+        getItem: jest.fn(() => null),
+        setItem: jest.fn(),
+        clear: jest.fn(),
+      },
+    });
   });
 
   describe('getCartId', () => {
-    it('should get the cart id if there is one', () => {
-      localStorage.setItem('royalmobile::cartId', 'cart-id');
+    fit('should get the cart id if there is one', () => {
+      (localStorage.getItem as jest.Mock).mockReturnValueOnce('cart-id');
+
       expect(StorageUtil.getCartId()).toEqual('cart-id');
+      expect(localStorage.getItem).toHaveBeenCalledWith('royalmobile::cartId');
     });
 
-    it('should return null if there is no cart id', () => {
+    fit('should return null if there is no cart id', () => {
       expect(StorageUtil.getCartId()).toEqual(null);
     });
   });
 
   describe('setCartId', () => {
-    it('should set the cart id', () => {
+    fit('should set the cart id', () => {
       StorageUtil.setCartId('cart-id');
-      expect(localStorage.getItem('royalmobile::cartId')).toEqual('cart-id');
+
+      expect(localStorage.setItem).toHaveBeenCalledWith('royalmobile::cartId', 'cart-id');
     });
   });
 });
