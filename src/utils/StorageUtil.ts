@@ -16,7 +16,7 @@ const setCartId = (cartId: string) => {
   localStorage.setItem(CART_ID, cartId);
 };
 
-const getProductSelection = (): ProductSelection => {
+const getProductSelection = (): Partial<ProductSelection> => {
   return JSON.parse(sessionStorage.getItem(PRODUCT_SELECTION) ?? '{}');
 };
 
