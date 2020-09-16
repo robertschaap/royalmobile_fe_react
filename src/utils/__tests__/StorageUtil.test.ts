@@ -12,20 +12,20 @@ describe('StorageUtil', () => {
   });
 
   describe('getCartId', () => {
-    fit('should get the cart id if there is one', () => {
+    it('should get the cart id if there is one', () => {
       (localStorage.getItem as jest.Mock).mockReturnValueOnce('cart-id');
 
       expect(StorageUtil.getCartId()).toEqual('cart-id');
       expect(localStorage.getItem).toHaveBeenCalledWith('royalmobile::cartId');
     });
 
-    fit('should return null if there is no cart id', () => {
+    it('should return null if there is no cart id', () => {
       expect(StorageUtil.getCartId()).toEqual(null);
     });
   });
 
   describe('setCartId', () => {
-    fit('should set the cart id', () => {
+    it('should set the cart id', () => {
       StorageUtil.setCartId('cart-id');
 
       expect(localStorage.setItem).toHaveBeenCalledWith('royalmobile::cartId', 'cart-id');
