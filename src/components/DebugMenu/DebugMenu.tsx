@@ -5,9 +5,9 @@ import StorageUtil from '../../utils/StorageUtil';
 import Link from '../Link';
 
 const DebugMenu: React.FC = () => {
-  if (process.env.REACT_APP_DEBUG) {
+  if (process.env.REACT_APP_DEBUG === 'true') {
     return (
-      <div style={{ backgroundColor: '#ddd' }}>
+      <div data-testid="debug-menu" style={{ backgroundColor: '#ddd' }}>
         Debug:&nbsp;
         <Link to={routes.HOME_PAGE}>Home</Link> |&nbsp;
         <Link to={routes.PRODUCT_PAGE}>Product</Link> |&nbsp;
