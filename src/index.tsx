@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import RootContainer from './containers/RootContainer';
 
-(async () => {
+export const init = async () => {
   if (process.env.REACT_APP_USESTUBS === 'true') {
     const { stubsServer } = await import('./stubs');
     await stubsServer();
@@ -13,4 +13,6 @@ import RootContainer from './containers/RootContainer';
     <RootContainer />,
     document.getElementById('root'),
   );
-})();
+};
+
+init();
