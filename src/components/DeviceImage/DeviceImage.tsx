@@ -21,6 +21,7 @@ const DeviceImage: React.FC<DeviceImageProps> = React.memo((props) => {
 
   return (
     <img
+      data-testid="device-image"
       alt="phone"
       onError={() => setHasError(true)}
       src={`/images/${modelId}-${color}.png`}
