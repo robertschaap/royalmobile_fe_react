@@ -28,6 +28,7 @@ describe('<ProductPageCustomise />', () => {
         colors={[]}
         deviceManufacturer='manufacturer'
         deviceModel='model'
+        deviceModelId="model-id"
         onClickColorOrCapacity={jest.fn}
         selectedVariant={variant}
       />,
