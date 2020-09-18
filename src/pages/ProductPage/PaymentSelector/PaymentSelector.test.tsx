@@ -1,4 +1,4 @@
-import { fireEvent, wait, waitForElementToBeRemoved } from '@testing-library/react';
+import { fireEvent, waitForElementToBeRemoved } from '@testing-library/react';
 import React from 'react';
 
 import { renderWithTheme } from '../../../test/helpers';
