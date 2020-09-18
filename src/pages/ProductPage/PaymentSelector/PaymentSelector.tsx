@@ -35,7 +35,7 @@ const PaymentSelector: React.FC = () => {
       </S.ToggleWrapper>
 
       {isToggleActive && (
-        <S.PaymentBase>Well, you can't.</S.PaymentBase>
+        <S.PaymentBase data-testid="payment-selector-denied">Well, you can't.</S.PaymentBase>
       )}
     </>
   );
