@@ -38,19 +38,22 @@ describe('<OrderDetailsPageContainer />', () => {
   });
 
   it('should show an error message when there is no cart', () => {
-    // const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />);
+    const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />);
 
-    // expect(getByTestId('error-message')).toBeInTheDocument();
-  });
-  it('should show an error message when there is no cart', () => {
-    // const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />);
-
-    // expect(getByTestId('error-message')).toBeInTheDocument();
+    expect(getByTestId('error-message')).toBeInTheDocument();
   });
 
-  it('should show an error message when there is no cart', () => {
-    // const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />);
+  it('should take the user back to the homepage when the return button is clicked', () => {
+    const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />, {
+      cart: {
+        collection: {
+          id: 'cart-id',
+        },
+      },
+    });
 
-    // expect(getByTestId('error-message')).toBeInTheDocument();
+    fireEvent.click(getByTestId('return-button'));
+
+    expect(window.location.pathname).toBe('/');
   });
 });
