@@ -1,26 +1,8 @@
-import React from 'react';
-
-import { render } from '../../test/helpers';
-
 import {
-  GridBase,
-  GridItem,
   calculatePercentage,
 } from './grid.styles';
 
 describe('<Grid />', () => {
-  describe('<GridBase />', () => {
-    it('should render without crashing', () => {
-      render(<GridBase />);
-    });
-  });
-
-  describe('<GridItem />', () => {
-    it('should render without crashing', () => {
-      render(<GridItem />);
-    });
-  });
-
   describe('calculatePercentage()', () => {
     it('should return 100 when no values are passed', () => {
       expect(calculatePercentage(undefined)).toEqual(100);

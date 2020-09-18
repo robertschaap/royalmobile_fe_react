@@ -13,10 +13,6 @@ import {
 
 describe('<NavigationLinks />', () => {
   describe('<ForYourBusinessLink />', () => {
-    it('should render without crashing', () => {
-      renderWithProviders(<ForYourBusinessLink />);
-    });
-
     it('should redirect the user when clicked on', () => {
       const { getByTestId } = renderWithProviders(<ForYourBusinessLink />);
 
@@ -27,10 +23,6 @@ describe('<NavigationLinks />', () => {
   });
 
   describe('<HelpLink />', () => {
-    it('should render without crashing', () => {
-      renderWithProviders(<HelpLink />);
-    });
-
     it('should redirect the user when clicked on', () => {
       const { getByTestId } = renderWithProviders(<HelpLink />);
 
@@ -41,10 +33,6 @@ describe('<NavigationLinks />', () => {
   });
 
   describe('<MyAccountLink />', () => {
-    it('should render without crashing', () => {
-      renderWithProviders(<MyAccountLink />);
-    });
-
     it('should redirect the user when clicked on', () => {
       const { getByTestId } = renderWithProviders(<MyAccountLink />);
 
@@ -55,10 +43,6 @@ describe('<NavigationLinks />', () => {
   });
 
   describe('<OrderLink />', () => {
-    it('should render without crashing', () => {
-      renderWithProviders(<OrderLink />);
-    });
-
     it('should redirect the user when clicked on', () => {
       const { getByTestId } = renderWithProviders(<OrderLink />);
 
@@ -69,10 +53,6 @@ describe('<NavigationLinks />', () => {
   });
 
   describe('<ProductsForYouLink />', () => {
-    it('should render without crashing', () => {
-      renderWithProviders(<ProductsForYouLink />);
-    });
-
     it('should redirect the user when clicked on', () => {
       const { getByTestId } = renderWithProviders(<ProductsForYouLink />);
 
