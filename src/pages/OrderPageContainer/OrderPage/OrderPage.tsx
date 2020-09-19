@@ -27,7 +27,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
   } = props;
 
   return (
-    <PageSection>
+    <PageSection data-testid="order-page">
       <SectionHeader>{ContentUtil('order.order')}</SectionHeader>
       {cart.items.map((item, index) => (
         <S.CartItem key={index}>
