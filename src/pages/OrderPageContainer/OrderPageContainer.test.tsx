@@ -72,7 +72,7 @@ describe('<OrderPageContainer />', () => {
     expect(getByTestId('loader')).toBeInTheDocument();
   });
 
-  it('should add an item to a cart if there is a product selection', () => {
+  it('should add an item to a cart if there is a product selection and a cart', () => {
     (StorageUtil.getCartId as jest.Mock).mockReturnValueOnce('cart-id');
     (StorageUtil.getProductSelection as jest.Mock).mockReturnValueOnce({ subscriptionId: 'subscription-id', variantId: 'variant-id' });
     const addCartItemSpy = jest.spyOn(cartDuck, 'addCartItem');
@@ -80,6 +80,18 @@ describe('<OrderPageContainer />', () => {
     const { getByTestId } = renderWithProviders(<OrderPageContainer />);
 
     expect(addCartItemSpy).toHaveBeenCalledWith({ subscriptionId: 'subscription-id', variantId: 'variant-id' }, 'cart-id');
+    expect(StorageUtil.clearProductSelection).toHaveBeenCalled();
+    expect(getByTestId('loader')).toBeInTheDocument();
+  });
+
+  it('should add an item to a cart if there is a product selection and no cart', () => {
+    (StorageUtil.getCartId as jest.Mock).mockReturnValueOnce(null);
+    (StorageUtil.getProductSelection as jest.Mock).mockReturnValueOnce({ subscriptionId: 'subscription-id', variantId: 'variant-id' });
+    const addCartItemSpy = jest.spyOn(cartDuck, 'addCartItem');
+
+    const { getByTestId } = renderWithProviders(<OrderPageContainer />);
+
+    expect(addCartItemSpy).toHaveBeenCalledWith({ subscriptionId: 'subscription-id', variantId: 'variant-id' }, undefined);
     expect(StorageUtil.clearProductSelection).toHaveBeenCalled();
     expect(getByTestId('loader')).toBeInTheDocument();
   });
