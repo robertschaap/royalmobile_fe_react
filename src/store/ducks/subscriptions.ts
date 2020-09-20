@@ -41,4 +41,3 @@ export type SubscriptionsActionTypes =
   | FetchSubscriptionsErrorAction;
 
 export const selectSubscriptions = (state: StoreState) => state.subscriptions;
-export const selectSubscriptionsCollection = (state: StoreState) => state.subscriptions.collection;
