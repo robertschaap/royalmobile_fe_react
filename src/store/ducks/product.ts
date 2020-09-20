@@ -101,5 +101,4 @@ export type ProductActionTypes =
   | InvalidateProductCollectionAction;
 
 export const selectProduct = (state: StoreState) => state.product;
-export const selectProductCollection = (state: StoreState) => state.product.collection;
 export const selectProductSelection = (state: StoreState) => state.product.selection;
