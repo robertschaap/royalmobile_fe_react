@@ -43,4 +43,3 @@ export type ProductsActionTypes =
   | FetchProductsErrorAction;
 
 export const selectProducts = (state: StoreState) => state.products;
-export const selectProductsCollection = (state: StoreState) => state.products.collection;
