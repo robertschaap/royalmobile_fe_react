@@ -13,6 +13,7 @@ const DeviceImage: React.FC<DeviceImageProps> = React.memo((props) => {
   if (hasError) {
     return (
       <img
+        data-testid="device-image-fallback"
         alt="phone"
         src="/images/fallback.png"
         width="100%" />
