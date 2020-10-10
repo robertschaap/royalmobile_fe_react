@@ -1,3 +1,4 @@
+import { waitForElementToBeRemoved } from '@testing-library/react';
 import React from 'react';
 
 import * as cartDuck from '../../store/ducks/cart';
@@ -19,6 +20,33 @@ jest.mock('../../utils/StorageUtil', () => ({
 }));
 
 describe('<OrderPageContainer />', () => {
+  beforeAll(() => {
+    server = stubsServer('test');
+    server.create('product');
+    server.create('subscription');
+
+    cart = {
+      id: 'cart-id',
+      items: [{
+        id: 'item-id',
+        product: server.db.products[0],
+        subscription: server.db.subscriptions[0],
+        totals: {
+          monthly_price: '',
+          onetime_price: '',
+        },
+      }],
+      totals: {
+        monthly_price: '',
+        onetime_price: '',
+      },
+    };
+  });
+
+  afterAll(() => {
+    server.shutdown();
+  });
+
   describe('states', () => {
     it('should show an error message if there is an error', () => {
       const { getByTestId } = renderWithProviders(<OrderPageContainer />, {
@@ -56,7 +84,7 @@ describe('<OrderPageContainer />', () => {
   });
 
   describe('fetch and add to cart', () => {
-    it('should fetch a cart if there is no product selection', () => {
+    it('should fetch a cart if there is no product selection', async () => {
       (StorageUtil.getCartId as jest.Mock).mockReturnValueOnce('cart-id');
       (StorageUtil.getProductSelection as jest.Mock).mockReturnValueOnce({ subscriptionId: null, variantId: null });
       const fetchCartSpy = jest.spyOn(cartDuck, 'fetchCart');
@@ -64,10 +92,13 @@ describe('<OrderPageContainer />', () => {
       const { getByTestId } = renderWithProviders(<OrderPageContainer />);
 
       expect(fetchCartSpy).toHaveBeenCalledWith('cart-id');
-      expect(getByTestId('loader')).toBeInTheDocument();
+
+      await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+      expect(getByTestId('order-page')).toBeInTheDocument();
     });
 
-    it('should add an item to a cart if there is a product selection and a cart', () => {
+    it('should add an item to a cart if there is a product selection and a cart', async () => {
       (StorageUtil.getCartId as jest.Mock).mockReturnValueOnce('cart-id');
       (StorageUtil.getProductSelection as jest.Mock).mockReturnValueOnce({ subscriptionId: 'subscription-id', variantId: 'variant-id' });
       const addCartItemSpy = jest.spyOn(cartDuck, 'addCartItem');
@@ -76,10 +107,13 @@ describe('<OrderPageContainer />', () => {
 
       expect(addCartItemSpy).toHaveBeenCalledWith({ subscriptionId: 'subscription-id', variantId: 'variant-id' }, 'cart-id');
       expect(StorageUtil.clearProductSelection).toHaveBeenCalled();
-      expect(getByTestId('loader')).toBeInTheDocument();
+
+      await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+      expect(getByTestId('order-page')).toBeInTheDocument();
     });
 
-    it('should add an item to a cart if there is a product selection and no cart', () => {
+    it('should add an item to a cart if there is a product selection and no cart', async () => {
       (StorageUtil.getCartId as jest.Mock).mockReturnValueOnce(null);
       (StorageUtil.getProductSelection as jest.Mock).mockReturnValueOnce({ subscriptionId: 'subscription-id', variantId: 'variant-id' });
       const addCartItemSpy = jest.spyOn(cartDuck, 'addCartItem');
@@ -88,38 +122,14 @@ describe('<OrderPageContainer />', () => {
 
       expect(addCartItemSpy).toHaveBeenCalledWith({ subscriptionId: 'subscription-id', variantId: 'variant-id' }, undefined);
       expect(StorageUtil.clearProductSelection).toHaveBeenCalled();
-      expect(getByTestId('loader')).toBeInTheDocument();
+
+      await waitForElementToBeRemoved(() => getByTestId('loader'));
+
+      expect(getByTestId('order-page')).toBeInTheDocument();
     });
   });
 
   describe('cart', () => {
-    beforeAll(() => {
-      server = stubsServer('test');
-      server.create('product');
-      server.create('subscription');
-
-      cart = {
-        id: 'cart-id',
-        items: [{
-          id: 'item-id',
-          product: server.db.products[0],
-          subscription: server.db.subscriptions[0],
-          totals: {
-            monthly_price: '',
-            onetime_price: '',
-          },
-        }],
-        totals: {
-          monthly_price: '',
-          onetime_price: '',
-        },
-      };
-    });
-
-    afterAll(() => {
-      server.shutdown();
-    });
-
     it('should show a cart', () => {
       const { getByTestId } = renderWithProviders(<OrderPageContainer />, {
         cart: {
