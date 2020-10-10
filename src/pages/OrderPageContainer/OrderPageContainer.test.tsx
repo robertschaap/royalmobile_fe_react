@@ -149,7 +149,5 @@ describe('<OrderPageContainer />', () => {
 
       expect(StorageUtil.setCartId).toHaveBeenCalled();
     });
-
-    // TODO: remove, return, order
   });
 });
