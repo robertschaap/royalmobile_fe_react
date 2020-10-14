@@ -104,11 +104,11 @@ const createProductVariant = (props: CreateProductVariant): ProductVariant => {
 
 const createDefaultProductVariants = (modelId: string): ProductVariant[] => {
   const defaultColors = [
-    { color: 'white', colorHex: '#f5f5f7' },
-    { color: 'blue', colorHex: '#023b63' },
-    { color: 'red', colorHex: '#d82e2e' },
     { color: 'green', colorHex: '#d8efd5' },
+    { color: 'white', colorHex: '#f5f5f7' },
+    { color: 'red', colorHex: '#d82e2e' },
     { color: 'black', colorHex: '#25212b' },
+    { color: 'blue', colorHex: '#023b63' },
   ];
 
   const colorsByCapacity = ['64gb', '128gb', '256gb', '512gb'].reduce((acc, capacity) => {
