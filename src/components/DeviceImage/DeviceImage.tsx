@@ -15,7 +15,7 @@ const DeviceImage: React.FC<DeviceImageProps> = React.memo((props) => {
       <img
         data-testid="device-image-fallback"
         alt="phone"
-        src="/images/fallback.png"
+        src="/images/fallback.jpg"
         width="100%" />
     );
   }
@@ -25,7 +25,7 @@ const DeviceImage: React.FC<DeviceImageProps> = React.memo((props) => {
       data-testid="device-image"
       alt="phone"
       onError={() => setHasError(true)}
-      src={`/images/${modelId}-${color}.png`}
+      src={`/images/${modelId}-${color}.jpg`}
       width="100%" />
   );
 });
