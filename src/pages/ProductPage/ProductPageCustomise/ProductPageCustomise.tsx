@@ -36,7 +36,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
   const deviceColor = StringUtil.capitalise(selectedVariant.color);
   const deviceCost = StringUtil.formatRoundedPrice(selectedVariant.regular_price);
   const deviceName = `${deviceModel} ${selectedVariant.capacity} ${deviceColor}`;
-  const deviceDescription = 'The iPhone X is Apple’s latest attempt at a near bezel-less device and a minor failure as far as that goes. The device is disgraced by a thick and weird notch, a trend that for some inexplicable reason scores of phone manufactureres seem to have copied. We thouroughly dislike this phone but feel you should buy it anyway because we’ll make money.';
+  const deviceDescription = 'The iPhone 12 is Apple’s latest attempt at a near notch-less device and an unsuccesful one as far as that goes. The device is disgraced by the notch, a trend that for some inexplicable reason scores of phone manufacturers seem to have copied, and even though most have moved away from, Apple insists on continuing. We still think you should buy it, just because it reminds you of the iPhone 5 (wasn\'t that nice) and because it will make us money.';
 
   return (
     <S.Flexy data-testid="product-page-customise">
