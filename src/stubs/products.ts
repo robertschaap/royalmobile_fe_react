@@ -104,13 +104,14 @@ const createProductVariant = (props: CreateProductVariant): ProductVariant => {
 
 const createDefaultProductVariants = (modelId: string): ProductVariant[] => {
   const defaultColors = [
-    { color: 'lime', colorHex: '#7ec09a' },
-    { color: 'purple', colorHex: '#8097c2' },
-    { color: 'green', colorHex: '#bae596' },
-    { color: 'pink', colorHex: '#d59a8d' },
+    { color: 'white', colorHex: '#f5f5f7' },
+    { color: 'blue', colorHex: '#023b63' },
+    { color: 'red', colorHex: '#d82e2e' },
+    { color: 'green', colorHex: '#d8efd5' },
+    { color: 'black', colorHex: '#25212b' },
   ];
 
-  const colorsByCapacity = ['16gb', '32gb', '64gb', '128gb'].reduce((acc, capacity) => {
+  const colorsByCapacity = ['64gb', '128gb', '256gb', '512gb'].reduce((acc, capacity) => {
     const colorsForCapacity = defaultColors.map((color) => ({
       capacity,
       ...color,
@@ -127,7 +128,7 @@ const createDefaultProductVariants = (modelId: string): ProductVariant[] => {
 };
 
 export const seedProducts = (server: Server) => {
-  server.createList('product', 6, { manufacturer: 'Apple', model: 'iPhone X', modelId: 'apple-iphonex' }).forEach((product: Row<Product>) => {
+  server.createList('product', 6, { manufacturer: 'Apple', model: 'iPhone 12', modelId: 'apple-iphone12' }).forEach((product: Row<Product>) => {
     product.update({
       variants: createDefaultProductVariants(product.modelId),
     });
