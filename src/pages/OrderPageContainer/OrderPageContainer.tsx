@@ -32,8 +32,8 @@ const OrderPageContainer: React.FC = () => {
       dispatch(fetchCart(cartId));
     }
 
-    if (variantId && subscriptionId) {
-      dispatch(addCartItem({ variantId, subscriptionId }, cartId ?? undefined));
+    if (subscriptionId && variantId) {
+      dispatch(addCartItem({ subscriptionId, variantId }, cartId ?? undefined));
       StorageUtil.clearProductSelection();
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
