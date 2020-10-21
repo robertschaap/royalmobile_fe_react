@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useOrderSummary, OrderSummary } from '../../../hooks';
-import { Server, stubsServer } from '../../../stubs';
+import { Server, testStubsServer } from '../../../stubs';
 import { renderWithTheme } from '../../../test/helpers';
 import { ProductSelection, ProductVariant } from '../../../types/products';
 import { Subscription } from '../../../types/subscriptions';
@@ -23,7 +23,7 @@ const subscription = {
 
 describe('<OrderSummaryText />', () => {
   beforeAll(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
   });
 
   afterAll(() => {
