@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/react';
 import React from 'react';
 
 import * as cartDuck from '../../store/ducks/cart';
-import { Server, stubsServer } from '../../stubs';
+import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 
 import OrderDetailsPageContainer from '.';
@@ -11,7 +11,7 @@ let server: Server;
 
 describe('<OrderDetailsPageContainer />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
   });
 
   afterEach(() => {
