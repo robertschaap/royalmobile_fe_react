@@ -46,3 +46,5 @@ export const stubsServer = (environment = 'development') => new Server({
     seedSubscriptions(server);
   },
 });
+
+export const testStubsServer = () => stubsServer('test');
