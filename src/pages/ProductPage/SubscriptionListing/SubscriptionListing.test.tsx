@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Server, stubsServer } from '../../../stubs';
+import { Server, testStubsServer } from '../../../stubs';
 import { renderWithProviders } from '../../../test/helpers';
 
 import SubscriptionListing from '.';
@@ -9,7 +9,7 @@ let server: Server;
 
 describe('<SubscriptionListing />', () => {
   beforeAll(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.createList('subscription', 3);
   });
 
