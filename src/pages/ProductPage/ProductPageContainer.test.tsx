@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouteParams } from '../../hooks';
 import * as productDuck from '../../store/ducks/product';
 import * as subscriptionsDuck from '../../store/ducks/subscriptions';
-import { Server, stubsServer } from '../../stubs';
+import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 import { Product } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
@@ -19,7 +19,7 @@ jest.mock('../../hooks/useRouteParams', () => ({
 
 describe('<ProductPageContainer />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('product');
     server.create('subscription', { durationId: '1year' }); // durationId is just to suppress console error
   });
