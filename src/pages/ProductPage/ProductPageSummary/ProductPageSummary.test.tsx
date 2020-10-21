@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { useOrderSummary, OrderSummary } from '../../../hooks';
-import { Server, stubsServer } from '../../../stubs';
+import { Server, testStubsServer } from '../../../stubs';
 import { renderWithTheme } from '../../../test/helpers';
 import { Product } from '../../../types/products';
 import { Subscription } from '../../../types/subscriptions';
@@ -13,7 +13,7 @@ let server: Server;
 
 describe('<ProductPageSummary />', () => {
   beforeAll(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('product');
     server.create('subscription');
   });
