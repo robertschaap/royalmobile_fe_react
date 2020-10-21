@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import React from 'react';
 
 import * as productDuck from '../../store/ducks/product';
-import { Server, stubsServer } from '../../stubs';
+import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 import { Subscription } from '../../types/subscriptions';
 
@@ -13,7 +13,7 @@ let server: Server;
 
 describe('<ProductPageConfigureContainer />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('subscription', { subscriptionId: 'subscription-id1-1year', durationId: '1year' });
     server.create('subscription', { subscriptionId: 'subscription-id2-1year', durationId: '1year' });
     server.create('subscription', { subscriptionId: 'subscription-id1-2year', durationId: '2year' });
