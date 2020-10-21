@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { stubsServer, Server } from '../../../stubs';
+import { Server, testStubsServer } from '../../../stubs';
 import { renderWithProviders } from '../../../test/helpers';
 import { Product } from '../../../types/products';
 
@@ -10,7 +10,7 @@ let server: Server;
 
 describe('<ProductListing />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
   });
 
   afterEach(() => {
