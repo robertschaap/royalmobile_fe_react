@@ -2,7 +2,7 @@ import { waitForElementToBeRemoved } from '@testing-library/react';
 import React from 'react';
 
 import * as cartDuck from '../../store/ducks/cart';
-import { Server, stubsServer } from '../../stubs';
+import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 import { Cart } from '../../types/cart';
 import StorageUtil from '../../utils/StorageUtil';
@@ -21,7 +21,7 @@ jest.mock('../../utils/StorageUtil', () => ({
 
 describe('<OrderPageContainer />', () => {
   beforeAll(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('product');
     server.create('subscription');
 
