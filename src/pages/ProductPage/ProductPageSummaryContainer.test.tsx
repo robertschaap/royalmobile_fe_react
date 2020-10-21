@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 import React from 'react';
 
-import { stubsServer, Server } from '../../stubs';
+import { testStubsServer, Server } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 import { Product } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
@@ -12,7 +12,7 @@ let server: Server;
 
 describe('<ProductPageSummaryContainer />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('product');
     server.create('subscription');
   });
