@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { stubsServer, Server } from '../../../stubs';
+import { testStubsServer, Server } from '../../../stubs';
 import { renderWithTheme } from '../../../test/helpers';
 import { Product } from '../../../types/products';
 
@@ -10,7 +10,7 @@ let server: Server;
 
 describe('<ProductPageCustomise />', () => {
   beforeAll(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('product');
   });
 
