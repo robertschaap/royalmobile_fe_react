@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/react';
 import React from 'react';
 
 import * as productDuck from '../../store/ducks/product';
-import { Server, stubsServer } from '../../stubs';
+import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 import { Product } from '../../types/products';
 
@@ -12,7 +12,7 @@ let server: Server;
 
 describe('<ProductPageCustomiseContainer />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
     server.create('product');
   });
 
