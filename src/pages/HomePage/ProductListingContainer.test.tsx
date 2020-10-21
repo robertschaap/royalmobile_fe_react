@@ -2,7 +2,7 @@ import { waitForElementToBeRemoved, fireEvent } from '@testing-library/react';
 import React from 'react';
 
 import * as productsDuck from '../../store/ducks/products';
-import { stubsServer, Server } from '../../stubs';
+import { testStubsServer, Server } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
 
 import ProductListingContainer from './ProductListingContainer';
@@ -11,7 +11,7 @@ let server: Server;
 
 describe('<ProductListingContainer />', () => {
   beforeEach(() => {
-    server = stubsServer('test');
+    server = testStubsServer();
   });
 
   afterEach(() => {
