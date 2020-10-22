@@ -18,6 +18,7 @@ describe('<OrderPage />', () => {
     cart = {
       id: 'cart-id',
       items: [{
+        id: 'id',
         product: server.db.products[0],
         subscription: server.db.subscriptions[0],
         totals: {
