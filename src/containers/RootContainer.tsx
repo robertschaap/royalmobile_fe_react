@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
+import ErrorBoundary from '../components/ErrorBoundary';
 import RootLayout from '../components/RootLayout';
 import routes from '../constants/routes';
 import history from '../history';
@@ -29,22 +30,24 @@ const Root: React.FC = () => {
       <ThemeProviderContainer>
         <Router history={history}>
           <RootLayout>
-            <Suspense fallback={null}>
-              <Switch>
-                <Route exact path={routes.HOME_PAGE} component={HomePage} />
-                <Route path={routes.BUSINESS_PAGE} component={BusinessPage} />
-                <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPage} />
-                <Route path={routes.CONSUMER_PAGE} component={ConsumerPage} />
-                <Route path={routes.CONTACT_PAGE} component={ContactPage} />
-                <Route path={routes.HELP_PAGE} component={HelpPage} />
-                <Route path={routes.MY_ACCOUNT_PAGE} component={MyAccountPage} />
-                <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPage} />
-                <Route path={routes.ORDER_PAGE} component={OrderPage} />
-                <Route path={routes.PRODUCT_PAGE} component={ProductPage} />
-                <Route path={routes.THANK_YOU_PAGE} component={ThankYouPage} />
-                <Route component={ErrorPage} />
-              </Switch>
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Switch>
+                  <Route exact path={routes.HOME_PAGE} component={HomePage} />
+                  <Route path={routes.BUSINESS_PAGE} component={BusinessPage} />
+                  <Route path={routes.CAMPAIGNS_PAGE} component={CampaignsPage} />
+                  <Route path={routes.CONSUMER_PAGE} component={ConsumerPage} />
+                  <Route path={routes.CONTACT_PAGE} component={ContactPage} />
+                  <Route path={routes.HELP_PAGE} component={HelpPage} />
+                  <Route path={routes.MY_ACCOUNT_PAGE} component={MyAccountPage} />
+                  <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPage} />
+                  <Route path={routes.ORDER_PAGE} component={OrderPage} />
+                  <Route path={routes.PRODUCT_PAGE} component={ProductPage} />
+                  <Route path={routes.THANK_YOU_PAGE} component={ThankYouPage} />
+                  <Route component={ErrorPage} />
+                </Switch>
+              </Suspense>
+            </ErrorBoundary>
           </RootLayout>
         </Router>
       </ThemeProviderContainer>
