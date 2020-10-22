@@ -22,7 +22,7 @@ export type Row<T> = T & {
   update(args: Record<string, unknown>): void;
 }
 
-export const stubsServer = (environment = 'development') => new Server({
+export const stubsServer = (environment = 'development'): Server => new Server({
   environment,
   routes() {
     this.patch(routes.API_ADD_CART_ITEM, patchCartItem);
@@ -47,4 +47,4 @@ export const stubsServer = (environment = 'development') => new Server({
   },
 });
 
-export const testStubsServer = () => stubsServer('test');
+export const testStubsServer = (): Server => stubsServer('test');
