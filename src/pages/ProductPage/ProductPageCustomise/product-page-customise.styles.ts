@@ -30,7 +30,16 @@ export const Card = styled.div`
   }
 `;
 
-export const DeviceImage = styled.div`
+export const DeviceImages = styled.div`
+  display: grid;
+`;
+
+export const DeviceImage = styled.div<{ isSelected?: boolean }>`
+  grid-column: 1;
+  grid-row: 1;
+  opacity: ${({ isSelected }) => isSelected ? 1 : 0};
+  transition: opacity 0.5s;
+
   width: 115px;
   margin-right: ${({ theme }) => theme.spacing(4)};
 

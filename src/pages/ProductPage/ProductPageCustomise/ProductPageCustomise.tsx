@@ -41,12 +41,15 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
   return (
     <S.Flexy data-testid="product-page-customise">
       <S.Card>
-        <S.DeviceImage>
-          <DeviceImage
-            key={selectedVariant.color}
-            modelId={deviceModelId}
-            color={selectedVariant.color} />
-        </S.DeviceImage>
+        <S.DeviceImages>
+          {colors.map(({ color }) => (
+            <S.DeviceImage key={color} isSelected={selectedVariant.color === color}>
+              <DeviceImage
+                modelId={deviceModelId}
+                color={color} />
+            </S.DeviceImage>
+          ))}
+        </S.DeviceImages>
         <Hidden md lg>
           <S.DeviceName data-testid="device-name">{deviceName}</S.DeviceName>
           <S.DeviceManufacturer>{deviceManufacturer}</S.DeviceManufacturer>
