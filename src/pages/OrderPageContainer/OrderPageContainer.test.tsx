@@ -13,6 +13,7 @@ let server: Server;
 let cart: Cart;
 
 jest.mock('../../utils/StorageUtil', () => ({
+  clearCartId: jest.fn(),
   clearProductSelection: jest.fn(),
   getCartId: jest.fn(),
   getProductSelection: jest.fn(() => ({})),

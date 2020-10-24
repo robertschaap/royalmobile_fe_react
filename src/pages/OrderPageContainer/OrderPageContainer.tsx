@@ -44,6 +44,12 @@ const OrderPageContainer: React.FC = () => {
     }
   }, [cartState.collection]);
 
+  useEffect(() => {
+    if (cartState.hasError) {
+      StorageUtil.clearCartId();
+    }
+  }, [cartState.hasError]);
+
   const onClickRemove = useCallback((cartItemId: string) => {
     if (cartState.collection?.id) {
       dispatch(deleteCartItem(cartItemId, cartState.collection.id));
