@@ -57,7 +57,7 @@ const OrderPage: React.FC<OrderPageProps> = (props) => {
           <S.CartItemRemove>
             <S.CartItemRemoveButton
               data-testid="cart-item-remove-button"
-              onClick={() => onClickRemove(index.toString())}>
+              onClick={() => onClickRemove(item.id)}>
               {ContentUtil('order.removeCartItem')}
             </S.CartItemRemoveButton>
           </S.CartItemRemove>
