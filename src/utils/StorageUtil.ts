@@ -16,6 +16,10 @@ const setCartId = (cartId: string) => {
   localStorage.setItem(CART_ID, cartId);
 };
 
+const clearCartId = () => {
+  localStorage.removeItem(CART_ID);
+};
+
 const getProductSelection = (): Partial<ProductSelection> => {
   return JSON.parse(sessionStorage.getItem(PRODUCT_SELECTION) ?? '{}');
 };
@@ -30,6 +34,7 @@ const clearProductSelection = () => {
 
 export default {
   clearAll,
+  clearCartId,
   clearProductSelection,
   getCartId,
   getProductSelection,
