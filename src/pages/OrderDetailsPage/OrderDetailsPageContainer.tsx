@@ -1,31 +1,52 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import ErrorMessage from '../../components/ErrorMessage';
+import Loader from '../../components/Loader';
 import PageSection from '../../components/PageSection';
 import PageTitle from '../../components/PageTitle';
 import routes from '../../constants/routes';
-import { useSelector, selectCartCollection, placeOrder, useDispatch } from '../../store';
+import { useSelector, selectCart, placeOrder, useDispatch, fetchCart } from '../../store';
 import { ContentUtil } from '../../utils/ContentUtil';
+import StorageUtil from '../../utils/StorageUtil';
 
 import OrderDetailsPage from './OrderDetailsPage';
 
 const OrderDetailsPageContainer: React.FC = () => {
-  const cart = useSelector(selectCartCollection);
+  const cartState = useSelector(selectCart);
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const onSubmitOrder = useCallback(() => {
-    if (cart?.id) {
-      dispatch(placeOrder(cart.id));
+  useEffect(() => {
+    const cartId = StorageUtil.getCartId();
+
+    if (!cartState.collection && cartId) {
+      dispatch(fetchCart(cartId));
     }
-  }, [dispatch, cart]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const onSubmitOrder = useCallback(() => {
+    if (cartState.collection?.id) {
+      dispatch(placeOrder(cartState.collection.id));
+    }
+  }, [dispatch, cartState]);
 
   const onClickReturn = useCallback(() => {
     history.push(routes.HOME_PAGE);
   }, [history]);
 
-  if (!cart) {
+  if (cartState.isFetching) {
+    return (
+      <>
+        <PageTitle page={ContentUtil('pages.order')} />
+        <PageSection>
+          <Loader show />
+        </PageSection>
+      </>
+    );
+  }
+
+  if (!cartState.collection) {
     return (
       <>
         <PageTitle page={ContentUtil('pages.orderDetails')} />
