@@ -60,6 +60,5 @@ describe('<OrderDetailsPage />', () => {
     fireEvent.click(getByTestId('finalise-order-button'));
 
     expect(onSubmitOrder).toHaveBeenCalled();
-    expect(getByTestId('error-message')).toBeInTheDocument();
   });
 });

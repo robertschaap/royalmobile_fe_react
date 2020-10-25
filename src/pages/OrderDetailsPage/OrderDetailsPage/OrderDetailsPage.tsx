@@ -100,7 +100,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = (props) => {
             label={ContentUtil('order.form.bankAccount')}
             placeholder={ContentUtil('order.form.bankAccount')} />
         </S.Section>
-        <S.FormError messageId="order.form.hasErrors" />
+        {!form.isValid && <S.FormError messageId="order.form.hasErrors" />}
         <S.FinaliseOrderButton
           data-testid="finalise-order-button"
           variant="primary"
