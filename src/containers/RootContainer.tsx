@@ -24,7 +24,7 @@ const OrderPage = React.lazy(() => import('../pages/OrderPageContainer'));
 const ProductPage = React.lazy(() => import('../pages/ProductPage'));
 const ThankYouPage = React.lazy(() => import('../pages/ThankYouPage'));
 
-const Root: React.FC = () => {
+const RootContainer: React.FC = () => {
   return (
     <StoreProviderContainer>
       <ThemeProviderContainer>
@@ -55,4 +55,4 @@ const Root: React.FC = () => {
   );
 };
 
-export default Root;
+export default RootContainer;
