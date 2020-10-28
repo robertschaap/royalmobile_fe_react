@@ -1,3 +1,4 @@
+import { Subscription } from '../../../types/subscriptions';
 import {
   fetchSubscriptions,
   fetchSubscriptionsError,
@@ -23,11 +24,12 @@ describe('Subscriptions Reducer', () => {
     });
   });
 
+  // TODO: this doesn't handle the collection change
   it('should handle FETCH_SUBSCRIPTIONS_SUCCESS', () => {
-    expect(subscriptionsReducer(initialSubscriptionsState, fetchSubscriptionsSuccess([]))).toEqual({
+    expect(subscriptionsReducer(initialSubscriptionsState, fetchSubscriptionsSuccess([{}] as Subscription[]))).toEqual({
       isFetching: false,
       hasError: false,
-      collection: [],
+      collection: [{}],
     });
   });
 
