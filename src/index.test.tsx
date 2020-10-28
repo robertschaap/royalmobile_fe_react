@@ -16,6 +16,7 @@ describe('index.tsx', () => {
   it('should render the application', () => {
     init();
 
+    expect(stubsServer).not.toHaveBeenCalled();
     expect(ReactDOM.render).toHaveBeenCalled();
   });
 
