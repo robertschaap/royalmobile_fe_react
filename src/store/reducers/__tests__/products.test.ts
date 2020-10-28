@@ -1,3 +1,4 @@
+import { Product } from '../../../types/products';
 import {
   fetchProducts,
   fetchProductsError,
@@ -25,11 +26,12 @@ describe('Products Reducer', () => {
     });
   });
 
+  // TODO: this doesn't handle the collection change
   it('should handle FETCH_PRODUCTS_SUCCESS', () => {
-    expect(productsReducer(initialProductsState, fetchProductsSuccess([]))).toEqual({
+    expect(productsReducer(initialProductsState, fetchProductsSuccess([{}] as Product[]))).toEqual({
       isFetching: false,
       hasError: false,
-      collection: [],
+      collection: [{}],
       pageNumber: 1,
     });
   });
