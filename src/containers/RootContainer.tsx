@@ -20,7 +20,7 @@ const HelpPage = React.lazy(() => import('../pages/HelpPage'));
 const HomePage = React.lazy(() => import('../pages/HomePage'));
 const MyAccountPage = React.lazy(() => import('../pages/MyAccountPage'));
 const OrderDetailsPage = React.lazy(() => import('../pages/OrderDetailsPage'));
-const OrderPage = React.lazy(() => import('../pages/OrderPageContainer'));
+const OrderPage = React.lazy(() => import('../pages/OrderPage'));
 const ProductPage = React.lazy(() => import('../pages/ProductPage'));
 const ThankYouPage = React.lazy(() => import('../pages/ThankYouPage'));
 
