@@ -11,7 +11,7 @@ import {
   FetchProductAction,
 } from '../ducks/product';
 
-function* fetchProductsSaga({ payload: productId }: FetchProductAction): SagaIterator {
+function* fetchProductSaga({ payload: productId }: FetchProductAction): SagaIterator {
   yield call(api.get, {
     url: formatRoute(routes.API_GET_PRODUCT, { id: productId }),
     onSuccessAction: fetchProductSuccess,
@@ -20,5 +20,5 @@ function* fetchProductsSaga({ payload: productId }: FetchProductAction): SagaIte
 }
 
 export default [
-  takeEvery(ProductActions.FETCH_PRODUCT, fetchProductsSaga),
+  takeEvery(ProductActions.FETCH_PRODUCT, fetchProductSaga),
 ];
