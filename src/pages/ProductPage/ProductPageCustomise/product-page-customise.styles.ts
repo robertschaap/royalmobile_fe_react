@@ -53,10 +53,6 @@ export const DeviceName = styled.div`
   font-weight: 700;
 `;
 
-export const DeviceManufacturer = styled.div`
-  /* stylelint-disable-line no-empty-source */
-`;
-
 export const DeviceCustomisationOptions = styled.div`
   padding: 0 ${({ theme }) => theme.spacing(4)};
   flex: 0 0 100%;

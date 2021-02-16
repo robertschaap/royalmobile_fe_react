@@ -52,7 +52,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
         </S.DeviceImages>
         <Hidden md lg>
           <S.DeviceName data-testid="device-name">{deviceName}</S.DeviceName>
-          <S.DeviceManufacturer>{deviceManufacturer}</S.DeviceManufacturer>
+          <div>{deviceManufacturer}</div>
           <DeviceDiscounts />
         </Hidden>
       </S.Card>
@@ -60,7 +60,7 @@ const ProductPageCustomise: React.FC<ProductPageCustomiseProps> = (props) => {
       <S.DeviceCustomisationOptions>
         <Hidden sm>
           <S.DeviceName>{deviceName}</S.DeviceName>
-          <S.DeviceManufacturer>{deviceManufacturer}</S.DeviceManufacturer>
+          <div>{deviceManufacturer}</div>
           <DeviceDiscounts />
         </Hidden>
         <S.DeviceColor>
