@@ -3,13 +3,14 @@ export interface Content {
 }
 
 const content: Content = Object.freeze({
-  'common.errorMissing': 'Something should\'ve been here, but it isn\'t.',
   'common.errorHeader': 'Whoops...',
+  'common.errorMissing': 'Something should\'ve been here, but it isn\'t.',
   'common.loadMore': 'Load More',
   'common.mobile': 'Mobile',
   'common.royal': 'Royal',
   'common.royalMobile': 'RoyalMobile',
   'common.sale': 'Sale',
+  'common.skipNavigation': 'Skip navigation',
 
   'form.validate.isRequired': 'This field is required',
 

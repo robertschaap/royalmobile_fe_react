@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ContentUtil } from '../../utils/ContentUtil';
+
 import * as S from './skip-navigation-button.styles';
 
 const SkipNavigationButton: React.FC = () => {
@@ -26,7 +28,7 @@ const SkipNavigationButton: React.FC = () => {
     <S.SkipNavigationButtonBase
       variant="secondary"
       onClick={onClick}>
-      Skip navigation
+      {ContentUtil('common.skipNavigation')}
     </S.SkipNavigationButtonBase>
   );
 };
