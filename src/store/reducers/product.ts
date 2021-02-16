@@ -15,7 +15,6 @@ interface ProductState {
 
 const initialProductSelection = {
   durationId: null,
-  paymentPlanId: null,
   subscriptionId: null,
   variantId: null,
 };
@@ -43,9 +42,6 @@ export const productReducer = produce((draft: ProductState = initialProductState
       break;
     case ProductActions.SET_PRODUCT_SELECTED_DURATION_ID:
       draft.selection.durationId = action.payload;
-      break;
-    case ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID:
-      draft.selection.paymentPlanId = action.payload;
       break;
     case ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID:
       draft.selection.subscriptionId = action.payload;

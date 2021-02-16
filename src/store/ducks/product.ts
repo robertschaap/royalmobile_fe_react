@@ -6,7 +6,6 @@ export enum ProductActions {
   FETCH_PRODUCT_SUCCESS = 'FETCH_PRODUCT_SUCCESS',
   FETCH_PRODUCT_ERROR = 'FETCH_PRODUCT_ERROR',
   SET_PRODUCT_SELECTED_DURATION_ID = 'SET_PRODUCT_SELECTED_DURATION_ID',
-  SET_PRODUCT_SELECTED_PAYMENTPLAN_ID = 'SET_PRODUCT_SELECTED_PAYMENTPLAN_ID',
   SET_PRODUCT_SELECTED_SUBSCRIPTION_ID = 'SET_PRODUCT_SELECTED_SUBSCRIPTION_ID',
   SET_PRODUCT_SELECTED_VARIANT_ID = 'SET_PRODUCT_SELECTED_VARIANT_ID',
   INVALIDATE_PRODUCT_COLLECTION = 'INVALIDATE_PRODUCT_COLLECTION',
@@ -52,16 +51,6 @@ export const setProductSelectedDurationId = (payload: string): ProductActionType
   payload,
 });
 
-interface SetProductSelectedPaymentPlanIdAction {
-  type: typeof ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID;
-  payload: string;
-}
-
-export const setProductSelectedPaymentPlanId = (payload: string): ProductActionTypes => ({
-  type: ProductActions.SET_PRODUCT_SELECTED_PAYMENTPLAN_ID,
-  payload,
-});
-
 interface SetProductSelectedSubscriptionIdAction {
   type: typeof ProductActions.SET_PRODUCT_SELECTED_SUBSCRIPTION_ID;
   payload: string;
@@ -95,7 +84,6 @@ export type ProductActionTypes =
   | FetchProductSucesssAction
   | FetchProductErrorAction
   | SetProductSelectedDurationIdAction
-  | SetProductSelectedPaymentPlanIdAction
   | SetProductSelectedSubscriptionIdAction
   | SetProductSelectedVariantIdAction
   | InvalidateProductCollectionAction;

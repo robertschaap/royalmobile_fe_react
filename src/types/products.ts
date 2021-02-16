@@ -30,7 +30,6 @@ export type ProductColor = Pick<ProductVariant, 'color' | 'colorHex'> & {
 
 export interface ProductSelection {
   durationId: string | null;
-  paymentPlanId: string | null;
   subscriptionId: string | null;
   variantId: string | null;
 }
