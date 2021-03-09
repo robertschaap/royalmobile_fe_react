@@ -27,6 +27,7 @@ const OrderDetailsPageContainer: React.FC = () => {
 
   const onSubmitOrder = useCallback(() => {
     if (cartState.collection?.id) {
+      // TODO this is fake but at least pass the form data
       dispatch(placeOrder(cartState.collection.id));
     }
   }, [dispatch, cartState]);
