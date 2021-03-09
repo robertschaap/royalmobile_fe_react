@@ -57,7 +57,7 @@ function withBody(method: string) {
 
 export default {
   get,
+  delete: withBody('DELETE'),
   patch: withBody('PATCH'),
   post: withBody('POST'),
-  delete: withBody('DELETE'),
 };
