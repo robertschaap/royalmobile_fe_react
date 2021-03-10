@@ -43,7 +43,7 @@ function* get(props: ApiCallBaseProps) {
   yield apiCall(props);
 }
 
-function withBody(method: string) {
+function withBody(method: 'DELETE' | 'PATCH' | 'POST') {
   return function* methodFunction(props: ApiCallWithOptionalBodyProps) {
     const options = {
       method,
