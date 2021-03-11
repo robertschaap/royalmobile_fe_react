@@ -7,7 +7,6 @@ import * as S from './form-fields.styles';
 interface FormFieldProps<T> {
   autoFocus?: boolean;
   error?: string;
-  hint?: string;
   isRequired?: boolean;
   isValid: boolean;
   label: string;
@@ -25,7 +24,6 @@ export const Input: React.FC<InputProps<HTMLInputElement>> = (props) => {
   const {
     autoFocus,
     error,
-    hint,
     isRequired,
     isValid,
     label,
@@ -39,7 +37,6 @@ export const Input: React.FC<InputProps<HTMLInputElement>> = (props) => {
   return (
     <FormGroup
       error={error}
-      hint={hint}
       isRequired={isRequired}
       isValid={isValid}
       label={label}>
@@ -68,7 +65,6 @@ export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
   const {
     autoFocus,
     error,
-    hint,
     isRequired,
     isValid,
     label,
@@ -82,7 +78,6 @@ export const Select: React.FC<SelectProps<HTMLSelectElement>> = (props) => {
   return (
     <FormGroup
       error={error}
-      hint={hint}
       isRequired={isRequired}
       isValid={isValid}
       label={label}>

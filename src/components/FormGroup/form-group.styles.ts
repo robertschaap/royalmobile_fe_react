@@ -12,11 +12,6 @@ export const FormLabel = styled.label`
   padding-left: ${({ theme }) => theme.spacing(2)};
 `;
 
-export const Hint = styled.div`
-  font-size: 14px;
-  padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
-`;
-
 export const Error = styled.div`
   background-color: ${({ theme }) => theme.color.lightGrey};
   font-size: 14px;
