@@ -8,7 +8,6 @@ const content: Content = Object.freeze({
   'common.loadMore': 'Load More',
   'common.mobile': 'Mobile',
   'common.royal': 'Royal',
-  'common.royalMobile': 'RoyalMobile',
   'common.sale': 'Sale',
   'common.skipNavigation': 'Skip navigation',
 
