@@ -1,7 +1,7 @@
 context('Product Page', () => {
   before(() => {
     cy.server()
-      .visit('/product/apple-iphonex');
+      .visit('/product/apple-iphone12');
   });
 
   it('should select a color when one is clicked', () => {

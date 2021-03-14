@@ -1,14 +1,14 @@
 context('Order Details Page', () => {
   before(() => {
     cy.server()
-      .visit('/product/apple-iphonex')
+      .visit('/product/apple-iphone12')
       .getTestId('place-order-button')
       .click()
       .getTestId('button-primary')
       .click();
   });
 
-  it('should remove a cartItem when the remove button is clicked', () => {
+  it('should submit an order', () => {
     cy.fillForm({
       initials: 'T',
       lastname: 'Test',

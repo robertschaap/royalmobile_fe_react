@@ -1,7 +1,7 @@
 context('Order Page', () => {
   beforeEach(() => {
     cy.server()
-      .visit('/product/apple-iphonex')
+      .visit('/product/apple-iphone12')
       .getTestId('place-order-button')
       .click();
   });
