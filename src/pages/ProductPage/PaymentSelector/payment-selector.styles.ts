@@ -27,7 +27,6 @@ export const ToggleDescription = styled.span`
 
   ${media_breakpoint_up.lg} {
     flex: 0 0 50%;
-
   }
 `;
 
