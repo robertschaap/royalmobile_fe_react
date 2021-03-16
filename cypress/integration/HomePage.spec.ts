@@ -12,7 +12,7 @@ context('Home Page', () => {
   });
 
   it('should load more products when the load more button is clicked', () => {
-    cy.get('[data-testid="product-listing"]')
+    cy.getTestId('product-listing')
       .siblings('[data-testid="button-secondary"]')
       .click();
   });
