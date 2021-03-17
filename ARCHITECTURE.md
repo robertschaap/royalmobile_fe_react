@@ -29,11 +29,11 @@ Redux was chosen as the main source for global data due to its maturity and prev
 The aforementioned roughly creates the following flow.
 
 * A page or one of its nested container components sends an action to the store because it needs some data.
-* The store updates its state to indicated that it is going into a fetch state
+* The store updates its state to indicate that it is going into a fetch state.
 * Redux saga intercepts the action if it is explicitly listening to it and does the actual API call.
-* Provided the container is listening to the piece of store redux has just updated, it will receive an update and either do some business or view logic (like showing a loader in this case)
+* Provided the container is listening to the piece of store redux has just updated, it will receive an update and either do some business or view logic (like showing a loader in this case).
 * When the call either resolves or rejects, redux saga sends an action to the store with the result.
-* The store updates its state based on either action
+* The store updates its state based on either action.
 * Provided the container is listening to the piece of the store that redux is updating, it will receive an update and either do some business logic or pass it to the presentational layer.
 
 Of note is that the retrieval of initial data is explicit. A container has to send a `fetchX` action to the store to begin the process of communicating with an API. Another option would be to merely `selectX` and have the store maintain some information on whether the fetch actually needs to be done, however this pushes logic into the store at the cost of implicit behaviour.
