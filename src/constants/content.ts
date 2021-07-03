@@ -13,6 +13,13 @@ const content: Content = Object.freeze({
 
   'form.validate.isRequired': 'This field is required',
 
+  'myAccount.login': 'Login',
+  'myAccount.info': 'Enter your username and password below and click login to access your account. Don\'t have any credtials or can\'t remember? Visit the help page.',
+  'myAccount.username': 'Username',
+  'myAccount.password': 'Password',
+
+  'navigation.ourProducts': 'Our Products',
+
   'pages.business': 'For Your Business',
   'pages.campaign': 'Campaign',
   'pages.consumer': 'Products For You',
@@ -25,8 +32,6 @@ const content: Content = Object.freeze({
   'pages.orderDetails': 'Order Details',
   'pages.product': 'Product',
   'pages.thankYou': 'Thank You',
-
-  'navigation.ourProducts': 'Our Products',
 
   'benefits.get': 'GET',
   'benefits.threeMonthsFree': 'Three months free inside of your regular bundle when you refer a friend',
