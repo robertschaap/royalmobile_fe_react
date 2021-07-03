@@ -13,10 +13,10 @@ const content: Content = Object.freeze({
 
   'form.validate.isRequired': 'This field is required',
 
-  'myAccount.login': 'Login',
-  'myAccount.info': 'Enter your username and password below and click login to access your account. Don\'t have any credtials or can\'t remember? Visit the help page.',
-  'myAccount.username': 'Username',
-  'myAccount.password': 'Password',
+  'login.login': 'Login',
+  'login.info': 'Enter your username and password below and click login to access your account. Don\'t have any credtials or can\'t remember? Visit the help page.',
+  'login.username': 'Username',
+  'login.password': 'Password',
 
   'navigation.ourProducts': 'Our Products',
 
