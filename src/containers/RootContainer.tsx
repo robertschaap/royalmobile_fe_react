@@ -18,6 +18,7 @@ const ContactPage = React.lazy(() => import('../pages/ContactPage'));
 const ErrorPage = React.lazy(() => import('../pages/ErrorPage'));
 const HelpPage = React.lazy(() => import('../pages/HelpPage'));
 const HomePage = React.lazy(() => import('../pages/HomePage'));
+const LoginPage = React.lazy(() => import('../pages/LoginPage'));
 const MyAccountPage = React.lazy(() => import('../pages/MyAccountPage'));
 const OrderDetailsPage = React.lazy(() => import('../pages/OrderDetailsPage'));
 const OrderPage = React.lazy(() => import('../pages/OrderPage'));
@@ -39,6 +40,7 @@ const RootContainer: React.FC = () => {
                   <Route path={routes.CONSUMER_PAGE} component={ConsumerPage} />
                   <Route path={routes.CONTACT_PAGE} component={ContactPage} />
                   <Route path={routes.HELP_PAGE} component={HelpPage} />
+                  <Route path={routes.LOGIN} component={LoginPage} />
                   <Route path={routes.MY_ACCOUNT_PAGE} component={MyAccountPage} />
                   <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPage} />
                   <Route path={routes.ORDER_PAGE} component={OrderPage} />

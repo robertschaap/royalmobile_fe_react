@@ -1,14 +1,15 @@
 const pageRoutes = {
-  HOME_PAGE: '/',
-  PRODUCT_PAGE: '/product/:id',
-  ORDER_DETAILS_PAGE: '/order/details',
-  ORDER_PAGE: '/order',
+  BUSINESS_PAGE: '/business',
   CAMPAIGNS_PAGE: '/campaigns/:id',
+  CONSUMER_PAGE: '/consumer',
   CONTACT_PAGE: '/contact',
   HELP_PAGE: '/help',
+  HOME_PAGE: '/',
+  LOGIN: '/login',
   MY_ACCOUNT_PAGE: '/myroyalmobile',
-  CONSUMER_PAGE: '/consumer',
-  BUSINESS_PAGE: '/business',
+  ORDER_DETAILS_PAGE: '/order/details',
+  ORDER_PAGE: '/order',
+  PRODUCT_PAGE: '/product/:id',
   THANK_YOU_PAGE: '/thankyou',
 };
 
