@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '../../../components/Button';
-import { Input, Select } from '../../../components/FormFields/FormFields';
+import { Input, Select } from '../../../components/FormFields';
 import PageSection from '../../../components/PageSection';
 import SectionHeader from '../../../components/SectionHeader';
 import { useForm } from '../../../hooks';
