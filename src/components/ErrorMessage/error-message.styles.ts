@@ -12,5 +12,6 @@ export const ErrorMessageBase = styled.div`
 export const Frown = styled.span`
   font-size: 32px;
   font-weight: 700;
-  margin-right: ${({ theme }) => theme.spacing(4)}
+  margin-right: ${({ theme }) => theme.spacing(4)};
+  white-space: nowrap;
 `;
