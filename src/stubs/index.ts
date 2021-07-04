@@ -5,6 +5,7 @@ import routes from '../constants/routes';
 
 import {
   deleteCartItem,
+  getAuthToken,
   getCart,
   getProduct,
   getProducts,
@@ -32,6 +33,7 @@ export const stubsServer = (environment = 'development'): Server => new Server({
     this.get(routes.API_GET_SUBSCRIPTIONS, getSubscriptions);
     this.delete(routes.API_REMOVE_CART_ITEM, deleteCartItem);
     this.post(routes.API_PLACE_ORDER, postOrder);
+    this.post(routes.API_AUTH, getAuthToken);
   },
   models: {
     product: Model,

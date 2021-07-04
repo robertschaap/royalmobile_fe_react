@@ -2,6 +2,11 @@
 // Do not expose an entire file, the application doesn't need to know.
 
 export {
+  fetchAuthToken,
+  selectAuth,
+} from './ducks/auth';
+
+export {
   addCartItem,
   deleteCartItem,
   fetchCart,

@@ -16,14 +16,15 @@ const pageRoutes = {
 const API = '/api';
 
 const apiRoutes = {
-  API_ROOT: `${API}/`,
-  API_GET_CART: `${API}/cart/:id`,
   API_ADD_CART_ITEM: `${API}/cart/:id/item`,
+  API_AUTH: `${API}/auth/login`,
+  API_GET_CART: `${API}/cart/:id`,
   API_GET_PRODUCT: `${API}/product/:id`,
   API_GET_PRODUCTS: `${API}/products`,
   API_GET_SUBSCRIPTIONS: `${API}/subscriptions`,
-  API_REMOVE_CART_ITEM: `${API}/cart/:id/item/:itemId`,
   API_PLACE_ORDER: `${API}/cart/order`,
+  API_REMOVE_CART_ITEM: `${API}/cart/:id/item/:itemId`,
+  API_ROOT: `${API}/`,
 };
 
 export default {

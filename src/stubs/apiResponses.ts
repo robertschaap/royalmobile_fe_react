@@ -115,3 +115,12 @@ export const postOrder = () => {
     data: null,
   });
 };
+
+export const getAuthToken = () => {
+  return new Response(200, {}, {
+    status: 'success',
+    data: {
+      token: 'a_valid_auth_token',
+    },
+  });
+};

@@ -10,6 +10,7 @@ const content: Content = Object.freeze({
   'common.royal': 'Royal',
   'common.sale': 'Sale',
   'common.skipNavigation': 'Skip navigation',
+  'common.formHasErrors': 'There are some errors in the form, please check them above',
 
   'form.validate.isRequired': 'This field is required',
 
@@ -27,6 +28,7 @@ const content: Content = Object.freeze({
   'pages.error': 'Error',
   'pages.help': 'Help',
   'pages.home': 'Home',
+  'pages.login': 'Login',
   'pages.myAccount': 'My Account',
   'pages.order': 'Order',
   'pages.orderDetails': 'Order Details',
