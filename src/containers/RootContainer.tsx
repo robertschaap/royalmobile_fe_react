@@ -7,6 +7,7 @@ import routes from '../constants/routes';
 import history from '../history';
 import { StoreProviderContainer } from '../store';
 
+import AuthRouteContainer from './AuthRouteContainer';
 import ThemeProviderContainer from './ThemeProviderContainer';
 
 import '../styles/normalize.css';
@@ -41,7 +42,7 @@ const RootContainer: React.FC = () => {
                   <Route path={routes.CONTACT_PAGE} component={ContactPage} />
                   <Route path={routes.HELP_PAGE} component={HelpPage} />
                   <Route path={routes.LOGIN} component={LoginPage} />
-                  <Route path={routes.MY_ACCOUNT_PAGE} component={MyAccountPage} />
+                  <AuthRouteContainer path={routes.MY_ACCOUNT_PAGE} component={MyAccountPage} />
                   <Route path={routes.ORDER_DETAILS_PAGE} component={OrderDetailsPage} />
                   <Route path={routes.ORDER_PAGE} component={OrderPage} />
                   <Route path={routes.PRODUCT_PAGE} component={ProductPage} />
