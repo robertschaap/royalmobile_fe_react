@@ -14,6 +14,7 @@ const DebugMenu: React.FC = () => {
         <Link to={routes.ORDER_PAGE}>Order</Link> |&nbsp;
         <Link to={routes.ORDER_DETAILS_PAGE}>Order Details</Link> |&nbsp;
         <Link to={routes.THANK_YOU_PAGE}>Thank You</Link> |&nbsp;
+        <Link to={routes.LOGIN}>Login</Link> |&nbsp;
         <button onClick={() => StorageUtil.clearAll()}>Clear Storage</button>
       </div>
     );
