@@ -1,12 +1,12 @@
 import produce from 'immer';
 
 import { AuthToken } from '../../types/auth';
-import { AuthActions } from '../ducks/auth';
+import { AuthActions, AuthActionTypes } from '../ducks/auth';
 
 interface AuthState {
   isFetching: boolean;
   hasError: boolean;
-  collection: AuthToken | null; // temp, design proper auth stuff
+  collection: AuthToken | null;
 }
 
 const initialAuthState: AuthState = {
@@ -15,7 +15,7 @@ const initialAuthState: AuthState = {
   collection: null,
 };
 
-export const authReducer = produce((draft: AuthState = initialAuthState, action: any) => {
+export const authReducer = produce((draft: AuthState = initialAuthState, action: AuthActionTypes) => {
   switch (action.type) {
     case AuthActions.FETCH_AUTH_TOKEN:
       draft.isFetching = true;
@@ -32,5 +32,6 @@ export const authReducer = produce((draft: AuthState = initialAuthState, action:
     default:
       break;
   }
+
   return draft;
 });
