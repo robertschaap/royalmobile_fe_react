@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import { createStore } from '../../store';
+import { StoreState } from '../../store/reducers';
 import theme from '../../styles/theme';
 
 export const render = renderTest;
@@ -17,7 +18,7 @@ export const renderWithTheme = (Component: React.ReactElement) => {
   );
 };
 
-export const renderWithProviders = (Component: React.ReactElement, customInitialState?: Record<string, unknown>) => {
+export const renderWithProviders = (Component: React.ReactElement, customInitialState?: Partial<StoreState>) => {
   return renderTest(
     <Provider store={createStore(customInitialState)}>
       <ThemeProvider theme={theme}>

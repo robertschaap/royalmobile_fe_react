@@ -46,6 +46,8 @@ describe('<ProductListingContainer />', () => {
 
     renderWithProviders(<ProductListingContainer />, {
       products: {
+        isFetching: false,
+        hasError: false,
         pageNumber: 4,
         collection: [],
       },
@@ -74,7 +76,10 @@ describe('<ProductListingContainer />', () => {
   it('should show an error message when there is an error', () => {
     const { getByTestId } = renderWithProviders(<ProductListingContainer />, {
       products: {
+        isFetching: false,
         hasError: true,
+        collection: [],
+        pageNumber: 0,
       },
     });
 

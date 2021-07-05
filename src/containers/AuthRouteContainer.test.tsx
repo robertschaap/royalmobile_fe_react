@@ -18,6 +18,8 @@ describe('<AuthRouteContainer />', () => {
         component={TestComponent} />,
       {
         auth: {
+          isFetching: false,
+          hasError: false,
           collection: { token: 'a_valid_auth_token' },
         },
       },

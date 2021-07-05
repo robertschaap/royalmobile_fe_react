@@ -52,6 +52,7 @@ describe('<OrderPageContainer />', () => {
     it('should show an error message if there is an error', () => {
       const { getByTestId } = renderWithProviders(<OrderPageContainer />, {
         cart: {
+          isFetching: false,
           hasError: true,
         },
       });
@@ -62,8 +63,15 @@ describe('<OrderPageContainer />', () => {
     it('should show an error message if there is an empty cart', () => {
       const { getByTestId, getByText } = renderWithProviders(<OrderPageContainer />, {
         cart: {
+          isFetching: false,
+          hasError: false,
           collection: {
+            id: 'cart_id',
             items: [],
+            totals: {
+              monthly_price: '',
+              onetime_price: '',
+            },
           },
         },
       });
@@ -75,6 +83,8 @@ describe('<OrderPageContainer />', () => {
     it('should show an error message if there is no cart', () => {
       const { getByTestId, getByText } = renderWithProviders(<OrderPageContainer />, {
         cart: {
+          isFetching: false,
+          hasError: false,
           collection: undefined,
         },
       });
@@ -134,6 +144,8 @@ describe('<OrderPageContainer />', () => {
     it('should show a cart', () => {
       const { getByTestId } = renderWithProviders(<OrderPageContainer />, {
         cart: {
+          isFetching: false,
+          hasError: false,
           collection: cart,
         },
       });
@@ -144,6 +156,8 @@ describe('<OrderPageContainer />', () => {
     it('should store the cartId', () => {
       renderWithProviders(<OrderPageContainer />, {
         cart: {
+          isFetching: false,
+          hasError: false,
           collection: cart,
         },
       });

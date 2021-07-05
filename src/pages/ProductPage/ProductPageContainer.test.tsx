@@ -6,7 +6,7 @@ import * as productDuck from '../../store/ducks/product';
 import * as subscriptionsDuck from '../../store/ducks/subscriptions';
 import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
-import { Product } from '../../types/products';
+import { Product, ProductSelection } from '../../types/products';
 import { Subscription } from '../../types/subscriptions';
 
 import ProductPageContainer from './ProductPageContainer';
@@ -82,10 +82,13 @@ describe('<ProductPageContainer />', () => {
 
     const { getByTestId } = renderWithProviders(<ProductPageContainer />, {
       product: {
+        isFetching: false,
         hasError: true,
-        selection: {},
+        selection: {} as ProductSelection,
+        collection: null,
       },
       subscriptions: {
+        isFetching: false,
         hasError: true,
         collection: [],
       },

@@ -4,6 +4,7 @@ import React from 'react';
 import * as cartDuck from '../../store/ducks/cart';
 import { Server, testStubsServer } from '../../stubs';
 import { renderWithProviders } from '../../test/helpers';
+import { Cart } from '../../types/cart';
 
 import OrderDetailsPageContainer from '.';
 
@@ -23,9 +24,11 @@ describe('<OrderDetailsPageContainer />', () => {
 
     const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />, {
       cart: {
+        isFetching: false,
+        hasError: false,
         collection: {
           id: 'cart-id',
-        },
+        } as Cart,
       },
     });
 
@@ -46,9 +49,11 @@ describe('<OrderDetailsPageContainer />', () => {
   it('should take the user back to the homepage when the return button is clicked', () => {
     const { getByTestId } = renderWithProviders(<OrderDetailsPageContainer />, {
       cart: {
+        isFetching: false,
+        hasError: false,
         collection: {
           id: 'cart-id',
-        },
+        } as Cart,
       },
     });
 
