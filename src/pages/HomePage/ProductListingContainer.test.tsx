@@ -79,7 +79,7 @@ describe('<ProductListingContainer />', () => {
         isFetching: false,
         hasError: true,
         collection: [],
-        pageNumber: 0,
+        pageNumber: 1,
       },
     });
 
