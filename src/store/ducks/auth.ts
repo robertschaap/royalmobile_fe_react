@@ -9,10 +9,15 @@ export enum AuthActions {
 
 export interface FetchAuthTokenAction {
   type: typeof AuthActions.FETCH_AUTH_TOKEN;
+  payload: {
+    username: string;
+    password: string;
+  };
 }
 
-export const fetchAuthToken = (): AuthActionTypes => ({
+export const fetchAuthToken = (payload: FetchAuthTokenAction['payload']): AuthActionTypes => ({
   type: AuthActions.FETCH_AUTH_TOKEN,
+  payload,
 });
 
 interface FetchAuthTokenSuccessAction {
@@ -41,3 +46,4 @@ export type AuthActionTypes =
   | FetchAuthTokenErrorAction;
 
 export const selectAuth = (state: StoreState) => state.auth;
+export const selectAuthToken = (state: StoreState) => state.auth.collection?.token || null;

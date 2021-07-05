@@ -13,8 +13,8 @@ const LoginPageContainer: React.FC = () => {
   const authState = useSelector(selectAuth);
   const dispatch = useDispatch();
 
-  const onDoLogin = useCallback(() => {
-    dispatch(fetchAuthToken());
+  const onDoLogin = useCallback(({ username, password }) => {
+    dispatch(fetchAuthToken({ username, password }));
   }, [dispatch]);
 
   if (authState.isFetching) {

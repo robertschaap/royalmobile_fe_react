@@ -4,6 +4,7 @@
 export {
   fetchAuthToken,
   selectAuth,
+  selectAuthToken,
 } from './ducks/auth';
 
 export {

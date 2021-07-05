@@ -6,24 +6,25 @@ import history from '../../history';
 import api from '../../utils/api';
 import {
   AuthActions,
+  FetchAuthTokenAction,
   fetchAuthTokenError,
   fetchAuthTokenSuccess,
 } from '../ducks/auth';
 
-function* fetchAuthTokenSaga(): SagaIterator {
+function* fetchAuthTokenSaga({ payload: loginDetails }: FetchAuthTokenAction): SagaIterator {
   yield call(api.post, {
     url: routes.API_AUTH,
-    body: { username: 'blaat', password: 'blaat' },
+    body: loginDetails,
     onSuccessAction: fetchAuthTokenSuccess,
     onErrorAction: fetchAuthTokenError,
   });
 }
 
-function* fetchAuthTOkenSuccessSaga(): SagaIterator {
+function* fetchAuthTokenSuccessSaga(): SagaIterator {
   yield call(() => history.push(routes.MY_ACCOUNT_PAGE));
 }
 
 export default [
   takeEvery(AuthActions.FETCH_AUTH_TOKEN, fetchAuthTokenSaga),
-  takeEvery(AuthActions.FETCH_AUTH_TOKEN_SUCCESS, fetchAuthTOkenSuccessSaga),
+  takeEvery(AuthActions.FETCH_AUTH_TOKEN_SUCCESS, fetchAuthTokenSuccessSaga),
 ];

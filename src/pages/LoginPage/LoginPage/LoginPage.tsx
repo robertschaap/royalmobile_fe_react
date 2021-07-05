@@ -11,18 +11,20 @@ import { isRequired } from '../../../utils/FormValidators';
 
 import * as S from './login-page.styles';
 
+const initialValues = {
+  username: '',
+  password: '',
+};
+
 interface LoginPageProps {
-  onDoLogin(): void;
+  onDoLogin(v: typeof initialValues): void;
 }
 
 const LoginPage: React.FC<LoginPageProps> = (props) => {
   const { onDoLogin } = props;
 
   const form = useForm({
-    initialValues: {
-      username: '',
-      password: '',
-    },
+    initialValues,
     validators: {
       username: [isRequired],
       password: [isRequired],
