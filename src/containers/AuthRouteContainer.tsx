@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 import routes from '../constants/routes';
@@ -6,7 +6,7 @@ import { selectAuth, useSelector } from '../store';
 
 interface AuthRouteContainerProps {
   path: string;
-  component: React.LazyExoticComponent<React.FC>;
+  component: ComponentType;
 }
 
 const AuthRouteContainer: React.FC<AuthRouteContainerProps> = (props) => {
