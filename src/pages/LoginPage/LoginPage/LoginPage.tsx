@@ -44,7 +44,6 @@ const LoginPage: React.FC<LoginPageProps> = (props) => {
             placeholder={ContentUtil('login.username')} />
           <Input
             {...form.getFieldProps('password')}
-            autoFocus
             isRequired
             label={ContentUtil('login.password')}
             placeholder={ContentUtil('login.password')} />
