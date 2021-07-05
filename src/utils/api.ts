@@ -1,4 +1,6 @@
-import { put } from 'redux-saga/effects';
+import { put, select } from 'redux-saga/effects';
+
+import { selectAuthToken } from '../store';
 
 interface ApiCallBaseProps {
   onErrorAction: Function;
@@ -26,7 +28,7 @@ function* apiCall(props: ApiCallBaseProps) {
   } = props;
 
   try {
-    const apiRes = yield fetch(url, options);
+    const apiRes: Response = yield fetch(url, options);
     const res: ApiResponse = yield apiRes.json();
 
     if (res.status === 'success') {
@@ -40,15 +42,34 @@ function* apiCall(props: ApiCallBaseProps) {
 }
 
 function* get(props: ApiCallBaseProps) {
-  yield apiCall(props);
+  const authToken: ReturnType<typeof selectAuthToken> = yield select(selectAuthToken);
+
+  if (authToken) {
+    yield apiCall({
+      ...props,
+      options: {
+        method: 'GET',
+        headers: {
+          authorization: authToken,
+        },
+      },
+    });
+  } else {
+    yield apiCall(props);
+  }
 }
 
 function withBody(method: 'DELETE' | 'PATCH' | 'POST') {
   return function* methodFunction(props: ApiCallWithOptionalBodyProps) {
+    const authToken: ReturnType<typeof selectAuthToken> = yield select(selectAuthToken);
+
     const options = {
       method,
       body: JSON.stringify(props.body),
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        ...(authToken ? { Authorisation: authToken } : {}),
+      },
     };
 
     yield apiCall({ ...props, options });

@@ -15,12 +15,19 @@ const getCallProps = {
 
 jest.mock('redux-saga/effects', () => ({
   put: jest.fn(),
+  select: jest.fn(),
+}));
+
+jest.mock('../../store', () => ({
+  selectAuthToken: jest.fn(),
 }));
 
 describe('api', () => {
   describe('GET', () => {
     it('should handle a successful GET call with status success', async () => {
       const generator = api.get(getCallProps);
+      generator.next();
+
       const apiCall = generator.next().value as Generator;
 
       apiCall.next();
@@ -39,6 +46,8 @@ describe('api', () => {
 
     it('should handle a successful GET call without status success', async () => {
       const generator = api.get(getCallProps);
+      generator.next();
+
       const apiCall = generator.next().value as Generator;
 
       apiCall.next();
@@ -56,6 +65,8 @@ describe('api', () => {
 
     it('should handle an unsuccessful GET call', async () => {
       const generator = api.get(getCallProps);
+      generator.next();
+
       const apiCall = generator.next().value as Generator;
 
       apiCall.next();
